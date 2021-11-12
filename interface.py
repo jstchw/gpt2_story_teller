@@ -10,11 +10,12 @@ class Interface:
         self.window = tk.Tk()
         self.window.resizable(width=tk.FALSE, height=tk.FALSE)
 
-        # Frames
+        # Left frame
         self.leftFrame = tk.Frame(self.window, bg='red')
         self.leftFrame.pack_propagate(0)
         self.leftFrame.pack(fill='both', side='left', expand='True')
 
+        # Right frame
         self.rightFrame = tk.Frame(self.window, bg='green')
         self.rightFrame.pack_propagate(0)
         self.rightFrame.pack(fill='both', side='right', expand='True')
@@ -27,6 +28,14 @@ class Interface:
         self.button_next.pack(side=tk.BOTTOM, pady=20)
         self.button_prev.pack(side=tk.BOTTOM, pady=20)
 
+        # Canvas and image
+        self.canvas = tk.Canvas(self.window)
+        self.canvas.pack()
+
+        img = tk.PhotoImage(file='img/test_img.gif')
+        self.canvas.create_image((100, 100), image=img)
+
+        # Draw window
         self.create_window()
 
     def create_window(self):
