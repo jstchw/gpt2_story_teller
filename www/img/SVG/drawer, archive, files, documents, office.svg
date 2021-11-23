@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <title>drawer, archive, files, documents, office</title>
+  <g>
+    <path d="M15,0H1A1,1,0,0,0,0,1V15a1,1,0,0,0,1,1H15a1,1,0,0,0,1-1V1A1,1,0,0,0,15,0ZM2,2H14V7H2ZM14,14H2V9H14Z"/>
+    <path d="M9,3.5H7a1,1,0,0,0,0,2H9a1,1,0,0,0,0-2Z"/>
+    <path d="M7,12.5H9a1,1,0,0,0,0-2H7a1,1,0,0,0,0,2Z"/>
+  </g>
+</svg>

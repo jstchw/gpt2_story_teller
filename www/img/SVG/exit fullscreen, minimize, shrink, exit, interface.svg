@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <title>exit fullscreen, minimize, shrink, exit, interface</title>
+  <g>
+    <path d="M5,10H1a1,1,0,0,0,0,2H4v3a1,1,0,0,0,2,0V11A1,1,0,0,0,5,10Z"/>
+    <path d="M15,10H11a1,1,0,0,0-1,1v4a1,1,0,0,0,2,0V12h3a1,1,0,0,0,0-2Z"/>
+    <path d="M11,6h4a1,1,0,0,0,0-2H12V1a1,1,0,0,0-2,0V5A1,1,0,0,0,11,6Z"/>
+    <path d="M5,0A1,1,0,0,0,4,1V4H1A1,1,0,0,0,1,6H5A1,1,0,0,0,6,5V1A1,1,0,0,0,5,0Z"/>
+  </g>
+</svg>

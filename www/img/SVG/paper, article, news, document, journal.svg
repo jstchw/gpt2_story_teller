@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <title>paper, article, news, document, journal</title>
+  <g>
+    <path d="M14,0H2A1,1,0,0,0,1,1V15a1,1,0,0,0,1,1H14a1,1,0,0,0,1-1V1A1,1,0,0,0,14,0ZM13,14H3V2H13Z"/>
+    <path d="M6,6h4a1,1,0,0,0,0-2H6A1,1,0,0,0,6,6Z"/>
+    <path d="M6,10h4a1,1,0,0,0,0-2H6a1,1,0,0,0,0,2Z"/>
+  </g>
+</svg>
