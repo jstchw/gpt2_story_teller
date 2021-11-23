@@ -29,5 +29,5 @@ class ImgManager:
 
     def reformat_image(self):
         self.img_pil = Image.open(self.input_img)
-        self.img_pil = self.img_pil.resize((200, 200), Image.ANTIALIAS)
+        self.img_pil = self.img_pil.resize((350, 350), Image.ANTIALIAS)
         self.img_pil.save(self.output_img)
