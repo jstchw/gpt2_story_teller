@@ -1,0 +1,1 @@
+eel.cycle_image()

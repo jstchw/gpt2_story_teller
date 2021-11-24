@@ -1,6 +1,11 @@
 import eel
 
 
+@eel.expose
+def cycle_image():
+    print("test")
+
+
 class Interface:
 
     def __init__(self):
