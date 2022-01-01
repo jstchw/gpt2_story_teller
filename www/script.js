@@ -1,10 +1,13 @@
 let counter = 0
 let local_srv = "http://localhost:8000/"
 
-assignNumberToImage();
+for(let i = 0; i<5; i++) {
+    assignNumberToImage('memeDIV' + (counter + 1))
+    counter++;
+}
 
-function assignNumberToImage() {
-    document.getElementById('memeDIV').innerHTML = '<img data-src="img/meme' + counter + '.jpg"/>';
+function assignNumberToImage(memeDIV) {
+    document.getElementById(memeDIV).innerHTML = '<img src="img/meme' + counter + '.jpg"/ usemap="#clickmap">';
 }
 
 function nextImage() {
