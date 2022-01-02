@@ -5,6 +5,7 @@
         <link rel="icon" type="image/x-icon" href="img/favicon.ico/">
         <link rel="stylesheet" href="style/main.css">
         <meta name="google" content="notranslate" />
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     </head>
     <body>
         <script type="text/javascript" src="/eel.js"></script>
@@ -13,11 +14,9 @@
                 <div id="greeting">Meme Generator</div>
                 <div id="scroll-text">Scroll Down</div>
             </div>
-            <div class="item-image" id="memeDIV1"></div>
-            <div class="item-image" id="memeDIV2"></div>
-            <div class="item-image" id="memeDIV3"></div>
-            <div class="item-image" id="memeDIV4"></div>
-            <div class="item-image" id="memeDIV5"></div>
+
+            <div id="content" class="item-image"></div>
+            <button id="lmbutton" onclick="loadMore()">Load More</button>
 
 
 
