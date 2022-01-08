@@ -91,8 +91,34 @@
     \subsection*{Applications of neural networks in entertainment}
     \addcontentsline{toc}{subsection}{Application of neural networks in entertainment}
 
-    \citep{dank_learning}.
+    \subsubsection*{Introduction}
+    \addcontentsline{toc}{subsubsection}{Introduction}
+    \paragraph{}
 
+    Since artificial intelligence systems, transformer neural networks in particular, are good in synthesising text that is nearly indistinguishable from human phrases - that allows to make a presumtption: are modern neural networks developed and trained enough to be used to generate
+    entertainment short texts based on already created so known `memes'? It's important to understand the modern culture of internet and the heart of it - thematic pictures with short jokes written on them to undertake a project directly related to it.
+    Memes can be found everywhere on the Internet nowadays and they constantly change and evolve. Their primary function is to entertain the community in a harmless way yet our society is very diverese and has different interests - that explains the existence of memes which can be used
+    to "further political ideals, maginfy echo chambers and antagonise minorities" since it became a very popular communcation method \citep{dank_learning}. 
+
+    \subsubsection{How does it work?}
+    \addcontentsline{toc}{subsubsection}{How does it work?}
+    \paragraph{}
+
+    In order for a neural network to create a meme, there are several steps involved in that process. Given a training set of such images, the text from them should be recognised and stored using Python libraries such as `PyTesseract', then it should be fed to the neural network and then taken as a processed string
+    the generated text should be attached to the template of the meme from which it has been recognised. To attach a string to a picture - the preferred library is called `Pillow'.
+
+    \subsubsection{Tesseract}
+    \addcontentsline{toc}{subsubsection}{Tesseract}
+    \paragraph{}
+
+    `Tesseract' is an optical character recognition tool which can be both electronic or mechanical and is used to convert many types of text (handwritten, typed, printed etc.) to digital. A plenty of systems use this tool to scan all kind of documents to store it digitally.
+    Modern OCR is trained enough to work with different fonts, languages and even image recognition whereas early versions had to be fed with every character separetely.
+
+    PyTesseract is a library written for Python which allows the usage of OCR functions directly in a program. This is vital for this project because the main source of data exists as images rather than plain text strings.
+
+    \subsubsection{Pillow}
+    \addcontentsline{toc}{subsubsection}{Pillow}
+    \paragraph{}
 
     \addcontentsline{toc}{section}{Bibliography}
     \bibliography{reference}{}
