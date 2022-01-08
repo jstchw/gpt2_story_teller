@@ -1,0 +1,10 @@
+\contentsline {section}{Abstract}{2}{section*.1}%
+\contentsline {paragraph}{}{2}{section*.2}%
+\contentsline {section}{Literature Review}{2}{section*.3}%
+\contentsline {paragraph}{}{2}{section*.4}%
+\contentsline {subsection}{Introduction}{2}{section*.5}%
+\contentsline {paragraph}{}{2}{section*.6}%
+\contentsline {subsection}{Transformer Neural Networks}{3}{section*.7}%
+\contentsline {paragraph}{}{3}{section*.8}%
+\contentsline {subsection}{Application of neural networks in entertainment}{4}{section*.10}%
+\contentsline {section}{Bibliography}{4}{section*.10}%

@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2020)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: report.aux
+The style file: agsm.bst
+Database file #1: reference.bib
+Warning--empty booktitle in inproceedings
+You've used 6 entries,
+            2909 wiz_defined-function locations,
+            667 strings with 5777 characters,
+and the built_in function-call counts, 42493 in all, are:
+= -- 6997
+> -- 689
+< -- 0
++ -- 3515
+- -- 217
+* -- 3804
+:= -- 8293
+add.period$ -- 12
+call.type$ -- 6
+change.case$ -- 84
+chr.to.int$ -- 6
+cite$ -- 7
+duplicate$ -- 79
+empty$ -- 175
+format.name$ -- 241
+if$ -- 7648
+int.to.chr$ -- 5
+int.to.str$ -- 0
+missing$ -- 1
+newline$ -- 27
+num.names$ -- 64
+pop$ -- 49
+preamble$ -- 1
+purify$ -- 90
+quote$ -- 0
+skip$ -- 78
+stack$ -- 0
+substring$ -- 10066
+swap$ -- 13
+text.length$ -- 84
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 24
+warning$ -- 1
+while$ -- 128
+width$ -- 0
+write$ -- 89
+(There was 1 warning)
