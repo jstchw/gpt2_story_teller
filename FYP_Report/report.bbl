@@ -1,11 +1,21 @@
 \begin{thebibliography}{xx}
 
+\harvarditem{Clark \harvardand\ Contributors}{2022}{pillow_about}
+Clark, A. \harvardand\ Contributors  \harvardyearleft 2022\harvardyearright ,
+  `From pillow documentation'.
+\newblock \\Accessed Jan 8 2022 [Online].
+
 \harvarditem[Harvey et~al.]{Harvey, Husbands \harvardand\
   Cliff}{1994}{inproceedings}
 Harvey, I., Husbands, P. \harvardand\ Cliff, D.  \harvardyearleft
   1994\harvardyearright , Seeing the light: Artificial evolution, real vision,
   pp.~392--401.
 \newblock \\Accessed Jan 7 2022 [Online].
+
+\harvarditem{Kay}{2007}{tesseract_article}
+Kay, A.  \harvardyearleft 2007\harvardyearright , `Tesseract: an open-source
+  optical character recognition engine'.
+\newblock \\Accessed Jan 8 2022 [Online].
 
 \harvarditem{Nangia \harvardand\ Bowman}{2018}{ListOps}
 Nangia, N. \harvardand\ Bowman, S.  \harvardyearleft 2018\harvardyearright ,

@@ -4,45 +4,45 @@ The top-level auxiliary file: report.aux
 The style file: agsm.bst
 Database file #1: reference.bib
 Warning--empty booktitle in inproceedings
-You've used 6 entries,
+You've used 8 entries,
             2909 wiz_defined-function locations,
-            667 strings with 5777 characters,
-and the built_in function-call counts, 42493 in all, are:
-= -- 6997
-> -- 689
+            676 strings with 5969 characters,
+and the built_in function-call counts, 47559 in all, are:
+= -- 7800
+> -- 760
 < -- 0
-+ -- 3515
-- -- 217
-* -- 3804
-:= -- 8293
-add.period$ -- 12
-call.type$ -- 6
-change.case$ -- 84
-chr.to.int$ -- 6
-cite$ -- 7
-duplicate$ -- 79
-empty$ -- 175
-format.name$ -- 241
-if$ -- 7648
++ -- 3878
+- -- 238
+* -- 4206
+:= -- 9374
+add.period$ -- 16
+call.type$ -- 8
+change.case$ -- 112
+chr.to.int$ -- 8
+cite$ -- 9
+duplicate$ -- 101
+empty$ -- 227
+format.name$ -- 270
+if$ -- 8549
 int.to.chr$ -- 5
 int.to.str$ -- 0
 missing$ -- 1
-newline$ -- 27
-num.names$ -- 64
-pop$ -- 49
+newline$ -- 35
+num.names$ -- 84
+pop$ -- 67
 preamble$ -- 1
-purify$ -- 90
+purify$ -- 120
 quote$ -- 0
-skip$ -- 78
+skip$ -- 98
 stack$ -- 0
-substring$ -- 10066
-swap$ -- 13
-text.length$ -- 84
+substring$ -- 11147
+swap$ -- 15
+text.length$ -- 112
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 24
+type$ -- 32
 warning$ -- 1
-while$ -- 128
+while$ -- 170
 width$ -- 0
-write$ -- 89
+write$ -- 115
 (There was 1 warning)

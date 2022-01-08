@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.5.2)  8 JAN 2022 19:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.5.2)  8 JAN 2022 19:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -497,7 +497,7 @@ l.27     \clearpage
 ] [2
 
 ]
-<img/transformer_model.png, id=56, 702.625pt x 854.19125pt>
+<img/transformer_model.png, id=58, 702.625pt x 854.19125pt>
 File: img/transformer_model.png Graphic file (type png)
 <use img/transformer_model.png>
 Package pdftex.def Info: img/transformer_model.png  used on input line 78.
@@ -506,33 +506,33 @@ Package pdftex.def Info: img/transformer_model.png  used on input line 78.
 
  <./img/transformer_model.png (PNG copy)>]
 [4] (./report.bbl [5])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 127.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 139.
  [6
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 127.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 139.
  (./report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 127.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 127.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 139.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 139.
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: 8459D56B252E213EB08D30D3DF53BCB8;146.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 127.
+(rerunfilecheck)             Checksum: 25385BD9AFD688160EA908353ED15A1B;146.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 139.
  ) 
 Here is how much of TeX's memory you used:
- 8695 strings out of 480608
- 132386 string characters out of 5903631
- 411110 words of memory out of 5000000
- 24422 multiletter control sequences out of 15000+600000
+ 8707 strings out of 480608
+ 132604 string characters out of 5903631
+ 411171 words of memory out of 5000000
+ 24428 multiletter control sequences out of 15000+600000
  539237 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,7n,42p,408b,336s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,7n,42p,549b,336s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 ></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><
 /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on report.pdf (7 pages, 194614 bytes).
+Output written on report.pdf (7 pages, 196516 bytes).
 PDF statistics:
- 116 PDF objects out of 1000 (max. 8388607)
- 101 compressed objects within 2 object streams
- 32 named destinations out of 1000 (max. 500000)
+ 130 PDF objects out of 1000 (max. 8388607)
+ 115 compressed objects within 2 object streams
+ 38 named destinations out of 1000 (max. 500000)
  30 words of extra memory for PDF output out of 10000 (max. 10000000)
 

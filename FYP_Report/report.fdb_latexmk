@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex report"] 1641663128 "report.aux" "report.bbl" "report" 1641663130
+["bibtex report"] 1641664657 "report.aux" "report.bbl" "report" 1641664659
   "/usr/local/texlive/2020/texmf-dist/bibtex/bst/harvard/agsm.bst" 1136766823 25549 e3d0f1ab4ae55e777f7352db30e2c6f7 ""
-  "reference.bib" 1641662659 1620 3add25a8469a86d7415b558cd5ef8a65 ""
-  "report.aux" 1641663130 3748 e68303aaadafee3975cabc01dcb2f1e9 "pdflatex"
+  "reference.bib" 1641664435 1972 93117e143c490be4561c863526ff3d7a ""
+  "report.aux" 1641664659 4276 33efab6bfe837c703cf38f7145f84828 "pdflatex"
   (generated)
-  "report.blg"
   "report.bbl"
-["pdflatex"] 1641663129 "/Users/artembobrov/PycharmProjects/gpt2_meme_gen/FYP_Report/report.tex" "report.pdf" "report" 1641663130
-  "/Users/artembobrov/PycharmProjects/gpt2_meme_gen/FYP_Report/report.tex" 1641663126 9147 3df7c4469cbb1426631105cc32249c47 ""
+  "report.blg"
+["pdflatex"] 1641664657 "/Users/artembobrov/PycharmProjects/gpt2_meme_gen/FYP_Report/report.tex" "report.pdf" "report" 1641664659
+  "/Users/artembobrov/PycharmProjects/gpt2_meme_gen/FYP_Report/report.tex" 1641664655 10212 3836ab9f5af9ed83e228132a50134e3b ""
   "/usr/local/texlive/2020/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -86,14 +86,14 @@
   "/usr/local/texlive/2020/texmf-var/web2c/pdftex/pdflatex.fmt" 1588419698 2432465 dc4e1ff06e6d5a6660568dbaa9eeba7f ""
   "/usr/local/texlive/2020/texmf.cnf" 1586288231 577 d60164b4589a341208aff7a667fbbdcb ""
   "img/transformer_model.png" 1641559209 137249 87e2d920b3833d7caf0c7433928d3407 ""
-  "report.aux" 1641663130 3748 e68303aaadafee3975cabc01dcb2f1e9 "pdflatex"
-  "report.bbl" 1641663129 1977 8bc1d6358f2e9d08e290ea7098d0bc1e "bibtex report"
-  "report.out" 1641663130 146 8459d56b252e213eb08d30d3df53bcb8 "pdflatex"
-  "report.tex" 1641663126 9147 3df7c4469cbb1426631105cc32249c47 ""
-  "report.toc" 1641663130 1161 1988958b5185f31b2e1b80abdcff1f6f "pdflatex"
+  "report.aux" 1641664659 4276 33efab6bfe837c703cf38f7145f84828 "pdflatex"
+  "report.bbl" 1641664657 2399 f8cf6b136bd04fa8069b3059c7729b28 "bibtex report"
+  "report.out" 1641664659 146 25385bd9afd688160ea908353ed15a1b "pdflatex"
+  "report.tex" 1641664655 10212 3836ab9f5af9ed83e228132a50134e3b ""
+  "report.toc" 1641664659 1358 441cbdddd9eb3aa1f8997212c084019a "pdflatex"
   (generated)
   "report.pdf"
-  "report.log"
   "report.aux"
-  "report.out"
   "report.toc"
+  "report.log"
+  "report.out"
