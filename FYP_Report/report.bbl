@@ -1,0 +1,53 @@
+\begin{thebibliography}{xx}
+
+\harvarditem{Clark \harvardand\ Contributors}{2022}{pillow_about}
+Clark, A. \harvardand\ Contributors  \harvardyearleft 2022\harvardyearright ,
+  `From pillow documentation'.
+\newblock \\Accessed Jan 8 2022 [Online].
+
+\harvarditem[Harvey et~al.]{Harvey, Husbands \harvardand\
+  Cliff}{1994}{inproceedings}
+Harvey, I., Husbands, P. \harvardand\ Cliff, D.  \harvardyearleft
+  1994\harvardyearright , Seeing the light: Artificial evolution, real vision,
+  pp.~392--401.
+\newblock \\Accessed Jan 7 2022 [Online].
+
+\harvarditem{Kay}{2007}{tesseract_article}
+Kay, A.  \harvardyearleft 2007\harvardyearright , `Tesseract: an open-source
+  optical character recognition engine'.
+\newblock \\Accessed Jan 8 2022 [Online].
+
+\harvarditem{Nangia \harvardand\ Bowman}{2018}{ListOps}
+Nangia, N. \harvardand\ Bowman, S.  \harvardyearleft 2018\harvardyearright ,
+  `Listops: A diagnostic dataset for latent tree learning'.
+\newblock \\Accessed Jan 7 2022 [Online].
+
+\harvarditem{Peirson \harvardand\ Tolunay}{2018}{dank_learning}
+Peirson, A.~L. \harvardand\ Tolunay, E.~M.  \harvardyearleft
+  2018\harvardyearright , `Dank learning: Generating memes using deep neural
+  networks'.
+\newblock \\Accessed Jan 7 2022 [Online].
+
+\harvarditem[Radford et~al.]{Radford, Wu, Child, Luan, Amodei \harvardand\
+  Sutskever}{2019}{radford_wu_child_luan_amodei_sutskever_2019}
+Radford, A., Wu, J., Child, R., Luan, D., Amodei, D. \harvardand\ Sutskever, I.
+   \harvardyearleft 2019\harvardyearright , `Language models are unsupervised
+  multitask learners'.
+\newblock \\Accessed Jan 6 2022 [Online].
+
+\harvarditem[Tay et~al.]{Tay, Denghani, Abnar, Shen, Bahri, Pham, Rao, Yang,
+  Ruder \harvardand\ Metzler}{2020}{LRA_benchmark}
+Tay, Y., Denghani, M., Abnar, S., Shen, Y., Bahri, D., Pham, P., Rao, J., Yang,
+  L., Ruder, S. \harvardand\ Metzler, D.  \harvardyearleft
+  2020\harvardyearright , `Long range arena: A benchmark for efficient
+  transformers'.
+\newblock \\Accessed Jan 7 2022 [Online].
+
+\harvarditem[Vaswani et~al.]{Vaswani, Shazeer, Parmar, Uszkoreit, Jones, Gomez,
+  Kaiser \harvardand\ Polosukhin}{2017}{attention_is_all_you_need}
+Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A.,
+  Kaiser, L. \harvardand\ Polosukhin, I.  \harvardyearleft
+  2017\harvardyearright , `Attention is all you need'.
+\newblock \\Accessed Jan 7 2022 [Online].
+
+\end{thebibliography}

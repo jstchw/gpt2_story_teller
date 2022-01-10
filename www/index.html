@@ -1,19 +1,30 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" class="notranslate" translate="no">
     <head>
         <title>GPT-2 Based Meme Generator</title>
         <link rel="icon" type="image/x-icon" href="img/favicon.ico/">
-        <link rel="stylesheet" href="style/bootstrap.min.css">
+        <link rel="stylesheet" href="style/main.css">
+        <meta name="google" content="notranslate" />
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     </head>
     <body>
         <script type="text/javascript" src="/eel.js"></script>
-        <script src="script.js"></script>
         <div class="container">
-            <div class="item-top">Menu container</div>
-            <div class="item-image"><img id="memeIMG" src="img/meme0.jpg" alt="it just broke..."></div>
-            <div class="item"><img src="img/SVG/left,%20arrow,%20back,%20previous,%20navigation.svg" alt="Left arrow" onclick="prevImage()"></div>
-            <div class="item"><img src="img/SVG/right,%20arrow,%20next,%20forward,%20navigation.svg" alt="Right arrow" onclick="nextImage()"></div>
+            <div class="item-top" id="greeting-div">
+                <div id="greeting">Meme Generator</div>
+                <div id="scroll-text">Scroll Down</div>
+            </div>
+
+            <div id="content" class="item-image"></div>
+            <div class="button-div">
+                <button id="lmbutton" onclick="loadMore()">Load More</button>
+            </div>
+
+
+
         </div>
+
+    <script src="script.js"></script>
     </body>
 </html>
 -->
