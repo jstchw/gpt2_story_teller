@@ -178,8 +178,46 @@
         \caption{The system design flow chart}
     \end{figure}
 
-    As can be seen on this figure the process involved in generating and showing the images is continous. First come the database which will contain images and user reactions to each image. Reactions will be stored as a mass, not individual data. This will allow to understand better what the users like the most and what they don't.
+    As can be seen on this figure the process involved in generating and showing the images is continous. First comes the database which will contain images and user reactions to each image. Reactions will be stored as a mass, not individual data. This will allow to understand better what the users like the most and what they don't. 
+    The program will take the initial image, separate the text from it, remember what the image was, feed the text to the neural network and combine the output from the neural network and the existing image into a freshly generated meme. After that comes the process of displaying the image. Then the user, if they wish, can leave feedback. The loop repeats.
 
+    The main bridge between backend and frontend in this project is the Python library called `Eel' \citep{eel_github}. It is similar to JavaScript's `Electron' and allows to code the frontend with a stack of HTML, CSS and JavaScript having Python in the backend. There is another library which is heavier and therefore has a higher entry level - `cefpython'.
+    `Eel' makes possible linking buttons created using HTML/CSS to Python-implemented functions. This methodology is called `Function Exposure' \citep{eel_github}. Functions from Python could be exposed to JavaScript environment and vice versa.
+
+    \clearpage
+
+    \subsection*{Backend design}
+    \addcontentsline{toc}{subsection}{Backend design}
+    \paragraph{}
+
+    \begin{figure}[htbp]
+        \centerline{\includegraphics[scale=.5]{img/backend_diagram.png}}
+        \label{backend_diagram}
+        \caption{Backend design}
+    \end{figure}
+
+    The backend of the project is going to be implemented using Python programming language due to the availability of different frameworks and libraries. In the backend the process of the scanning the text from the image will be undertaken by a library called `PyTesseract' which allows the optical character recognition to be used in an optimised way.
+    Next step of the backend process is to push the string to the neural network allowing it to use its massive database to synthesise similar text. Afterwards comes the process of attaching the generated output to an image. It is done using a tool called `Pillow' and it's aim is to work with all kind of images. The string will be styled to fit the pattern appropriately.
+
+    \section*{Functional Requirements}
+    \addcontentsline{toc}{section}{Functional Requirements}
+    \paragraph{}
+
+    \section*{Indicative Test Plan}
+    \addcontentsline{toc}{section}{Indicative Test Plan}
+    \paragraph{}
+
+    \section*{Implementation Report}
+    \addcontentsline{toc}{section}{Implementation Report}
+    \paragraph{}
+
+    The approach chosen to develop this project is FDD - Feature-driven development. Features are implemented first and then the unit tests will be written to prove that these features work correctly. The whole idea of the project is to prove that neural networks can create memes that are interesting to people.
+
+    The current state of the development has the frontend and backend partly implemented. As of now the frontend features the ability to test the backend efficiently without writing unit tests. It visually shows what works and what doesn't. Content loading of the image stream when the user scrolls down is implemented using a `Load More' button powered by jQuery. The app has a branding and instruction screen but since the backend is only partly implemented - the app doesn't store information about users and wether they're using it for the first time.
+    In the backend some functions that process images are fully implemented. For example, functions that scan the text and add it to the images work but they have to be enhanced. Reading the text from the image sometimes collects non-existent characters and some kind of a filter should be implemented that will throw away useless characters. On the other hand the code that adds the text to the image works perfect.
+
+    For the frontend it's planned to implement 'lazy loading' using either React or jQuery and load the images from the database endlessly. 
+    For the backend the main target is to adapt GPT-2 code and use it to process text.
 
     \addcontentsline{toc}{section}{Bibliography}
     \bibliography{reference}{}
