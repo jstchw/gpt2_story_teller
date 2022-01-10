@@ -124,13 +124,62 @@
     Pillow is a successor of the first library and is still being updated. The latest stable version was released in April 2021. The author of the fork (a copy of a repository that is being managed by someone else rather than the creator of the original repository) has set several goals to follow when maintaining the product - continuous integration testing, publicised development activity and regular releases to Python Package Index \citep{pillow_about}. 
     It is capable of manipulating images in a variety of ways but one of the most important features of this library that will be used in this project is: "Adding text to an image".
 
-    \subsubsection*{GPT-2}
-    \addcontentsline{toc}{subsubsection}{Pillow}
+    \subsubsection*{PyTorch or TensorFlow?}
+    \addcontentsline{toc}{subsubsection}{PyTorch or TensorFlow?}
     \paragraph{}
 
     \subsection*{Conclusion}
     \addcontentsline{toc}{subsection}{Pillow}
     \paragraph{}
+
+    Summing up everything that has been stated before, nowadays the interest towards neural networks and other artificial intelligence systems grows with exponential speed. Literature available online that is crucial to familiarise yourself with when working on such a project is extensive and allows more in-deep research to be carried out. Having that in mind, writings about AI are more inclined towards scientific purposes rather than entertainment.
+    Transformers are the best choice when it comes to entertainment and text generation in particular, since they use attention mechanism - it greatly reduces training times. GPT-2 has a major training base of 1.5 billion parameters compared to BERT's two versions: 110 million and 340 million parameters (as of 2019). It makes GPT-2 a winner in more accurate text synthesis.
+
+    
+    \section*{System Design}
+    \addcontentsline{toc}{section}{System Design}
+
+    \subsection*{System UI (frontend)}
+    \addcontentsline{toc}{subsection}{System UI (frontend)}
+    \paragraph{}
+
+    The main key of the system UI when it aims to hold a `dialogue' with the user is simplicity. The system can include a lot of parameters, functions, features which will be implemented in an outstanding way but if it fails to correctly introduce these features to the user and they become convoluted - it's a problem.
+    
+    \paragraph{}
+
+    \begin{figure}[htbp]
+        \centerline{\includegraphics[scale=.5]{img/system_ui.png}}
+        \label{system_ui}
+        \caption{Main page design}
+    \end{figure}
+
+    The ladning page features a simple approach to the design. In the beginning we have a context menu which will contain drop-down boxes to control the behaviour of the program which will be used to tailor the experience that suits the end user. It's planned the menu to contain settings to control the environment - change
+    the appearence of the app, switch to another section (meme pattern), reload the app (in case of an emergency). 
+
+    Next section of the interface is `Branding'. The app shouldn't only be practical but also has a decent appearence. The logo should match to overall design of the program and to complement it.
+
+    `Directions to use' shows the user how to get the most out of the app and have a good experience. It will be shown only once on startup not to bother the user too much.
+
+    `Select image' section will allow the user to select the beloved meme pattern on which will be based the generation of the future memes shown. If the user doesn't have a preferred pattern or just wants to watch all kinds of memes - random generation will be available as an option (it will be set automatically, if no input collected).
+
+    The philosophy of the whole user interface which will be used in this project is to make the experience continious. Loading different pages manually is in the past, the modern idea of a scroller app is to make the usage seamless. Although the devices nowadays are very powerful and capable of handling massive amounts of calculations, it's still
+    important to implement a good optimisation to make the usage of the app pleasant to the highest number of people. To balance somewhere in between experience and optimisation - `lazy loading' is the answer. The main idea is to move away from separate pages and implement everything combined in one long page which will be loaded consequentially and automatically when the user reaches the end of the `page'.
+
+    Also as can be seen on the diagram above, every picture (meme) should have several buttons to express opinion. This can be achieved by using typical `like-dislike' system. To make even easier for the user to give positive feedback a double click system on the image can be used.
+    
+    \clearpage
+
+    \subsection*{Interaction between frontend and backend}
+    \addcontentsline{toc}{subsection}{Interaction between frontend and backend}
+
+    \begin{figure}[htbp]
+        \centerline{\includegraphics[scale=.5]{img/flow_diagram.png}}
+        \label{flow_diagram}
+        \caption{The system design flow chart}
+    \end{figure}
+
+    As can be seen on this figure the process involved in generating and showing the images is continous. First come the database which will contain images and user reactions to each image. Reactions will be stored as a mass, not individual data. This will allow to understand better what the users like the most and what they don't.
+
 
     \addcontentsline{toc}{section}{Bibliography}
     \bibliography{reference}{}

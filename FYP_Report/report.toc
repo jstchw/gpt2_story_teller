@@ -18,8 +18,13 @@
 \contentsline {subsubsection}{Pillow}{5}{section*.17}%
 \contentsline {subsubsection}{Pillow}{5}{section*.17}%
 \contentsline {paragraph}{}{5}{section*.18}%
-\contentsline {subsubsection}{Pillow}{5}{section*.19}%
+\contentsline {subsubsection}{PyTorch or TensorFlow?}{5}{section*.19}%
 \contentsline {paragraph}{}{5}{section*.20}%
 \contentsline {subsection}{Pillow}{5}{section*.21}%
-\contentsline {section}{Bibliography}{5}{section*.22}%
 \contentsline {paragraph}{}{5}{section*.22}%
+\contentsline {section}{System Design}{6}{section*.23}%
+\contentsline {subsection}{System UI (frontend)}{6}{section*.24}%
+\contentsline {paragraph}{}{6}{section*.25}%
+\contentsline {paragraph}{}{7}{figure.caption.27}%
+\contentsline {subsection}{Interaction between frontend and backend}{8}{section*.28}%
+\contentsline {section}{Bibliography}{8}{figure.caption.29}%
