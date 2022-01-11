@@ -688,6 +688,7 @@ INPUT .\report.bbl
 INPUT report.bbl
 INPUT .\report.bbl
 INPUT report.bbl
+INPUT D:\MiKTeX\fonts\tfm\public\cm\cmti12.tfm
 INPUT report.aux
 INPUT .\report.out
 INPUT .\report.out
@@ -697,3 +698,5 @@ INPUT D:\MiKTeX\fonts\type1\public\amsfonts\cm\cmr12.pfb
 INPUT D:\MiKTeX\fonts\type1\public\amsfonts\cm\cmr12.pfb
 INPUT D:\MiKTeX\fonts\type1\public\amsfonts\cm\cmr17.pfb
 INPUT D:\MiKTeX\fonts\type1\public\amsfonts\cm\cmr17.pfb
+INPUT D:\MiKTeX\fonts\type1\public\amsfonts\cm\cmti12.pfb
+INPUT D:\MiKTeX\fonts\type1\public\amsfonts\cm\cmti12.pfb

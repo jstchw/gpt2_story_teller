@@ -88,6 +88,24 @@
     LRA Benchmark article depicts using a table of results for the comparison between different models. First test - Long 'ListOps' aims to test the parsing ability of the models and is a more complex version of the standard 'ListOps' task \citep{ListOps}.
     The best result is given by `The Reformer'. Other conducted tests can be seen in the table provided in the research paper. The average score of `Big Bird' is the highest, although it never showed best single result.
 
+    \subsection*{Convoluational Neural Networks}
+    \addcontentsline{toc}{subsection}{Convolutional Neural Networks}
+    \paragraph{}
+
+    Convolutional neural networks were introduced long before transformers and have been mainly used to analyse visual imagery \citep{VALUEVA2020232}. Also they've been proved to be able to undertake such tasks as recommender systems, natural language processing and financial time series.
+    These networks are based on multilayer perceptron models but with implemented regularisation in order to avoid overfitting and that implies that multilayer perceptron neural networks are fully connected - each neuron of the previous layer is connected to every neuron in the next layer and that is the cause of overfitting.
+    That problem has been solved with weight decay, which effectively is adding a penalty term to the cost function. This leads to weight shrinking in the backpropagation step, and trimming connectivity of a neural network which can be described as pruning - removing some unnecessary weights or neurons. Weight prunin is more popular than neuron because it's less likely
+    to hurt network's performance and much easier to do. 
+
+    The origin of the convolutional networks is the `neocognitron' introduced by a Japanese computer scientist Kunihiko Fukushima in year 1980 \citep{neocognitron}. It used two types of layers: convolutional layer and downsampling layer. The mechanism of interaction of these two types of layers is the following:
+    Convolutional layer units whose receptive field cover previous layer. On the other hand downsampling layer units had receptive fields which covered the previous convolutional layers. The most popular method of training used for CNNs is backpropagation.
+
+    Convoluational neural networks perform unbelievably well in image recognition, for example - recogntion of handwritten characters testing using MNIST database showed an amazing result of 0.23\% \citep{image_classification_article}.
+
+    \subsection*{Recurrent Neural Networks}
+    \addcontentsline{toc}{subsection}{Recurrent Neural Networks}
+    \paragraph{}
+
     \subsection*{Applications of neural networks in entertainment}
     \addcontentsline{toc}{subsection}{Application of neural networks in entertainment}
 
@@ -219,7 +237,7 @@
 
     \clearpage
 
-    \begin{table}[]
+    \begin{table}[h]
         \centering
         \resizebox{\columnwidth}{!}{%
             \begin{tabular}{|lllll|}
@@ -243,6 +261,8 @@
         }
         \caption{Use Case Specification}
     \end{table}
+
+    The table above illustrates
 
     \section*{Indicative Test Plan}
     \addcontentsline{toc}{section}{Indicative Test Plan}

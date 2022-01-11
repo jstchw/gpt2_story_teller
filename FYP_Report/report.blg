@@ -6,45 +6,45 @@ Reallocating 'name_of_file' (item size: 1) to 5 items.
 The style file: agsm.bst
 Database file #1: reference.bib
 Warning--empty booktitle in inproceedings
-You've used 9 entries,
+You've used 12 entries,
             2909 wiz_defined-function locations,
-            681 strings with 6026 characters,
-and the built_in function-call counts, 49188 in all, are:
-= -- 8043
-> -- 784
+            699 strings with 6727 characters,
+and the built_in function-call counts, 64199 in all, are:
+= -- 10511
+> -- 990
 < -- 0
-+ -- 3979
-- -- 245
-* -- 4321
-:= -- 9750
-add.period$ -- 18
-call.type$ -- 9
-change.case$ -- 126
-chr.to.int$ -- 9
-cite$ -- 10
-duplicate$ -- 112
-empty$ -- 253
-format.name$ -- 279
-if$ -- 8833
++ -- 5182
+- -- 308
+* -- 5632
+:= -- 12734
+add.period$ -- 23
+call.type$ -- 12
+change.case$ -- 168
+chr.to.int$ -- 12
+cite$ -- 13
+duplicate$ -- 150
+empty$ -- 340
+format.name$ -- 350
+if$ -- 11528
 int.to.chr$ -- 5
 int.to.str$ -- 0
-missing$ -- 1
-newline$ -- 39
-num.names$ -- 94
-pop$ -- 76
+missing$ -- 2
+newline$ -- 51
+num.names$ -- 126
+pop$ -- 95
 preamble$ -- 1
-purify$ -- 135
+purify$ -- 180
 quote$ -- 0
-skip$ -- 108
+skip$ -- 142
 stack$ -- 0
-substring$ -- 11460
-swap$ -- 16
-text.length$ -- 126
+substring$ -- 14980
+swap$ -- 21
+text.length$ -- 168
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 36
+type$ -- 48
 warning$ -- 1
-while$ -- 191
+while$ -- 255
 width$ -- 0
-write$ -- 128
+write$ -- 171
 (There was 1 warning)

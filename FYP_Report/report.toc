@@ -6,30 +6,34 @@
 \contentsline {paragraph}{}{2}{section*.6}%
 \contentsline {subsection}{Transformer Neural Networks}{3}{section*.7}%
 \contentsline {paragraph}{}{3}{section*.8}%
-\contentsline {subsection}{Application of neural networks in entertainment}{4}{section*.10}%
-\contentsline {subsubsection}{Introduction}{4}{section*.11}%
-\contentsline {paragraph}{}{4}{section*.12}%
-\contentsline {subsubsection}{Tesseract}{4}{section*.13}%
-\contentsline {subsubsection}{Tesseract}{4}{section*.13}%
-\contentsline {paragraph}{}{4}{section*.14}%
-\contentsline {subsubsection}{Pillow}{5}{section*.15}%
-\contentsline {subsubsection}{Pillow}{5}{section*.15}%
+\contentsline {subsection}{Convolutional Neural Networks}{4}{section*.10}%
+\contentsline {paragraph}{}{4}{section*.11}%
+\contentsline {subsection}{Recurrent Neural Networks}{5}{section*.12}%
+\contentsline {paragraph}{}{5}{section*.13}%
+\contentsline {subsection}{Application of neural networks in entertainment}{5}{section*.14}%
+\contentsline {subsubsection}{Introduction}{5}{section*.15}%
 \contentsline {paragraph}{}{5}{section*.16}%
-\contentsline {subsubsection}{PyTorch or TensorFlow?}{5}{section*.17}%
+\contentsline {subsubsection}{Tesseract}{5}{section*.17}%
+\contentsline {subsubsection}{Tesseract}{5}{section*.17}%
 \contentsline {paragraph}{}{5}{section*.18}%
-\contentsline {subsection}{Pillow}{5}{section*.19}%
+\contentsline {subsubsection}{Pillow}{5}{section*.19}%
+\contentsline {subsubsection}{Pillow}{5}{section*.19}%
 \contentsline {paragraph}{}{5}{section*.20}%
-\contentsline {section}{System Design}{6}{section*.21}%
-\contentsline {subsection}{System UI (frontend)}{6}{section*.22}%
-\contentsline {paragraph}{}{6}{section*.23}%
-\contentsline {paragraph}{}{6}{figure.caption.25}%
-\contentsline {subsection}{Interaction between frontend and backend}{8}{section*.26}%
-\contentsline {subsection}{Backend design}{9}{section*.28}%
-\contentsline {paragraph}{}{9}{figure.caption.30}%
-\contentsline {section}{Functional Requirements}{10}{section*.31}%
-\contentsline {paragraph}{}{10}{section*.32}%
-\contentsline {section}{Indicative Test Plan}{11}{section*.35}%
+\contentsline {subsubsection}{PyTorch or TensorFlow?}{6}{section*.21}%
+\contentsline {paragraph}{}{6}{section*.22}%
+\contentsline {subsection}{Pillow}{6}{section*.23}%
+\contentsline {paragraph}{}{6}{section*.24}%
+\contentsline {section}{System Design}{6}{section*.25}%
+\contentsline {subsection}{System UI (frontend)}{6}{section*.26}%
+\contentsline {paragraph}{}{6}{section*.27}%
+\contentsline {paragraph}{}{6}{figure.caption.29}%
+\contentsline {subsection}{Interaction between frontend and backend}{9}{section*.30}%
+\contentsline {subsection}{Backend design}{10}{section*.32}%
+\contentsline {paragraph}{}{10}{figure.caption.34}%
+\contentsline {section}{Functional Requirements}{11}{section*.35}%
 \contentsline {paragraph}{}{11}{section*.36}%
-\contentsline {section}{Implementation Report}{11}{section*.37}%
-\contentsline {paragraph}{}{11}{section*.38}%
-\contentsline {section}{Bibliography}{11}{section*.38}%
+\contentsline {section}{Indicative Test Plan}{12}{section*.39}%
+\contentsline {paragraph}{}{12}{section*.40}%
+\contentsline {section}{Implementation Report}{12}{section*.41}%
+\contentsline {paragraph}{}{12}{section*.42}%
+\contentsline {section}{Bibliography}{13}{section*.42}%

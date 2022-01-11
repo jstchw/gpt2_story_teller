@@ -1,9 +1,22 @@
 \begin{thebibliography}{xx}
 
+\harvarditem[Ciresan et~al.]{Ciresan, Meier \harvardand\
+  Schmidhuber}{2012}{image_classification_article}
+Ciresan, D., Meier, U. \harvardand\ Schmidhuber, J.  \harvardyearleft
+  2012\harvardyearright , `Multi-column deep neural networks for image
+  classification'.
+\newblock \\Accessed Jan 11 2022 [Online].
+
 \harvarditem{Clark \harvardand\ Contributors}{2022}{pillow_about}
 Clark, A. \harvardand\ Contributors  \harvardyearleft 2022\harvardyearright ,
   `From pillow documentation'.
 \newblock \\Accessed Jan 8 2022 [Online].
+
+\harvarditem{Fukushima}{1980}{neocognitron}
+Fukushima, K.  \harvardyearleft 1980\harvardyearright , `Neocognitron: A
+  self-organizing neural network model for a mechanism of pattern recognition
+  unaffected by shift in position'.
+\newblock \\Accessed Jan 11 2022 [Online].
 
 \harvarditem[Harvey et~al.]{Harvey, Husbands \harvardand\
   Cliff}{1994}{inproceedings}
@@ -19,7 +32,7 @@ Kay, A.  \harvardyearleft 2007\harvardyearright , `Tesseract: an open-source
 
 \harvarditem{Knott}{2021}{eel_github}
 Knott, C.  \harvardyearleft 2021\harvardyearright , `Eel github'.
-\newblock \\Accessed Jan 10 2022.
+\newblock \\Accessed Jan 10 2022 [Online].
 
 \harvarditem{Nangia \harvardand\ Bowman}{2018}{ListOps}
 Nangia, N. \harvardand\ Bowman, S.  \harvardyearleft 2018\harvardyearright ,
@@ -46,6 +59,15 @@ Tay, Y., Denghani, M., Abnar, S., Shen, Y., Bahri, D., Pham, P., Rao, J., Yang,
   2020\harvardyearright , `Long range arena: A benchmark for efficient
   transformers'.
 \newblock \\Accessed Jan 7 2022 [Online].
+
+\harvarditem[Valueva et~al.]{Valueva, Nagornov, Lyakhov, Valuev \harvardand\
+  Chervyakov}{2020}{VALUEVA2020232}
+Valueva, M., Nagornov, N., Lyakhov, P., Valuev, G. \harvardand\ Chervyakov, N.
+  \harvardyearleft 2020\harvardyearright , `Application of the residue number
+  system to reduce hardware costs of the convolutional neural network
+  implementation', {\em Mathematics and Computers in Simulation} {\bf
+  177},~232--243.
+\newline\harvardurl{https://www.sciencedirect.com/science/article/pii/S0378475420301580}
 
 \harvarditem[Vaswani et~al.]{Vaswani, Shazeer, Parmar, Uszkoreit, Jones, Gomez,
   Kaiser \harvardand\ Polosukhin}{2017}{attention_is_all_you_need}
