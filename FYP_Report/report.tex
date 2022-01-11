@@ -100,12 +100,13 @@
     Memes can be found everywhere on the Internet nowadays and they constantly change and evolve. Their primary function is to entertain the community in a harmless way yet our society is very diverese and has different interests - that explains the existence of memes which can be used
     to "further political ideals, maginfy echo chambers and antagonise minorities" since it became a very popular communcation method \citep{dank_learning}. 
 
-    \subsubsection{How does it work?}
-    \addcontentsline{toc}{subsubsection}{How does it work?}
-    \paragraph{}
 
-    In order for a neural network to create a meme, there are several steps involved in that process. Given a training set of such images, the text from them should be recognised and stored using Python libraries such as `PyTesseract', then it should be fed to the neural network and then taken as a processed string
-    the generated text should be attached to the template of the meme from which it has been recognised. To attach a string to a picture - the preferred library is called `Pillow'.
+    %\subsubsection{How does it work?}
+    %\addcontentsline{toc}{subsubsection}{How does it work?}
+    %\paragraph{}
+
+    %In order for a neural network to create a meme, there are several steps involved in that process. Given a training set of such images, the text from them should be recognised and stored using Python libraries such as `PyTesseract', then it should be fed to the neural network and then taken as a processed string
+    %the generated text should be attached to the template of the meme from which it has been recognised. To attach a string to a picture - the preferred library is called `Pillow'.
 
     \subsubsection{Tesseract}
     \addcontentsline{toc}{subsubsection}{Tesseract}
@@ -199,9 +200,49 @@
     The backend of the project is going to be implemented using Python programming language due to the availability of different frameworks and libraries. In the backend the process of the scanning the text from the image will be undertaken by a library called `PyTesseract' which allows the optical character recognition to be used in an optimised way.
     Next step of the backend process is to push the string to the neural network allowing it to use its massive database to synthesise similar text. Afterwards comes the process of attaching the generated output to an image. It is done using a tool called `Pillow' and it's aim is to work with all kind of images. The string will be styled to fit the pattern appropriately.
 
+    \clearpage
+
     \section*{Functional Requirements}
     \addcontentsline{toc}{section}{Functional Requirements}
     \paragraph{}
+
+    The function requirement report will join the early described diagrams in a whole idea. Figure 4 shows the relationship between the user and the developer and how this interaction will enhance the experience of the user.
+
+    \begin{figure}[htbp]
+        \centerline{\includegraphics[scale=.5]{img/use-case-diagram.png}}
+        \label{use_case_diagram}
+        \caption{Use Case Diagram}
+    \end{figure}
+
+    The user has a way to communicate with the developer - hold a dialog in a non-verbal manner and explain what they like. This leads the system to be implemented in a `prosumer' way. The user not only consumes the content but also influences it. 
+    The diagram explains different elements of the system and how they work together. Although the user has only one way to interact with the program, the program collects non-sensitive data about the user and decides which path to take. The `use case diagram' is not final and may be changed throughout the development.
+
+    \clearpage
+
+    \begin{table}[]
+        \centering
+        \resizebox{\columnwidth}{!}{%
+            \begin{tabular}{|lllll|}
+                \hline
+                \multicolumn{5}{|c|}{Overview}                                                                                                                                                 \\ \hline
+                \multicolumn{1}{|l|}{Title}          & \multicolumn{4}{l|}{Scroll Example}                                                                                                     \\ \hline
+                \multicolumn{1}{|l|}{Description}    & \multicolumn{4}{l|}{The user logs in to the app and scrolls down in order to see images}                                                \\ \hline
+                \multicolumn{1}{|l|}{Actors}         & \multicolumn{4}{l|}{User}                                                                                                               \\ \hline
+                \multicolumn{1}{|l|}{Pre-Conditions} & \multicolumn{4}{l|}{First time login, no preferred image pattern selected}                                                              \\ \hline
+                \multicolumn{5}{|c|}{Basic Flow}                                                                                                                                               \\ \hline
+                \multicolumn{1}{|l|}{Step 1}         & \multicolumn{4}{l|}{Run the script to check the boolean variable for first login}                                                       \\ \hline
+                \multicolumn{1}{|l|}{Step 2}         & \multicolumn{4}{l|}{Show the welcome/landing page with short, simple instructions}                                                      \\ \hline
+                \multicolumn{1}{|l|}{Step 3 (1/2)}   & \multicolumn{4}{l|}{As the user scrolls down - generate new images, when the user reaches last 10 items (pre-generation to avoid lags)} \\ \hline
+                \multicolumn{1}{|l|}{Step 3 (2/2)}   & \multicolumn{4}{l|}{If the user doesn't reach to last 10 images - idle}                                                                \\ \hline
+                \multicolumn{1}{|l|}{Step 4}         & \multicolumn{4}{l|}{Unload the images that are far behind to decrease the load on the system}                                           \\ \hline
+                \multicolumn{1}{|l|}{Step 5}         & \multicolumn{4}{l|}{As the user likes or dislikes some images - store the reaction linked to a certain image as statistical data}       \\ \hline
+                \multicolumn{5}{|c|}{Post Condition}                                                                                                                                           \\ \hline
+                \multicolumn{1}{|l|}{Condition 1}    & \multicolumn{4}{l|}{The app saved the data about user login}                                                                            \\ \hline
+                \multicolumn{1}{|l|}{Condition 2}    & \multicolumn{4}{l|}{Adjusted settings saved - will be used on next login}                                                               \\ \hline
+            \end{tabular}%
+        }
+        \caption{Use Case Specification}
+    \end{table}
 
     \section*{Indicative Test Plan}
     \addcontentsline{toc}{section}{Indicative Test Plan}
