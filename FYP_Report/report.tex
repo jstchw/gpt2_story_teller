@@ -38,7 +38,6 @@
     
     \section*{Literature Review}
     \addcontentsline{toc}{section}{Literature Review}
-    \paragraph{}
 
     \subsection*{Introduction}
     \addcontentsline{toc}{subsection}{Introduction}
@@ -179,7 +178,7 @@
 
     The main key of the system UI when it aims to hold a `dialogue' with the user is simplicity. The system can include a lot of parameters, functions, features which will be implemented in an outstanding way but if it fails to correctly introduce these features to the user and they become convoluted - it's a problem.
     
-    \paragraph{}
+    \clearpage
 
     \begin{figure}[htbp]
         \centerline{\includegraphics[scale=.5]{img/system_ui.png}}
@@ -187,7 +186,7 @@
         \caption{Main page design}
     \end{figure}
 
-    The ladning page features a simple approach to the design. In the beginning we have a context menu which will contain drop-down boxes to control the behaviour of the program which will be used to tailor the experience that suits the end user. It's planned the menu to contain settings to control the environment - change
+    The landing page features a simple approach to the design. In the beginning we have a context menu which will contain drop-down boxes to control the behaviour of the program which will be used to tailor the experience that suits the end user. It's planned the menu to contain settings to control the environment - change
     the appearence of the app, switch to another section (meme pattern), reload the app (in case of an emergency). 
 
     Next section of the interface is `Branding'. The app shouldn't only be practical but also has a decent appearence. The logo should match to overall design of the program and to complement it.
@@ -201,12 +200,11 @@
 
     Also as can be seen on the diagram above, every picture (meme) should have several buttons to express opinion. This can be achieved by using typical `like-dislike' system. To make even easier for the user to give positive feedback a double click system on the image can be used.
     
-    \clearpage
 
     \subsection*{Interaction between frontend and backend}
     \addcontentsline{toc}{subsection}{Interaction between frontend and backend}
 
-    \begin{figure}[htbp]
+    \begin{figure}[h]
         \centerline{\includegraphics[scale=.5]{img/flow_diagram.png}}
         \label{flow_diagram}
         \caption{The system design flow chart}
@@ -218,13 +216,11 @@
     The main bridge between backend and frontend in this project is the Python library called `Eel' \citep{eel_github}. It is similar to JavaScript's `Electron' and allows to code the frontend with a stack of HTML, CSS and JavaScript having Python in the backend. There is another library which is heavier and therefore has a higher entry level - `cefpython'.
     `Eel' makes possible linking buttons created using HTML/CSS to Python-implemented functions. This methodology is called `Function Exposure' \citep{eel_github}. Functions from Python could be exposed to JavaScript environment and vice versa.
 
-    \clearpage
-
     \subsection*{Backend design}
     \addcontentsline{toc}{subsection}{Backend design}
     \paragraph{}
 
-    \begin{figure}[htbp]
+    \begin{figure}[h]
         \centerline{\includegraphics[scale=.5]{img/backend_diagram.png}}
         \label{backend_diagram}
         \caption{Backend design}
@@ -282,7 +278,46 @@
 
     \section*{Indicative Test Plan}
     \addcontentsline{toc}{section}{Indicative Test Plan}
+    
+    \subsection*{Testing strategy}
+    \addcontentsline{toc}{subsection}{Testing strategy}
+
+    Since the project is in development and follows a prototype model with feature-driven approach, testing functions will be added over time as the development progresses. There are three main test levels that will be used for the testing of this app.
+    Unit testing, integration testing and system testing. These three techniques will be used in later testing since the first version of the prototype that will be presented is not suitable for system testing as it doesn't act as a whole system yet.
+    Unit testing will be used in order to test the backend since there are a lot of small things that can go wrong that developer won't notice. The frontend can be effectively tested using manual technique that implies the developer to take a role of an end-user and test different aspects of the system.
+    For automated backend testing a tool called `unittest' for Python is going to be used. But the main focus will still be aimed at manual user-experience testing since the app tries to impress the user with its features. Automated tests will be split in test groups - file system test group, image conversion group, text generating group etc.
+    It's important not to forget about the priorities of the testing for the project. It might seem that the priority drifts towards any of the parts of the app but all of them are equally important in implementation. The backend must work properly for the frontend to be able to deliver right content. If one element of the system doesn't work - the system won't succeed.
+
+    \subsection*{Testing implementation}
+    \addcontentsline{toc}{subsection}{Testing implementation}
+
+    \subsubsection*{File System}
+    \addcontentsline{toc}{subsubsection}{File System}
     \paragraph{}
+
+    The first automated tests were written for the file system. Three crucial tests were conducted in order to verify that the file system is working properly and images are accessible to be displayed to the user.
+
+    \begin{table}[h]
+        \centering
+        \resizebox{\columnwidth}{!}{
+            \begin{tabular}{|l|l|l|l|l|l|l|}
+            \hline
+            Test Case ID & Test Scenario                                                                  & Test Steps                                                                                                                                                & Expected                                                                                                                 & Actual                                                                                 & Result & Comment \\ \hline
+            FS001        & Test the image names                                                           & \begin{tabular}[c]{@{}l@{}}1. Fetch through\\ meme directory\\ 2. Check the \\ spelling\\ 3. Check the\\ enumeration\end{tabular}                         & \begin{tabular}[c]{@{}l@{}}isdigit() method to\\ return true and to \\ be picked up by an\\ assertion\end{tabular}       & \begin{tabular}[c]{@{}l@{}}Assertion returned\\ true\end{tabular}                      & Pass   &         \\ \hline
+            FS002        & Test image integrity                                                           & \begin{tabular}[c]{@{}l@{}}1. Fetch through\\ image directory\\ 2. Find all files\\ ending with .jpg\\ 3. Open and\\ verify them using\\ PIL\end{tabular} & \begin{tabular}[c]{@{}l@{}}Assertion Boolean\\ variable to be set\\ to false if the\\ verification fails\end{tabular}    & \begin{tabular}[c]{@{}l@{}}Verification passed;\\ all images are\\ intact\end{tabular} & Pass   &         \\ \hline
+            FS003        & \begin{tabular}[c]{@{}l@{}}Test availability of the\\ directories\end{tabular} & \begin{tabular}[c]{@{}l@{}}1. Specify paths\\ to the directories\\ 2. Test with an\\ assertion\end{tabular}                                               & \begin{tabular}[c]{@{}l@{}}The assertions to\\ be returned true\\ if the paths are\\ correct and dirs exist\end{tabular} & \begin{tabular}[c]{@{}l@{}}Dirs exist and the\\ paths are right\end{tabular}           & Pass   &         \\ \hline
+            \end{tabular}%
+        }
+    \end{table}
+
+
+    \subsubsection*{GUI}
+    \addcontentsline{toc}{subsubsection}{GUI}
+    \paragraph{}
+
+    The GUI elements were tested using the user-side manual testing approach. The scrolling works okay, content is being loaded properly, although with a special button to load it. The branding section exists but it should be improved. Animation of the `load more' button works as it should.
+    The function that hides the button when there's nothing from the image array to load works correctly.
+
 
     \section*{Implementation Report}
     \addcontentsline{toc}{section}{Implementation Report}

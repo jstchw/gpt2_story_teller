@@ -5,8 +5,11 @@ let memeArray = []
 
 let currentIndex = 0
 
+const memeDIR = 'img/memes/'
+
 populateMemeArray()
 loadMore()
+document.addEventListener('contextmenu', event => event.preventDefault())
 
 
 // Load more function gets the array length and hides the button if there's nothing to load (shouldn't be a problem to a meme generator)
@@ -31,7 +34,7 @@ function loadMore() {
 function populateMemeArray() {
     for(let i = 0; i<5; i++) {
         memeArray[i] = new Image()
-        memeArray[i].src = 'img/meme' + i + '.jpg'
+        memeArray[i].src = memeDIR + 'meme' + i + '.jpg'
     }
 }
 
@@ -43,7 +46,7 @@ for(let i = 0; i<5; i++) {
 }
 
 function assignNumberToImage(memeDIV) {
-    document.getElementById(memeDIV).innerHTML = '<img src="img/meme' + counter + '.jpg"/>';
+    document.getElementById(memeDIV).innerHTML = '<img src= ' + memeDIR + ' "/meme' + counter + '.jpg"/>';
 }
 
 function nextImage() {

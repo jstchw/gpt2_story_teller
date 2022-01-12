@@ -11,6 +11,11 @@ html, body {
     height: 100%;
     margin: 0;
     cursor: default;
+
+}
+
+::-webkit-scrollbar {
+    display: none;
 }
 
 .container {
@@ -59,7 +64,7 @@ html, body {
     font-family: Milestone, serif;
     font-size: 3em;
     color: white;
-    background: black;
+    background: rgb(255, 0, 68);
     padding-bottom: 20px;
 
 }
