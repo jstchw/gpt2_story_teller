@@ -13,27 +13,27 @@
 \contentsline {subsection}{Application of neural networks in entertainment}{5}{section*.14}%
 \contentsline {subsubsection}{Introduction}{5}{section*.15}%
 \contentsline {paragraph}{}{5}{section*.16}%
-\contentsline {subsubsection}{Tesseract}{5}{section*.17}%
-\contentsline {subsubsection}{Tesseract}{5}{section*.17}%
-\contentsline {paragraph}{}{5}{section*.18}%
-\contentsline {subsubsection}{Pillow}{5}{section*.19}%
-\contentsline {subsubsection}{Pillow}{5}{section*.19}%
-\contentsline {paragraph}{}{5}{section*.20}%
+\contentsline {subsubsection}{Tesseract}{6}{section*.17}%
+\contentsline {subsubsection}{Tesseract}{6}{section*.17}%
+\contentsline {paragraph}{}{6}{section*.18}%
+\contentsline {subsubsection}{Pillow}{6}{section*.19}%
+\contentsline {subsubsection}{Pillow}{6}{section*.19}%
+\contentsline {paragraph}{}{6}{section*.20}%
 \contentsline {subsubsection}{PyTorch or TensorFlow?}{6}{section*.21}%
 \contentsline {paragraph}{}{6}{section*.22}%
 \contentsline {subsection}{Pillow}{6}{section*.23}%
 \contentsline {paragraph}{}{6}{section*.24}%
-\contentsline {section}{System Design}{6}{section*.25}%
-\contentsline {subsection}{System UI (frontend)}{6}{section*.26}%
-\contentsline {paragraph}{}{6}{section*.27}%
-\contentsline {paragraph}{}{6}{figure.caption.29}%
-\contentsline {subsection}{Interaction between frontend and backend}{9}{section*.30}%
-\contentsline {subsection}{Backend design}{10}{section*.32}%
-\contentsline {paragraph}{}{10}{figure.caption.34}%
-\contentsline {section}{Functional Requirements}{11}{section*.35}%
-\contentsline {paragraph}{}{11}{section*.36}%
-\contentsline {section}{Indicative Test Plan}{12}{section*.39}%
-\contentsline {paragraph}{}{12}{section*.40}%
-\contentsline {section}{Implementation Report}{12}{section*.41}%
-\contentsline {paragraph}{}{12}{section*.42}%
-\contentsline {section}{Bibliography}{13}{section*.42}%
+\contentsline {section}{System Design}{7}{section*.25}%
+\contentsline {subsection}{System UI (frontend)}{7}{section*.26}%
+\contentsline {paragraph}{}{7}{section*.27}%
+\contentsline {paragraph}{}{7}{figure.caption.29}%
+\contentsline {subsection}{Interaction between frontend and backend}{10}{section*.30}%
+\contentsline {subsection}{Backend design}{11}{section*.32}%
+\contentsline {paragraph}{}{11}{figure.caption.34}%
+\contentsline {section}{Functional Requirements}{12}{section*.35}%
+\contentsline {paragraph}{}{12}{section*.36}%
+\contentsline {section}{Indicative Test Plan}{13}{section*.39}%
+\contentsline {paragraph}{}{13}{section*.40}%
+\contentsline {section}{Implementation Report}{13}{section*.41}%
+\contentsline {paragraph}{}{13}{section*.42}%
+\contentsline {section}{Bibliography}{14}{section*.42}%

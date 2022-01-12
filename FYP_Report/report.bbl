@@ -1,5 +1,17 @@
 \begin{thebibliography}{xx}
 
+\harvarditem[Abiodun et~al.]{Abiodun, Jantan, Omolara, Dada, Mohamed
+  \harvardand\ Arshad}{2018}{rnn_article}
+Abiodun, O.~I., Jantan, A., Omolara, A.~E., Dada, K.~V., Mohamed, N.~A.
+  \harvardand\ Arshad, H.  \harvardyearleft 2018\harvardyearright ,
+  `State-of-the-art in artificial neural network applications'.
+\newblock \\Accessed Jan 11 2022 [Online].
+
+\harvarditem{Bohra}{2021}{vanishing_weight}
+Bohra, Y.  \harvardyearleft 2021\harvardyearright , `The challenge of
+  vanishing/exploding gradients in deep neural networks'.
+\newblock \\Accessed Jan 12 2022 [Online].
+
 \harvarditem[Ciresan et~al.]{Ciresan, Meier \harvardand\
   Schmidhuber}{2012}{image_classification_article}
 Ciresan, D., Meier, U. \harvardand\ Schmidhuber, J.  \harvardyearleft
@@ -24,6 +36,13 @@ Harvey, I., Husbands, P. \harvardand\ Cliff, D.  \harvardyearleft
   1994\harvardyearright , Seeing the light: Artificial evolution, real vision,
   pp.~392--401.
 \newblock \\Accessed Jan 7 2022 [Online].
+
+\harvarditem{Hochreiter \harvardand\
+  Schmidhuber}{1997}{10.1162/neco.1997.9.8.1735}
+Hochreiter, S. \harvardand\ Schmidhuber, J.  \harvardyearleft
+  1997\harvardyearright , `{Long Short-Term Memory}', {\em Neural Computation}
+  {\bf 9}(8),~1735--1780.
+\newline\harvardurl{https://doi.org/10.1162/neco.1997.9.8.1735}
 
 \harvarditem{Kay}{2007}{tesseract_article}
 Kay, A.  \harvardyearleft 2007\harvardyearright , `Tesseract: an open-source
@@ -51,6 +70,12 @@ Radford, A., Wu, J., Child, R., Luan, D., Amodei, D. \harvardand\ Sutskever, I.
    \harvardyearleft 2019\harvardyearright , `Language models are unsupervised
   multitask learners'.
 \newblock \\Accessed Jan 6 2022 [Online].
+
+\harvarditem[Sutskever et~al.]{Sutskever, Vinyals \harvardand\
+  Le}{2014}{ltsm_article}
+Sutskever, I., Vinyals, O. \harvardand\ Le, Q.~V.  \harvardyearleft
+  2014\harvardyearright , `Sequence to sequence learning with neural networks'.
+\newblock \\Accessed Jan 12 2022 [Online].
 
 \harvarditem[Tay et~al.]{Tay, Denghani, Abnar, Shen, Bahri, Pham, Rao, Yang,
   Ruder \harvardand\ Metzler}{2020}{LRA_benchmark}

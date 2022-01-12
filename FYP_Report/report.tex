@@ -106,6 +106,14 @@
     \addcontentsline{toc}{subsection}{Recurrent Neural Networks}
     \paragraph{}
 
+    Recurrent neural networks have been derived from feedforward neural networks. They have internal state memory that allows them to work with long sequences of data. Everything that is sequential like connected handwriting or speech can be easily converted to digital format using RNNs \citep{rnn_article}.
+    This type of networks is referred to as infinite impulse response class which can be applied not only to neural networks but to many other systems that produce an output based on an input which depends on time variable. 
+    There are different architecture variants of RNNs - fully recurrent, Elman and Jordan networks, Recursive and one that marked a big growth in recurrent neural networks - `Long short-term memory' \citep{10.1162/neco.1997.9.8.1735}.
+    LTSM networks showed a great performance in speech recognition, machine translation and other important areas \citep{ltsm_article}.
+
+    LTSM also is a type of a recurrent neural network that happened to avoid `vanishing gradient problem'. The problem affects the training process and weight adjustment in particular. The standard training process of a neural network is performed in a number of steps:
+    the error is updated accordingly every iteration and the weight are changed regarding the error value. The problem is encountered when the gradient is so small that it prevents the weights from changing. The opposite of the `vanishing gradient problem' is `exploding gradient problem' - the change in weights is too big \citep{vanishing_weight}.
+
     \subsection*{Applications of neural networks in entertainment}
     \addcontentsline{toc}{subsection}{Application of neural networks in entertainment}
 
@@ -147,12 +155,16 @@
     \addcontentsline{toc}{subsubsection}{PyTorch or TensorFlow?}
     \paragraph{}
 
+    PyTorch and Tensorflow are both tools for working with neural networks and offer different advantages and disadvantages. They both allow utilising your GPU's power in order to train NNs on big datasets. Any of these frameworks can be used to create an architecture of a neural network but they have some differences.
+    GPU processing in PyTorch is implemented using CUDA system created and maintained by NVIDIA. 
+
     \subsection*{Conclusion}
     \addcontentsline{toc}{subsection}{Pillow}
     \paragraph{}
 
     Summing up everything that has been stated before, nowadays the interest towards neural networks and other artificial intelligence systems grows with exponential speed. Literature available online that is crucial to familiarise yourself with when working on such a project is extensive and allows more in-deep research to be carried out. Having that in mind, writings about AI are more inclined towards scientific purposes rather than entertainment.
-    Transformers are the best choice when it comes to entertainment and text generation in particular, since they use attention mechanism - it greatly reduces training times. GPT-2 has a major training base of 1.5 billion parameters compared to BERT's two versions: 110 million and 340 million parameters (as of 2019). It makes GPT-2 a winner in more accurate text synthesis.
+    There are many types of neural networks available open-source: Recurrent Neural Networks, Convolutional Neural Networks, Perceptrons, Transformers etc. Transformers are the best choice when it comes to entertainment and text generation in particular, since they use attention mechanism - it greatly reduces training times. GPT-2 has a major training base of 1.5 billion parameters compared to BERT's two versions: 110 million and 340 million parameters (as of 2019). It makes GPT-2 a winner in more accurate text synthesis.
+
 
     
     \section*{System Design}
