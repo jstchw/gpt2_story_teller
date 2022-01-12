@@ -156,7 +156,10 @@
     \paragraph{}
 
     PyTorch and Tensorflow are both tools for working with neural networks and offer different advantages and disadvantages. They both allow utilising your GPU's power in order to train NNs on big datasets. Any of these frameworks can be used to create an architecture of a neural network but they have some differences.
-    GPU processing in PyTorch is implemented using CUDA system created and maintained by NVIDIA. 
+    GPU processing in PyTorch is implemented using CUDA system created and maintained by NVIDIA while TensorFlow uses its own algorithms which may affect the performance of the training. One of the main features that is implemented in PyTorch is data parallelism. PyTorch makes it automatically while TensorFlow should be manually given an instruction.
+    Tensorflow's functionality is more extensive but requires more effort to create something.
+
+    In the long run, there are many implemented tools based on PyTorch or TensorFlow which can be used to overcome the difficulties of reinventing the wheel. Some which are located on GitHub are available open-source to the community.
 
     \subsection*{Conclusion}
     \addcontentsline{toc}{subsection}{Pillow}
@@ -263,7 +266,7 @@
                 \multicolumn{1}{|l|}{Step 1}         & \multicolumn{4}{l|}{Run the script to check the boolean variable for first login}                                                       \\ \hline
                 \multicolumn{1}{|l|}{Step 2}         & \multicolumn{4}{l|}{Show the welcome/landing page with short, simple instructions}                                                      \\ \hline
                 \multicolumn{1}{|l|}{Step 3 (1/2)}   & \multicolumn{4}{l|}{As the user scrolls down - generate new images, when the user reaches last 10 items (pre-generation to avoid lags)} \\ \hline
-                \multicolumn{1}{|l|}{Step 3 (2/2)}   & \multicolumn{4}{l|}{If the user doesn't reach to last 10 images - idle}                                                                \\ \hline
+                \multicolumn{1}{|l|}{Step 3 (2/2)}   & \multicolumn{4}{l|}{If the user doesn't reach to last 10 images - idle}                                                                 \\ \hline
                 \multicolumn{1}{|l|}{Step 4}         & \multicolumn{4}{l|}{Unload the images that are far behind to decrease the load on the system}                                           \\ \hline
                 \multicolumn{1}{|l|}{Step 5}         & \multicolumn{4}{l|}{As the user likes or dislikes some images - store the reaction linked to a certain image as statistical data}       \\ \hline
                 \multicolumn{5}{|c|}{Post Condition}                                                                                                                                           \\ \hline
@@ -274,7 +277,8 @@
         \caption{Use Case Specification}
     \end{table}
 
-    The table above illustrates
+    The table above illustrates an example of using the application. Although, the program is not time-dependant (the user should be in control of what happens) and follows user's instructions, an attempt was made to adapt the flow of the actions in a time-dependant chart.
+    The example is very simple and doesn't represent the whole potential of the app. One possible linear way is introduced in this table.
 
     \section*{Indicative Test Plan}
     \addcontentsline{toc}{section}{Indicative Test Plan}

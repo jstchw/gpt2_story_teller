@@ -21,8 +21,8 @@
 \contentsline {paragraph}{}{6}{section*.20}%
 \contentsline {subsubsection}{PyTorch or TensorFlow?}{6}{section*.21}%
 \contentsline {paragraph}{}{6}{section*.22}%
-\contentsline {subsection}{Pillow}{6}{section*.23}%
-\contentsline {paragraph}{}{6}{section*.24}%
+\contentsline {subsection}{Pillow}{7}{section*.23}%
+\contentsline {paragraph}{}{7}{section*.24}%
 \contentsline {section}{System Design}{7}{section*.25}%
 \contentsline {subsection}{System UI (frontend)}{7}{section*.26}%
 \contentsline {paragraph}{}{7}{section*.27}%
