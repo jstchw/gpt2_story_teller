@@ -34,7 +34,23 @@
     This project explores the possibilities of deep learning mechanisms to create and improve the ways of 
     social interaction in the 21st century. The main idea of the project is to prove that modern trained neural networks can 
     synthesise entertainment data based on the input, embedded in an application that is easy to use by every user.
+
+    \section*{Main Introduction}
+    \addcontentsline{toc}{section}{Main Introduction}
+    \paragraph{}
     
+    This paper will explore and elaborate on the relation of artificial intelligence and entertainment.
+
+    Artificial Intelligence is some kind of an intelligence that is demonstrated by machines. Modern AI is very wide and can include many areas related to it but this project is focused on deep learning. This includes machine learning accompanied by methods based on artificial neural networks.
+    There are many types of neural networks already introduced: deep neural networks, deep belief networks, recurrent neural networks, convolutional neural networks and the one that is going to be used in this project - transformer neural networks. They were successfully used in many areas like natural language recognition, computer vision, drug design but
+    using neural networks in entertainment is a relatively new idea.
+
+    When a term `deep' is used it refers to the layers of the network. Neural networks are built bearing in mind the natural structure of brain. Neurons, synapses, weigths, biases and different functions. It's a simple approximation of a human brain yet very powerful.
+    Neural networks use an activation function to decide if a certain neuron should be activated or not. There are three main types of such functions: binary, linear and non-linear.
+
+    The project aims to deliver a simple application for every user to be able to enjoy with complex backend powered by modern libraries for Python such as PyTorch and TensorFlow. 
+    `Memes' could be described as new way of communicating and if some neural network could synthesise nearly indistinguishable text from humans, why wouldn't it be possible for it to `communicate' with people synthesising memes?
+
     
     \section*{Literature Review}
     \addcontentsline{toc}{section}{Literature Review}
@@ -56,8 +72,7 @@
     And third major difference is positional embeddings. This concept allows the usage of fixed weights that encode information about a specific token in a sequence.
     Convolutional neural networks are very good at processing images and detecting patterns in them. Recurrent neural networks are mainly used in evolutionary robotics to deal with vision \citep{inproceedings}.
     
-    
-    \clearpage
+
 
     \subsection*{Transformer Neural Networks}
     \addcontentsline{toc}{subsection}{Transformer Neural Networks}
@@ -73,7 +88,9 @@
     similar to the encoder sublayers. The first is a multi-head self-attention mechanism and the second is a fully connected feed-forward network. The third layer of the decoder works with the output
     of the encoder by performing multi-head attention over it.
 
-    \begin{figure}[htbp]
+    \clearpage
+
+    \begin{figure}[h]
         \centerline{\includegraphics[scale=.35]{img/transformer_model.png}}
         \label{transformer_model}
     \end{figure}
@@ -178,9 +195,8 @@
 
     The main key of the system UI when it aims to hold a `dialogue' with the user is simplicity. The system can include a lot of parameters, functions, features which will be implemented in an outstanding way but if it fails to correctly introduce these features to the user and they become convoluted - it's a problem.
     
-    \clearpage
 
-    \begin{figure}[htbp]
+    \begin{figure}[h]
         \centerline{\includegraphics[scale=.5]{img/system_ui.png}}
         \label{system_ui}
         \caption{Main page design}
@@ -200,12 +216,15 @@
 
     Also as can be seen on the diagram above, every picture (meme) should have several buttons to express opinion. This can be achieved by using typical `like-dislike' system. To make even easier for the user to give positive feedback a double click system on the image can be used.
     
+    \clearpage
 
     \subsection*{Interaction between frontend and backend}
     \addcontentsline{toc}{subsection}{Interaction between frontend and backend}
+    \paragraph{}
 
     \begin{figure}[h]
-        \centerline{\includegraphics[scale=.5]{img/flow_diagram.png}}
+        \centering
+        \includegraphics[scale=.5]{img/flow_diagram.png}
         \label{flow_diagram}
         \caption{The system design flow chart}
     \end{figure}
@@ -215,6 +234,8 @@
 
     The main bridge between backend and frontend in this project is the Python library called `Eel' \citep{eel_github}. It is similar to JavaScript's `Electron' and allows to code the frontend with a stack of HTML, CSS and JavaScript having Python in the backend. There is another library which is heavier and therefore has a higher entry level - `cefpython'.
     `Eel' makes possible linking buttons created using HTML/CSS to Python-implemented functions. This methodology is called `Function Exposure' \citep{eel_github}. Functions from Python could be exposed to JavaScript environment and vice versa.
+
+    \clearpage
 
     \subsection*{Backend design}
     \addcontentsline{toc}{subsection}{Backend design}
@@ -245,6 +266,8 @@
 
     The user has a way to communicate with the developer - hold a dialog in a non-verbal manner and explain what they like. This leads the system to be implemented in a `prosumer' way. The user not only consumes the content but also influences it. 
     The diagram explains different elements of the system and how they work together. Although the user has only one way to interact with the program, the program collects non-sensitive data about the user and decides which path to take. The `use case diagram' is not final and may be changed throughout the development.
+    The image patterns should be distinguished in different categories so the user could choose the best entertainment plan that suits them. The categories available to the user selection should be expanded over time and allow better tailoring.
+    In order to deliver the content properly and on time, the backend should communicate with the frontend and collect information when to generate the right amount of images. Since the computational power is limited, it's unknown how the backend will perform on different machines and the margin between the end of the page and new image generation will be calculated further in development (current margin - 10 images).
 
     \clearpage
 
@@ -276,11 +299,17 @@
     The table above illustrates an example of using the application. Although, the program is not time-dependant (the user should be in control of what happens) and follows user's instructions, an attempt was made to adapt the flow of the actions in a time-dependant chart.
     The example is very simple and doesn't represent the whole potential of the app. One possible linear way is introduced in this table.
 
+    Scrolling is the most important aspect of the app's frontend. While it may seem a simple process, it involves a whole backend (GPT-2) to run infinitely and generate new content. Errors and mistakes may occur, so security mechanisms should be implemented. For example, if the app doesn't succeed in loading the images,
+    it should notify the user to reload it or that there's some kind of maintaince is going on.
+
+
+
     \section*{Indicative Test Plan}
     \addcontentsline{toc}{section}{Indicative Test Plan}
     
     \subsection*{Testing strategy}
     \addcontentsline{toc}{subsection}{Testing strategy}
+    \paragraph{}
 
     Since the project is in development and follows a prototype model with feature-driven approach, testing functions will be added over time as the development progresses. There are three main test levels that will be used for the testing of this app.
     Unit testing, integration testing and system testing. These three techniques will be used in later testing since the first version of the prototype that will be presented is not suitable for system testing as it doesn't act as a whole system yet.
@@ -297,26 +326,44 @@
 
     The first automated tests were written for the file system. Three crucial tests were conducted in order to verify that the file system is working properly and images are accessible to be displayed to the user.
 
+    \subsection*{Image System}
+    \addcontentsline{toc}{subsection}{Image System}
+    \paragraph{}
+
+    Image system is tightly linked with file system but the tests were conducted on the JavaScript side.
+
+
+    \subsection*{Frontend Functionality}
+    \addcontentsline{toc}{subsection}{Frontend Functionality}
+    \paragraph{}
+
+    % Talk about frontend in general, Eel and CSS
+
+    The general GUI elements were tested using the user-side manual testing approach. The scrolling works okay, content is being loaded properly, although with a special button to load it. The branding section exists but it should be improved. Animation of the `load more' button works as it should.
+    The function that changes the text on a button when there's nothing to load works as it should.
+
+    Eel loads the window properly with the right resolution. CSS elements were developed consequentially and all work, they were tested manually.
+
+    \clearpage
+
     \begin{table}[h]
         \centering
         \resizebox{\columnwidth}{!}{
-            \begin{tabular}{|l|l|l|l|l|l|l|}
-            \hline
-            Test Case ID & Test Scenario                                                                  & Test Steps                                                                                                                                                & Expected                                                                                                                 & Actual                                                                                 & Result & Comment \\ \hline
-            FS001        & Test the image names                                                           & \begin{tabular}[c]{@{}l@{}}1. Fetch through\\ meme directory\\ 2. Check the \\ spelling\\ 3. Check the\\ enumeration\end{tabular}                         & \begin{tabular}[c]{@{}l@{}}isdigit() method to\\ return true and to \\ be picked up by an\\ assertion\end{tabular}       & \begin{tabular}[c]{@{}l@{}}Assertion returned\\ true\end{tabular}                      & Pass   &         \\ \hline
-            FS002        & Test image integrity                                                           & \begin{tabular}[c]{@{}l@{}}1. Fetch through\\ image directory\\ 2. Find all files\\ ending with .jpg\\ 3. Open and\\ verify them using\\ PIL\end{tabular} & \begin{tabular}[c]{@{}l@{}}Assertion Boolean\\ variable to be set\\ to false if the\\ verification fails\end{tabular}    & \begin{tabular}[c]{@{}l@{}}Verification passed;\\ all images are\\ intact\end{tabular} & Pass   &         \\ \hline
-            FS003        & \begin{tabular}[c]{@{}l@{}}Test availability of the\\ directories\end{tabular} & \begin{tabular}[c]{@{}l@{}}1. Specify paths\\ to the directories\\ 2. Test with an\\ assertion\end{tabular}                                               & \begin{tabular}[c]{@{}l@{}}The assertions to\\ be returned true\\ if the paths are\\ correct and dirs exist\end{tabular} & \begin{tabular}[c]{@{}l@{}}Dirs exist and the\\ paths are right\end{tabular}           & Pass   &         \\ \hline
-            \end{tabular}%
+            \begin{tabular}{|l|l|l|l|l|l|}
+                \hline
+                Test Case ID & Test Scenario                                                                                 & Test Steps                                                                                                                                        & Expected                                                                                                                      & Actual                                     & Result \\ \hline
+                FS001        & Test the image names                                                                          & \begin{tabular}[c]{@{}l@{}}1. Fetch through meme directory\\ 2. Check the spelling \\ 3. Check the enumeration\end{tabular}                       & isdigit() method to return true and to be picked up by an assertion                                                           & Assertion returned true                    & Pass   \\ \hline
+                FS002        & Test image integrity                                                                          & \begin{tabular}[c]{@{}l@{}}1. Fetch through image directory\\ 2. Find all files ending with .jpg\\ 3. Open and verify them using PIL\end{tabular} & Assertion Boolean variable to be set to false if the verification fails                                                       & Verification passed; all images are intact & Pass   \\ \hline
+                FS003        & Test availability of the directories                                                          & \begin{tabular}[c]{@{}l@{}}1. Specify paths to the directories\\ 2. Test with an assertion\end{tabular}                                           & The assertions to be returned true if the paths are correct and dirs exist                                                    & Dirs exist and the paths are right         & Pass   \\ \hline
+                IMG001       & \begin{tabular}[c]{@{}l@{}}Test correctness of image loading\\ (JavaScript side)\end{tabular} & \begin{tabular}[c]{@{}l@{}}1. Use loadMore() function\\ 2. Make sure the array indeces are\\ correct\end{tabular}                                 & \begin{tabular}[c]{@{}l@{}}The images to load on click of a button which is linked to the\\ loadMore() function\end{tabular}  & Images load correctly                      & Pass   \\ \hline
+                IMG002       & Test array population function                                                                & \begin{tabular}[c]{@{}l@{}}1. Create an array\\ 2. Populate it with a test set of\\ 5 images\\ 3. Use for loop\end{tabular}                       & \begin{tabular}[c]{@{}l@{}}The images should populate the array starting from index 0 and \\ ending with index 4\end{tabular} & Array populated                            & Pass   \\ \hline
+                FEF001       & \begin{tabular}[c]{@{}l@{}}Test front end functionality:\\ disable context menu\end{tabular}  & \begin{tabular}[c]{@{}l@{}}1. Add a listener to disable the \\ context menu\end{tabular}                                                          & The menu shouldn't be called on right mouse button click                                                                      & It doesn't show                            & Pass   \\ \hline
+                EEL001       & Test interface loading (eel)                                                                  & \begin{tabular}[c]{@{}l@{}}1. Initialise folder 'www'\\ 2. Start eel application with a size\\ of 550x570\end{tabular}                            & The app should run in 550x570 resolution (browser imitation)                                                                  & It runs at the right resolution            & Pass   \\ \hline
+                CSS001       & Test button animation                                                                         & \begin{tabular}[c]{@{}l@{}}1. Test the button box-shadow\\ change on hover\end{tabular}                                                           & \begin{tabular}[c]{@{}l@{}}Box shadow should change from 0 0 0 0 to 200 0 0 0 in order\\ to fill the button\end{tabular}      & The button animation is fine               & Pass   \\ \hline
+                \end{tabular}
         }
-    \end{table}
-
-
-    \subsubsection*{GUI}
-    \addcontentsline{toc}{subsubsection}{GUI}
-    \paragraph{}
-
-    The GUI elements were tested using the user-side manual testing approach. The scrolling works okay, content is being loaded properly, although with a special button to load it. The branding section exists but it should be improved. Animation of the `load more' button works as it should.
-    The function that hides the button when there's nothing from the image array to load works correctly.
+        \caption{Zoom in to see}
+        \end{table}
 
 
     \section*{Implementation Report}

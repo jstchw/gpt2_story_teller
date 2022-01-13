@@ -94,7 +94,7 @@ html, body {
 }
 
 #lmbutton:hover {
-    box-shadow: inset 150px 0 0 0 #f9e506;
+    box-shadow: inset 200px 0 0 0 #f9e506;
     color: black;
 }
 

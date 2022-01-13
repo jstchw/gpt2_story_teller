@@ -18,15 +18,15 @@ document.addEventListener('contextmenu', event => event.preventDefault())
 function loadMore() {
     let maxResult = 1
 
-    if(currentIndex >= memeArray.length) {
-        $("#lmbutton").hide()
-        return
-    }
-
     for(let i = 0; i < maxResult; i++) {
         $("#content").append("<div>" + "<img src='" + memeArray[i+currentIndex].src + "' />" + "</div>")
     }
     currentIndex += maxResult
+
+    if(currentIndex >= memeArray.length) {
+        //$("#lmbutton").hide()
+        document.getElementById("lmbutton").innerHTML = 'Nothing to Load'
+    }
 }
 
 // Function to populate the array with images located in a specific folder
@@ -36,25 +36,4 @@ function populateMemeArray() {
         memeArray[i] = new Image()
         memeArray[i].src = memeDIR + 'meme' + i + '.jpg'
     }
-}
-
-
-
-for(let i = 0; i<5; i++) {
-    assignNumberToImage('memeDIV' + (counter + 1))
-    counter++;
-}
-
-function assignNumberToImage(memeDIV) {
-    document.getElementById(memeDIV).innerHTML = '<img src= ' + memeDIR + ' "/meme' + counter + '.jpg"/>';
-}
-
-function nextImage() {
-    counter++
-    assignNumberToImage();
-}
-
-function prevImage() {
-    counter--
-    assignNumberToImage();
 }
