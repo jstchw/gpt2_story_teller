@@ -10,6 +10,7 @@ const memeDIR = 'img/memes/'
 populateMemeArray()
 loadMore()
 document.addEventListener('contextmenu', event => event.preventDefault())
+lmbutton.addEventListener('click', loadMore)
 
 
 // Load more function gets the array length and hides the button if there's nothing to load (shouldn't be a problem to a meme generator)
@@ -18,13 +19,15 @@ document.addEventListener('contextmenu', event => event.preventDefault())
 function loadMore() {
     let maxResult = 1
 
-    for(let i = 0; i < maxResult; i++) {
-        $("#content").append("<div>" + "<img src='" + memeArray[i+currentIndex].src + "' />" + "</div>")
+    for (let i = 0; i < maxResult; i++) {
+        //$("#content").append("<div>" + "<img src='" + memeArray[i + currentIndex].src + "' />" + "</div>")
+        //$("#like").append("<div>" + "<img src='style/icons/like.gif' />" + "</div>")
+        $(".content-block").append("<div>" + "<img class='append-img' src='" + memeArray[i + currentIndex].src + "' />" + "</div>")
+        $(".content-block").append("<div>" + "<img class='reaction-heart' src='style/icons/like.gif' />" + "</div>")
     }
     currentIndex += maxResult
 
-    if(currentIndex >= memeArray.length) {
-        //$("#lmbutton").hide()
+    if (currentIndex >= memeArray.length) {
         document.getElementById("lmbutton").innerHTML = 'Nothing to Load'
     }
 }
@@ -32,7 +35,7 @@ function loadMore() {
 // Function to populate the array with images located in a specific folder
 // The loop iterates through numbers and loads an image to an array slot with an according number
 function populateMemeArray() {
-    for(let i = 0; i<5; i++) {
+    for (let i = 0; i < 5; i++) {
         memeArray[i] = new Image()
         memeArray[i].src = memeDIR + 'meme' + i + '.jpg'
     }

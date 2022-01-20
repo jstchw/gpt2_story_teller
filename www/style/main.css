@@ -31,7 +31,7 @@ html, body {
     position: relative;
 }
 
-.item-top, .item-image {
+.item-top, .content-block {
     width: 100%;
     padding-bottom: 5%;
     margin-bottom: 2%;
@@ -44,11 +44,17 @@ html, body {
     height: 100vh;
 }
 
-.item-image img{
+.content-block .append-img {
     width: 500px;
     height: 350px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin-bottom: 0;
+}
+
+.content-block .reaction-heart {
+    width: 50px;
+    height: auto;
+    margin-top: 20px;
 }
 
 #scroll-text {
