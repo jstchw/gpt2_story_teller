@@ -1,0 +1,21 @@
+{
+
+  "name": "GPT-2 Based Meme Generator",
+  "version": "1.0.0",
+  "description": "A final year project for DMU",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/jstchw/gpt2_meme_gen",
+  "keywords": [
+    "Memes",
+    "Neural Network",
+    "Artificial Intelligence"
+  ],
+  "author": "Artem B.",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^7.2.4"
+  }
+}
