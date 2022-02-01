@@ -42,6 +42,7 @@ nav {
 #lmbutton:hover {
     box-shadow: inset 200px 0 0 0 #f9e506;
     color: black;
+    cursor: default;
 }
 
 .like, .dislike {
@@ -62,5 +63,14 @@ nav {
     font-family: Bebas, serif;
     font-size: 1.3em;
     letter-spacing: 2px;
+}
+
+.no-bg-focus:hover {
+    background-color: transparent;
+    cursor: default;
+}
+
+.no-bg-focus:active {
+    color: #212529;
 }
 

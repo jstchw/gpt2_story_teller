@@ -7,6 +7,15 @@ let currentIndex = 0
 
 const memeDIR = 'img/memes/'
 
+/*
+This event handler blocks the menu items from closing on click. Disabled for now
+*/
+/*$('nav').on('hide.bs.dropdown', function (e) {
+    if (e.clickEvent) {
+        e.preventDefault()
+    }
+});*/
+
 populateMemeArray()
 loadMore()
 document.addEventListener('contextmenu', event => event.preventDefault())
