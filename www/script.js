@@ -1,5 +1,11 @@
+/*
+TODO:
+    1. Work on like and dislike buttons
+    2. Change color theme of the app to: white (off-white) and implement a dark theme
+    3. Build a meme repository (Reddit API)
+ */
+
 let counter = 0
-let local_srv = "http://localhost:8000/"
 
 let memeArray = []
 
