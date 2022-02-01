@@ -7,6 +7,10 @@
     src: url(fonts/BebasNeue-Regular.ttf)
 }
 
+body {
+    padding-top: 5em;
+}
+
 nav {
     padding: 1.5em;
     background-color: red;
@@ -71,6 +75,10 @@ nav {
 }
 
 .no-bg-focus:active {
+    color: #212529;
+}
+
+.menu-label {
     color: #212529;
 }
 

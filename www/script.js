@@ -16,8 +16,19 @@ This event handler blocks the menu items from closing on click. Disabled for now
     }
 });*/
 
+
+const startTime = Date.now()
+
 populateMemeArray()
 loadMore()
+displayElapsedTime()
+
+// Check for the time spent in the app every minute, displayed in the menu
+let intervalId = window.setInterval(function(){
+  displayElapsedTime()
+}, 60000);
+
+// Adding listeners
 document.addEventListener('contextmenu', event => event.preventDefault())
 lmbutton.addEventListener('click', loadMore)
 
@@ -49,3 +60,18 @@ function populateMemeArray() {
         memeArray[i].src = memeDIR + 'meme' + i + '.jpg'
     }
 }
+
+function displayElapsedTime() {
+    // Getting the current time
+    let currentTime = Date.now()
+    // Calculating the time and converting it to minutes from milliseconds
+
+    let timeSpent = Math.trunc((currentTime - startTime) / 60000)
+    if(timeSpent === 1) {
+        document.querySelector('#offcanvasNavbarTime').textContent = `Time spent: ${timeSpent.toString()} minute`
+    } else {
+        document.querySelector('#offcanvasNavbarTime').textContent = `Time spent: ${timeSpent.toString()} minutes`
+    }
+
+}
+
