@@ -15,6 +15,8 @@ function createWindow () {
     }
   })
 
+  //mainWindow.webContents.openDevTools()
+
   // and load the index.html of the app.
   mainWindow.loadURL('http://localhost:8000/index_bootstrap.html');
 

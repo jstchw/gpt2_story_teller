@@ -1,17 +1,18 @@
 /*
 TODO:
     1. Work on like and dislike buttons
-    2. Change color theme of the app to: white (off-white) and implement a dark theme
+    DONE 2. Change color theme of the app to: white (off-white) and implement a dark theme
     3. Build a meme repository (Reddit API)
  */
 
 let counter = 0
-
 let memeArray = []
-
 let currentIndex = 0
-
 const memeDIR = 'img/memes/'
+const startTime = Date.now()
+const themeToggleBtn = document.querySelector('#theme-toggle');
+const navbar = document.querySelector('.navbar');
+const menu = document.querySelector('.offcanvas');
 
 /*
 This event handler blocks the menu items from closing on click. Disabled for now
@@ -22,8 +23,6 @@ This event handler blocks the menu items from closing on click. Disabled for now
     }
 });*/
 
-
-const startTime = Date.now()
 
 populateMemeArray()
 loadMore()
@@ -37,6 +36,8 @@ let intervalId = window.setInterval(function(){
 // Adding listeners
 document.addEventListener('contextmenu', event => event.preventDefault())
 lmbutton.addEventListener('click', loadMore)
+
+themeToggleBtn.addEventListener('click', toggleTheme)
 
 
 // Load more function gets the array length and hides the button if there's nothing to load (shouldn't be a problem to a meme generator)
@@ -79,5 +80,30 @@ function displayElapsedTime() {
         document.querySelector('#offcanvasNavbarTime').textContent = `Time spent: ${timeSpent.toString()} minutes`
     }
 
+}
+
+function toggleTheme() {
+    // Then toggle (add/remove) the .dark-theme class to the body
+    document.body.classList.toggle('dark-theme');
+
+    // Toggling the navbar
+    navbar.classList.toggle('bg-dark')
+    navbar.classList.toggle('bg-light')
+    navbar.classList.toggle('navbar-dark')
+    navbar.classList.toggle('navbar-light')
+
+    // Toggling the menu
+    //menu.classList.toggle('bg-dark')
+    //document.querySelector('#offcanvasNavbarLabel').classList.toggle('text-light')
+    //document.querySelector('#offcanvasNavbarTime').classList.toggle('text-light')
+
+    document.querySelector('.btn-close').classList.toggle('btn-close-white')
+
+    document.querySelector('#offcanvasNavbarTime').classList.toggle('menu-label')
+    document.querySelector('#offcanvasNavbarLabel').classList.toggle('menu-label')
+
+    document.querySelector('.offcanvas').classList.toggle('bg-dark')
+    document.querySelector('#settingsDrop').classList.toggle('dropdown-menu-dark')
+    document.querySelector('#aboutDrop').classList.toggle('dropdown-menu-dark')
 }
 

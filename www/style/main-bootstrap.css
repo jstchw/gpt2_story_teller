@@ -9,7 +9,14 @@
 
 body {
     padding-top: 5em;
+    background: white;
 }
+
+body.dark-theme {
+    background: #121212;
+}
+
+
 
 nav {
     padding: 1.5em;
@@ -81,4 +88,6 @@ nav {
 .menu-label {
     color: #212529;
 }
+
+
 

@@ -31,11 +31,11 @@
                 <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdownAbout" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     About
                 </a>
-                  <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdownSettings">
+                  <ul class="dropdown-menu" id="aboutDrop" aria-labelledby="offcanvasNavbarDropdownAbout">
                     <li><span class="dropdown-item no-bg-focus">Developer: Artem B.</span></li>
                       <li>
                         <hr class="dropdown-divider">
-                    </li>
+                      </li>
                     <li><span class="dropdown-item no-bg-focus">Version: Alpha 1.0</span></li>
                   </ul>
               </li>
@@ -44,13 +44,13 @@
                 <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdownSettings" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Settings
                 </a>
-                <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdownSettings">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                <ul class="dropdown-menu" id="settingsDrop" aria-labelledby="offcanvasNavbarDropdownSettings">
+                  <li><button class="dropdown-item" id="theme-toggle">Toggle theme</button></li>
+                  <li><button class="dropdown-item">Another action</button></li>
                   <li>
                     <hr class="dropdown-divider">
                   </li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  <li><button class="dropdown-item">Something else here</button></li>
                 </ul>
               </li>
             </ul>
@@ -59,6 +59,7 @@
       </div>
     </nav>
 </header>
+
 
 <main>
     <div class="container text-center meme"></div>
