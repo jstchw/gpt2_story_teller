@@ -8,28 +8,12 @@
 }
 
 body {
-    padding-top: 5em;
+    padding-top: 4em;
     background: white;
 }
 
 body.dark-theme {
     background: #121212;
-}
-
-
-
-nav {
-    padding: 1.5em;
-    background-color: red;
-    color: white;
-    margin-bottom: 1.5em;
-}
-
-.navbar-brand img {
-    width: 7em;
-    height: auto;
-    filter: saturate(2);
-    border: 1px solid white;
 }
 
 #lmbutton {
@@ -57,17 +41,13 @@ nav {
 }
 
 .like, .dislike {
-    border: 1px solid black;
-    margin-inline: 1.5em;
-    display: inline;
+    cursor: pointer;
+    font-size: 30px;
+    margin-bottom: 0.6em;
 }
 
 #menu {
     text-align: right;
-}
-
-.row {
-    border: 1px solid black;
 }
 
 .menu-banner {
@@ -88,6 +68,4 @@ nav {
 .menu-label {
     color: #212529;
 }
-
-
 
