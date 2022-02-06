@@ -104,8 +104,8 @@ function toggleTheme() {
     // Toggling the menu color
     document.querySelector('.btn-close').classList.toggle('btn-close-white')
 
-    document.querySelector('#offcanvasNavbarTime').classList.toggle('menu-label')
-    document.querySelector('#offcanvasNavbarLabel').classList.toggle('menu-label')
+    document.querySelector('#offcanvasNavbarTime').classList.toggle('text-light')
+    document.querySelector('#offcanvasNavbarLabel').classList.toggle('text-light')
 
     document.querySelector('.offcanvas').classList.toggle('bg-dark')
     document.querySelector('#settingsDrop').classList.toggle('dropdown-menu-dark')
