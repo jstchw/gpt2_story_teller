@@ -3,6 +3,7 @@ TODO:
     PARTLY-DONE 1. Work on like and dislike buttons
     DONE 2. Change color theme of the app to: white (off-white) and implement a dark theme
     3. Build a meme repository (Reddit API)
+    4. Implement settings file (JSON) - choose theme etc. (combine Eel and JS)
  */
 
 "use strict"
@@ -25,10 +26,17 @@ This event handler blocks the menu items from closing on click. Disabled for now
     }
 });*/
 
-
+// Execute on startup
 populateMemeArray()
 loadMore()
 displayElapsedTime()
+
+// Set theme
+getSettings().then(function(settings) {
+    if(settings.theme === 'dark') {
+        toggleTheme()
+    }
+})
 
 // Check for the time spent in the app every minute, displayed in the menu
 let intervalId = window.setInterval(function(){
@@ -110,5 +118,25 @@ function toggleTheme() {
     document.querySelector('.offcanvas').classList.toggle('bg-dark')
     document.querySelector('#settingsDrop').classList.toggle('dropdown-menu-dark')
     document.querySelector('#aboutDrop').classList.toggle('dropdown-menu-dark')
+
+    // If the body tag contains dark-theme then change the dark theme settings
+    if(document.body.classList.contains('dark-theme')) {
+        setSettings('theme', 'dark')
+    }
+    else {
+        setSettings('theme', 'light')
+    }
+
+
 }
 
+/*
+Just an adaptation of the Eel functions in JS
+ */
+function setSettings(key, value) {
+    eel.set_settings(key, value)
+}
+
+async function getSettings() {
+    return await eel.get_settings()()
+}
