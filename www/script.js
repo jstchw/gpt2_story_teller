@@ -3,7 +3,8 @@ TODO:
     PARTLY-DONE 1. Work on like and dislike buttons
     DONE 2. Change color theme of the app to: white (off-white) and implement a dark theme
     3. Build a meme repository (Reddit API)
-    4. Implement settings file (JSON) - choose theme etc. (combine Eel and JS)
+    DONE 4. Implement settings file (JSON) - choose theme etc. (combine Eel and JS)
+    5. Get rid of the load more button and implement infinite scroll
  */
 
 "use strict"

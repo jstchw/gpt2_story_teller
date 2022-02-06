@@ -5,7 +5,7 @@ import json
 # Function to retrieve JSON string from the file and use it
 @eel.expose
 def get_settings():
-    with open('www/settings.json') as json_file:
+    with open('settings.json') as json_file:
         settings = json.load(json_file)
         return settings
 
@@ -16,7 +16,7 @@ def set_settings(key, value):
     settings = get_settings()
     settings[key] = value
 
-    with open('www/settings.json', 'w') as json_file:
+    with open('settings.json', 'w') as json_file:
         json.dump(settings, json_file)
 
 
