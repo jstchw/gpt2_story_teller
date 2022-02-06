@@ -51,7 +51,7 @@ function loadMore() {
     for (let i = 0; i < maxResult; i++) {
         $(".meme").append("<div>" + "<img class='append-img img-fluid' src='" + memeArray[i + currentIndex].src + "' />" + "</div>")
         $(".meme").append("<div class='container overflow-hidden'>" +
-            "<div class='row'>" +
+            "<div class='row px-5'>" +
             "<div class='col like'>&#128077</div>" +
             "<div class='col'></div>" +
             "<div class='col dislike'>&#128078</div>" +

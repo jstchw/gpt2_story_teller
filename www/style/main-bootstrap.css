@@ -44,6 +44,11 @@ body.dark-theme {
     cursor: pointer;
     font-size: 30px;
     margin-bottom: 0.6em;
+    transition: 0.5s ease;
+}
+
+.like:hover, .dislike:hover {
+    font-size: 60px;
 }
 
 #menu {
