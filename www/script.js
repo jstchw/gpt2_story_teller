@@ -58,17 +58,15 @@ function loadMore() {
     let maxResult = 1
 
     for (let i = 0; i < maxResult; i++) {
-        $(".meme").append("<div>" + "<img class='append-img img-fluid' src='" + memeArray[i + currentIndex].src + "' />" + "</div>")
-        $(".meme").append("<div class='container overflow-hidden'>" +
+        $(".meme").append(
+            "<div><img class='append-img img-fluid' src='" + memeArray[i + currentIndex].src + "'/></div>" +
+            "<div class='container overflow-hidden'>" +
             "<div class='row px-5'>" +
             "<div class='col like'>&#128077</div>" +
             "<div class='col'></div>" +
             "<div class='col dislike'>&#128078</div>" +
             "</div>" +
             "</div>")
-        /*$(".meme").append("<div class='like'>&#128077</div>")
-        $(".meme").append("<div class='dislike'>&#128078</div>")*/
-        //$(".meme").append("<div>" + "<img class='reaction-heart' src='style/icons/like.gif' />" + "</div>")
     }
     currentIndex += maxResult
 
