@@ -1,10 +1,11 @@
 /*
 TODO:
-    PARTLY-DONE 1. Work on like and dislike buttons
+    DONE 1. Work on like and dislike buttons
     DONE 2. Change color theme of the app to: white (off-white) and implement a dark theme
     3. Build a meme repository (Reddit API)
     DONE 4. Implement settings file (JSON) - choose theme etc. (combine Eel and JS)
     DONE 5. Get rid of the load more button and implement infinite scroll
+    6. Fix endless scrolling when there is nothing to load
  */
 
 "use strict"
@@ -34,6 +35,8 @@ populateMemeArray()
 loadMore()
 displayElapsedTime()
 
+
+
 // Set theme
 getSettings().then(function(settings) {
     if(settings.theme === 'dark') {
@@ -50,39 +53,40 @@ let intervalId = window.setInterval(function(){
 LISTENERS
  */
 document.addEventListener('contextmenu', event => event.preventDefault())
-//lmbutton.addEventListener('click', loadMore)
 themeToggleBtn.addEventListener('click', toggleTheme)
-// Special listener to load everything when user reaches
+
+// Special listener to load everything when user reaches the end of page
 document.addEventListener('scroll',()=>{
-    if(window.scrollY + window.innerHeight >=
-    document.documentElement.scrollHeight){
-    loadMore()
+    if(window.scrollY + window.innerHeight >= document.documentElement.scrollHeight) {
+        loadMore()
     }
 })
+
+$('.like').click(selectReaction)
+$('.dislike').click(selectReaction)
 
 
 // Load more function gets the array length and hides the button if there's nothing to load (shouldn't be a problem to a meme generator)
 // When a button is clicked, the for loop appends an image from an array which is populated beforehand
 
 function loadMore() {
-    let maxResult = 10
+    // When the maxResult value is bigger or the modulus of it and the array length is not 0 -> endless scrolling problem
+    let maxResult = 5
 
-    for (let i = 0; i < maxResult; i++) {
-        $(".meme").append(
-            "<div><img class='append-img img-fluid' src='" + memeArray[i + currentIndex].src + "'/></div>" +
+        for (let i = 0; i < maxResult; i++) {
+            $(".meme").append(
+            "<div><img class='append-img img-fluid' alt='Everything went wrong' src='" + memeArray[i + currentIndex].src + "'/></div>" +
             "<div class='container overflow-hidden'>" +
             "<div class='row px-5'>" +
-            "<div class='col like'>&#128077</div>" +
+            "<div class='col like' id='like_" + counter + "'>&#128077</div>" +
             "<div class='col'></div>" +
-            "<div class='col dislike'>&#128078</div>" +
+            "<div class='col dislike' id='dislike_" + counter + "'>&#128078</div>" +
             "</div>" +
             "</div>")
-    }
-    currentIndex += maxResult
 
-    if (currentIndex >= memeArray.length) {
-        document.getElementById("lmbutton").innerHTML = 'Nothing to Load'
-    }
+            counter++
+        }
+        currentIndex += maxResult
 }
 
 // Function to populate the array with images located in a specific folder
@@ -148,4 +152,26 @@ function setSettings(key, value) {
 
 async function getSettings() {
     return await eel.get_settings()()
+}
+
+function selectReaction() {
+    let id = (this.id).replace(/\D/g, "");
+    let like_pressed, dislike_pressed
+
+    like_pressed = document.querySelector('#like_' + id).classList.contains('reaction-selected')
+    dislike_pressed = document.querySelector('#dislike_' + id).classList.contains('reaction-selected')
+
+
+    if(!like_pressed && this.id.includes('dislike')) {
+        document.querySelector('#' + this.id).classList.add('reaction-selected')
+    }
+    if(!dislike_pressed && this.id.includes('like')) {
+        document.querySelector('#' + this.id).classList.add('reaction-selected')
+    }
+    if(like_pressed && this.id.includes('like')) {
+        document.querySelector('#' + this.id).classList.remove('reaction-selected')
+    }
+    if(dislike_pressed && this.id.includes('dislike')) {
+        document.querySelector('#' + this.id).classList.remove('reaction-selected')
+    }
 }
