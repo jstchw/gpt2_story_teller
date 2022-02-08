@@ -4,8 +4,8 @@ import json
 
 # Function to retrieve JSON string from the file and use it
 @eel.expose
-def get_settings():
-    with open('settings.json') as json_file:
+def get_settings(filename):
+    with open(filename) as json_file:
         settings = json.load(json_file)
         return settings
 
@@ -13,7 +13,7 @@ def get_settings():
 # Function to set any setting to a JSON file
 @eel.expose
 def set_settings(key, value):
-    settings = get_settings()
+    settings = get_settings('settings.json')
     settings[key] = value
 
     with open('settings.json', 'w') as json_file:
@@ -23,7 +23,11 @@ def set_settings(key, value):
 class Interface:
 
     def __init__(self):
+        self.width = 550
+        self.height = 570
+        self.credentials = get_settings('credentials.json')
         eel.browsers.set_path('electron', '/Applications/Electron.app/Contents/MacOS/Electron')
-
         eel.init('www')
-        eel.start(mode='electron', size=(550, 570))
+
+    def create_window(self):
+        eel.start(mode='electron', size=(self.width, self.height))

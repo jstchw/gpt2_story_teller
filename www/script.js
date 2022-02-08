@@ -151,7 +151,7 @@ function setSettings(key, value) {
 }
 
 async function getSettings() {
-    return await eel.get_settings()()
+    return await eel.get_settings('settings.json')
 }
 
 function selectReaction() {
