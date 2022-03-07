@@ -1,5 +1,6 @@
 import eel
 import json
+import os
 
 
 # Function to retrieve JSON string from the file and use it
@@ -20,12 +21,16 @@ def set_settings(key, value):
         json.dump(settings, json_file)
 
 
+@eel.expose
+def count_files(path):
+    return len([name for name in os.listdir(path) if os.path.isfile(os.path.join(path, name))])
+
+
 class Interface:
 
     def __init__(self):
         self.width = 550
         self.height = 570
-        self.credentials = get_settings('credentials.json')
         eel.browsers.set_path('electron', '/Applications/Electron.app/Contents/MacOS/Electron')
         eel.init('www')
 

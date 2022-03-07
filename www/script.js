@@ -2,7 +2,7 @@
 TODO:
     DONE 1. Work on like and dislike buttons
     DONE 2. Change color theme of the app to: white (off-white) and implement a dark theme
-    3. Build a meme repository (Reddit API)
+    DONE 3. Build a meme repository (Reddit API)
     DONE 4. Implement settings file (JSON) - choose theme etc. (combine Eel and JS)
     DONE 5. Get rid of the load more button and implement infinite scroll
     6. Fix endless scrolling when there is nothing to load
@@ -15,9 +15,9 @@ let memeArray = []
 let currentIndex = 0
 const memeDIR = 'img/memes/'
 const startTime = Date.now()
-const themeToggleBtn = document.querySelector('#theme-toggle');
-const navbar = document.querySelector('.navbar');
-const menu = document.querySelector('.offcanvas');
+const themeToggleBtn = document.querySelector('#theme-toggle')
+const navbar = document.querySelector('.navbar')
+const menu = document.querySelector('.offcanvas')
 
 /*
 This event handler blocks the menu items from closing on click. Disabled for now
@@ -31,11 +31,11 @@ This event handler blocks the menu items from closing on click. Disabled for now
 /*
 ON STARTUP
 */
-populateMemeArray()
-loadMore()
+
+// A number of functions which will be executed one after another.
+// Listeners for reactions should be added only after the images are loaded
+populateMemeArray().then(loadMore)
 displayElapsedTime()
-
-
 
 // Set theme
 getSettings().then(function(settings) {
@@ -55,15 +55,13 @@ LISTENERS
 document.addEventListener('contextmenu', event => event.preventDefault())
 themeToggleBtn.addEventListener('click', toggleTheme)
 
+
 // Special listener to load everything when user reaches the end of page
 document.addEventListener('scroll',()=>{
-    if(window.scrollY + window.innerHeight >= document.documentElement.scrollHeight) {
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
         loadMore()
     }
 })
-
-$('.like').click(selectReaction)
-$('.dislike').click(selectReaction)
 
 
 // Load more function gets the array length and hides the button if there's nothing to load (shouldn't be a problem to a meme generator)
@@ -87,12 +85,15 @@ function loadMore() {
             counter++
         }
         currentIndex += maxResult
+        $('.like').click(selectReaction)
+        $('.dislike').click(selectReaction)
 }
 
 // Function to populate the array with images located in a specific folder
 // The loop iterates through numbers and loads an image to an array slot with an according number
-function populateMemeArray() {
-    for (let i = 0; i < 5; i++) {
+async function populateMemeArray() {
+    // Get file count from Eel exposed function
+    for (let i = 0; i < await eel.count_files('www/img/memes')(); i++) {
         memeArray[i] = new Image()
         memeArray[i].src = memeDIR + 'meme' + i + '.jpg'
     }
