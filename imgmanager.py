@@ -1,7 +1,7 @@
 try:
     from PIL import Image, ImageDraw, ImageFont
 except ImportError:
-    import Image, ImageDraw
+    import Image, ImageDraw, ImageFont
 
 import pytesseract
 import os
@@ -19,9 +19,12 @@ class ImgManager:
         self.meme_dir = os.fsdecode('www/img/memes')
 
     # Returns a string
-    def read_text(self):
-        pytesseract.pytesseract.tesseract_cmd = r"D:\Tesseract\tesseract.exe"
-        self.txt = pytesseract.image_to_string(Image.open(self.input_img))
+    def read_text(self, input_img):
+        # pytesseract.pytesseract.tesseract_cmd = r"D:\Tesseract\tesseract.exe"
+        # self.txt = pytesseract.image_to_string(Image.open(self.input_img))
+        
+        # Trying different parameters
+        return pytesseract.image_to_string(Image.open(input_img), lang='eng', config='--psm 4')
 
     # Takes a string as a value
     def write_text(self):
