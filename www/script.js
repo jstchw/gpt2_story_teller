@@ -1,32 +1,23 @@
-/*
-TODO:
-    DONE 1. Work on like and dislike buttons
-    DONE 2. Change color theme of the app to: white (off-white) and implement a dark theme
-    DONE 3. Build a meme repository (Reddit API)
-    DONE 4. Implement settings file (JSON) - choose theme etc. (combine Eel and JS)
-    DONE 5. Get rid of the load more button and implement infinite scroll
-    6. Fix endless scrolling when there is nothing to load
- */
-
+// REACTIONS WORK PARTIALLY
+// EVERY SECOND GROUP OF IMAGES CAN BE REACTED AT
 "use strict"
+
+// Set theme
+
+getSettings().then(function(settings) {
+    if(settings.theme === 'dark') {
+        toggleTheme()
+    }
+})
 
 let counter = 0
 let memeArray = []
-let currentIndex = 0
-const memeDIR = 'img/memes/'
 const startTime = Date.now()
+
 const themeToggleBtn = document.querySelector('#theme-toggle')
 const navbar = document.querySelector('.navbar')
 const menu = document.querySelector('.offcanvas')
-
-/*
-This event handler blocks the menu items from closing on click. Disabled for now
-*/
-/*$('nav').on('hide.bs.dropdown', function (e) {
-    if (e.clickEvent) {
-        e.preventDefault()
-    }
-});*/
+let modelIsLoaded = false
 
 /*
 ON STARTUP
@@ -34,15 +25,9 @@ ON STARTUP
 
 // A number of functions which will be executed one after another.
 // Listeners for reactions should be added only after the images are loaded
-populateMemeArray().then(loadMore)
-displayElapsedTime()
 
-// Set theme
-getSettings().then(function(settings) {
-    if(settings.theme === 'dark') {
-        toggleTheme()
-    }
-})
+loadMore()
+displayElapsedTime()
 
 // Check for the time spent in the app every minute, displayed in the menu
 let intervalId = window.setInterval(function(){
@@ -67,36 +52,67 @@ document.addEventListener('scroll',()=>{
 // Load more function gets the array length and hides the button if there's nothing to load (shouldn't be a problem to a meme generator)
 // When a button is clicked, the for loop appends an image from an array which is populated beforehand
 
-function loadMore() {
+async function loadMore() {
+    //let isEmpty = Boolean(memeArray.length === 0)
+    // let spinner = document.createElement('div')
+    // spinner.classList.add('spinner-border')
+    // document.body.append(spinner)
+
+    $("body").append('<div class="spinner-border">')
+
+    let object = await eel.generate_text('alice', 100, 6)()
+
+
     // When the maxResult value is bigger or the modulus of it and the array length is not 0 -> endless scrolling problem
-    let maxResult = 5
+    // !!! ABSOLUTELY MUST  BE THE SAME AS THE NUMBER OF ARRAY LENGTH (MAY BE LESS THAN COUNT OF FILES, BUT NOT GREATER) !!!
+    // CAUSES ISSUES IF GREATER
+    let maxResult = 6
 
-        for (let i = 0; i < maxResult; i++) {
-            $(".meme").append(
-            "<div><img class='append-img img-fluid' alt='Everything went wrong' src='" + memeArray[i + currentIndex].src + "'/></div>" +
-            "<div class='container overflow-hidden'>" +
+    await populateImageArray('alice')
+
+    for (let i = 0; i < maxResult; i++) {
+
+        $(".content").append(
+        "<div><img class='append-img img-fluid' alt='Everything went wrong' src='" + memeArray[i].src + "'/></div>" +
+        "<div class='container overflow-hidden'>" +
+            "<div class='row px-5'>" + object[i] + "</div>" +
             "<div class='row px-5'>" +
-            "<div class='col like' id='like_" + counter + "'>&#128077</div>" +
-            "<div class='col'></div>" +
-            "<div class='col dislike' id='dislike_" + counter + "'>&#128078</div>" +
+                "<div class='col like' id='like_" + counter + "'>&#128077</div>" +
+                "<div class='col'></div>" +
+                "<div class='col dislike' id='dislike_" + counter + "'>&#128078</div>" +
             "</div>" +
-            "</div>")
+        "</div>")
+        counter++
+    }
 
-            counter++
-        }
-        currentIndex += maxResult
-        $('.like').click(selectReaction)
-        $('.dislike').click(selectReaction)
+    $('.like').click(selectReaction)
+    $('.dislike').click(selectReaction)
+    //currentIndex += maxResult
+
+    $('.spinner-border').fadeOut('fast', 'swing', function() {
+        $('.spinner-border').remove()
+    })
 }
 
 // Function to populate the array with images located in a specific folder
 // The loop iterates through numbers and loads an image to an array slot with an according number
-async function populateMemeArray() {
-    // Get file count from Eel exposed function
-    for (let i = 0; i < await eel.count_files('www/img/memes')(); i++) {
-        memeArray[i] = new Image()
-        memeArray[i].src = memeDIR + 'meme' + i + '.jpg'
+async function populateImageArray(topic) {
+
+    let isEmpty = Boolean(memeArray.length === 0)
+
+    switch(topic) {
+        case 'alice':
+            if(isEmpty) {
+                for(let i = 0; i < await eel.count_files('www/img/alice')(); i++) {
+                    memeArray[i] = new Image()
+                    memeArray[i].src = 'img/alice/' + 'alice' + i + '.jpg'
+                }
+            } else {
+                shuffleArray(memeArray)
+            }
     }
+
+    console.log('populate function complete')
 }
 
 function displayElapsedTime() {
@@ -148,11 +164,11 @@ function toggleTheme() {
 Just an adaptation of the Eel functions in JS
  */
 function setSettings(key, value) {
-    eel.set_settings(key, value)
+    eel.set_settings(key, value)()
 }
 
 async function getSettings() {
-    return await eel.get_settings('settings.json')
+    return await eel.get_settings('settings.json')()
 }
 
 function selectReaction() {
@@ -175,4 +191,15 @@ function selectReaction() {
     if(dislike_pressed && this.id.includes('dislike')) {
         document.querySelector('#' + this.id).classList.remove('reaction-selected')
     }
+}
+
+function shuffleArray(array) {
+    let currentIndex = array.length,  randomIndex
+    while (currentIndex !== 0) {
+        randomIndex = Math.floor(Math.random() * currentIndex)
+        currentIndex--
+        [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex], array[currentIndex]]
+    }
+    return array
 }

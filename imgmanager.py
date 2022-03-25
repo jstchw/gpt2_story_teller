@@ -20,7 +20,7 @@ class ImgManager:
 
     # Returns a string
     def read_text(self, input_img):
-        # pytesseract.pytesseract.tesseract_cmd = r"D:\Tesseract\tesseract.exe"
+        pytesseract.pytesseract.tesseract_cmd = r"D:\Tesseract\tesseract.exe"
         # self.txt = pytesseract.image_to_string(Image.open(self.input_img))
         
         # Trying different parameters
@@ -46,7 +46,7 @@ class ImgManager:
             if os.path.isfile(os.path.join(self.meme_dir, file)):
                 counter += 1
 
-        subprocess.call(['python', 'imagescraper.py', '-s', 'memes', '-n', '60', '-o', 'hot'])
+        subprocess.call(['python', 'imagescraper.py', '-s', 'RollSafe', '-n', '60', '-o', 'hot'])
 
         for file in os.listdir(self.meme_dir):
             filename = os.fsdecode(file)

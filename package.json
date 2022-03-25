@@ -1,6 +1,6 @@
 {
 
-  "name": "GPT-2 Based Meme Generator",
+  "name": "story_teller",
   "version": "1.0.0",
   "description": "A final year project for DMU",
   "main": "main.js",
@@ -11,7 +11,8 @@
   "keywords": [
     "Memes",
     "Neural Network",
-    "Artificial Intelligence"
+    "Artificial Intelligence",
+    "Stories"
   ],
   "author": "Artem B.",
   "license": "CC0-1.0",

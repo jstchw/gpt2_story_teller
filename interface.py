@@ -1,6 +1,7 @@
 import eel
 import json
 import os
+import glob
 
 
 # Function to retrieve JSON string from the file and use it
@@ -23,7 +24,8 @@ def set_settings(key, value):
 
 @eel.expose
 def count_files(path):
-    return len([name for name in os.listdir(path) if os.path.isfile(os.path.join(path, name))])
+    # return len([name for name in os.listdir(path) if os.path.isfile(os.path.join(path, name))])
+    return len(glob.glob1(path, "*.jpg"))
 
 
 class Interface:
@@ -31,7 +33,10 @@ class Interface:
     def __init__(self):
         self.width = 550
         self.height = 570
-        eel.browsers.set_path('electron', '/Applications/Electron.app/Contents/MacOS/Electron')
+        # For Mac
+        # eel.browsers.set_path('electron', '/Applications/Electron.app/Contents/MacOS/Electron')
+        # For Windows
+        eel.browsers.set_path('electron', r'C:/Users/bobr7/AppData/Roaming/npm/node_modules/electron/dist/electron.exe')
         eel.init('www')
 
     def create_window(self):
