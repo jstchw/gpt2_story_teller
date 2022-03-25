@@ -17,7 +17,7 @@ const startTime = Date.now()
 const themeToggleBtn = document.querySelector('#theme-toggle')
 const navbar = document.querySelector('.navbar')
 const menu = document.querySelector('.offcanvas')
-let modelIsLoaded = false
+let loadMoreInProgress = false
 
 /*
 ON STARTUP
@@ -43,7 +43,7 @@ themeToggleBtn.addEventListener('click', toggleTheme)
 
 // Special listener to load everything when user reaches the end of page
 document.addEventListener('scroll',()=>{
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight && !loadMoreInProgress) {
         loadMore()
     }
 })
@@ -53,12 +53,11 @@ document.addEventListener('scroll',()=>{
 // When a button is clicked, the for loop appends an image from an array which is populated beforehand
 
 async function loadMore() {
-    //let isEmpty = Boolean(memeArray.length === 0)
-    // let spinner = document.createElement('div')
-    // spinner.classList.add('spinner-border')
-    // document.body.append(spinner)
 
-    $("body").append('<div class="spinner-border">')
+    // THIS VARIABLE FIXES MULTIPLE NN GENERATIONS
+    loadMoreInProgress = true
+
+    $("body").append('<div class="d-flex justify-content-center"><div class="spinner-border"></div></div>')
 
     let object = await eel.generate_text('alice', 100, 6)()
 
@@ -68,7 +67,7 @@ async function loadMore() {
     // CAUSES ISSUES IF GREATER
     let maxResult = 6
 
-    await populateImageArray('alice')
+    await populateImageArray('alice').then($('.spinner-border').remove())
 
     for (let i = 0; i < maxResult; i++) {
 
@@ -88,10 +87,7 @@ async function loadMore() {
     $('.like').click(selectReaction)
     $('.dislike').click(selectReaction)
     //currentIndex += maxResult
-
-    $('.spinner-border').fadeOut('fast', 'swing', function() {
-        $('.spinner-border').remove()
-    })
+    loadMoreInProgress = false
 }
 
 // Function to populate the array with images located in a specific folder
@@ -111,8 +107,6 @@ async function populateImageArray(topic) {
                 shuffleArray(memeArray)
             }
     }
-
-    console.log('populate function complete')
 }
 
 function displayElapsedTime() {
