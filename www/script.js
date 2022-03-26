@@ -2,23 +2,14 @@
 // EVERY SECOND GROUP OF IMAGES CAN BE REACTED AT
 "use strict"
 
-// Set theme
-
-getSettings().then(function(settings) {
-    if(settings.theme === 'dark') {
-        toggleTheme()
-    }
-})
-
 let counter = 0
 let memeArray = []
 const startTime = Date.now()
 
 const themeToggleBtn = document.querySelector('#theme-toggle')
-const navbar = document.querySelector('.navbar')
 const menu = document.querySelector('.offcanvas')
 let loadMoreInProgress = false
-
+let topic
 /*
 ON STARTUP
 */
@@ -26,7 +17,13 @@ ON STARTUP
 // A number of functions which will be executed one after another.
 // Listeners for reactions should be added only after the images are loaded
 
-loadMore()
+// Getting the settings
+
+getSettings().then(settings => {
+    if(settings.theme === 'dark') toggleTheme()
+    topic = settings.topic
+}).then(loadMore)
+
 displayElapsedTime()
 
 // Check for the time spent in the app every minute, displayed in the menu
@@ -39,6 +36,19 @@ LISTENERS
  */
 document.addEventListener('contextmenu', event => event.preventDefault())
 themeToggleBtn.addEventListener('click', toggleTheme)
+
+$('#catcher-topic').on('click', ev => {
+    if(topic !== 'catcher' && !loadMoreInProgress) {
+        selectTopic('catcher')
+        $('.navbar-toggler').click()
+    }
+})
+$('#alice-topic').on('click', ev => {
+    if(topic !== 'alice' && !loadMoreInProgress) {
+        selectTopic('alice')
+        $('.navbar-toggler').click()
+    }
+})
 
 
 // Special listener to load everything when user reaches the end of page
@@ -62,7 +72,7 @@ async function loadMore() {
     body.append('<div class="d-flex justify-content-center pb-4 spinner-container"><div class="spinner-border"></div></div>')
 
     // IT HAS BEEN TESTED WITH DIFFERENT SAMPLE SIZES - 20, 40, 60, 70, 100, 200, 500, 1023 - 100 IS AN OPTIMAL SOLUTION - NOT TOO BIG TO TRUNCATE AND DOESN'T TAKE AN ETERNITY TO PROCESS
-    let object = await eel.generate_text('alice', 100, 6)()
+    let object = await eel.generate_text(topic, 100, 6)()
 
 
     // When the maxResult value is bigger or the modulus of it and the array length is not 0 -> endless scrolling problem
@@ -70,14 +80,14 @@ async function loadMore() {
     // CAUSES ISSUES IF GREATER
     let maxResult = 6
 
-    await populateImageArray('alice').then($('.spinner-container').remove())
+    await populateImageArray(topic).then($('.spinner-container').remove())
 
     for (let i = 0; i < maxResult; i++) {
 
         $(".content").append(
         "<div><img class='append-img img-fluid pb-2' alt='Everything went wrong' src='" + memeArray[i].src + "'/></div>" +
         "<div class='container overflow-hidden'>" +
-            "<div class='row px-5'>" + object[i] + "</div>" +
+            "<div class='row px-5 text-content'>" + object[i] + "</div>" +
             "<div class='row px-5'>" +
                 "<div class='col like' id='like_" + counter + "'>&#128077</div>" +
                 "<div class='col'></div>" +
@@ -99,16 +109,14 @@ async function populateImageArray(topic) {
 
     let isEmpty = Boolean(memeArray.length === 0)
 
-    switch(topic) {
-        case 'alice':
-            if(isEmpty) {
-                for(let i = 0; i < await eel.count_files('www/img/alice')(); i++) {
-                    memeArray[i] = new Image()
-                    memeArray[i].src = 'img/alice/' + 'alice' + i + '.jpg'
-                }
-            } else {
-                shuffleArray(memeArray)
-            }
+    if(isEmpty) {
+        for(let i = 0; i < await eel.count_files(`www/img/${topic}`)(); i++) {
+            memeArray[i] = new Image()
+            memeArray[i].src = `img/${topic}/${topic + i}.jpg`
+            shuffleArray(memeArray)
+        }
+    } else {
+        shuffleArray(memeArray)
     }
 }
 
@@ -127,6 +135,10 @@ function displayElapsedTime() {
 }
 
 function toggleTheme() {
+    let navbar = document.querySelector('.navbar')
+    let dropdownMenu = document.querySelectorAll('.dropdown-menu')
+    let offCanvasTitle = document.querySelectorAll('.offcanvas-title')
+
     // Then toggle (add/remove) the .dark-theme class to the body
     document.body.classList.toggle('dark-theme')
 
@@ -138,13 +150,15 @@ function toggleTheme() {
 
     // Toggling the menu color
     document.querySelector('.btn-close').classList.toggle('btn-close-white')
-
-    document.querySelector('#offcanvasNavbarTime').classList.toggle('text-light')
-    document.querySelector('#offcanvasNavbarLabel').classList.toggle('text-light')
-
     document.querySelector('.offcanvas').classList.toggle('bg-dark')
-    document.querySelector('#settingsDrop').classList.toggle('dropdown-menu-dark')
-    document.querySelector('#aboutDrop').classList.toggle('dropdown-menu-dark')
+
+    offCanvasTitle.forEach(el => {
+        el.classList.toggle('text-light')
+    })
+
+    dropdownMenu.forEach(el => {
+        el.classList.toggle('dropdown-menu-dark')
+    })
 
     // If the body tag contains dark-theme then change the dark theme settings
     if(document.body.classList.contains('dark-theme')) {
@@ -155,6 +169,14 @@ function toggleTheme() {
     }
 
 
+}
+
+async function selectTopic(topic_par) {
+    $('.content').empty()
+    memeArray = []
+    topic = topic_par
+    setSettings('topic', topic)
+    await loadMore()
 }
 
 /*

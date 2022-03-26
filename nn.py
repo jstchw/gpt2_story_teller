@@ -25,6 +25,7 @@ import re
 # THIS IS TRAINED ON 1023 SAMPLE SIZE
 # NETWORK WASN'T FINETUNED TO THE SAMPLE SIZE ----------------------
 # ALL TRAINED WITH ADAM
+# TRAINED WITH ADAM -> SGD TOO SLOW AND TAKES MUCH MORE TIME
 @eel.expose
 def generate_text(run_name, length, nsamples):
     sess = gpt2.start_tf_sess()
