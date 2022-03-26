@@ -1,22 +1,48 @@
 {
 
   "name": "story_teller",
+
   "version": "1.0.0",
+
   "description": "A final year project for DMU",
+
   "main": "main.js",
+
   "scripts": {
+
     "start": "electron ."
+
   },
+
   "repository": "https://github.com/jstchw/gpt2_meme_gen",
+
   "keywords": [
+
     "Memes",
+
     "Neural Network",
+
     "Artificial Intelligence",
+
     "Stories"
+
   ],
+
   "author": "Artem B.",
+
   "license": "CC0-1.0",
+
   "devDependencies": {
+
     "electron": "^7.2.4"
+
+  },
+
+  "dependencies": {
+
+    "jquery": "^3.6.0"
+
   }
+
 }
+

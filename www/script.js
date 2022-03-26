@@ -54,11 +54,14 @@ document.addEventListener('scroll',()=>{
 
 async function loadMore() {
 
+    let body = $('body')
+
     // THIS VARIABLE FIXES MULTIPLE NN GENERATIONS
     loadMoreInProgress = true
 
-    $("body").append('<div class="d-flex justify-content-center"><div class="spinner-border"></div></div>')
+    body.append('<div class="d-flex justify-content-center pb-4 spinner-container"><div class="spinner-border"></div></div>')
 
+    // IT HAS BEEN TESTED WITH DIFFERENT SAMPLE SIZES - 20, 40, 60, 70, 100, 200, 500, 1023 - 100 IS AN OPTIMAL SOLUTION - NOT TOO BIG TO TRUNCATE AND DOESN'T TAKE AN ETERNITY TO PROCESS
     let object = await eel.generate_text('alice', 100, 6)()
 
 
@@ -67,12 +70,12 @@ async function loadMore() {
     // CAUSES ISSUES IF GREATER
     let maxResult = 6
 
-    await populateImageArray('alice').then($('.spinner-border').remove())
+    await populateImageArray('alice').then($('.spinner-container').remove())
 
     for (let i = 0; i < maxResult; i++) {
 
         $(".content").append(
-        "<div><img class='append-img img-fluid' alt='Everything went wrong' src='" + memeArray[i].src + "'/></div>" +
+        "<div><img class='append-img img-fluid pb-2' alt='Everything went wrong' src='" + memeArray[i].src + "'/></div>" +
         "<div class='container overflow-hidden'>" +
             "<div class='row px-5'>" + object[i] + "</div>" +
             "<div class='row px-5'>" +
