@@ -1,0 +1,216 @@
+\documentclass[12pt]{report}
+\usepackage{blindtext}
+\usepackage{hyperref}
+\usepackage{tocloft}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage[newfloat]{minted}
+\usepackage{caption}
+\usepackage{booktabs}
+\usepackage[toc, page]{appendix}
+\usepackage{multirow}
+\newenvironment{longlisting}{\captionsetup{type=listing}}{}
+\title{%
+  GPT-2 Based Story Teller\\
+  \large CTEC3451 Development Project \\~\\
+    De Montfort University} 
+\author{Artem Bobrov (P2547788)}
+\date{May 5 2022}
+\setlength{\parindent}{1em}
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+\clearpage
+\tableofcontents
+\setcounter{tocdepth}{1}
+\thispagestyle{empty}
+\clearpage
+\section*{Abstract}
+\addcontentsline{toc}{section}{Abstract}
+\paragraph{}
+The project described in this report is a story-telling application that uses the GPT-2 model to generate text. 
+The model is trained on multiple datasets and is able to generate text from a variety of topics in the backend. 
+The frontend is a web application that allows users to endlessly generate stories accompanied by thematic pictures.
+The point of the project is to prove the concept that neural networks, if trained properly, are able to generate 
+data that is very similar to human language.
+
+\section*{Introduction}
+\addcontentsline{toc}{section}{Introduction}
+\paragraph{}
+Neural networks weren't so popular in the early days of computing, but they are now a common tool for machine learning.
+First neural network was invented by Frank Rosenblatt in the late 1950s \citep{rosenblatt_1958_the}. Perceptron has only 
+one layer of neurons, but more advance neural networks can have multiple layers. Before Transformer neural networks 
+there were many different types of neural networks (e.g. Convolutional, Recurrent, LSTM, Feed Forward, etc).
+
+Transformers were introduced in 2017 by Google \citep{attention_is_all_you_need} and are a new type of neural network. It uses self-attention mechanism 
+to focus on the most relevant information in the input. It weights the significance of each part of the input differently.
+
+This report focuses on the GPT-2 model, which is a transformer type neural network developed by OpenAI in 2019 \citep{radford_wu_child_luan_amodei_sutskever_2019}.
+Despite the fact that GPT-3 is a newer model, it's predecessor is still a popular choice for text generation.
+
+An application will be developed that utilises the features of GPT-2 and wraps it up in a user-friendly web
+interface that allows users to read freshly generated stories accompanied by thematic pictures. The development process 
+will be examined and the results will be presented and discussed in depth. The usage of the key elements and techniques used both in
+backend and frontend will be explained. Moreover the project development and research cycle will be reflected on and 
+other approaches that possibly could have been used to achieve different or similar results will be presented.
+
+\clearpage
+
+\section*{Objectives and Goals}
+\addcontentsline{toc}{section}{Objectives and Goals}
+
+\subsection*{Initial approach}
+\addcontentsline{toc}{subsection}{Initial approach}
+\paragraph{}
+It is important to state that the original plan for the project was to develop a similar application that generates
+pictures with attached text to them (known as `memes') and allows users to watch them using a web interface. It has been
+planned to use different approach to build a repository of training data using `Optical Character Recognition (OCR)' \citep{tesseract_article} and 
+`Pillow' library to attach processed text to the pictures. It has been decided to adjust the original plan and change the
+topic from memes to stories.
+
+\subsection*{New approach}
+\addcontentsline{toc}{subsection}{New approach}
+\paragraph{}
+The new approach doesn't require any massive changes to the original plan and the project will be developed using the same
+techniques - indetical frontend and almost the same backend. The only difference is that OCR will be removed from the backend
+because it's not needed for the project anymore. To minimize the deviation from the original plan, there will be an
+additional section in the web interface that creates `memes' based on novels and other piece of art.
+
+
+\subsection*{Reasons}
+\addcontentsline{toc}{subsection}{Reasons}
+\paragraph{}
+Despite the fact that many of the features used in the initial approach have been already developed - Tesseract OCR, 
+Pillow Image placing, `Meme' scraper - one major issue made it extremely perplexing to continue the project without changing the approach.
+
+The first puzzling part was hidden in reading the text (using Tesseract OCR) from the scraped images and translate them to text strings.
+Memes contain text captions that makes it easy for a human to read, but this same process is hard for machines to do so - 
+especially via OCR. There were some images successfully processed by it but it didn't satisfy the requirement because the the success rate was too low.
+Many solutions were tried, but even pre-processing the images before feeding them to the OCR engine didn't seem to give much improvement.
+The second complexity was to build a meme repository itself. Using the meme scraper is not the best solution because
+the content obtained by it can be anything. Unfiltered, uncensored - it's a huge ethical problem.
+
+\subsection*{General Description}
+\addcontentsline{toc}{subsection}{General Description}
+\paragraph{}
+Two general components of the development project are described in two sections. Such apparent separation between these categories 
+is due to the fact that this approach allows a simpler, faster and more effiecient implementation with better user
+experience, it also improves code readability and maintainability.
+
+The first one is the backend, which is responsible for generating text based on given datasets 
+(stories, novels, other pieces of art, etc). It is implemented in Python and uses numerous libraries
+to achieve the goal. Multiple steps are involved in generating simple text samples including hours of training.
+
+The second component is the frontend, which is a web application that creates a user-friendly, simple interface
+to scroll and read stories. It is implemented in JavaScript using many libraries, as well as the Python part.
+Such approach to frontend was chosen because web development is flexible and it's easy to adapt to different
+platforms. Also it's possible to extend it to a web service that doesn't require downloading the application
+to user's computer.
+
+The goal is create a system with pre-trained model, which the user can use to scroll through the stories and 
+react to each story leaving a positive or a negative feedback - using the `Like' and `Dislike' buttons. Afterwards,
+these reactions will be stored in a database to be used by the developer to understand which stories should be
+corrected and improved. The feedback system is designed to create a reflection on the pre-trained model as a whole and
+not on separate elements (stories). Given the feedback, the developer can decide to improve the model or not.
+
+\clearpage
+
+\section*{Major Components}
+\addcontentsline{toc}{section}{Major Components}
+
+\subsection*{Backend}
+\addcontentsline{toc}{subsection}{Backend}
+
+\subsubsection*{GPT-2}
+\addcontentsline{toc}{subsubsection}{GPT-2}
+\paragraph{}
+% Libraries used to operate with the model
+GPT-2 is the version of the GPT family used in the project. To operate with the network it was chosen to use a 
+library called `GPT-2-simple' \citep{gpt-2-simple-git} since it features an easy approach to control and train the model.
+The library is written in Python and offers a documentation which was used in order to work with the neural network.
+GPT-2-simple offers two types of models - one with 124 million parameters and one with 324 million parameters. 
+Acknowledging the computational limits of the processing unit used - graphical (GPU), the first model with 124 million
+parameters was used. It is possible to use the second model but it requires a GPU with significantly more processing power and
+memory. 
+
+It is possible to use techniques that allow to save memory and train bigger models using memory saving gradients -
+the main memory loss in the computation is due to calculating the gradient of the loss by backpropagation. At the
+cost of one additional forward pass, the memory consumption can be reduced significantly \citep{chen_2016_training}.
+However Tensorflow framework (version 2), which is used by GPT-2-simple, is not optimized for such tasks. 
+
+\subsubsection*{Datasets}
+\addcontentsline{toc}{subsubsection}{Datasets}
+\paragraph{}
+% Alice, Catcher, Iliad
+
+
+\subsubsection*{Pillow}
+\addcontentsline{toc}{subsubsection}{Pillow}
+\paragraph{}
+% Meme section
+
+\subsection*{Frontend}
+\addcontentsline{toc}{subsection}{Frontend}
+
+\subsubsection*{Web Application appearence}
+\addcontentsline{toc}{subsubsection}{Web Application appearence}
+\paragraph{}
+% Bootstrap, Electron, theme change
+The application appearance is based on Bootstrap 5 and Electron. Bootstrap is a CSS framework that is used to create
+a responsive and mobile-first design. The main navigation bar that is positioned at the top of the page and can be
+seen at all times since its fixed is designed using Bootstrap classes.
+
+
+\subsubsection*{Displaying the content}
+\addcontentsline{toc}{subsubsection}{Displaying the content}
+\paragraph{}
+% Lazy loading, formatting the NN output, JQuery
+
+\subsubsection*{User feedback}
+\addcontentsline{toc}{subsubsection}{User feedback}
+\paragraph{}
+% Like and dislike buttons
+
+\subsubsection*{Database}
+\addcontentsline{toc}{subsubsection}{Database}
+\paragraph{}
+% Storing settings, user feedback, theme change, JSON
+
+\subsection*{Linking the frontend and backend}
+\addcontentsline{toc}{subsection}{Linking the frontend and backend}
+\paragraph{}
+% Eel, Python, JavaScript
+
+
+
+
+
+% IMPLEMENTATION:
+% Building repository
+% Training the model
+% Generating text (best samples)
+% Testing
+% 
+
+%TC:ignore
+
+\addcontentsline{toc}{section}{Bibliography}
+\bibliography{reference}{}
+\bibliographystyle{agsm}
+
+\begin{appendices}
+\section*{Appendix A}
+\label{appendix:A}
+\addcontentsline{toc}{section}{Appendix A}
+
+\clearpage
+
+\section*{Appendix B}
+\label{appendix:B}
+\addcontentsline{toc}{section}{Appendix B}
+
+\end{appendices}
+
+%TC:endignore
+
+\end{document}

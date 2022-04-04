@@ -1,0 +1,38 @@
+\begin{thebibliography}{xx}
+
+\harvarditem[Chen et~al.]{Chen, Xu, Zhang \harvardand\
+  Guestrin}{2016}{chen_2016_training}
+Chen, T., Xu, B., Zhang, C. \harvardand\ Guestrin, C.  \harvardyearleft
+  2016\harvardyearright , `Training deep nets with sublinear memory cost', {\em
+  arXiv:1604.06174 [cs]} .
+\newline\harvardurl{https://arxiv.org/abs/1604.06174}
+
+\harvarditem{Kay}{2007}{tesseract_article}
+Kay, A.  \harvardyearleft 2007\harvardyearright , `Tesseract: an open-source
+  optical character recognition engine'.
+\newblock \\Accessed Jan 8 2022 [Online].
+
+\harvarditem[Radford et~al.]{Radford, Wu, Child, Luan, Amodei \harvardand\
+  Sutskever}{2019}{radford_wu_child_luan_amodei_sutskever_2019}
+Radford, A., Wu, J., Child, R., Luan, D., Amodei, D. \harvardand\ Sutskever, I.
+   \harvardyearleft 2019\harvardyearright , `Language models are unsupervised
+  multitask learners'.
+\newblock \\Accessed Jan 6 2022 [Online].
+
+\harvarditem{Rosenblatt}{1958}{rosenblatt_1958_the}
+Rosenblatt, F.  \harvardyearleft 1958\harvardyearright , `The perceptron: A
+  probabilistic model for information storage and organization in the brain.',
+  {\em Psychological Review} {\bf 65},~386--408.
+
+\harvarditem[Vaswani et~al.]{Vaswani, Shazeer, Parmar, Uszkoreit, Jones, Gomez,
+  Kaiser \harvardand\ Polosukhin}{2017}{attention_is_all_you_need}
+Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A.,
+  Kaiser, L. \harvardand\ Polosukhin, I.  \harvardyearleft
+  2017\harvardyearright , `Attention is all you need'.
+\newblock \\Accessed Jan 7 2022 [Online].
+
+\harvarditem{Woolf}{2021}{gpt-2-simple-git}
+Woolf, M.  \harvardyearleft 2021\harvardyearright , `gpt-2-simple'.
+\newline\harvardurl{https://github.com/minimaxir/gpt-2-simple}
+
+\end{thebibliography}

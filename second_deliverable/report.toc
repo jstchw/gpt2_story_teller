@@ -1,0 +1,36 @@
+\contentsline {section}{Abstract}{2}{section*.1}%
+\contentsline {paragraph}{}{2}{section*.2}%
+\contentsline {section}{Introduction}{2}{section*.3}%
+\contentsline {paragraph}{}{2}{section*.4}%
+\contentsline {section}{Objectives and Goals}{3}{section*.5}%
+\contentsline {subsection}{Initial approach}{3}{section*.6}%
+\contentsline {paragraph}{}{3}{section*.7}%
+\contentsline {subsection}{New approach}{3}{section*.8}%
+\contentsline {paragraph}{}{3}{section*.9}%
+\contentsline {subsection}{Reasons}{3}{section*.10}%
+\contentsline {paragraph}{}{3}{section*.11}%
+\contentsline {subsection}{General Description}{4}{section*.12}%
+\contentsline {paragraph}{}{4}{section*.13}%
+\contentsline {section}{Major Components}{5}{section*.14}%
+\contentsline {subsection}{Backend}{5}{section*.15}%
+\contentsline {subsubsection}{GPT-2}{5}{section*.16}%
+\contentsline {paragraph}{}{5}{section*.17}%
+\contentsline {subsubsection}{Datasets}{5}{section*.18}%
+\contentsline {paragraph}{}{5}{section*.19}%
+\contentsline {subsubsection}{Pillow}{5}{section*.20}%
+\contentsline {paragraph}{}{5}{section*.21}%
+\contentsline {subsection}{Frontend}{5}{section*.22}%
+\contentsline {subsubsection}{Web Application appearence}{5}{section*.23}%
+\contentsline {paragraph}{}{5}{section*.24}%
+\contentsline {subsubsection}{Displaying the content}{6}{section*.25}%
+\contentsline {paragraph}{}{6}{section*.26}%
+\contentsline {subsubsection}{User feedback}{6}{section*.27}%
+\contentsline {paragraph}{}{6}{section*.28}%
+\contentsline {subsubsection}{Database}{6}{section*.29}%
+\contentsline {paragraph}{}{6}{section*.30}%
+\contentsline {subsection}{Linking the frontend and backend}{6}{section*.31}%
+\contentsline {section}{Bibliography}{6}{section*.32}%
+\contentsline {paragraph}{}{6}{section*.32}%
+\contentsline {chapter}{Appendices}{8}{section*.34}%
+\contentsline {section}{Appendix A}{9}{section*.35}%
+\contentsline {section}{Appendix B}{10}{section*.36}%
