@@ -13,24 +13,24 @@
 \contentsline {paragraph}{}{4}{section*.13}%
 \contentsline {section}{Major Components}{5}{section*.14}%
 \contentsline {subsection}{Backend}{5}{section*.15}%
-\contentsline {subsubsection}{GPT-2}{5}{section*.16}%
+\contentsline {subsubsection}{GPT-2 and the library}{5}{section*.16}%
 \contentsline {paragraph}{}{5}{section*.17}%
-\contentsline {subsubsection}{Datasets}{5}{section*.18}%
-\contentsline {paragraph}{}{5}{section*.19}%
-\contentsline {subsubsection}{Pillow}{5}{section*.20}%
-\contentsline {paragraph}{}{5}{section*.21}%
-\contentsline {subsection}{Frontend}{5}{section*.22}%
-\contentsline {subsubsection}{Web Application appearence}{5}{section*.23}%
-\contentsline {paragraph}{}{5}{section*.24}%
+\contentsline {subsubsection}{Datasets}{6}{section*.18}%
+\contentsline {paragraph}{}{6}{section*.19}%
+\contentsline {subsubsection}{Pillow}{6}{section*.20}%
+\contentsline {paragraph}{}{6}{section*.21}%
+\contentsline {subsection}{Frontend}{6}{section*.22}%
+\contentsline {subsubsection}{Web Application appearence}{6}{section*.23}%
+\contentsline {paragraph}{}{6}{section*.24}%
 \contentsline {subsubsection}{Displaying the content}{6}{section*.25}%
 \contentsline {paragraph}{}{6}{section*.26}%
 \contentsline {subsubsection}{User feedback}{6}{section*.27}%
 \contentsline {paragraph}{}{6}{section*.28}%
-\contentsline {subsubsection}{Database}{6}{section*.29}%
-\contentsline {paragraph}{}{6}{section*.30}%
-\contentsline {subsection}{Linking the frontend and backend}{6}{section*.31}%
-\contentsline {section}{Bibliography}{6}{section*.32}%
-\contentsline {paragraph}{}{6}{section*.32}%
-\contentsline {chapter}{Appendices}{8}{section*.34}%
-\contentsline {section}{Appendix A}{9}{section*.35}%
-\contentsline {section}{Appendix B}{10}{section*.36}%
+\contentsline {subsubsection}{Database}{7}{section*.29}%
+\contentsline {paragraph}{}{7}{section*.30}%
+\contentsline {subsection}{Linking the frontend and backend}{7}{section*.31}%
+\contentsline {section}{Bibliography}{7}{section*.32}%
+\contentsline {paragraph}{}{7}{section*.32}%
+\contentsline {chapter}{Appendices}{10}{section*.34}%
+\contentsline {section}{Appendix A}{11}{section*.35}%
+\contentsline {section}{Appendix B}{12}{section*.36}%

@@ -121,8 +121,8 @@ not on separate elements (stories). Given the feedback, the developer can decide
 \subsection*{Backend}
 \addcontentsline{toc}{subsection}{Backend}
 
-\subsubsection*{GPT-2}
-\addcontentsline{toc}{subsubsection}{GPT-2}
+\subsubsection*{GPT-2 and the library}
+\addcontentsline{toc}{subsubsection}{GPT-2 and the library}
 \paragraph{}
 % Libraries used to operate with the model
 GPT-2 is the version of the GPT family used in the project. To operate with the network it was chosen to use a 
@@ -136,12 +136,41 @@ memory.
 It is possible to use techniques that allow to save memory and train bigger models using memory saving gradients -
 the main memory loss in the computation is due to calculating the gradient of the loss by backpropagation. At the
 cost of one additional forward pass, the memory consumption can be reduced significantly \citep{chen_2016_training}.
-However Tensorflow framework (version 2), which is used by GPT-2-simple, is not optimized for such tasks. 
+However Tensorflow framework (version 2), which is used by GPT-2-simple, is not optimized for such tasks.
+
+Despite providing simpler control functions, this library also provides a lot of tweaking options. For example, 
+some of the hyperparameters can be changed to improve the model performance during testing. Learning rate, batch size,
+number of training steps, number of accumulated gradients and optimizer can be changed. Number of layers and other
+more complex parameters can also be changed but in order to do that, the parameters must be examined and adjusted in Tensorflow
+code files.
+
+The library also provides a way to load the model from a checkpoint file. This is useful when the model is trained
+in multiple steps and it's needed to continue training from the last checkpoint without losing progress.
+
+Another important feature for testing and optimising the output is the possibility to use different optimisers.
+`Adam' and `SGD' are available optimisers. The first one is the most popular and is used in the project because 
+the learning time is relatively short and the memory requirements are little \citep{musstafa_2022_optimizers}. 
+These two aspects are crucial and thereforce the choice fell on `Adam'.
+
+% Checkpoints, hyperparameters, adam
+
 
 \subsubsection*{Datasets}
 \addcontentsline{toc}{subsubsection}{Datasets}
 \paragraph{}
-% Alice, Catcher, Iliad
+% Alice, Catcher, Iliad, main problem - too much text decoration
+Several datasets are used in the project. It has been chosen to use three datasets to work with. The first one is
+the novel `Alice in Wonderland' \citep{alice_in_wonderland}. This version was taken from GitHub Gist.
+It's more adapted for machine learning than the original version since it's shorter and therefore contains less tokens.
+For the reason that it was the first dataset to train the network on, it has been decided to go with the shortened version.
+The text file with the novel poses a certain inconvenience because it contains a lot of text decoration which can create
+noise in the model. But also it can have a positive effect on the user experience because it can be perceived as a
+unique style of the author.
+
+The second dataset used is the novel `Catcher in the Rye' \citep{catcher_in_the_rye}. The version found on GitHub is
+slightly incomplete in the beginning and therefore was filled with the original text from the book. Also it was slightly
+formated for the sake of the correctness of the output of the neural network. Chapter enumeration and the title page
+was removed from the text file. 
 
 
 \subsubsection*{Pillow}

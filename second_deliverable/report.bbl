@@ -7,10 +7,19 @@ Chen, T., Xu, B., Zhang, C. \harvardand\ Guestrin, C.  \harvardyearleft
   arXiv:1604.06174 [cs]} .
 \newline\harvardurl{https://arxiv.org/abs/1604.06174}
 
+\harvarditem{Johnsen}{2013}{alice_in_wonderland}
+Johnsen, P.  \harvardyearleft 2013\harvardyearright , `Alice in wonderland'.
+\newline\harvardurl{https://gist.github.com/phillipj/4944029}
+
 \harvarditem{Kay}{2007}{tesseract_article}
 Kay, A.  \harvardyearleft 2007\harvardyearright , `Tesseract: an open-source
   optical character recognition engine'.
 \newblock \\Accessed Jan 8 2022 [Online].
+
+\harvarditem{Musstafa}{2022}{musstafa_2022_optimizers}
+Musstafa  \harvardyearleft 2022\harvardyearright , `Optimizers in deep
+  learning'.
+\newline\harvardurl{https://medium.com/mlearning-ai/optimizers-in-deep-learning-7bf81fed78a0}
 
 \harvarditem[Radford et~al.]{Radford, Wu, Child, Luan, Amodei \harvardand\
   Sutskever}{2019}{radford_wu_child_luan_amodei_sutskever_2019}
@@ -23,6 +32,10 @@ Radford, A., Wu, J., Child, R., Luan, D., Amodei, D. \harvardand\ Sutskever, I.
 Rosenblatt, F.  \harvardyearleft 1958\harvardyearright , `The perceptron: A
   probabilistic model for information storage and organization in the brain.',
   {\em Psychological Review} {\bf 65},~386--408.
+
+\harvarditem{Valenzuela}{2017}{catcher_in_the_rye}
+Valenzuela, C.  \harvardyearleft 2017\harvardyearright , `the-catcher-rye'.
+\newline\harvardurl{https://github.com/cvalenzuela/rwet/blob/master/final/source{\_}text/ny/the-catcher-rye.txt}
 
 \harvarditem[Vaswani et~al.]{Vaswani, Shazeer, Parmar, Uszkoreit, Jones, Gomez,
   Kaiser \harvardand\ Polosukhin}{2017}{attention_is_all_you_need}

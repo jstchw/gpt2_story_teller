@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12.10) (preloaded format=pdflatex 2021.12.10)  4 APR 2022 16:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12.10) (preloaded format=pdflatex 2021.12.10)  4 APR 2022 22:44
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -482,29 +482,39 @@ l.27 \clearpage
 
 ] [4] [5
 
-] (report.bbl [6]) [7
+] [6] (report.bbl [7]
+Underfull \hbox (badness 10000) in paragraph at lines 20--23
+\OT1/cmr/bx/n/12 URL: \OT1/cmr/m/it/12 https://medium.com/mlearning-ai/optimizers-in-deep-learning-
+ []
 
-] [8
+
+Overfull \hbox (41.84016pt too wide) in paragraph at lines 37--39
+\OT1/cmr/bx/n/12 URL: \OT1/cmr/m/it/12 https://github.com/cvalenzuela/rwet/blob/master/final/source[]text/ny/the-
+ []
+
+[8
+
+]) [9] [10
 
 
-] [9] [10
+] [11] [12
 
 ] (report.aux)
 Package rerunfilecheck Info: File `report.out' has not changed.
 (rerunfilecheck)             Checksum: E24DF7DFB5B69561104774B95AC2B8C1;884.
  ) 
 Here is how much of TeX's memory you used:
- 14231 strings out of 478659
- 242783 string characters out of 2862404
- 588191 words of memory out of 3000000
- 32105 multiletter control sequences out of 15000+600000
+ 14246 strings out of 478659
+ 243146 string characters out of 2862404
+ 589274 words of memory out of 3000000
+ 32115 multiletter control sequences out of 15000+600000
  409551 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 61i,6n,67p,336b,401s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 61i,6n,67p,336b,481s stack positions out of 5000i,500n,10000p,200000b,80000s
 <D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on report.pdf (11 pages, 96115 bytes).
+Output written on report.pdf (13 pages, 103018 bytes).
 PDF statistics:
- 177 PDF objects out of 1000 (max. 8388607)
- 53 named destinations out of 1000 (max. 500000)
+ 196 PDF objects out of 1000 (max. 8388607)
+ 58 named destinations out of 1000 (max. 500000)
  65 words of extra memory for PDF output out of 10000 (max. 10000000)
 
