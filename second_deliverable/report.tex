@@ -336,7 +336,7 @@ of its simplicity and flexibility compared to YAML. YAML is a superset of JSON a
 The main bridge between the frontend and backend used in this project is a `little Python library' 
 called `Eel' \citep{knott_2022_eel}. It allows interaction between JavaScript and Python at every point of
 the development. The library is used to create a web server that can be accessed from the browser - 
-Chrome, Safari, Firefox and last but not least Electron. 
+Chrome, Safari, Firefox and last but not least - Electron. 
 
 The most important feature of `Eel' is function exposition. It allows to call any function that is explicitly 
 defined with a `@eel.expose' decorator and use it anywhere in the JavaScript code and vice versa.
@@ -351,6 +351,16 @@ defined with a `@eel.expose' decorator and use it anywhere in the JavaScript cod
 It's important to note that when a function call is made from the JavaScript code, it should be done in
 async/await fashion. This is because the function call is made in the background and the result is returned
 after some time.
+
+The separation of the frontend and backend is an important action becasue it allowed to use the most efficient
+approaches on each side and also focus on each part individually.
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=1\linewidth]{img/system_diagram.png}
+  \caption{The relations in the system}
+  \label{fig:system_diagram}
+\end{figure}
 
 
 

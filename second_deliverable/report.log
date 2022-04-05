@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12.10) (preloaded format=pdflatex 2021.12.10)  5 APR 2022 19:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12.10) (preloaded format=pdflatex 2021.12.10)  5 APR 2022 19:52
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -521,7 +521,12 @@ File: img/eel_expose_example.png Graphic file (type png)
 <use img/eel_expose_example.png>
 Package pdftex.def Info: img/eel_expose_example.png  used on input line 346.
 (pdftex.def)             Requested size: 390.0pt x 55.58557pt.
- (report.bbl [11 <./img/eel_expose_example.png>]
+<img/system_diagram.png, id=185, 573.14125pt x 164.615pt>
+File: img/system_diagram.png Graphic file (type png)
+<use img/system_diagram.png>
+Package pdftex.def Info: img/system_diagram.png  used on input line 360.
+(pdftex.def)             Requested size: 390.0pt x 112.01457pt.
+ (report.bbl [11 <./img/eel_expose_example.png> <./img/system_diagram.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 38--41
 \OT1/cmr/bx/n/12 URL: \OT1/cmr/m/it/12 https://medium.com/mlearning-ai/optimizers-in-deep-learning-
  []
@@ -540,20 +545,20 @@ Overfull \hbox (41.84016pt too wide) in paragraph at lines 64--66
 
 ] (report.aux)
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: BFB80BD2B421FC333A5B0B33DC04C838;890.
+(rerunfilecheck)             Checksum: A8031F977EFB1628AD7A03ACE7F20C0E;890.
  ) 
 Here is how much of TeX's memory you used:
- 14432 strings out of 478659
- 246936 string characters out of 2862404
- 591724 words of memory out of 3000000
- 32275 multiletter control sequences out of 15000+600000
+ 14441 strings out of 478659
+ 247154 string characters out of 2862404
+ 591784 words of memory out of 3000000
+ 32282 multiletter control sequences out of 15000+600000
  409851 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  61i,8n,67p,336b,517s stack positions out of 5000i,500n,10000p,200000b,80000s
 <D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on report.pdf (17 pages, 626799 bytes).
+Output written on report.pdf (17 pages, 633504 bytes).
 PDF statistics:
- 255 PDF objects out of 1000 (max. 8388607)
- 74 named destinations out of 1000 (max. 500000)
- 95 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 258 PDF objects out of 1000 (max. 8388607)
+ 75 named destinations out of 1000 (max. 500000)
+ 100 words of extra memory for PDF output out of 10000 (max. 10000000)
 
