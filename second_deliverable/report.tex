@@ -9,6 +9,7 @@
 \usepackage{booktabs}
 \usepackage[toc, page]{appendix}
 \usepackage{multirow}
+\usepackage{subcaption}
 \newenvironment{longlisting}{\captionsetup{type=listing}}{}
 \title{%
   GPT-2 Based Story Teller\\
@@ -120,6 +121,12 @@ not on separate elements (stories). Given the feedback, the developer can decide
 
 \subsection*{Backend}
 \addcontentsline{toc}{subsection}{Backend}
+\paragraph{}
+% General info - Python, PyCharm
+The backend of the project is developed using Python programming language since it's a very popular language for machine learning
+and has a lot of libraries that can be used to achieve the goal. The backend is developed using PyCharm IDE, which is also
+a popular editor for Python. Calculations that are done in the backend can be executed on any machine with Python 
+installed. The only issue is the optimisation - text generation requires a lot of computing power.
 
 \subsubsection*{GPT-2 and the library}
 \addcontentsline{toc}{subsubsection}{GPT-2 and the library}
@@ -160,55 +167,191 @@ These two aspects are crucial and thereforce the choice fell on `Adam'.
 \paragraph{}
 % Alice, Catcher, Iliad, main problem - too much text decoration
 Several datasets are used in the project. It has been chosen to use three datasets to work with. The first one is
-the novel `Alice in Wonderland' \citep{alice_in_wonderland}. This version was taken from GitHub Gist.
+the novel `Alice in Wonderland' by Lewis Carroll \citep{alice_in_wonderland}. This version was taken from GitHub Gist.
 It's more adapted for machine learning than the original version since it's shorter and therefore contains less tokens.
 For the reason that it was the first dataset to train the network on, it has been decided to go with the shortened version.
 The text file with the novel poses a certain inconvenience because it contains a lot of text decoration which can create
 noise in the model. But also it can have a positive effect on the user experience because it can be perceived as a
-unique style of the author.
+unique style of the author. The unformatted version contains 26,413 words and 148,574 characters.
 
-The second dataset used is the novel `Catcher in the Rye' \citep{catcher_in_the_rye}. The version found on GitHub is
+The second dataset used is the novel `Catcher in the Rye' by J. D. Salinger \citep{catcher_in_the_rye}. The version found on GitHub is
 slightly incomplete in the beginning and therefore was filled with the original text from the book. Also it was slightly
-formated for the sake of the correctness of the output of the neural network. Chapter enumeration and the title page
-was removed from the text file. 
+formatted for the sake of the correctness of the output of the neural network. Chapter enumeration and the title page
+were removed from the text file. In the final revision there are 73,676 words and 382,008 characters.
 
+The last and the longest dataset is the novel `Iliad' by Homer \citep{the_iliad}. It contains 152,507 words and 807,481 characters.
+It doesn't contain much text decoration apart from chapter (book) enumeration. Also it has some translation references and copyright information.
+All this information was removed from the dataset since it could affect the training process. It still can be viewed in the original text document 
+in the reference list.
+
+Later as the project evolves more datasets potentially could be added. The main problem of having multiple datasets is the size of the
+checkpoint files created by the neural network for training purposes. `Alice in Wonderland' checkpoint, which was trained 3,200 times on the novel
+is around 500MB and `Catcher in the Rye' checkpoint is about the same size and the same amount of training steps. It would be possible to add more stories to the
+project if the checkpoint storage would be located not on the user's machine but rather on a server.
 
 \subsubsection*{Pillow}
 \addcontentsline{toc}{subsubsection}{Pillow}
 \paragraph{}
 % Meme section
+`Pillow' is a Python library used to manipulate images \citep{pillow_lib}. It's a fork from an original library named
+`PIL'. The reason why it was chosen to use in the development project is that it offers an easy and fast way
+to insert text into the image. This process is also known as `meme' creation. It is possible to use generated samples
+from the neural network, either cut the size of the samples after it has been generated or generate a small sample 
+in the first place. The second option reduces the time of generation process but it also takes away the option
+to format the text if the first and the last sentences are inappropriate. The customisation of the text in the library
+is a very straightforward process. It is possible to change the font, the size, the colour, the position and the angle.
+The `Meme mode' section will most likely contain pictures in unified format (i.e. the font size, the colour and the angle will
+be the same).
+
+In terms of the project, `Pillow' will be used in the `Meme mode' section. The idea is similar to the stories generator,
+the difference lies in the fact that the text is inserted into the image, rather than being printed below the image.
+Stories are presented in a post-like format.
+
 
 \subsection*{Frontend}
 \addcontentsline{toc}{subsection}{Frontend}
+\paragraph{}
+% HTML, CSS, JavaScript
+The frontend of the project consists of a mixture of HTML, CSS and JavaScript. HTML is a markup language which is used
+to create the layout of the webpage. CSS is a language used to style the webpage. In this project it's used in a
+bundle with Bootstrap for easier manipulations with the styles. JavaScript is used to control the behaviour of
+the webpage and everything in it. Some of the functions displayed in the webpage are calculated and controlled 
+solely with JavaScript with no interaction with Python.
 
 \subsubsection*{Web Application appearence}
 \addcontentsline{toc}{subsubsection}{Web Application appearence}
 \paragraph{}
 % Bootstrap, Electron, theme change
-The application appearance is based on Bootstrap 5 and Electron. Bootstrap is a CSS framework that is used to create
-a responsive and mobile-first design. The main navigation bar that is positioned at the top of the page and can be
-seen at all times since its fixed is designed using Bootstrap classes.
+The application appearance is based on Bootstrap 5 and Electron. Bootstrap \citep{bootstrap} is a CSS framework/library 
+that is used to create a responsive and mobile-first design. It's files (CSS and JS) can be accessed via `Content 
+Delivery Links' (CDN). This method is useful when only a part of the content hosted on CDN servers is used in
+development since CDN technology allows to deliver only necessary files. Also a big advantage is the loading time
+if the resource is server-based by reducing latency \citep{cdnetworks}. The other aspect of the look is `Electron' which
+was formerly known as `Atom Shell' \citep{a2015_atom}. It's a cross-platform application that is used to develop
+application with web-like design. The main reason to work with `Electron' is the ability to have the same look and feel
+on all platforms. GUI applications can be developed and deployed using web technologies much faster. Prior to the introduction 
+of `Electron' to the project, the application was developed on the basis of different browsers and operating systems.
+
+Also as can be seen on the figures below, most popular approach to the development of Python GUI apps - Tkinter, doesn't
+satisfy the standards of app design in early 2020s. 
+
+\begin{figure}[ht]
+  \captionsetup[subfigure]{labelformat=empty}
+  \centering
+  \begin{subfigure}{.5\textwidth}
+    \centering
+    \includegraphics[width=.8\linewidth]{img/electron_window_example.png}
+    \caption{Story Teller (Electron)}
+    \label{fig:electron}
+  \end{subfigure}%
+  \begin{subfigure}{.5\textwidth}
+    \centering
+    \includegraphics[width=.8\linewidth]{img/tkinter_window_example.png}
+    \caption{Tkinter app}
+    \label{fig:tkinter}
+  \end{subfigure}
+  \caption{A comparison of two GUI layouts}
+  \label{fig:comparison_tk_electron}
+\end{figure}
+
+Similar situation occurs when it comes to animation with Tkinter. Many examples and many guides were examined and 
+it has been concluded that Tkinter, in spite of the fact that it's one of the most popular GUI libraries, is not
+suitable for the purpose of the project because the aim of the project is to create a fancy web-based application
+that can catch the attention of the user.
+
+Another aspect of the design is the theme. Since many modern projects offer a possibility to change to 
+either a light or a dark theme, it has been decided to develop an application with two themes. Bootstrap 
+does most of the work for the theme change in terms of the colour change. Theme is persistent and is to a
+settings file which is stored in the application's folder. On every start-up the application checks if the
+theme is set to the light or dark mode accessing the JSON file.
+
+\begin{figure}[ht]
+  \captionsetup[subfigure]{labelformat=empty}
+  \centering
+  \begin{subfigure}{.5\textwidth}
+    \centering
+    \includegraphics[width=.8\linewidth]{img/light_theme.png}
+    \caption{Light theme}
+    \label{fig:light_theme}
+  \end{subfigure}%
+  \begin{subfigure}{.5\textwidth}
+    \centering
+    \includegraphics[width=.8\linewidth]{img/dark_theme.png}
+    \caption{Dark theme}
+    \label{fig:dark_theme}
+  \end{subfigure}
+  \caption{A comparison of two GUI themes}
+  \label{fig:comparison_light_dark}
+\end{figure}
+
 
 
 \subsubsection*{Displaying the content}
 \addcontentsline{toc}{subsubsection}{Displaying the content}
 \paragraph{}
 % Lazy loading, formatting the NN output, JQuery
+To display the content it has been chosen to follow modern techniques of infinite scrolling. It loads
+the content continously while the content is being generated on the fly. Infinite scrolling absolutely matches the 
+topic of the project since the main idea was to create stories without any administrator intervention and 
+minimise the unnecessary clicks and interactions. The content is displayed in a post-like format - that means 
+a random picture from a set is followed by a random and freshly generated text based on a neural network checkpoint.
+The displayed content depends on which topic is selected since the content is separated in different topics and
+are displayed with different pictures.
+
 
 \subsubsection*{User feedback}
 \addcontentsline{toc}{subsubsection}{User feedback}
 \paragraph{}
 % Like and dislike buttons
+User feedback is an easy and effective way to improve the application and enhance the text generation process in
+particular. To establish a dialogue with a user the application uses a standard approach to the problem.
+The user can either like or dislike the text generated by the application by simply clicking one of the buttons. 
+It is planned to store the reactions in the database and use them to manually assess the quality of the content.
 
 \subsubsection*{Database}
 \addcontentsline{toc}{subsubsection}{Database}
 \paragraph{}
 % Storing settings, user feedback, theme change, JSON
+Databases are used to store the user settings and the user feedback. The settings are stored in a JSON file and are
+accessed every time the application is started. JSON is a lightweight, human-readable text format that can be used with
+any programming language. The objects in the files are stored in an `attribute-value' format. 
+
+The purpose of the traditional database is defeated since the application doesn't store any sensitive information.
+No encryption of the database is used either.
+
+There are many other data serialisation formats such as XML, YAML, BSON etc. It has been decided to use JSON because
+of its simplicity and flexibility compared to YAML. YAML is a superset of JSON and it seemed to big for the purpose.
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.5\linewidth]{img/json_example.png}
+  \caption{JSON database}
+  \label{fig:json}
+\end{figure}
 
 \subsection*{Linking the frontend and backend}
 \addcontentsline{toc}{subsection}{Linking the frontend and backend}
 \paragraph{}
 % Eel, Python, JavaScript
+The main bridge between the frontend and backend used in this project is a `little Python library' 
+called `Eel' \citep{knott_2022_eel}. It allows interaction between JavaScript and Python at every point of
+the development. The library is used to create a web server that can be accessed from the browser - 
+Chrome, Safari, Firefox and last but not least Electron. 
+
+The most important feature of `Eel' is function exposition. It allows to call any function that is explicitly 
+defined with a `@eel.expose' decorator and use it anywhere in the JavaScript code and vice versa.
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=1\linewidth]{img/eel_expose_example.png}
+  \caption{Eel exposition}
+  \label{fig:eel}
+\end{figure}
+
+It's important to note that when a function call is made from the JavaScript code, it should be done in
+async/await fashion. This is because the function call is made in the background and the result is returned
+after some time.
+
 
 
 
@@ -219,7 +362,8 @@ seen at all times since its fixed is designed using Bootstrap classes.
 % Training the model
 % Generating text (best samples)
 % Testing
-% 
+% Code explanation
+% Examples
 
 %TC:ignore
 

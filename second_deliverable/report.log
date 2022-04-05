@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12.10) (preloaded format=pdflatex 2021.12.10)  4 APR 2022 22:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12.10) (preloaded format=pdflatex 2021.12.10)  5 APR 2022 19:16
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -369,6 +369,11 @@ Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
 \multirow@cntb=\count330
 \multirow@dima=\skip92
 \bigstrutjot=\dimen182
+) (D:\MiKTeX\tex/latex/caption\subcaption.sty
+Package: subcaption 2020/10/07 v1.3j Sub-captions (AR)
+\c@subfigure=\count331
+\c@subtable=\count332
+\c@sublisting=\count333
 ) (D:\MiKTeX\tex/latex/xcolor\xcolor.sty
 Package: xcolor 2021/10/31 v2.13 LaTeX color extensions (UK)
  (D:\MiKTeX\tex/latex/graphics-cfg\color.cfg
@@ -391,30 +396,30 @@ runsystem(del report.aex)...executed.
 
  (D:\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2021-10-18 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count331
+\l__color_backend_stack_int=\count334
 \l__pdf_internal_box=\box57
 ) (report.aux)
 \openout1 = `report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-Package hyperref Info: Link coloring OFF on input line 20.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+Package hyperref Info: Link coloring OFF on input line 21.
  (D:\MiKTeX\tex/latex/hyperref\nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
  (D:\MiKTeX\tex/latex/refcount\refcount.sty
@@ -422,27 +427,27 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (D:\MiKTeX\tex/generic/gettitlestring\gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count332
+\c@section@level=\count335
 )
-LaTeX Info: Redefining \ref on input line 20.
-LaTeX Info: Redefining \pageref on input line 20.
-LaTeX Info: Redefining \nameref on input line 20.
+LaTeX Info: Redefining \ref on input line 21.
+LaTeX Info: Redefining \pageref on input line 21.
+LaTeX Info: Redefining \nameref on input line 21.
  (report.out) (report.out)
 \@outlinefile=\write5
 \openout5 = `report.out'.
 
  (D:\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count333
+\scratchcounter=\count336
 \scratchdimen=\dimen183
 \scratchbox=\box58
-\nofMPsegments=\count334
-\nofMParguments=\count335
+\nofMPsegments=\count337
+\nofMParguments=\count338
 \everyMPshowfont=\toks18
-\MPscratchCnt=\count336
+\MPscratchCnt=\count339
 \MPscratchDim=\dimen184
-\MPnumerator=\count337
-\makeMPintoPDFobject=\count338
+\MPnumerator=\count340
+\makeMPintoPDFobject=\count341
 \everyMPtoPDFconversion=\toks19
 ) (D:\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -453,9 +458,9 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> on input line 22.
+(Font)              <14.4> on input line 23.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 22.
+(Font)              <7> on input line 23.
  [1
 
 {C:/Users/bobr7/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] (report.toc
@@ -473,7 +478,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.27 \clearpage
+l.28 \clearpage
                 [1
 
 ] [2
@@ -482,39 +487,73 @@ l.27 \clearpage
 
 ] [4] [5
 
-] [6] (report.bbl [7]
-Underfull \hbox (badness 10000) in paragraph at lines 20--23
+] [6] [7]
+<img/electron_window_example.png, id=147, 403.5075pt x 423.83344pt>
+File: img/electron_window_example.png Graphic file (type png)
+<use img/electron_window_example.png>
+Package pdftex.def Info: img/electron_window_example.png  used on input line 243.
+(pdftex.def)             Requested size: 156.0006pt x 163.85866pt.
+<img/tkinter_window_example.png, id=148, 403.5075pt x 333.245pt>
+File: img/tkinter_window_example.png Graphic file (type png)
+<use img/tkinter_window_example.png>
+Package pdftex.def Info: img/tkinter_window_example.png  used on input line 249.
+(pdftex.def)             Requested size: 156.0006pt x 128.83617pt.
+ [8 <./img/electron_window_example.png> <./img/tkinter_window_example.png>]
+<img/light_theme.png, id=161, 403.5075pt x 423.83344pt>
+File: img/light_theme.png Graphic file (type png)
+<use img/light_theme.png>
+Package pdftex.def Info: img/light_theme.png  used on input line 273.
+(pdftex.def)             Requested size: 156.0006pt x 163.85866pt.
+<img/dark_theme.png, id=162, 403.5075pt x 423.83344pt>
+File: img/dark_theme.png Graphic file (type png)
+<use img/dark_theme.png>
+Package pdftex.def Info: img/dark_theme.png  used on input line 279.
+(pdftex.def)             Requested size: 156.0006pt x 163.85866pt.
+ [9 <./img/light_theme.png> <./img/dark_theme.png>]
+<img/json_example.png, id=170, 331.2375pt x 234.8775pt>
+File: img/json_example.png Graphic file (type png)
+<use img/json_example.png>
+Package pdftex.def Info: img/json_example.png  used on input line 327.
+(pdftex.def)             Requested size: 195.0pt x 138.27188pt.
+ [10 <./img/json_example.png>]
+<img/eel_expose_example.png, id=184, 644.4075pt x 91.84312pt>
+File: img/eel_expose_example.png Graphic file (type png)
+<use img/eel_expose_example.png>
+Package pdftex.def Info: img/eel_expose_example.png  used on input line 346.
+(pdftex.def)             Requested size: 390.0pt x 55.58557pt.
+ (report.bbl [11 <./img/eel_expose_example.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 38--41
 \OT1/cmr/bx/n/12 URL: \OT1/cmr/m/it/12 https://medium.com/mlearning-ai/optimizers-in-deep-learning-
  []
 
+[12
 
-Overfull \hbox (41.84016pt too wide) in paragraph at lines 37--39
+]
+Overfull \hbox (41.84016pt too wide) in paragraph at lines 64--66
 \OT1/cmr/bx/n/12 URL: \OT1/cmr/m/it/12 https://github.com/cvalenzuela/rwet/blob/master/final/source[]text/ny/the-
  []
 
-[8
-
-]) [9] [10
+) [13] [14
 
 
-] [11] [12
+] [15] [16
 
 ] (report.aux)
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: E24DF7DFB5B69561104774B95AC2B8C1;884.
+(rerunfilecheck)             Checksum: BFB80BD2B421FC333A5B0B33DC04C838;890.
  ) 
 Here is how much of TeX's memory you used:
- 14246 strings out of 478659
- 243146 string characters out of 2862404
- 589274 words of memory out of 3000000
- 32115 multiletter control sequences out of 15000+600000
- 409551 words of font info for 47 fonts, out of 8000000 for 9000
+ 14432 strings out of 478659
+ 246936 string characters out of 2862404
+ 591724 words of memory out of 3000000
+ 32275 multiletter control sequences out of 15000+600000
+ 409851 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 61i,6n,67p,336b,481s stack positions out of 5000i,500n,10000p,200000b,80000s
-<D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on report.pdf (13 pages, 103018 bytes).
+ 61i,8n,67p,336b,517s stack positions out of 5000i,500n,10000p,200000b,80000s
+<D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on report.pdf (17 pages, 626799 bytes).
 PDF statistics:
- 196 PDF objects out of 1000 (max. 8388607)
- 58 named destinations out of 1000 (max. 500000)
- 65 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 255 PDF objects out of 1000 (max. 8388607)
+ 74 named destinations out of 1000 (max. 500000)
+ 95 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,11 +1,20 @@
 \begin{thebibliography}{xx}
 
+\harvarditem{CDNetworks}{2021}{cdnetworks}
+CDNetworks  \harvardyearleft 2021\harvardyearright , `Cdn vs local'.
+\newline\harvardurl{https://www.cdnetworks.com/web-performance-blog/cdn-vs-local/}
+
 \harvarditem[Chen et~al.]{Chen, Xu, Zhang \harvardand\
   Guestrin}{2016}{chen_2016_training}
 Chen, T., Xu, B., Zhang, C. \harvardand\ Guestrin, C.  \harvardyearleft
   2016\harvardyearright , `Training deep nets with sublinear memory cost', {\em
   arXiv:1604.06174 [cs]} .
 \newline\harvardurl{https://arxiv.org/abs/1604.06174}
+
+\harvarditem{Clark \harvardand\ Contributors}{2022}{pillow_lib}
+Clark, A. \harvardand\ Contributors  \harvardyearleft 2022\harvardyearright ,
+  `Pillow'.
+\newline\harvardurl{https://github.com/python-pillow/Pillow}
 
 \harvarditem{Johnsen}{2013}{alice_in_wonderland}
 Johnsen, P.  \harvardyearleft 2013\harvardyearright , `Alice in wonderland'.
@@ -15,6 +24,15 @@ Johnsen, P.  \harvardyearleft 2013\harvardyearright , `Alice in wonderland'.
 Kay, A.  \harvardyearleft 2007\harvardyearright , `Tesseract: an open-source
   optical character recognition engine'.
 \newblock \\Accessed Jan 8 2022 [Online].
+
+\harvarditem{Knott}{2022}{knott_2022_eel}
+Knott, C.  \harvardyearleft 2022\harvardyearright , `Eel'.
+\newline\harvardurl{https://github.com/ChrisKnott/Eel}
+
+\harvarditem{Mark~Otto \harvardand\ Contributors}{2022}{bootstrap}
+Mark~Otto, M.~C. \harvardand\ Contributors  \harvardyearleft
+  2022\harvardyearright , `Bootstrap'.
+\newline\harvardurl{https://github.com/twbs/bootstrap}
 
 \harvarditem{Musstafa}{2022}{musstafa_2022_optimizers}
 Musstafa  \harvardyearleft 2022\harvardyearright , `Optimizers in deep
@@ -32,6 +50,15 @@ Radford, A., Wu, J., Child, R., Luan, D., Amodei, D. \harvardand\ Sutskever, I.
 Rosenblatt, F.  \harvardyearleft 1958\harvardyearright , `The perceptron: A
   probabilistic model for information storage and organization in the brain.',
   {\em Psychological Review} {\bf 65},~386--408.
+
+\harvarditem{Sawicki}{2015}{a2015_atom}
+Sawicki, K.  \harvardyearleft 2015\harvardyearright , `Atom shell is now
+  electron | electron'.
+\newline\harvardurl{https://www.electronjs.org/blog/electron}
+
+\harvarditem{Stevenson}{2000}{the_iliad}
+Stevenson, D.~C.  \harvardyearleft 2000\harvardyearright , `The iliad'.
+\newline\harvardurl{http://classics.mit.edu/Homer/iliad.mb.txt}
 
 \harvarditem{Valenzuela}{2017}{catcher_in_the_rye}
 Valenzuela, C.  \harvardyearleft 2017\harvardyearright , `the-catcher-rye'.
