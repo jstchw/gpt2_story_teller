@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex report"] 1649184775 "report.aux" "report.bbl" "report" 1649184777
+["bibtex report"] 1649277223 "report.aux" "report.bbl" "report" 1649277515
   "D:/MiKTeX/bibtex/bst/harvard/agsm.bst" 1233283740 25549 e3d0f1ab4ae55e777f7352db30e2c6f7 ""
   "reference.bib" 1649174314 9415 2b7b369df9d62f5de88e978b460002e4 ""
-  "report.aux" 1649184777 7802 08ca7b4e0218a748062b4e989c6e2749 "pdflatex"
+  "report.aux" 1649277515 8991 3d75fc07526f6922a2a261bc5b8ce1b8 "pdflatex"
   (generated)
   "report.bbl"
   "report.blg"
-["pdflatex"] 1649184775 "c:/Users/bobr7/PycharmProjects/gpt2_meme_gen/second_deliverable/report.tex" "report.pdf" "report" 1649184777
+["pdflatex"] 1649277513 "c:/Users/bobr7/PycharmProjects/gpt2_meme_gen/second_deliverable/report.tex" "report.pdf" "report" 1649277515
   "C:/Users/bobr7/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1648997439 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/bobr7/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1639155284 9753483 123e7fae54bc17d7209047598158cbc0 ""
   "D:/MiKTeX/fonts/tfm/public/cm/cmbx12.tfm" 1136768653 1324 c910af8c371558dc20f2d7822f66fe64 ""
@@ -23,6 +23,7 @@
   "D:/MiKTeX/fonts/tfm/public/cm/cmsy8.tfm" 1136768653 1120 8b7d695260f3cff42e636090a8002094 ""
   "D:/MiKTeX/fonts/tfm/public/cm/cmti12.tfm" 1136768653 1484 ed72f8f5cf654cda15ecc8e32bfcbee5 ""
   "D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1247596666 32080 340ef9bf63678554ee606688e7b5339d ""
+  "D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb" 1247596667 36741 0ee9e374ec3e30da87cdfb0ea3575226 ""
   "D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1247596667 35752 024fb6c41858982481f6968b5fc26508 ""
   "D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1247596667 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb" 1247596666 32362 bc3f3eec7ab7d65fe700963d4017d32c ""
@@ -97,7 +98,7 @@
   "D:/MiKTeX/tex/latex/url/url.sty" 1388494052 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "D:/MiKTeX/tex/latex/xcolor/xcolor.sty" 1636288472 56029 3f7889dab51d620aa43177c391b7b190 ""
   "D:/MiKTeX/tex/latex/xstring/xstring.sty" 1626884962 123 a302f2c651a95033260db60e51527ae8 ""
-  "c:/Users/bobr7/PycharmProjects/gpt2_meme_gen/second_deliverable/report.tex" 1649184773 22436 d2bd2b1981ebf55d94d8af90c68eb67b ""
+  "c:/Users/bobr7/PycharmProjects/gpt2_meme_gen/second_deliverable/report.tex" 1649277513 28760 98c07e94e29b4e33e5dbdd7b273fff6e ""
   "img/dark_theme.png" 1649176539 80375 98a85109fd1b531d5573dd0941a1cf52 ""
   "img/eel_expose_example.png" 1649174891 8585 e9ea77e9512b131ca7286307e39db1c5 ""
   "img/electron_window_example.png" 1649173264 340091 472974c5230cf154b10d800add95bd70 ""
@@ -105,11 +106,12 @@
   "img/light_theme.png" 1649176556 80693 1bf567ffadaa0e4da0a57716d5ff418f ""
   "img/system_diagram.png" 1649184744 12704 efca0f47fd8b9ff60d310f7383a7b039 ""
   "img/tkinter_window_example.png" 1649173109 1948 d18270dcca5906b6829d5bed57655023 ""
-  "report.aux" 1649184777 7802 08ca7b4e0218a748062b4e989c6e2749 "pdflatex"
-  "report.bbl" 1649184775 3669 a829f3d9f046a9c74f09230f6755ea06 "bibtex report"
-  "report.out" 1649184777 890 a8031f977efb1628ad7a03ace7f20c0e "pdflatex"
-  "report.tex" 1649184773 22436 d2bd2b1981ebf55d94d8af90c68eb67b ""
-  "report.toc" 1649184777 2039 b9f3e5f5195a52ec5e15712a627d0744 "pdflatex"
+  "img/train_model_example.png" 1649264929 7779 48f0a99e88d653414e624e875da79565 ""
+  "report.aux" 1649277515 8991 3d75fc07526f6922a2a261bc5b8ce1b8 "pdflatex"
+  "report.bbl" 1649277223 3669 a829f3d9f046a9c74f09230f6755ea06 "bibtex report"
+  "report.out" 1649277515 1019 5afbbf48970f654127d83fbfb119686d "pdflatex"
+  "report.tex" 1649277513 28760 98c07e94e29b4e33e5dbdd7b273fff6e ""
+  "report.toc" 1649277515 2479 0f7621b121e574260ffde4ad50f66fc4 "pdflatex"
   (generated)
   "report.aux"
   "report.log"

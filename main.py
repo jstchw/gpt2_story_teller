@@ -2,8 +2,9 @@ import nn
 from imgmanager import ImgManager
 from interface import Interface
 from nn import NN
+import time
 
-network = NN('124M')
+# network = NN('124M')
 
 #network.download_model()
 
@@ -18,7 +19,9 @@ network = NN('124M')
 # network.train_model(file_name='www/img/the iliad/the_iliad.txt', run_name='iliad', steps=200)
 
 # print(network.generate_text(run_name='catcher'))
-#nn.generate_text(run_name='alice', length=100, nsamples=1)
+start_time = time.time()
+nn.generate_text(run_name='alice', length=100, nsamples=6)
+print("--- %s seconds ---" % (time.time() - start_time))
 # print(nn.generate_text(run_name='catcher', length=100, nsamples=1)[0])
 #print(f'Sample 1: {sample}')
 #print(f'Sample 1.1: {sample[0]}')
@@ -28,7 +31,7 @@ network = NN('124M')
 
 
 # Creates an instance of a browser using Eel.
-gui = Interface()
+# gui = Interface()
 
 # Create an instance of Imgmanager class
 # img_manager = ImgManager()
@@ -39,7 +42,7 @@ gui = Interface()
 # img_manager.get_images()
 
 # Create the window
-gui.create_window()
+# gui.create_window()
 
 # text = im.read_text()
 

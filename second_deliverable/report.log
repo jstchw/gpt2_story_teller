@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12.10) (preloaded format=pdflatex 2021.12.10)  5 APR 2022 19:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12.10) (preloaded format=pdflatex 2021.12.10)  6 APR 2022 21:38
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -488,77 +488,91 @@ l.28 \clearpage
 ] [4] [5
 
 ] [6] [7]
-<img/electron_window_example.png, id=147, 403.5075pt x 423.83344pt>
+<img/electron_window_example.png, id=156, 403.5075pt x 423.83344pt>
 File: img/electron_window_example.png Graphic file (type png)
 <use img/electron_window_example.png>
 Package pdftex.def Info: img/electron_window_example.png  used on input line 243.
 (pdftex.def)             Requested size: 156.0006pt x 163.85866pt.
-<img/tkinter_window_example.png, id=148, 403.5075pt x 333.245pt>
+<img/tkinter_window_example.png, id=157, 403.5075pt x 333.245pt>
 File: img/tkinter_window_example.png Graphic file (type png)
 <use img/tkinter_window_example.png>
 Package pdftex.def Info: img/tkinter_window_example.png  used on input line 249.
 (pdftex.def)             Requested size: 156.0006pt x 128.83617pt.
  [8 <./img/electron_window_example.png> <./img/tkinter_window_example.png>]
-<img/light_theme.png, id=161, 403.5075pt x 423.83344pt>
+<img/light_theme.png, id=170, 403.5075pt x 423.83344pt>
 File: img/light_theme.png Graphic file (type png)
 <use img/light_theme.png>
-Package pdftex.def Info: img/light_theme.png  used on input line 273.
+Package pdftex.def Info: img/light_theme.png  used on input line 275.
 (pdftex.def)             Requested size: 156.0006pt x 163.85866pt.
-<img/dark_theme.png, id=162, 403.5075pt x 423.83344pt>
+<img/dark_theme.png, id=171, 403.5075pt x 423.83344pt>
 File: img/dark_theme.png Graphic file (type png)
 <use img/dark_theme.png>
-Package pdftex.def Info: img/dark_theme.png  used on input line 279.
+Package pdftex.def Info: img/dark_theme.png  used on input line 281.
 (pdftex.def)             Requested size: 156.0006pt x 163.85866pt.
- [9 <./img/light_theme.png> <./img/dark_theme.png>]
-<img/json_example.png, id=170, 331.2375pt x 234.8775pt>
+ [9
+
+ <./img/light_theme.png> <./img/dark_theme.png>] [10]
+<img/json_example.png, id=187, 331.2375pt x 234.8775pt>
 File: img/json_example.png Graphic file (type png)
 <use img/json_example.png>
-Package pdftex.def Info: img/json_example.png  used on input line 327.
+Package pdftex.def Info: img/json_example.png  used on input line 341.
 (pdftex.def)             Requested size: 195.0pt x 138.27188pt.
- [10 <./img/json_example.png>]
-<img/eel_expose_example.png, id=184, 644.4075pt x 91.84312pt>
+<img/eel_expose_example.png, id=191, 644.4075pt x 91.84312pt>
 File: img/eel_expose_example.png Graphic file (type png)
 <use img/eel_expose_example.png>
-Package pdftex.def Info: img/eel_expose_example.png  used on input line 346.
+Package pdftex.def Info: img/eel_expose_example.png  used on input line 360.
 (pdftex.def)             Requested size: 390.0pt x 55.58557pt.
-<img/system_diagram.png, id=185, 573.14125pt x 164.615pt>
+ [11
+
+ <./img/json_example.png> <./img/eel_expose_example.png>]
+<img/system_diagram.png, id=201, 573.14125pt x 164.615pt>
 File: img/system_diagram.png Graphic file (type png)
 <use img/system_diagram.png>
-Package pdftex.def Info: img/system_diagram.png  used on input line 360.
+Package pdftex.def Info: img/system_diagram.png  used on input line 374.
 (pdftex.def)             Requested size: 390.0pt x 112.01457pt.
- (report.bbl [11 <./img/eel_expose_example.png> <./img/system_diagram.png>]
+ [12 <./img/system_diagram.png>]
+<img/train_model_example.png, id=209, 630.10406pt x 85.06781pt>
+File: img/train_model_example.png Graphic file (type png)
+<use img/train_model_example.png>
+Package pdftex.def Info: img/train_model_example.png  used on input line 422.
+(pdftex.def)             Requested size: 390.0pt x 52.65192pt.
+ [13
+
+] [14 <./img/train_model_example.png>] (report.bbl [15
+
+]
 Underfull \hbox (badness 10000) in paragraph at lines 38--41
 \OT1/cmr/bx/n/12 URL: \OT1/cmr/m/it/12 https://medium.com/mlearning-ai/optimizers-in-deep-learning-
  []
 
-[12
+[16
 
 ]
 Overfull \hbox (41.84016pt too wide) in paragraph at lines 64--66
 \OT1/cmr/bx/n/12 URL: \OT1/cmr/m/it/12 https://github.com/cvalenzuela/rwet/blob/master/final/source[]text/ny/the-
  []
 
-) [13] [14
+) [17] [18
 
 
-] [15] [16
+] [19] [20
 
 ] (report.aux)
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: A8031F977EFB1628AD7A03ACE7F20C0E;890.
+(rerunfilecheck)             Checksum: 5AFBBF48970F654127D83FBFB119686D;1019.
  ) 
 Here is how much of TeX's memory you used:
- 14441 strings out of 478659
- 247154 string characters out of 2862404
- 591784 words of memory out of 3000000
- 32282 multiletter control sequences out of 15000+600000
+ 14466 strings out of 478659
+ 247590 string characters out of 2862404
+ 602838 words of memory out of 3000000
+ 32292 multiletter control sequences out of 15000+600000
  409851 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 61i,8n,67p,336b,517s stack positions out of 5000i,500n,10000p,200000b,80000s
-<D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on report.pdf (17 pages, 633504 bytes).
+ 61i,11n,67p,336b,517s stack positions out of 5000i,500n,10000p,200000b,80000s
+<D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on report.pdf (21 pages, 656709 bytes).
 PDF statistics:
- 258 PDF objects out of 1000 (max. 8388607)
- 75 named destinations out of 1000 (max. 500000)
- 100 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 300 PDF objects out of 1000 (max. 8388607)
+ 89 named destinations out of 1000 (max. 500000)
+ 113 words of extra memory for PDF output out of 10000 (max. 10000000)
 
