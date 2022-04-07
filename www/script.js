@@ -20,7 +20,12 @@ ON STARTUP
 // Getting the settings
 
 getSettings().then(settings => {
-    if(settings.theme === 'dark') toggleTheme()
+    if(settings.theme === 'dark') {
+        toggleTheme()
+        theme = 'dark'
+    } else {
+        theme = 'light'
+    }
     topic = settings.topic
 }).then(loadMore)
 
@@ -68,8 +73,12 @@ async function loadMore() {
 
     // THIS VARIABLE FIXES MULTIPLE NN GENERATIONS
     loadMoreInProgress = true
-
-    body.append('<div class="d-flex justify-content-center pb-4 spinner-container"><div class="spinner-border"></div></div>')
+    if(theme === 'light') {
+        body.append('<div class="d-flex justify-content-center pb-4 spinner-container"><div class="spinner-border"></div></div>')
+    }
+    else if(theme === 'dark') {
+        body.append('<div class="d-flex justify-content-center pb-4 spinner-container"><div class="spinner-border text-light"></div></div>')
+    }
 
     // IT HAS BEEN TESTED WITH DIFFERENT SAMPLE SIZES - 20, 40, 60, 70, 100, 200, 500, 1023 - 100 IS AN OPTIMAL SOLUTION - NOT TOO BIG TO TRUNCATE AND DOESN'T TAKE AN ETERNITY TO PROCESS
     let object = await eel.generate_text(topic, 100, 6)()
@@ -154,6 +163,7 @@ function toggleTheme() {
     let dropdownMenu = document.querySelectorAll('.dropdown-menu')
     let offCanvasTitle = document.querySelectorAll('.offcanvas-title')
     let postText = document.querySelectorAll('.text-content')
+    let spinner = document.querySelector('.spinner-border')
 
     // Then toggle (add/remove) the .dark-theme class to the body
     document.body.classList.toggle('dark-theme')
@@ -180,12 +190,14 @@ function toggleTheme() {
         el.classList.toggle('text-light')
     })
 
+    if(spinner) spinner.classList.toggle('text-light')
+
     // If the body tag contains dark-theme then change the dark theme settings
     if(document.body.classList.contains('dark-theme')) {
         theme = 'dark'
         setSettings('theme', 'dark')
     }
-    else {
+    else if(!(document.body.classList.contains('dark-theme'))){
         theme = 'light'
         setSettings('theme', 'light')
     }
@@ -209,7 +221,7 @@ function setSettings(key, value) {
 }
 
 async function getSettings() {
-    return await eel.get_settings('settings.json')()
+    return await eel.get_settings('base/settings.json')()
 }
 
 function selectReaction() {

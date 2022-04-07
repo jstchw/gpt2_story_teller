@@ -15,10 +15,10 @@ def get_settings(filename):
 # Function to set any setting to a JSON file
 @eel.expose
 def set_settings(key, value):
-    settings = get_settings('settings.json')
+    settings = get_settings('base/settings.json')
     settings[key] = value
 
-    with open('settings.json', 'w') as json_file:
+    with open('base/settings.json', 'w') as json_file:
         json.dump(settings, json_file)
 
 
