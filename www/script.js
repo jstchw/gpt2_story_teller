@@ -9,7 +9,7 @@ const startTime = Date.now()
 const themeToggleBtn = document.querySelector('#theme-toggle')
 const menu = document.querySelector('.offcanvas')
 let loadMoreInProgress = false
-let topic
+let topic, theme
 /*
 ON STARTUP
 */
@@ -82,19 +82,34 @@ async function loadMore() {
 
     await populateImageArray(topic).then($('.spinner-container').remove())
 
-    for (let i = 0; i < maxResult; i++) {
-
-        $(".content").append(
-        "<div><img class='append-img img-fluid pb-2' alt='Everything went wrong' src='" + memeArray[i].src + "'/></div>" +
-        "<div class='container overflow-hidden'>" +
-            "<div class='row px-5 text-content'>" + object[i] + "</div>" +
-            "<div class='row px-5'>" +
-                "<div class='col like' id='like_" + counter + "'>&#128077</div>" +
-                "<div class='col'></div>" +
-                "<div class='col dislike' id='dislike_" + counter + "'>&#128078</div>" +
-            "</div>" +
-        "</div>")
-        counter++
+    if(theme === 'light') {
+        for (let i = 0; i < maxResult; i++) {
+            $(".content").append(
+            "<div><img class='append-img img-fluid pb-2' alt='Everything went wrong' src='" + memeArray[i].src + "'/></div>" +
+            "<div class='container overflow-hidden'>" +
+                "<div class='row px-5 text-content'>" + object[i] + "</div>" +
+                "<div class='row px-5'>" +
+                    "<div class='col like' id='like_" + counter + "'>&#128077</div>" +
+                    "<div class='col'></div>" +
+                    "<div class='col dislike' id='dislike_" + counter + "'>&#128078</div>" +
+                "</div>" +
+            "</div>")
+            counter++
+        }
+    } else if(theme === 'dark') {
+        for (let i = 0; i < maxResult; i++) {
+            $(".content").append(
+            "<div><img class='append-img img-fluid pb-2' alt='Everything went wrong' src='" + memeArray[i].src + "'/></div>" +
+            "<div class='container overflow-hidden'>" +
+                "<div class='row px-5 text-content text-light'>" + object[i] + "</div>" +
+                "<div class='row px-5'>" +
+                    "<div class='col like' id='like_" + counter + "'>&#128077</div>" +
+                    "<div class='col'></div>" +
+                    "<div class='col dislike' id='dislike_" + counter + "'>&#128078</div>" +
+                "</div>" +
+            "</div>")
+            counter++
+        }
     }
 
     $('.like').click(selectReaction)
@@ -138,6 +153,7 @@ function toggleTheme() {
     let navbar = document.querySelector('.navbar')
     let dropdownMenu = document.querySelectorAll('.dropdown-menu')
     let offCanvasTitle = document.querySelectorAll('.offcanvas-title')
+    let postText = document.querySelectorAll('.text-content')
 
     // Then toggle (add/remove) the .dark-theme class to the body
     document.body.classList.toggle('dark-theme')
@@ -160,11 +176,17 @@ function toggleTheme() {
         el.classList.toggle('dropdown-menu-dark')
     })
 
+    postText.forEach(el => {
+        el.classList.toggle('text-light')
+    })
+
     // If the body tag contains dark-theme then change the dark theme settings
     if(document.body.classList.contains('dark-theme')) {
+        theme = 'dark'
         setSettings('theme', 'dark')
     }
     else {
+        theme = 'light'
         setSettings('theme', 'light')
     }
 
