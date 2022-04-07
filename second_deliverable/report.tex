@@ -10,6 +10,7 @@
 \usepackage[toc, page]{appendix}
 \usepackage{multirow}
 \usepackage{subcaption}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
 \newenvironment{longlisting}{\captionsetup{type=listing}}{}
 \title{%
   GPT-2 Based Story Teller\\
@@ -495,6 +496,22 @@ Testing \hyperref[appendix:model_testing]{appendix}
   \end{tabular}
   \caption{`Alice' (3100 steps) dataset text generation testing} 
 \end{table}
+
+
+% SPRINT: REACTION SYSTEM
+% TESTING DATABASE REACTIONS
+% TEST 1: LIKE, ALICE, Different post text - Partial Pass - text formatted with \n
+% TEST 2: LIKE, ALICE, Different post texts - Partial pass - text too long and formatted with \n
+% TEST 3: DISLIKE, ALICE, Different post texts - Fail - two entries with different reacion identifiers (id 6 and 7)
+% TEST 4: DISLIKE, ALICE, Different post texts - Fail - two entires with different reaction identifiers (id 8 and 9)
+% TEST 5: REMOVE DISLIKE, ALICE, different post texts - fail - instead of doing nothing, it adds another entry
+% TEST 6: EMPTY FILE TEST - fail - cannot append to a non-existing array in JSON
+% TEST 6: No file with w+, a+ instead of r+ - fail - some error, idk
+% TEST 7: No file with w+, a+ instead of r+ - file creation - Pass
+% TEST 8: Empty file with w+, r+, a+ - fail - empty file needs at least one entry
+
+% TEST 9: LIKE, CATCHER, Different post texts - Partial pass - text formatted with \n but only one entry, no multiple entries
+% TEST 10: DISLIKE, CATCHER, DIfferent post texts - Partial pass - text formatted with \n but only one entry, no multiple entries
 
 
 

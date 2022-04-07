@@ -96,9 +96,9 @@ async function loadMore() {
             $(".content").append(
             "<div><img class='append-img img-fluid pb-2' alt='Everything went wrong' src='" + memeArray[i].src + "'/></div>" +
             "<div class='container overflow-hidden'>" +
-                "<div class='row px-5 text-content'>" + object[i] + "</div>" +
+                "<div class='row px-5 text-content' id='text_" + counter + "'>" + object[i] + "</div>" +
                 "<div class='row px-5'>" +
-                    "<div class='col like' id='like_" + counter + "'>&#128077</div>" +
+                    "<div class='col like' id='dolike_" + counter + "'>&#128077</div>" +
                     "<div class='col'></div>" +
                     "<div class='col dislike' id='dislike_" + counter + "'>&#128078</div>" +
                 "</div>" +
@@ -110,9 +110,9 @@ async function loadMore() {
             $(".content").append(
             "<div><img class='append-img img-fluid pb-2' alt='Everything went wrong' src='" + memeArray[i].src + "'/></div>" +
             "<div class='container overflow-hidden'>" +
-                "<div class='row px-5 text-content text-light'>" + object[i] + "</div>" +
+                "<div class='row px-5 text-content text-light' id='text_" + counter + "'>" + object[i] + "</div>" +
                 "<div class='row px-5'>" +
-                    "<div class='col like' id='like_" + counter + "'>&#128077</div>" +
+                    "<div class='col like' id='dolike_" + counter + "'>&#128077</div>" +
                     "<div class='col'></div>" +
                     "<div class='col dislike' id='dislike_" + counter + "'>&#128078</div>" +
                 "</div>" +
@@ -224,26 +224,39 @@ async function getSettings() {
     return await eel.get_settings('base/settings.json')()
 }
 
-function selectReaction() {
+async function selectReaction() {
     let id = (this.id).replace(/\D/g, "");
     let like_pressed, dislike_pressed
+    let postText = document.querySelector('#text_' + id).innerHTML
 
-    like_pressed = document.querySelector('#like_' + id).classList.contains('reaction-selected')
+    like_pressed = document.querySelector('#dolike_' + id).classList.contains('reaction-selected')
     dislike_pressed = document.querySelector('#dislike_' + id).classList.contains('reaction-selected')
 
 
     if(!like_pressed && this.id.includes('dislike')) {
         document.querySelector('#' + this.id).classList.add('reaction-selected')
-    }
-    if(!dislike_pressed && this.id.includes('like')) {
+        if(!dislike_pressed) {
+            console.log('dislike done')
+            await eel.react(id, 0, topic, postText)()
+        }
+    } else if(!dislike_pressed && this.id.includes('dolike')) {
         document.querySelector('#' + this.id).classList.add('reaction-selected')
+        if(!like_pressed) {
+            console.log('like done')
+            await eel.react(id, 1, topic, postText)()
+        }
     }
-    if(like_pressed && this.id.includes('like')) {
-        document.querySelector('#' + this.id).classList.remove('reaction-selected')
-    }
+
     if(dislike_pressed && this.id.includes('dislike')) {
         document.querySelector('#' + this.id).classList.remove('reaction-selected')
+        console.log('dislike undone')
+        await eel.unreact(id)
+    } else if(like_pressed && this.id.includes('dolike')) {
+        document.querySelector('#' + this.id).classList.remove('reaction-selected')
+        console.log('like undone')
+        await eel.unreact(id)
     }
+
 }
 
 function shuffleArray(array) {

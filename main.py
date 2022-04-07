@@ -2,6 +2,7 @@ import nn
 from imgmanager import ImgManager
 from interface import Interface
 from nn import NN
+import interface
 import time
 
 # network = NN('124M')
@@ -43,6 +44,8 @@ gui = Interface()
 
 # Create the window
 gui.create_window()
+
+# interface.react(value=1, topic='Alice', post_text='Alice is a great novel')
 
 # text = im.read_text()
 

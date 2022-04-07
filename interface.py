@@ -3,6 +3,38 @@ import json
 import os
 import glob
 
+app_version = 1.0
+
+
+# Function to save reactions in a JSON file
+@eel.expose
+def react(post_id, value, topic, post_text):
+    with open('base/reaction.json', 'r+') as json_file:
+        reaction_file = json.load(json_file)
+        array = {
+            "appVer": app_version,
+            "id": reaction_file['posts'][-1]['id'] + 1,
+            "postID": post_id,
+            "postReaction": value,
+            "postText": post_text,
+            "topic": topic
+        }
+        reaction_file['posts'].append(array)
+        json_file.seek(0)
+        json.dump(reaction_file, json_file, indent=4, sort_keys=True)
+
+
+@eel.expose
+def unreact(post_id):
+    with open('base/reaction.json', 'r+') as json_file:
+        reaction_file = json.load(json_file)
+        for i in reversed(range(len(reaction_file['posts']))):
+            if reaction_file['posts'][i]["postID"] == post_id:
+                # This just doesn't work
+                reaction_file['posts'].pop(i)
+                # reaction_file['posts'].remove(i-1)
+                break
+
 
 # Function to retrieve JSON string from the file and use it
 @eel.expose

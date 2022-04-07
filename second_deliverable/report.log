@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12.10) (preloaded format=pdflatex 2021.12.10)  6 APR 2022 21:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12.10) (preloaded format=pdflatex 2021.12.10)  7 APR 2022 17:11
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -374,7 +374,24 @@ Package: subcaption 2020/10/07 v1.3j Sub-captions (AR)
 \c@subfigure=\count331
 \c@subtable=\count332
 \c@sublisting=\count333
-) (D:\MiKTeX\tex/latex/xcolor\xcolor.sty
+) (D:\MiKTeX\tex/latex/geometry\geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+ (D:\MiKTeX\tex/generic/iftex\ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+)
+\Gm@cnth=\count334
+\Gm@cntv=\count335
+\c@Gm@tempcnt=\count336
+\Gm@bindingoffset=\dimen183
+\Gm@wd@mp=\dimen184
+\Gm@odd@mp=\dimen185
+\Gm@even@mp=\dimen186
+\Gm@layoutwidth=\dimen187
+\Gm@layoutheight=\dimen188
+\Gm@layouthoffset=\dimen189
+\Gm@layoutvoffset=\dimen190
+\Gm@dimlist=\toks18
+ (D:\MiKTeX\tex/latex/geometry\geometry.cfg)) (D:\MiKTeX\tex/latex/xcolor\xcolor.sty
 Package: xcolor 2021/10/31 v2.13 LaTeX color extensions (UK)
  (D:\MiKTeX\tex/latex/graphics-cfg\color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
@@ -396,30 +413,30 @@ runsystem(del report.aex)...executed.
 
  (D:\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2021-10-18 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count334
+\l__color_backend_stack_int=\count337
 \l__pdf_internal_box=\box57
 ) (report.aux)
 \openout1 = `report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-Package hyperref Info: Link coloring OFF on input line 21.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+Package hyperref Info: Link coloring OFF on input line 22.
  (D:\MiKTeX\tex/latex/hyperref\nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
  (D:\MiKTeX\tex/latex/refcount\refcount.sty
@@ -427,28 +444,28 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (D:\MiKTeX\tex/generic/gettitlestring\gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count335
+\c@section@level=\count338
 )
-LaTeX Info: Redefining \ref on input line 21.
-LaTeX Info: Redefining \pageref on input line 21.
-LaTeX Info: Redefining \nameref on input line 21.
+LaTeX Info: Redefining \ref on input line 22.
+LaTeX Info: Redefining \pageref on input line 22.
+LaTeX Info: Redefining \nameref on input line 22.
  (report.out) (report.out)
 \@outlinefile=\write5
 \openout5 = `report.out'.
 
  (D:\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count336
-\scratchdimen=\dimen183
+\scratchcounter=\count339
+\scratchdimen=\dimen191
 \scratchbox=\box58
-\nofMPsegments=\count337
-\nofMParguments=\count338
-\everyMPshowfont=\toks18
-\MPscratchCnt=\count339
-\MPscratchDim=\dimen184
-\MPnumerator=\count340
-\makeMPintoPDFobject=\count341
-\everyMPtoPDFconversion=\toks19
+\nofMPsegments=\count340
+\nofMParguments=\count341
+\everyMPshowfont=\toks19
+\MPscratchCnt=\count342
+\MPscratchDim=\dimen192
+\MPnumerator=\count343
+\makeMPintoPDFobject=\count344
+\everyMPtoPDFconversion=\toks20
 ) (D:\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -457,11 +474,46 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(81.94394pt, 433.62pt, 81.94394pt)
+* v-part:(T,H,B)=(106.75473pt, 578.15999pt, 160.13213pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=433.62pt
+* \textheight=578.15999pt
+* \oddsidemargin=9.67395pt
+* \evensidemargin=9.67395pt
+* \topmargin=-2.51526pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=44.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> on input line 23.
+(Font)              <14.4> on input line 24.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 23.
- [1
+(Font)              <7> on input line 24.
+[1
 
 {C:/Users/bobr7/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] (report.toc
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -478,7 +530,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.28 \clearpage
+l.29 \clearpage
                 [1
 
 ] [2
@@ -488,54 +540,53 @@ l.28 \clearpage
 ] [4] [5
 
 ] [6] [7]
-<img/electron_window_example.png, id=156, 403.5075pt x 423.83344pt>
+<img/electron_window_example.png, id=161, 403.5075pt x 423.83344pt>
 File: img/electron_window_example.png Graphic file (type png)
 <use img/electron_window_example.png>
-Package pdftex.def Info: img/electron_window_example.png  used on input line 243.
-(pdftex.def)             Requested size: 156.0006pt x 163.85866pt.
-<img/tkinter_window_example.png, id=157, 403.5075pt x 333.245pt>
+Package pdftex.def Info: img/electron_window_example.png  used on input line 244.
+(pdftex.def)             Requested size: 173.44865pt x 182.18661pt.
+<img/tkinter_window_example.png, id=162, 403.5075pt x 333.245pt>
 File: img/tkinter_window_example.png Graphic file (type png)
 <use img/tkinter_window_example.png>
-Package pdftex.def Info: img/tkinter_window_example.png  used on input line 249.
-(pdftex.def)             Requested size: 156.0006pt x 128.83617pt.
+Package pdftex.def Info: img/tkinter_window_example.png  used on input line 250.
+(pdftex.def)             Requested size: 173.44865pt x 143.24678pt.
  [8 <./img/electron_window_example.png> <./img/tkinter_window_example.png>]
 <img/light_theme.png, id=170, 403.5075pt x 423.83344pt>
 File: img/light_theme.png Graphic file (type png)
 <use img/light_theme.png>
-Package pdftex.def Info: img/light_theme.png  used on input line 275.
-(pdftex.def)             Requested size: 156.0006pt x 163.85866pt.
+Package pdftex.def Info: img/light_theme.png  used on input line 276.
+(pdftex.def)             Requested size: 173.44865pt x 182.18661pt.
 <img/dark_theme.png, id=171, 403.5075pt x 423.83344pt>
 File: img/dark_theme.png Graphic file (type png)
 <use img/dark_theme.png>
-Package pdftex.def Info: img/dark_theme.png  used on input line 281.
-(pdftex.def)             Requested size: 156.0006pt x 163.85866pt.
+Package pdftex.def Info: img/dark_theme.png  used on input line 282.
+(pdftex.def)             Requested size: 173.44865pt x 182.18661pt.
  [9
 
  <./img/light_theme.png> <./img/dark_theme.png>] [10]
 <img/json_example.png, id=187, 331.2375pt x 234.8775pt>
 File: img/json_example.png Graphic file (type png)
 <use img/json_example.png>
-Package pdftex.def Info: img/json_example.png  used on input line 341.
-(pdftex.def)             Requested size: 195.0pt x 138.27188pt.
+Package pdftex.def Info: img/json_example.png  used on input line 342.
+(pdftex.def)             Requested size: 216.81pt x 153.73657pt.
 <img/eel_expose_example.png, id=191, 644.4075pt x 91.84312pt>
 File: img/eel_expose_example.png Graphic file (type png)
 <use img/eel_expose_example.png>
-Package pdftex.def Info: img/eel_expose_example.png  used on input line 360.
-(pdftex.def)             Requested size: 390.0pt x 55.58557pt.
- [11
-
- <./img/json_example.png> <./img/eel_expose_example.png>]
-<img/system_diagram.png, id=201, 573.14125pt x 164.615pt>
+Package pdftex.def Info: img/eel_expose_example.png  used on input line 361.
+(pdftex.def)             Requested size: 433.62pt x 61.80362pt.
+<img/system_diagram.png, id=192, 573.14125pt x 164.615pt>
 File: img/system_diagram.png Graphic file (type png)
 <use img/system_diagram.png>
-Package pdftex.def Info: img/system_diagram.png  used on input line 374.
-(pdftex.def)             Requested size: 390.0pt x 112.01457pt.
- [12 <./img/system_diagram.png>]
+Package pdftex.def Info: img/system_diagram.png  used on input line 375.
+(pdftex.def)             Requested size: 433.62pt x 124.54353pt.
+ [11
+
+ <./img/json_example.png> <./img/eel_expose_example.png>] [12 <./img/system_diagram.png>]
 <img/train_model_example.png, id=209, 630.10406pt x 85.06781pt>
 File: img/train_model_example.png Graphic file (type png)
 <use img/train_model_example.png>
-Package pdftex.def Info: img/train_model_example.png  used on input line 422.
-(pdftex.def)             Requested size: 390.0pt x 52.65192pt.
+Package pdftex.def Info: img/train_model_example.png  used on input line 423.
+(pdftex.def)             Requested size: 433.62pt x 58.54108pt.
  [13
 
 ] [14 <./img/train_model_example.png>] (report.bbl [15
@@ -547,12 +598,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 38--41
 
 [16
 
-]
-Overfull \hbox (41.84016pt too wide) in paragraph at lines 64--66
-\OT1/cmr/bx/n/12 URL: \OT1/cmr/m/it/12 https://github.com/cvalenzuela/rwet/blob/master/final/source[]text/ny/the-
- []
-
-) [17] [18
+]) [17] [18
 
 
 ] [19] [20
@@ -562,15 +608,15 @@ Package rerunfilecheck Info: File `report.out' has not changed.
 (rerunfilecheck)             Checksum: 5AFBBF48970F654127D83FBFB119686D;1019.
  ) 
 Here is how much of TeX's memory you used:
- 14466 strings out of 478659
- 247590 string characters out of 2862404
- 602838 words of memory out of 3000000
- 32292 multiletter control sequences out of 15000+600000
+ 14956 strings out of 478659
+ 255203 string characters out of 2862404
+ 615383 words of memory out of 3000000
+ 32774 multiletter control sequences out of 15000+600000
  409851 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  61i,11n,67p,336b,517s stack positions out of 5000i,500n,10000p,200000b,80000s
 <D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on report.pdf (21 pages, 656709 bytes).
+Output written on report.pdf (21 pages, 656592 bytes).
 PDF statistics:
  300 PDF objects out of 1000 (max. 8388607)
  89 named destinations out of 1000 (max. 500000)

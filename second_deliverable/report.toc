@@ -18,12 +18,12 @@
 \contentsline {paragraph}{}{5}{section*.18}%
 \contentsline {subsubsection}{Datasets}{6}{section*.19}%
 \contentsline {paragraph}{}{6}{section*.20}%
-\contentsline {subsubsection}{Pillow}{7}{section*.21}%
-\contentsline {paragraph}{}{7}{section*.22}%
+\contentsline {subsubsection}{Pillow}{6}{section*.21}%
+\contentsline {paragraph}{}{6}{section*.22}%
 \contentsline {subsection}{Frontend}{7}{section*.23}%
 \contentsline {paragraph}{}{7}{section*.24}%
-\contentsline {subsubsection}{Web Application appearence}{8}{section*.25}%
-\contentsline {paragraph}{}{8}{section*.26}%
+\contentsline {subsubsection}{Web Application appearence}{7}{section*.25}%
+\contentsline {paragraph}{}{7}{section*.26}%
 \contentsline {subsubsection}{Displaying the content}{9}{section*.29}%
 \contentsline {paragraph}{}{9}{section*.30}%
 \contentsline {subsubsection}{User feedback}{10}{section*.31}%
