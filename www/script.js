@@ -89,7 +89,7 @@ async function loadMore() {
     // CAUSES ISSUES IF GREATER
     let maxResult = 6
 
-    await populateImageArray(topic).then($('.spinner-container').remove())
+    await populateImageArray().then($('.spinner-container').remove())
 
     if(theme === 'light') {
         for (let i = 0; i < maxResult; i++) {
@@ -129,7 +129,7 @@ async function loadMore() {
 
 // Function to populate the array with images located in a specific folder
 // The loop iterates through numbers and loads an image to an array slot with an according number
-async function populateImageArray(topic) {
+async function populateImageArray() {
 
     let isEmpty = Boolean(memeArray.length === 0)
 
