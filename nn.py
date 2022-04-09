@@ -58,4 +58,4 @@ class NN:
     def train_model(self, run_name, file_name, steps, sample_length):
         sess = gpt2.start_tf_sess()
         gpt2.finetune(sess, file_name, model_name=self.model_name, steps=steps, run_name=run_name,
-                      restore_from='latest', overwrite=True, sample_length=sample_length, save_every=100)
+                      restore_from='latest', overwrite=True, sample_length=sample_length, save_every=100, sample_every=10000)

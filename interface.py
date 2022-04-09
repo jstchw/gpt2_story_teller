@@ -30,10 +30,8 @@ def unreact(post_id):
         reaction_file = json.load(json_file)
         for i in reversed(range(len(reaction_file['posts']))):
             if reaction_file['posts'][i]["postID"] == post_id:
-                # This just doesn't work
-                print(reaction_file['posts'][i])
-                # reaction_file['posts'].pop(i)
-                del reaction_file['posts'][i]
+                reaction_file['posts'].pop(i)
+                # del reaction_file['posts'][i]
                 json_file.seek(0)
                 json.dump(reaction_file, json_file, indent=4, sort_keys=True)
                 json_file.truncate()

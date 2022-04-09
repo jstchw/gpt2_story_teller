@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12.10) (preloaded format=pdflatex 2021.12.10)  8 APR 2022 09:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12.10) (preloaded format=pdflatex 2021.12.10)  9 APR 2022 15:50
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -479,19 +479,19 @@ Package caption Info: End \AtBeginDocument code.
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
 * driver: pdftex
-* paper: a4paper
+* paper: <default>
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(81.94394pt, 433.62pt, 81.94394pt)
-* v-part:(T,H,B)=(106.75473pt, 578.15999pt, 160.13213pt)
-* \paperwidth=597.50787pt
-* \paperheight=845.04684pt
-* \textwidth=433.62pt
-* \textheight=578.15999pt
-* \oddsidemargin=9.67395pt
-* \evensidemargin=9.67395pt
-* \topmargin=-2.51526pt
+* h-part:(L,W,R)=(57.81621pt, 498.66258pt, 57.81621pt)
+* v-part:(T,H,B)=(57.81621pt, 679.33757pt, 57.81621pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=498.66258pt
+* \textheight=679.33757pt
+* \oddsidemargin=-14.45378pt
+* \evensidemargin=-14.45378pt
+* \topmargin=-51.45378pt
 * \headheight=12.0pt
 * \headsep=25.0pt
 * \topskip=12.0pt
@@ -537,88 +537,119 @@ l.29 \clearpage
 
 ] [3
 
-] [4] [5
-
-] [6] [7]
-<img/electron_window_example.png, id=161, 403.5075pt x 423.83344pt>
+] [4] [5]
+<img/electron_window_example.png, id=149, 403.5075pt x 423.83344pt>
 File: img/electron_window_example.png Graphic file (type png)
 <use img/electron_window_example.png>
-Package pdftex.def Info: img/electron_window_example.png  used on input line 244.
-(pdftex.def)             Requested size: 173.44865pt x 182.18661pt.
-<img/tkinter_window_example.png, id=162, 403.5075pt x 333.245pt>
+Package pdftex.def Info: img/electron_window_example.png  used on input line 243.
+(pdftex.def)             Requested size: 199.46577pt x 209.51039pt.
+<img/tkinter_window_example.png, id=150, 403.5075pt x 333.245pt>
 File: img/tkinter_window_example.png Graphic file (type png)
 <use img/tkinter_window_example.png>
-Package pdftex.def Info: img/tkinter_window_example.png  used on input line 250.
-(pdftex.def)             Requested size: 173.44865pt x 143.24678pt.
- [8 <./img/electron_window_example.png> <./img/tkinter_window_example.png>]
-<img/light_theme.png, id=170, 403.5075pt x 423.83344pt>
+Package pdftex.def Info: img/tkinter_window_example.png  used on input line 249.
+(pdftex.def)             Requested size: 199.46577pt x 164.7305pt.
+ [6 <./img/electron_window_example.png> <./img/tkinter_window_example.png>]
+<img/light_theme.png, id=166, 403.5075pt x 423.83344pt>
 File: img/light_theme.png Graphic file (type png)
 <use img/light_theme.png>
-Package pdftex.def Info: img/light_theme.png  used on input line 276.
-(pdftex.def)             Requested size: 173.44865pt x 182.18661pt.
-<img/dark_theme.png, id=171, 403.5075pt x 423.83344pt>
+Package pdftex.def Info: img/light_theme.png  used on input line 274.
+(pdftex.def)             Requested size: 199.46577pt x 209.51039pt.
+<img/dark_theme.png, id=167, 403.5075pt x 423.83344pt>
 File: img/dark_theme.png Graphic file (type png)
 <use img/dark_theme.png>
-Package pdftex.def Info: img/dark_theme.png  used on input line 282.
-(pdftex.def)             Requested size: 173.44865pt x 182.18661pt.
- [9
-
- <./img/light_theme.png> <./img/dark_theme.png>] [10]
-<img/json_example.png, id=187, 331.2375pt x 234.8775pt>
+Package pdftex.def Info: img/dark_theme.png  used on input line 280.
+(pdftex.def)             Requested size: 199.46577pt x 209.51039pt.
+ [7 <./img/light_theme.png> <./img/dark_theme.png>]
+<img/json_example.png, id=175, 331.2375pt x 234.8775pt>
 File: img/json_example.png Graphic file (type png)
 <use img/json_example.png>
-Package pdftex.def Info: img/json_example.png  used on input line 342.
-(pdftex.def)             Requested size: 216.81pt x 153.73657pt.
-<img/eel_expose_example.png, id=191, 644.4075pt x 91.84312pt>
+Package pdftex.def Info: img/json_example.png  used on input line 338.
+(pdftex.def)             Requested size: 249.33128pt x 176.79921pt.
+ [8 <./img/json_example.png>]
+<img/eel_expose_example.png, id=189, 644.4075pt x 91.84312pt>
 File: img/eel_expose_example.png Graphic file (type png)
 <use img/eel_expose_example.png>
-Package pdftex.def Info: img/eel_expose_example.png  used on input line 361.
-(pdftex.def)             Requested size: 433.62pt x 61.80362pt.
-<img/system_diagram.png, id=192, 573.14125pt x 164.615pt>
+Package pdftex.def Info: img/eel_expose_example.png  used on input line 359.
+(pdftex.def)             Requested size: 498.66258pt x 71.07396pt.
+<img/system_diagram.png, id=190, 573.14125pt x 164.615pt>
 File: img/system_diagram.png Graphic file (type png)
 <use img/system_diagram.png>
-Package pdftex.def Info: img/system_diagram.png  used on input line 375.
-(pdftex.def)             Requested size: 433.62pt x 124.54353pt.
- [11
+Package pdftex.def Info: img/system_diagram.png  used on input line 373.
+(pdftex.def)             Requested size: 498.66258pt x 143.22644pt.
+ [9
 
- <./img/json_example.png> <./img/eel_expose_example.png>] [12 <./img/system_diagram.png>]
-<img/train_model_example.png, id=209, 630.10406pt x 85.06781pt>
+ <./img/eel_expose_example.png> <./img/system_diagram.png>]
+<img/train_model_example.png, id=200, 630.10406pt x 85.06781pt>
 File: img/train_model_example.png Graphic file (type png)
 <use img/train_model_example.png>
-Package pdftex.def Info: img/train_model_example.png  used on input line 423.
-(pdftex.def)             Requested size: 433.62pt x 58.54108pt.
- [13
+Package pdftex.def Info: img/train_model_example.png  used on input line 421.
+(pdftex.def)             Requested size: 498.66258pt x 67.32224pt.
+ [10
 
-] [14 <./img/train_model_example.png>] (report.bbl [15
+ <./img/train_model_example.png>]
+<img/alice-original.png, id=210, 356.0803pt x 62.48344pt>
+File: img/alice-original.png Graphic file (type png)
+<use img/alice-original.png>
+Package pdftex.def Info: img/alice-original.png  used on input line 448.
+(pdftex.def)             Requested size: 249.33128pt x 43.75145pt.
+<img/alice-preprocess.png, id=211, 356.0803pt x 106.89937pt>
+File: img/alice-preprocess.png Graphic file (type png)
+<use img/alice-preprocess.png>
+Package pdftex.def Info: img/alice-preprocess.png  used on input line 454.
+(pdftex.def)             Requested size: 249.33128pt x 74.85187pt.
+ [11
+
+ <./img/alice-original.png> <./img/alice-preprocess.png>]
+<img/generate-text-eel.png, id=221, 648.17157pt x 91.09032pt>
+File: img/generate-text-eel.png Graphic file (type png)
+<use img/generate-text-eel.png>
+Package pdftex.def Info: img/generate-text-eel.png  used on input line 504.
+(pdftex.def)             Requested size: 398.93158pt x 56.06398pt.
+<img/text-processing.png, id=222, 351.56343pt x 167.12437pt>
+File: img/text-processing.png Graphic file (type png)
+<use img/text-processing.png>
+Package pdftex.def Info: img/text-processing.png  used on input line 519.
+(pdftex.def)             Requested size: 249.33128pt x 118.52396pt.
+ [12
+
+ <./img/generate-text-eel.png> <./img/text-processing.png>] [13
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 38--41
-\OT1/cmr/bx/n/12 URL: \OT1/cmr/m/it/12 https://medium.com/mlearning-ai/optimizers-in-deep-learning-
+<img/json_entry.png, id=242, 499.8675pt x 144.54pt>
+File: img/json_entry.png Graphic file (type png)
+<use img/json_entry.png>
+Package pdftex.def Info: img/json_entry.png  used on input line 588.
+(pdftex.def)             Requested size: 349.06227pt x 100.93689pt.
+ (report.bbl [14
+
+ <./img/json_entry.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 64--66
+\OT1/cmr/bx/n/12 URL: \OT1/cmr/m/it/12 https://github.com/cvalenzuela/rwet/blob/master/final/source[]text/ny/the-catcher-
  []
 
-[16
+[15
 
-]) [17] [18
+]) [16] [17
 
 
-] [19] [20
+] [18] [19
 
 ] (report.aux)
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: 5AFBBF48970F654127D83FBFB119686D;1019.
+(rerunfilecheck)             Checksum: B2AE308C05D95922F63A0E85767EC017;1019.
  ) 
 Here is how much of TeX's memory you used:
- 14956 strings out of 478659
- 255203 string characters out of 2862404
- 615383 words of memory out of 3000000
- 32774 multiletter control sequences out of 15000+600000
+ 15019 strings out of 478659
+ 256551 string characters out of 2862404
+ 619845 words of memory out of 3000000
+ 32812 multiletter control sequences out of 15000+600000
  409851 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  61i,11n,67p,336b,517s stack positions out of 5000i,500n,10000p,200000b,80000s
 <D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on report.pdf (21 pages, 656592 bytes).
+Output written on report.pdf (20 pages, 696870 bytes).
 PDF statistics:
- 300 PDF objects out of 1000 (max. 8388607)
- 89 named destinations out of 1000 (max. 500000)
- 113 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 329 PDF objects out of 1000 (max. 8388607)
+ 109 named destinations out of 1000 (max. 500000)
+ 138 words of extra memory for PDF output out of 10000 (max. 10000000)
 

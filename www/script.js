@@ -1,5 +1,3 @@
-// REACTIONS WORK PARTIALLY
-// EVERY SECOND GROUP OF IMAGES CAN BE REACTED AT
 "use strict"
 
 let counter = 0
@@ -51,6 +49,12 @@ $('#catcher-topic').on('click', ev => {
 $('#alice-topic').on('click', ev => {
     if(topic !== 'alice' && !loadMoreInProgress) {
         selectTopic('alice')
+        $('.navbar-toggler').click()
+    }
+})
+$('#iliad-topic').on('click', ev => {
+    if(topic !== 'the_iliad' && !loadMoreInProgress) {
+        selectTopic('the_iliad')
         $('.navbar-toggler').click()
     }
 })

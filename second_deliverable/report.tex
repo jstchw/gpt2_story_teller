@@ -10,7 +10,7 @@
 \usepackage[toc, page]{appendix}
 \usepackage{multirow}
 \usepackage{subcaption}
-\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage[margin=0.8in]{geometry}
 \newenvironment{longlisting}{\captionsetup{type=listing}}{}
 \title{%
   GPT-2 Based Story Teller\\
@@ -115,8 +115,6 @@ these reactions will be stored in a database to be used by the developer to unde
 corrected and improved. The feedback system is designed to create a reflection on the pre-trained model as a whole and
 not on separate elements (stories). Given the feedback, the developer can decide to improve the model or not.
 
-\clearpage
-
 \section*{Major Components}
 \addcontentsline{toc}{section}{Major Components}
 
@@ -167,6 +165,7 @@ These two aspects are crucial and thereforce the choice fell on `Adam'.
 \addcontentsline{toc}{subsubsection}{Datasets}
 \paragraph{}
 % Alice, Catcher, Iliad, main problem - too much text decoration
+% Iliad was formatted - removed all book names and multiple dashes
 Several datasets are used in the project. It has been chosen to use three datasets to work with. The first one is
 the novel `Alice in Wonderland' by Lewis Carroll \citep{alice_in_wonderland}. This version was taken from GitHub Gist.
 It's more adapted for machine learning than the original version since it's shorter and therefore contains less tokens.
@@ -183,7 +182,7 @@ were removed from the text file. In the final revision there are 73,676 words an
 The last and the longest dataset is the novel `Iliad' by Homer \citep{the_iliad}. It contains 152,507 words and 807,481 characters.
 It doesn't contain much text decoration apart from chapter (book) enumeration. Also it has some translation references and copyright information.
 All this information was removed from the dataset since it could affect the training process. It still can be viewed in the original text document 
-in the reference list.
+in the reference list. Another text decoration elements such as book (chapter) enumeration and dash symbols dividing the chapters was also removed.
 
 Later as the project evolves more datasets potentially could be added. The main problem of having multiple datasets is the size of the
 checkpoint files created by the neural network for training purposes. `Alice in Wonderland' checkpoint, which was trained 3,200 times on the novel
@@ -255,8 +254,6 @@ satisfy the standards of app design in early 2020s.
   \label{fig:comparison_tk_electron}
 \end{figure}
 
-\clearpage
-
 Similar situation occurs when it comes to animation with Tkinter. Many examples and many guides were examined and 
 it has been concluded that Tkinter, in spite of the fact that it's one of the most popular GUI libraries, is not
 suitable for the purpose of the project because the aim of the project is to create a fancy web-based application
@@ -267,6 +264,7 @@ either a light or a dark theme, it has been decided to develop an application wi
 does most of the work for the theme change in terms of the colour change. Theme is persistent and is to a
 settings file which is stored in the application's folder. On every start-up the application checks if the
 theme is set to the light or dark mode accessing the JSON file.
+
 
 \begin{figure}[ht]
   \captionsetup[subfigure]{labelformat=empty}
@@ -332,8 +330,6 @@ any programming language. The objects in the files are stored in an `attribute-v
 The purpose of the traditional database is defeated since the application doesn't store any sensitive information.
 No encryption of the database is used either.
 
-\clearpage
-
 There are many other data serialisation formats such as XML, YAML, BSON etc. It has been decided to use JSON because
 of its simplicity and flexibility compared to YAML. YAML is a superset of JSON and it seemed to big for the purpose.
 
@@ -343,6 +339,8 @@ of its simplicity and flexibility compared to YAML. YAML is a superset of JSON a
   \caption{JSON database}
   \label{fig:json}
 \end{figure}
+
+\clearpage
 
 \subsection*{Linking the frontend and backend}
 \addcontentsline{toc}{subsection}{Linking the frontend and backend}
@@ -430,15 +428,196 @@ value of 100 to save the progress in case the process crashes.
 \subsubsection*{Testing}
 \addcontentsline{toc}{subsubsection}{Testing}
 \paragraph{}
+Testing the training process is not a very long process itself, so it is not described in detail. The `GPT-2-Simple'
+library offers many parameters to tweak and test the performance of the training process. All datasets were fed to the
+network and trained on a machine with a `NVIDIA RTX 3080' GPU - this allowed an effective and speedy training process.
 
-Testing \hyperref[appendix:model_testing]{appendix}
+Several ways of training the neural network on the first dataset `Alice' were tried. The first attempt included
+the raw format of `Alice in Wonderland' text file without any preprocessing (i.e. text is decorated with numerous
+spaces, unnecessary punctuation marks and different symbols). The results from the training were acceptable and
+the model was able to generate some of the samples that had sense in them. The second attempt included the preprocessing
+of the original text file. Chapter enumeration, excess symbols and other punctuation was reduced in order to
+minimise the impact on the network. Paragraph spaces were left in the text. The generated text was compared with the
+original text and the results were satisfactory.
+
+\begin{figure}[ht]
+  \captionsetup[subfigure]{labelformat=empty}
+  \centering
+  \begin{subfigure}{.5\textwidth}
+    \centering
+    \includegraphics[width=1\linewidth]{img/alice-original.png}
+    \caption{Unprocessed text (trained 13,100 steps)}
+    \label{fig:unprocess-alice}
+  \end{subfigure}%
+  \begin{subfigure}{.5\textwidth}
+    \centering
+    \includegraphics[width=1\linewidth]{img/alice-preprocess.png}
+    \caption{Prepocessed text (trained 1,000 steps)}
+    \label{fig:preprocess-alice}
+  \end{subfigure}
+  \caption{A comparison of unprocessed and processed datasets}
+  \label{fig:comparison_process_unprocess}
+\end{figure}
+
+The same process was applied to the second dataset `Catcher in the Rye'. It was cleaned from the chapter enumeration and
+then fed to the neural network. It was trained more than 13,000 times.
+
+The Iliad training was the fastest in terms of adjusting the text before feeding it. Since it didn't have any excessive
+decoration and the paragraphs didn't have indents - the output text from the network was of a very good quality.
+
+The finetuning parameters weren't tweaked much. The learning rate stayed at 0.0001 the gradient count was set to
+5. As for the steps, it's impossible to identify a universal value for the best result. The best result for each
+dataset was achieved by taking into account the accuracy of each training step. The longer and more complex the dataset -
+the longer it takes to train. The final accuracy the neural network aimed to achieve was \textit{0.1-0.2}. Therefore
+training times for every dataset are very different.
+
+\subsubsection*{Reflection}
+\addcontentsline{toc}{subsubsection}{Reflection}
+\paragraph{}
+Training the model was one of the most time-consuming parts of the project. Possibly, another method of training could
+have been used. There's still a lot of freedom in what can be tweaked and changed in the parameter sections to
+enhance the results of the training. For example, the biggest enhancement would be to use a different model with more
+parameters. This project is limited computationally and therefore the model with the least parameters was chosen. The video
+memory of the machine wasn't enough to train the model with 355 million parameters. There is a solution to that problem
+as well (use memory saving gradients and only train transformer layers) but it's not implemented in Tensorflow 2.
+
+\clearpage 
+
+\subsection*{Text generation}
+\addcontentsline{toc}{subsection}{Text generation}
+\paragraph{}
+Text generation sprint could have been placed together with model training sprint. However, it was decided to separate
+the two because they are quite important on their own and whereas model training doesn't require frontend adaptation -
+text generation does because it is the final product that is being presented to the user.
+\subsubsection*{Implementation}
+\addcontentsline{toc}{subsubsection}{Implementation}
+\paragraph{}
+Text generation is the most important part of the project. The function takes a trained checkpoint of the network and
+based on the training it presents the user with a text. The function is written in a separate class based on the
+`GPT-2-Simple' library. The function takes the following parameters: \textit{run\_name, length, nsamples}. These
+parameters are thought to be the most `volatile' because they are changed often. The \textit{`run\_name'} parameter specifies
+which checkpoint is being used. The \textit{`length'} parameter defines how many tokens the text should contain and the last parameter
+\textit{`nsamples'} determines the number of samples to be generated.
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=.8\linewidth]{img/generate-text-eel.png}
+  \caption{Eel exposed generate function}
+  \label{fig:generate_text}
+\end{figure}
+
+For the purpose of the infinite generation it is important to specify the \textit{`reuse'} parameter when the GPT-2
+is being loaded. This parameter allows the model to be reused without the need to load it again. In the example above
+this parameter is set to a value directly taken from the Tensorflow library since `GPT-2-Simple' provided explanation
+in the documentation doesn't work (setting the `reuse' parameter to `True').
+
+Yet this is only a first stage of the text processing in the function. After the text is generated it is handled by the
+algorithm that is shown on the below figure.
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=.5\linewidth]{img/text-processing.png}
+  \caption{Text processing algorithm}
+  \label{fig:process_text}
+\end{figure}
+
+\clearpage
+
+The presented algorithm is developed specifically for this project. It is based on the idea that the text which is
+output by the function is cut - it is been tested and proven in the previous section `Model training'. The incomplete
+text seems to be cut only in the beginning and the end of the sample so, the algorithm iterates over the samples and
+removes the last sentence from each of them. This is done using Python `rsplit' function which is the reverse version
+of a standard `split'. After that, the first element of the word is checked for two conditions to decide where to put
+the ellipsis. First condition - uppercase, second condition - alphabetic character. If this is the case, the ellipsis
+is placed in the beginning and in the end of the word. If it's not - only in the end.
+
+The point of the ellipsis is to make the text more pleasing to the eye and slightly confuse the perception of the user.
+It's been decided to call this trick `Ellipsis of Uncertainty' - when the user sees the text that begins with 
+ellipsis which signals that this is not the beginning of the text and ends with ellipsis which has the same meaning
+in perception,e tex they won't expect to see a fully understandable piece of text.
+
+\subsubsection*{Testing}
+\addcontentsline{toc}{subsubsection}{Testing}
+\paragraph{}
+The testing process of the text generation involved the assessment of the generated text not only by the quality of
+the output but also by how it looks displayed on the page appended to the image. It might seem that this testing
+section overlaps with the testing section of the frontend development and it does, since the correlation between 
+those elements is very high.
+
+The main aspect of testing was the time taken to generate the text sample. It is important not to make the user
+wait for too long because it may result in a loss of the user's attention. The \hyperref[appendix:model_testing]{model testing appendix}
+shows different test cases and results of parameter tweaking. The most optimal parameters were found to be: length
+of the text - \textit{100}, number of samples - \textit{6}. It satisfies the time requirement of 15 seconds for generating 
+all 6 samples on whichever topic the user chooses. `Alice' checkpoint has been tested more than the other checkpoints due
+to the fact that it's the first checkpoint that was developed. The results and knowledge gained from the testing are transferred
+from `Alice' to other checkpoints successfully saving time.
+
+\subsubsection*{Reflection}
+\addcontentsline{toc}{subsubsection}{Reflection}
+\paragraph{}
+Output generation was a harder task to accomplish because it involved more than just using and adapting the functions
+from the library but also a `Ellipsis of Uncertainty' trick had to be implemented. Also a lot of tests weren't passed
+because the expected outcome was an uncut text. That case wasn't reached and thus the trick described above was used.
+Besides, the text length was a question that had to be answered by testing what looks the best under a picture. 
+Most likely, the reaction system will help to find out the best length and what exactly the user is looking for.
+
+\clearpage
+
+\subsection*{Reaction System}
+\addcontentsline{toc}{subsection}{Reaction System}
+\subsubsection*{Implementation}
+\addcontentsline{toc}{subsubsection}{Implementation}
+\paragraph{}
+Despite the simple explanation of the reaction system earlier in `Major Components' section - the development
+itself was a bit more complex and involved the creation of a whole new logic system. Reactions now are used in a
+manual way by the developer to understand the problems of the system and make it more efficient and enjoyable to use.
+The idea is simple - if the user likes a generated post - they can react with a positive reaction (like). If they
+don't - they can react with a negative reaction (dislike). A logic system was needed in order to restrict the user
+from liking and disliking one post at the same time. It checks the boolean value of the reaction and if it's `True',
+it's impossible to react with the opposite reaction again. Every reaction is separate for every post and has its own
+unique ID which is linked to the post. That way, it's easier to find the reactions in the database and understand a 
+pattern of these reactions, since the main aim of the system is to gather collective information about the experience
+in whole and not one by one.
+
+Apart from the logics - a database was implemented to store the reactions. JSON data serialisation format is used 
+and every new reaction is stored there right away. Every object has several keys: \textit{appVer}, \textit{id},
+\textit{postID}, \textit{postReaction}, \textit{postTime} and \textit{topic}.
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=.7\linewidth]{img/json_entry.png}
+  \caption{Example of an object}
+  \label{fig:json_entry}
+\end{figure}
+
+As every post can be reacted at, it can also be unreacted. This is an important feature which helps to tidy up the
+database in case if the user changes their mind or just missclicks. The system for unreacting is slightly more
+complex than reacting. It searches the database reversely and finds the last reaction of the user with a corresponding
+post ID. It must work from the end to the beginning because many entries might have the same post ID and only the last
+one should be deleted.
+
+\subsubsection*{Testing}
+\addcontentsline{toc}{subsubsection}{Testing}
+\paragraph{}
+
+
+\subsubsection*{Reflection}
+\addcontentsline{toc}{subsubsection}{Reflection}
+\paragraph{}
+The reaction system was one of the hardest things to implement since it has very convoluted logic. The main problem with
+it was the naming of the `like' and `dislike' buttons in the HTML document. After the issue has been solved, the implementation
+became rather simple. A better possible solution would be to use this feedback somehow to automatically improve
+the model and adjust the generated text without any manual intervention. This approach would make the app 
+totally autonomous and would be a good point for the future development.
+
 
 
 % IMPLEMENTATION:
 % Building repository
 % Training the model
 % Generating text (best samples)
-% Testing
+% Frontend implementation (lazy loading etc.)
+% Reaction system
 % Code explanation
 % Examples
 
@@ -492,9 +671,17 @@ Testing \hyperref[appendix:model_testing]{appendix}
   \multirow{4}{*}{GEN7} & Length: 100 & \multirow{2}{*}{No cut text} & \multirow{2}{*}{Text cut} & \multirow{2}{*}{Fail}\\
   & Samples: 6 & \multirow{2}{*}{Time: $<$15s} & \multirow{2}{*}{Time: 9.46s} & \multirow{2}{*}{Pass} \\
   & Batches: 1 & & & \\
+  \addlinespace[3pt]
+  \multirow{4}{*}{GEN8} & Length: 100 & \multirow{4}{*}{Time: $<$15s} & \multirow{4}{*}{Time: 12.12s} & \multirow{4}{*}{Pass}\\
+  & Samples: 6 & & & \\
+  & Batches: 1 & & & \\
+  \addlinespace[3pt]
+  \multirow{4}{*}{GEN9} & Length: 100 & \multirow{4}{*}{Time: $<$15s} & \multirow{4}{*}{Time: 11.66s} & \multirow{4}{*}{Pass}\\
+  & Samples: 6 & & & \\
+  & Batches: 1 & & & \\
   \bottomrule
   \end{tabular}
-  \caption{`Alice' (3100 steps) dataset text generation testing} 
+  \caption{GEN0-GEN7 - `Alice', GEN8-GEN9 - `Catcher'}
 \end{table}
 
 
@@ -515,6 +702,7 @@ Testing \hyperref[appendix:model_testing]{appendix}
 % TEST 11: UNREACT - ANY TOPIC, ANY POST, LOGIC TEST - Fail - When like is pressed - dislike can be activated 
 % TEST 12: UNREACT - ANY TOPIC, ANY POST, LOGIC TEST - Pass - Every function works fine
 % TEST 13: UNREACT - ANY TOPIC, ANY POST, DELETE Entry test - Fail - Input r+, w+, w, r,
+% TEST 14: UNREACT - ANY TOPIC, ANY POST, DELETE Entry test - Pass - Input r+, just forgot to dump it back in JSON
 
 
 
