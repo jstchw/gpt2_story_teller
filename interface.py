@@ -3,7 +3,7 @@ import json
 import os
 import glob
 
-app_version = 1.0
+app_version = 'Alpha 1.1'
 
 
 # Function to save reactions in a JSON file
@@ -35,7 +35,6 @@ def unreact(post_id):
                 json_file.seek(0)
                 json.dump(reaction_file, json_file, indent=4, sort_keys=True)
                 json_file.truncate()
-                # reaction_file['posts'].remove(i-1)
                 break
 
 
@@ -54,7 +53,7 @@ def set_settings(key, value):
     settings[key] = value
 
     with open('base/settings.json', 'w') as json_file:
-        json.dump(settings, json_file)
+        json.dump(settings, json_file, indent=4, sort_keys=True)
 
 
 @eel.expose

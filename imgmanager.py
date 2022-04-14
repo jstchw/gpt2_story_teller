@@ -3,53 +3,46 @@ try:
 except ImportError:
     import Image, ImageDraw, ImageFont
 
-import pytesseract
 import os
-import subprocess
+import nn
+import textwrap
+import eel
+
+
+@eel.expose
+def create_meme(topic, count):
+    W, H = 1000, 1000
+    text = nn.generate_text(topic, 20, count * 2)
+
+    for i in range(0, count):
+        img = Image.open(f'www/img/{topic}/{topic}{i}.jpg')
+        img = img.resize((W, H), Image.ANTIALIAS)
+        d = ImageDraw.Draw(img)
+        font = ImageFont.truetype("www/style/fonts/unicode.impact.ttf", 60)
+        text[i] = text[i].upper()
+        text[i] = textwrap.fill(text=text[i], width=35)
+        w, h = d.textsize(text[i], font=font)
+        d.text(((W-w)/2, 50), text[i], fill=(255, 255, 255), font=font, align='center', stroke_fill=(0, 0, 0),
+               stroke_width=2)
+        text[i+6] = text[i+6].upper()
+        text[i+6] = textwrap.fill(text=text[i+6], width=35)
+        w, h = d.textsize(text[i+6], font=font)
+        d.text(((W-w)/2, 800), text[i+6], fill=(255, 255, 255), font=font, align='center', stroke_fill=(0, 0, 0),
+               stroke_width=2)
+        img.save(f'www/img/memes/{topic}/{topic}{i}.jpg')
 
 
 class ImgManager:
 
     # def __init__(self, input_img, output_img):
     def __init__(self):
-        self.txt = None
-        # self.input_img = 'img/' + input_img
-        # self.output_img = 'img/' + output_img
         self.img_pil = None
-        self.meme_dir = os.fsdecode('www/img/memes')
-
-    # Returns a string
-    def read_text(self, input_img):
-        pytesseract.pytesseract.tesseract_cmd = r"D:\Tesseract\tesseract.exe"
-        # self.txt = pytesseract.image_to_string(Image.open(self.input_img))
-        
-        # Trying different parameters
-        return pytesseract.image_to_string(Image.open(input_img), lang='eng', config='--psm 4')
+        self.meme_dir = os.fsdecode('www/img/memes/')
+        self.output_img = self.meme_dir + 'testing.jpg'
 
     # Takes a string as a value
-    def write_text(self):
-        img = Image.new('RGB', (400, 400), color=(255, 255, 255))
-        d = ImageDraw.Draw(img)
-        font = ImageFont.truetype("fonts/ZenKakuGothicAntique-Regular.ttf", 15)
-        d.text((100, 100), self.txt, fill=(0, 0, 0), font=font)
-        img.save(self.output_img)
 
     def reformat_image(self):
         self.img_pil = Image.open(self.input_img)
         self.img_pil = self.img_pil.resize((350, 350), Image.ANTIALIAS)
         self.img_pil.save(self.output_img)
-
-    # Images will be the same if reddit hot is not updated
-    def get_images(self):
-        counter = 0
-        for file in os.listdir(self.meme_dir):
-            if os.path.isfile(os.path.join(self.meme_dir, file)):
-                counter += 1
-
-        subprocess.call(['python', 'imagescraper.py', '-s', 'RollSafe', '-n', '60', '-o', 'hot'])
-
-        for file in os.listdir(self.meme_dir):
-            filename = os.fsdecode(file)
-            if filename.endswith(".jpg") and 'meme' not in filename:
-                os.rename(f"{self.meme_dir}/{filename}", f"{self.meme_dir}/meme{counter}.jpg")
-                counter = counter + 1

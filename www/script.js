@@ -1,13 +1,13 @@
 "use strict"
 
 let counter = 0
-let memeArray = []
+let imageArray = []
 const startTime = Date.now()
 
 const themeToggleBtn = document.querySelector('#theme-toggle')
 const menu = document.querySelector('.offcanvas')
 let loadMoreInProgress = false
-let topic, theme
+let topic, theme, mode
 /*
 ON STARTUP
 */
@@ -25,6 +25,7 @@ getSettings().then(settings => {
         theme = 'light'
     }
     topic = settings.topic
+    mode = settings.mode
 }).then(loadMore)
 
 displayElapsedTime()
@@ -58,6 +59,18 @@ $('#iliad-topic').on('click', ev => {
         $('.navbar-toggler').click()
     }
 })
+$('#classic-mode').on('click', ev => {
+    if(mode !== 'classic' && !loadMoreInProgress) {
+        selectMode('classic')
+        $('.navbar-toggler').click()
+    }
+})
+$('#meme-mode').on('click', ev => {
+    if(mode !== 'meme' && !loadMoreInProgress) {
+        selectMode('meme')
+        $('.navbar-toggler').click()
+    }
+})
 
 
 // Special listener to load everything when user reaches the end of page
@@ -72,20 +85,20 @@ document.addEventListener('scroll',()=>{
 // When a button is clicked, the for loop appends an image from an array which is populated beforehand
 
 async function loadMore() {
-
     let body = $('body')
 
     // THIS VARIABLE FIXES MULTIPLE NN GENERATIONS
     loadMoreInProgress = true
     if(theme === 'light') {
+        console.log('spinner should appear')
         body.append('<div class="d-flex justify-content-center pb-4 spinner-container"><div class="spinner-border"></div></div>')
     }
     else if(theme === 'dark') {
+        console.log('spinner should appear')
         body.append('<div class="d-flex justify-content-center pb-4 spinner-container"><div class="spinner-border text-light"></div></div>')
     }
 
     // IT HAS BEEN TESTED WITH DIFFERENT SAMPLE SIZES - 20, 40, 60, 70, 100, 200, 500, 1023 - 100 IS AN OPTIMAL SOLUTION - NOT TOO BIG TO TRUNCATE AND DOESN'T TAKE AN ETERNITY TO PROCESS
-    let object = await eel.generate_text(topic, 100, 6)()
 
 
     // When the maxResult value is bigger or the modulus of it and the array length is not 0 -> endless scrolling problem
@@ -93,37 +106,56 @@ async function loadMore() {
     // CAUSES ISSUES IF GREATER
     let maxResult = 6
 
-    await populateImageArray().then($('.spinner-container').remove())
+    await populateImageArray()
+    $('.spinner-container').remove()
 
-    if(theme === 'light') {
-        for (let i = 0; i < maxResult; i++) {
-            $(".content").append(
-            "<div><img class='append-img img-fluid pb-2' alt='Everything went wrong' src='" + memeArray[i].src + "'/></div>" +
-            "<div class='container overflow-hidden'>" +
-                "<div class='row px-5 text-content' id='text_" + counter + "'>" + object[i] + "</div>" +
-                "<div class='row px-5'>" +
-                    "<div class='col like' id='dolike_" + counter + "'>&#128077</div>" +
-                    "<div class='col'></div>" +
-                    "<div class='col dislike' id='dislike_" + counter + "'>&#128078</div>" +
-                "</div>" +
-            "</div>")
-            counter++
+    if (mode === 'classic') {
+        let object = await eel.generate_text(topic, 100, 6)()
+        if(theme === 'light') {
+            for (let i = 0; i < maxResult; i++) {
+                $(".content").append(
+                "<div><img class='append-img img-fluid pb-2' alt='Everything went wrong' src='" + imageArray[i].src + "'/></div>" +
+                "<div class='container overflow-hidden'>" +
+                    "<div class='row px-5 text-content' id='text_" + counter + "'>" + object[i] + "</div>" +
+                    "<div class='row px-5'>" +
+                        "<div class='col like' id='dolike_" + counter + "'>&#128077</div>" +
+                        "<div class='col'></div>" +
+                        "<div class='col dislike' id='dislike_" + counter + "'>&#128078</div>" +
+                    "</div>" +
+                "</div>")
+                counter++
+            }
+        } else if(theme === 'dark') {
+            for (let i = 0; i < maxResult; i++) {
+                $(".content").append(
+                "<div><img class='append-img img-fluid pb-2' alt='Everything went wrong' src='" + imageArray[i].src + "'/></div>" +
+                "<div class='container overflow-hidden'>" +
+                    "<div class='row px-5 text-content text-light' id='text_" + counter + "'>" + object[i] + "</div>" +
+                    "<div class='row px-5'>" +
+                        "<div class='col like' id='dolike_" + counter + "'>&#128077</div>" +
+                        "<div class='col'></div>" +
+                        "<div class='col dislike' id='dislike_" + counter + "'>&#128078</div>" +
+                    "</div>" +
+                "</div>")
+                counter++
+            }
         }
-    } else if(theme === 'dark') {
+    } else if (mode === 'meme') {
+
         for (let i = 0; i < maxResult; i++) {
-            $(".content").append(
-            "<div><img class='append-img img-fluid pb-2' alt='Everything went wrong' src='" + memeArray[i].src + "'/></div>" +
-            "<div class='container overflow-hidden'>" +
-                "<div class='row px-5 text-content text-light' id='text_" + counter + "'>" + object[i] + "</div>" +
-                "<div class='row px-5'>" +
-                    "<div class='col like' id='dolike_" + counter + "'>&#128077</div>" +
-                    "<div class='col'></div>" +
-                    "<div class='col dislike' id='dislike_" + counter + "'>&#128078</div>" +
-                "</div>" +
-            "</div>")
-            counter++
-        }
+                $(".content").append(
+                "<div><img class='append-img img-fluid pb-2' alt='Everything went wrong' src='" + imageArray[i].src + "'/></div>" +
+                "<div class='container overflow-hidden'>" +
+                    "<div class='row px-5'>" +
+                        "<div class='col like' id='dolike_" + counter + "'>&#128077</div>" +
+                        "<div class='col'></div>" +
+                        "<div class='col dislike' id='dislike_" + counter + "'>&#128078</div>" +
+                    "</div>" +
+                "</div>")
+                counter++
+            }
     }
+
 
     $('.like').click(selectReaction)
     $('.dislike').click(selectReaction)
@@ -135,16 +167,26 @@ async function loadMore() {
 // The loop iterates through numbers and loads an image to an array slot with an according number
 async function populateImageArray() {
 
-    let isEmpty = Boolean(memeArray.length === 0)
+    let isEmpty = Boolean(imageArray.length === 0)
 
-    if(isEmpty) {
-        for(let i = 0; i < await eel.count_files(`www/img/${topic}`)(); i++) {
-            memeArray[i] = new Image()
-            memeArray[i].src = `img/${topic}/${topic + i}.jpg`
-            shuffleArray(memeArray)
+    if(mode === 'classic') {
+        if(isEmpty) {
+            for(let i = 0; i < await eel.count_files(`www/img/${topic}`)(); i++) {
+                imageArray[i] = new Image()
+                imageArray[i].src = `img/${topic}/${topic + i}.jpg`
+                shuffleArray(imageArray)
+            }
+        } else {
+            shuffleArray(imageArray)
         }
-    } else {
-        shuffleArray(memeArray)
+    } else if(mode === 'meme') {
+        imageArray = []
+        await eel.create_meme(topic, 6)()
+        for (let i = 0; i < await eel.count_files(`www/img/memes/${topic}`)(); i++) {
+            imageArray[i] = new Image()
+            imageArray[i].src = `img/memes/${topic}/${topic + i}.jpg`
+            shuffleArray(imageArray)
+        }
     }
 }
 
@@ -211,9 +253,17 @@ function toggleTheme() {
 
 async function selectTopic(topic_par) {
     $('.content').empty()
-    memeArray = []
+    imageArray = []
     topic = topic_par
     setSettings('topic', topic)
+    await loadMore()
+}
+
+async function selectMode(mode_par) {
+    $('.content').empty()
+    imageArray = []
+    mode = mode_par
+    setSettings('mode', mode)
     await loadMore()
 }
 
@@ -231,7 +281,9 @@ async function getSettings() {
 async function selectReaction() {
     let id = (this.id).replace(/\D/g, "");
     let like_pressed, dislike_pressed
-    let postText = document.querySelector('#text_' + id).innerHTML
+    let postText
+    if (mode === 'classic') postText = document.querySelector('#text_' + id).innerHTML
+    else if (mode === 'meme')  postText = 'Meme post (WIP)'
 
     like_pressed = document.querySelector('#dolike_' + id).classList.contains('reaction-selected')
     dislike_pressed = document.querySelector('#dislike_' + id).classList.contains('reaction-selected')
@@ -260,7 +312,6 @@ async function selectReaction() {
         console.log('like undone')
         await eel.unreact(id)
     }
-
 }
 
 function shuffleArray(array) {

@@ -560,6 +560,10 @@ from the library but also a `Ellipsis of Uncertainty' trick had to be implemente
 because the expected outcome was an uncut text. That case wasn't reached and thus the trick described above was used.
 Besides, the text length was a question that had to be answered by testing what looks the best under a picture. 
 Most likely, the reaction system will help to find out the best length and what exactly the user is looking for.
+Generally assessing, the result might have been much better if the model with a higher number of parameters was used.
+Having that said, it's hard to make a neural network that knows little words and sentences, generate a text that is
+practically indistinguishable from the text that would come from a human. The benefit of having more parameters is that
+the model can represent much more complicated functions that with fewer parameters.
 
 \clearpage
 
@@ -581,7 +585,13 @@ in whole and not one by one.
 
 Apart from the logics - a database was implemented to store the reactions. JSON data serialisation format is used 
 and every new reaction is stored there right away. Every object has several keys: \textit{appVer}, \textit{id},
-\textit{postID}, \textit{postReaction}, \textit{postTime} and \textit{topic}.
+\textit{postID}, \textit{postReaction}, \textit{postTime} and \textit{topic}. The addition process is rather simple,
+the JSON file is opened with a built-in function in Python, then the array of data if being formed. It includes all
+the values described earlier. App version is hard coded into the system whereas other values such as post ID, reaction,
+text and topic are passed into the function from the frontend. ID of the entry follows a different approach. It is 
+being generated every time a new array is formed. The mechanism is the following: the last post ID is collected and
+incremented by one. Right after that this array is appended to the JSON object, the end of the JSON file (different from JSON object) 
+is sought and the array is dumped into it. Indentation and sorting is maintained.
 
 \begin{figure}[ht]
   \centering
@@ -594,11 +604,46 @@ As every post can be reacted at, it can also be unreacted. This is an important 
 database in case if the user changes their mind or just missclicks. The system for unreacting is slightly more
 complex than reacting. It searches the database reversely and finds the last reaction of the user with a corresponding
 post ID. It must work from the end to the beginning because many entries might have the same post ID and only the last
-one should be deleted.
+one should be deleted since it is the most recent one. The search is performed using a loop which iterates over the
+entries in the database. Then the post ID from the frontend (every like and dislike button have their IDs) is compared
+with the post ID of the entry. If they are the same, the entry is deleted and the loop is broken.
 
 \subsubsection*{Testing}
 \addcontentsline{toc}{subsubsection}{Testing}
 \paragraph{}
+The testing stage was very extensive and everything was tested directly during the development sprint. 
+The testing was done, as always, in a manual way without writing any automatic tests or using any test suites.
+It can be split in several parts: reaction buttons and database. The reaction buttons were tested only for logics and
+animation tests weren't conducted since they were considered unnecessary.
+
+Buttons' logic is meant to be the following way: when the like button is pressed - the button is animated and dislike
+button is deactivated. And the dislike button should follow the same mechanism of action. Since an if-else statement
+was used to determine the logical system instead of switch-case statement, it was harder to create a logical system
+and this harder to test it (i.e. more tests were needed).
+
+Database testing was conducted in a similar way. Entry creation and entry deletion was tested. It was crucial to 
+have an understanding that it all works the way it should. Total of 13 tests were conducted in order to test the integrity of the system.
+
+The test table of conducted tests can be found in the following \hyperref[appendix:reaction_system_testing]{appendix}.
+
+\begin{figure}[ht]
+  \captionsetup[subfigure]{labelformat=empty}
+  \centering
+  \begin{subfigure}{.5\textwidth}
+    \centering
+    \includegraphics[width=.8\linewidth]{img/react-function.png}
+    \caption{React function}
+    \label{fig:react-func}
+  \end{subfigure}%
+  \begin{subfigure}{.5\textwidth}
+    \centering
+    \includegraphics[width=1\linewidth]{img/unreact-function.png}
+    \caption{Unreact function}
+    \label{fig:unreact-func}
+  \end{subfigure}
+  \caption{Two functions that have been tested}
+  \label{fig:react-unreact-funcs}
+\end{figure}
 
 
 \subsubsection*{Reflection}
@@ -608,7 +653,134 @@ The reaction system was one of the hardest things to implement since it has very
 it was the naming of the `like' and `dislike' buttons in the HTML document. After the issue has been solved, the implementation
 became rather simple. A better possible solution would be to use this feedback somehow to automatically improve
 the model and adjust the generated text without any manual intervention. This approach would make the app 
-totally autonomous and would be a good point for the future development.
+totally autonomous and would be a good point for the future development. Also not enough attention was paid to the
+functions that work with JSON. The formed array wasn't dumped into the JSON file and thus the database was not updated.
+This flaw extended the development time with a couple of hours.
+
+\clearpage
+
+\subsection*{Frontend Development}
+\addcontentsline{toc}{subsection}{Frontend Development}
+\paragraph{}
+It has been decided to unify all the work carried out in the frontend into one section of the report. The reason for that
+is a belief that the frontend must work as a one single unit since it consists of many small components that are unable to
+work on their own. This section will include the implementation process of such elements as: navigation bar, menu,
+content loading, reaction animations, theme change and other elements related to frontend (created and coded in the
+JavaScript part of the project).
+
+Many different ways of implementation and design were tried for the frontend. This section won't include the details of
+the earlier versions since they're not used in the project.
+\subsubsection*{Implementation - Visible elements}
+\addcontentsline{toc}{subsubsection}{Implementation - visible elements}
+\paragraph{}
+The implementation of the navigation bar was one of the first things that was done in the frontend. Bootstrap 5 was used
+in order to create a responsive navigation bar. The navigation bar is a simple one with a hamburger menu button that leads
+to a dropdown menu that contains the several sections to tweak the application. Instead of a logo on the left of the navigation
+bar - application's name is displayed. Moreover, this name can be used as an active button to return to the beginning of the page.
+That is a very useful feature in an infinite scrolling app.
+
+A dropdown menu implements three sections. The first one is `Topics'. It contains three different sections that neural network
+can generate text on. The second section is `About'. It contains information about the developer and a current version of the
+application. The third section is `Settings'. A button to change the theme of the application is located there along with
+mode selection. There are two modes of the app - classic and meme mode. In the classic mode the app generates text beneath
+the images and the final content looks like posts. In meme mode the text is going to be appended directly onto the images to create
+meme-like effect. Apart from the sections, the menu has a timer built into it. The timer counts how much time has passed since the
+application was opened.
+
+Post arrangement is designed following the main trends of the Internet nowadays. First comes the image then the description and
+only after that are positioned the feedback buttons. The feedback buttons are animated when the user hovers on them. It's a simple
+and effective way to show the user that the app is responsive and invites them to leave some feedback. If the desired reaction is clicked,
+the button stays enlarged. All the content is dynamic on the page and is generated on the fly. Images are pulled from the array which is being
+shuffled every iteration of post generation. 
+
+Theme change implementation is heavily based on the Bootstrap 5. All of the elements use class togglers to change the theme.
+Classes are implemented in Bootstrap and can be used on almost any element of the page. One of the complexities in the implementation
+of the dark theme laid under the hood is the generating of the new posts with according colour of the text. When a function
+is called to change the theme, the posts that are already created will be changed only. This is solved by creating an if-else
+statement that check for the theme variable value in the function that loads more content.
+
+\clearpage
+
+\subsubsection*{Implementation - Invisible elements}
+\addcontentsline{toc}{subsubsection}{Implementation - invisible elements}
+\paragraph{}
+The invisible elements are the functions and the mechanisms that stand behind the beautiful and interactive elements.
+They are all implemented in the JavaScript and thus included in the `Frontend Development' section.
+
+The main invisible element is the Post generation system. The generation flow is as follows: a text is generated on a certain topic
+with a certain length. While it's being done, the application shows a spinner to a user - which can be either white or dark, depending
+on the theme selected. Then when the text generation is over - an image array is shuffled and populated with images. Then the spinner is removed.
+After that comes the if-else statement that checks if the theme is dark or not to generate the the text with an 
+appropriate colour. After, the reaction buttons are appended.
+
+Another important aspect in loading is the point of time when to start generating and displaying another group of posts. The logics behind that are rather simple and are very well known
+in modern Internet applications. When the user reaches the end of the page and no content is available - the application will load more content.
+
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=.8\linewidth]{img/lazy-loading.png}
+  \caption{Function of lazy loading}
+  \label{fig:lazy-loading}
+\end{figure}
+
+This technique is known as `lazy loading'. The point of using `lazy loading' in the project is to minimise the load on the user's system
+and thus improve the user experience. Also there is no point in generating more posts than the user will be able to see in the long run.
+
+Nowadays there are many ways of implementing lazy loading mechanism. Beginning from 2020 it's considered a web standard and therefore
+can be declared as an attribute in the HTML document. However, for the purpose of the project the HTML approach doesn't work since the objects
+are generated on the fly and thus they cannot be appended to the DOM beforehand.
+
+Moving onto what's under the hood of the design solutions - the time displayed in the navigation bar is calculated via comparing two timestamps.
+One timestamp is created when the application is launched and the other is created and compared with the first one every 60 seconds.
+Strictly cosmetic feature is that the function checks for the spent time and decides whether to display a singular or a plural word for `minute/s'.
+
+Another under the hood explanation is about the theme and topic change mechanism. The function calls Python via Eel and uses built-in Python
+functions to manipulate the JSON settings file and retrieve or write information to it. Topic and theme values are saved in the file and retrieved
+when the application is launched or whenever they are needed.
+
+\clearpage
+
+\subsubsection*{Testing}
+\addcontentsline{toc}{subsubsection}{Testing}
+\paragraph{}
+Testing the frontend and all its features was very important to achieve the final satisfactory result. It's been carried out
+during the whole development process. The testing process for the visible and invisible elements of the frontend was conducted
+simultaneously because they depend on each other. The greatest challenges in testing were to ensure that the application works
+as expected and no errors will come up in the future. Visible elements were tested on a principle of a visual testing. 
+Questions like: `Does it look right?', `Is there a way to make it appear better?' and similar were asked to verify the correctness of implementation.
+Invisible elements on the other hands followed a functional testing approach. Every visible element must have had a working
+implentation in the backend. Since lazy loading heavily depends on text generation process - the performance testing has been declared
+successful because the text generation completed in a reasonable time. 
+
+
+\subsubsection*{Reflection}
+\addcontentsline{toc}{subsubsection}{Reflection}
+\paragraph{}
+The overall process of frontend development was something very different from the other parts of the project.
+It included many different attempts to create the best looking design that would suit the app purpose. The development 
+of the design was one of the first things that was done in the whole project and only then the backend development process
+commenced. First attempt of the design involved no additional libraries and frameworks and was done with plain HTML and CSS.
+Later, this idea has been changed towards innovation and the use of Bootstrap 5. No doubt, it could have been done without 
+using additional resources but it was a good idea to use Bootstrap in order to make the code more readable and maintainable thus
+making the code creation more efficient and speedy. The hardest thing to implement in the frontend was to competently
+wire up the function call from the frontend and a response from the backend when it comes to lazy loading of the content.
+JavaScript allowed easy implementation of all the aspects of the look and design functionality. Choosing JavaScript in a bundle
+with Python was definitely a good idea.
+
+Speaking about frontend features, there are some not very functional features that were implemented but through them
+the developers can show their own attitude towards the project and user experience in whole. From a commercial point of view,
+having a timer that counts how much time the user has spent in the app scrolling through stories, is not a good idea,
+since they are likely to blame themselves for the big amount of time spent but I think it's a great addition.
+
+\clearpage
+
+\section*{Critical analysis and Reflection}
+\addcontentsline{toc}{section}{Critical analysis and Reflection}
+\paragraph{}
+
+
+
 
 
 
@@ -684,34 +856,105 @@ totally autonomous and would be a good point for the future development.
   \caption{GEN0-GEN7 - `Alice', GEN8-GEN9 - `Catcher'}
 \end{table}
 
+\clearpage
+
+\subsection*{Reaction system testing}
+\addcontentsline{toc}{subsection}{Reaction system testing}
+\label{appendix:reaction_system_testing}
+
+\begin{table}[ht]
+  \centering
+  \begin{tabular}{@{\extracolsep{1pt}}lllll}
+  \toprule   
+  {Case} & {Input} & {Expected} & {Actual} & {Result}\\
+  \midrule
+  \multirow{3}{*}{RS0} & Action: Like & \multirow{3}{*}{Multi-line string} & \multirow{3}{*}{Single-line string} & \multirow{3}{*}{Fail}\\ 
+  & Set: Alice & & & \\
+  & Post: Any &  & & \\
+  \addlinespace[3pt]
+  \multirow{3}{*}{RS1} & Action: Dislike & \multirow{3}{*}{Single entry} & \multirow{2}{*}{2 same entries} & \multirow{3}{*}{Fail}\\ 
+  & Set: Alice & & \multirow{2}{*}{ID 6 and ID 7} & \\
+  & Post: Any &  & & \\
+  \addlinespace[3pt]
+  \multirow{3}{*}{RS2} & Action: Dislike & \multirow{3}{*}{Single entry} & \multirow{2}{*}{2 same entries} & \multirow{3}{*}{Fail}\\ 
+  & Set: Alice & & \multirow{2}{*}{ID 8 and ID 9} & \\
+  & Post: Any &  & & \\
+  \addlinespace[3pt]
+  \multirow{3}{*}{RS3} & Action: Undislike & \multirow{3}{*}{Do nothing} & \multirow{3}{*}{Entry added} & \multirow{3}{*}{Fail}\\ 
+  & Set: Alice & & & \\
+  & Post: Any &  & & \\
+  \addlinespace[3pt]
+  \multirow{3}{*}{RS4} & Action: Create file (r+) & \multirow{3}{*}{File created} & \multirow{3}{*}{Error} & \multirow{3}{*}{Fail}\\ 
+  & Set: - & & & \\
+  & Post: - &  & & \\
+  \addlinespace[3pt]
+  \multirow{3}{*}{RS5} & Action: Create file (a+) & \multirow{3}{*}{File created} & \multirow{3}{*}{File created} & \multirow{3}{*}{Pass}\\ 
+  & Set: - & & & \\
+  & Post: - &  & & \\
+  \addlinespace[3pt]
+  \multirow{3}{*}{RS6} & Action: Append to empty & \multirow{3}{*}{Appended} & \multirow{3}{*}{Error} & \multirow{3}{*}{Fail}\\ 
+  & Set: - & & & \\
+  & Post: - &  & & \\
+  \addlinespace[3pt]
+  \multirow{3}{*}{RS7} & Action: Like & \multirow{3}{*}{Single entry} & \multirow{3}{*}{Single entry} & \multirow{3}{*}{Pass}\\ 
+  & Set: Catcher & & & \\
+  & Post: Any &  & & \\
+  \addlinespace[3pt]
+  \multirow{3}{*}{RS8} & Action: Dislike & \multirow{3}{*}{Single entry} & \multirow{3}{*}{Single entry} & \multirow{3}{*}{Pass}\\ 
+  & Set: Catcher & & & \\
+  & Post: Any &  & & \\
+  \addlinespace[3pt]
+  \multirow{3}{*}{RS9} & Action: Unreact & \multirow{2}{*}{Dislike inactive} & \multirow{3}{*}{Dislike active} & \multirow{3}{*}{Fail}\\ 
+  & Set: Any & \multirow{2}{*}{(when like is active)} & & \\
+  & Post: Any &  & & \\
+  \addlinespace[3pt]
+  \bottomrule
+  \end{tabular}
+  \caption{Reaction system sprint}
+\end{table}
+
+\begin{table}[ht]
+  \centering
+  \begin{tabular}{@{\extracolsep{1pt}}lllll}
+  \toprule   
+  {Case} & {Input} & {Expected} & {Actual} & {Result}\\
+  \midrule
+  \multirow{3}{*}{RS10} & Action: Unreact & \multirow{3}{*}{Complete logics} & \multirow{3}{*}{Complete logics} & \multirow{3}{*}{Pass}\\ 
+  & Set: Alice & & & \\
+  & Post: Any &  & & \\
+  \addlinespace[3pt]
+  \multirow{3}{*}{RS11} & Action: Unreact & \multirow{3}{*}{Delete entry} & \multirow{3}{*}{Not deleted} & \multirow{3}{*}{Fail}\\ 
+  & Set: Any & & & \\
+  & Post: Any &  & & \\
+  \addlinespace[3pt]
+  \multirow{3}{*}{RS12} & Action: Unreact & \multirow{3}{*}{Delete entry} & \multirow{3}{*}{Deleted} & \multirow{3}{*}{Pass}\\ 
+  & Set: Any & & & \\
+  & Post: Any &  & & \\
+  \addlinespace[3pt]
+  \bottomrule
+  \end{tabular}
+  \caption{Reaction system sprint}
+\end{table}
+
 
 % SPRINT: REACTION SYSTEM
 % TESTING DATABASE REACTIONS
-% TEST 1: LIKE, ALICE, Different post text - Partial Pass - text formatted with \n
-% TEST 2: LIKE, ALICE, Different post texts - Partial pass - text too long and formatted with \n
-% TEST 3: DISLIKE, ALICE, Different post texts - Fail - two entries with different reacion identifiers (id 6 and 7)
-% TEST 4: DISLIKE, ALICE, Different post texts - Fail - two entires with different reaction identifiers (id 8 and 9)
-% TEST 5: REMOVE DISLIKE, ALICE, different post texts - fail - instead of doing nothing, it adds another entry
-% TEST 6: EMPTY FILE TEST - fail - cannot append to a non-existing array in JSON
-% TEST 6: No file with w+, a+ instead of r+ - fail - some error, idk
-% TEST 7: No file with w+, a+ instead of r+ - file creation - Pass
-% TEST 8: Empty file with w+, r+, a+ - fail - empty file needs at least one entry
+% TEST 1: LIKE, ALICE, Different post text - Partial Pass - text formatted with \n ------------
+% TEST 2: LIKE, ALICE, Different post texts - Partial pass - text too long and formatted with \n ------
+% TEST 3: DISLIKE, ALICE, Different post texts - Fail - two entries with different reacion identifiers (id 6 and 7) -----
+% TEST 4: DISLIKE, ALICE, Different post texts - Fail - two entires with different reaction identifiers (id 8 and 9) -----
+% TEST 5: REMOVE DISLIKE, ALICE, different post texts - fail - instead of doing nothing, it adds another entry ----
+% TEST 6: EMPTY FILE TEST - fail - cannot append to a non-existing array in JSON ----
+% TEST 6: No file with w+, a+ instead of r+ - fail - some error, idk -------
+% TEST 7: No file with w+, a+ instead of r+ - file creation - Pass ----------
+% TEST 8: Empty file with w+, r+, a+ - fail - empty file needs at least one entry ---------
 
-% TEST 9: LIKE, CATCHER, Different post texts - Partial pass - text formatted with \n but only one entry, no multiple entries
+% TEST 9: LIKE, CATCHER, Different post texts - Partial pass - text formatted with \n but only one entry, no multiple entries -----
 % TEST 10: DISLIKE, CATCHER, DIfferent post texts - Partial pass - text formatted with \n but only one entry, no multiple entries
-% TEST 11: UNREACT - ANY TOPIC, ANY POST, LOGIC TEST - Fail - When like is pressed - dislike can be activated 
-% TEST 12: UNREACT - ANY TOPIC, ANY POST, LOGIC TEST - Pass - Every function works fine
+% TEST 11: UNREACT - ANY TOPIC, ANY POST, LOGIC TEST - Fail - When like is pressed - dislike can be activated --------
+% TEST 12: UNREACT - ANY TOPIC, ANY POST, LOGIC TEST - Pass - Every function works fine ------
 % TEST 13: UNREACT - ANY TOPIC, ANY POST, DELETE Entry test - Fail - Input r+, w+, w, r,
 % TEST 14: UNREACT - ANY TOPIC, ANY POST, DELETE Entry test - Pass - Input r+, just forgot to dump it back in JSON
-
-
-
-
-\clearpage
-
-\section*{Appendix B}
-\label{appendix:B}
-\addcontentsline{toc}{section}{Appendix B}
 
 \end{appendices}
 

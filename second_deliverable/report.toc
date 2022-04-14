@@ -52,12 +52,24 @@
 \contentsline {subsection}{Reaction System}{14}{section*.61}%
 \contentsline {subsubsection}{Implementation}{14}{section*.62}%
 \contentsline {paragraph}{}{14}{section*.63}%
-\contentsline {subsubsection}{Testing}{14}{section*.65}%
-\contentsline {paragraph}{}{14}{section*.66}%
-\contentsline {subsubsection}{Reflection}{14}{section*.67}%
-\contentsline {paragraph}{}{14}{section*.68}%
-\contentsline {section}{Bibliography}{14}{section*.68}%
-\contentsline {chapter}{Appendices}{17}{section*.70}%
-\contentsline {section}{Testing}{18}{section*.71}%
-\contentsline {subsection}{Model testing}{18}{section*.72}%
-\contentsline {section}{Appendix B}{19}{section*.74}%
+\contentsline {subsubsection}{Testing}{15}{section*.65}%
+\contentsline {paragraph}{}{15}{section*.66}%
+\contentsline {subsubsection}{Reflection}{15}{section*.68}%
+\contentsline {paragraph}{}{15}{section*.69}%
+\contentsline {subsection}{Frontend Development}{16}{section*.70}%
+\contentsline {paragraph}{}{16}{section*.71}%
+\contentsline {subsubsection}{Implementation - visible elements}{16}{section*.72}%
+\contentsline {paragraph}{}{16}{section*.73}%
+\contentsline {subsubsection}{Implementation - invisible elements}{17}{section*.74}%
+\contentsline {paragraph}{}{17}{section*.75}%
+\contentsline {subsubsection}{Testing}{18}{section*.77}%
+\contentsline {paragraph}{}{18}{section*.78}%
+\contentsline {subsubsection}{Reflection}{18}{section*.79}%
+\contentsline {paragraph}{}{18}{section*.80}%
+\contentsline {section}{Critical analysis and Reflection}{19}{section*.81}%
+\contentsline {section}{Bibliography}{19}{section*.82}%
+\contentsline {paragraph}{}{19}{section*.82}%
+\contentsline {chapter}{Appendices}{22}{section*.84}%
+\contentsline {section}{Testing}{23}{section*.85}%
+\contentsline {subsection}{Model testing}{23}{section*.86}%
+\contentsline {subsection}{Reaction system testing}{24}{section*.88}%
