@@ -107,10 +107,10 @@ async function loadMore() {
     let maxResult = 6
 
     await populateImageArray()
-    $('.spinner-container').remove()
 
     if (mode === 'classic') {
         let object = await eel.generate_text(topic, 100, 6)()
+        $('.spinner-container').remove()
         if(theme === 'light') {
             for (let i = 0; i < maxResult; i++) {
                 $(".content").append(
@@ -141,7 +141,7 @@ async function loadMore() {
             }
         }
     } else if (mode === 'meme') {
-
+        $('.spinner-container').remove()
         for (let i = 0; i < maxResult; i++) {
                 $(".content").append(
                 "<div><img class='append-img img-fluid pb-2' alt='Everything went wrong' src='" + imageArray[i].src + "'/></div>" +

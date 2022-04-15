@@ -1,11 +1,4 @@
-@font-face {
-    font-family: Milestone;
-    src: url(fonts/MilestoneFreeVersion-Script.otf);
-}
-@font-face {
-    font-family: Bebas;
-    src: url(fonts/BebasNeue-Regular.ttf)
-}
+@import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
 
 body {
     padding-top: 5em;
@@ -16,28 +9,12 @@ body.dark-theme {
     background: #121212;
 }
 
-#lmbutton {
-    font-family: Bebas, serif;
-    background-color: rgb(255, 0, 68);
-    border: none;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 24px;
-    margin: 4px 2px;
-    border-radius: 4px;
-    letter-spacing: 2px;
-    transition: ease-out 0.4s;
-    outline: none;
-    box-shadow: inset 0 0 0 0 #f9e506;
+.app-name {
+    font-family: 'Handlee', cursive;
 }
 
-#lmbutton:hover {
-    box-shadow: inset 200px 0 0 0 #f9e506;
-    color: black;
-    cursor: default;
+::-webkit-scrollbar {
+    width: 0;
 }
 
 .like, .dislike {

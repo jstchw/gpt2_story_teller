@@ -1,6 +1,5 @@
 import eel
 import json
-import os
 import glob
 
 app_version = 'Alpha 1.1'

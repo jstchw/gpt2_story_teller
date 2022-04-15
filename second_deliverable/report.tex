@@ -778,20 +778,61 @@ since they are likely to blame themselves for the big amount of time spent but I
 \section*{Critical analysis and Reflection}
 \addcontentsline{toc}{section}{Critical analysis and Reflection}
 \paragraph{}
+The project overall, despite the difficulties and challenges, slightly incorrect approaches and the lack of knowledge
+in regards to neural networks and artificial intelligence, was a successful proof of concept that neural networks can
+synthesise human-like text and be used in entertainment. Considering the great amount of work put into this project and
+the number of papers and articles, guides and documentations gone through, it involved a significant and important learning process.
+Without gaining an understanding in the field of artificial intelligence, the project was not possible to complete. Yet
+in spite of the fact that the project was a success, there are a lot of different possibilites that could have been
+explored and implemented. Many features could have used a different approach. But these considerations of a different approach 
+came during the process of implementation and eventually it was decided to stick as much as possible to the initial approach that was chosen.
+
+\subsection*{Libraries and frameworks}
+\addcontentsline{toc}{subsection}{Libraries and frameworks}
+\subsubsection*{GPT-2-Simple}
+\addcontentsline{toc}{subsubsection}{GPT-2-Simple}
+\paragraph{}
+GPT-2-Simple is the library used to work with the neural network and perform the most important tasks of the project.
+It's a small adaptation of a big library called Tensorflow and allow a fast and effective integration in the project
+without consuming much time that can be used to accomplish other tasks. It wraps many functions from Tensorflow in
+its own functions narrowing down the scope of the library to the most important functions. Yet it's highly adjustable
+and can be tweaked in an almost any possible way. Also, it provides ready-to-use pretrained models of GPT-2 with
+reasonable amount of parameters making it possible to develop an app with a reasonable size.
+
+\subsubsection*{Eel}
+\addcontentsline{toc}{subsubsection}{Eel}
+\paragraph{}
+Eel is also a library that has been used in order to complete this project. This is a library that allows to connect
+frontend which is written in HTML, CSS, JavaScript to interact with the backend which is written in Python. It was chosen
+because it's a small library that is very easily set up and worked with. Also it has a good documentation on GitHub and
+satisfies the needs of the project. A library CEF Python could have been used instead of Eel but it seemed to be more
+complex and a bit too much.
+
+\subsubsection*{Bootstrap}
+\addcontentsline{toc}{subsubsection}{Bootstrap}
+\paragraph{}
+Bootstrap on the other hand is a frontend framework used to make the development process more efficient since it provides a big
+amount of ready-to-use components. The development of the design that is featured in the application now would be much more
+complicated and time consuming if Bootstrap was not used.
+
+\clearpage
+
+\subsubsection*{Pillow}
+\addcontentsline{toc}{subsubsection}{Pillow}
+\paragraph{}
+Pillow is a library used in the backend and implementing a `meme mode' without it would be impossible because it's used
+to manipulate images and put text directly on them. Also, the genuine look of the generated memes is very important and is due
+to the presence of the font called `Impact' and an added stroke to it. All this is done with help of Pillow.
+
+\subsection*{Tools}
+\addcontentsline{toc}{subsection}{Tools}
+\subsubsection*{Python}
+\addcontentsline{toc}{subsubsection}{Python}
+\paragraph{}
+Python is the main tool used in the project since it's a very simple and effective language. It's very well known for
+the amount of libraries written in it.
 
 
-
-
-
-
-% IMPLEMENTATION:
-% Building repository
-% Training the model
-% Generating text (best samples)
-% Frontend implementation (lazy loading etc.)
-% Reaction system
-% Code explanation
-% Examples
 
 %TC:ignore
 
@@ -955,6 +996,10 @@ since they are likely to blame themselves for the big amount of time spent but I
 % TEST 12: UNREACT - ANY TOPIC, ANY POST, LOGIC TEST - Pass - Every function works fine ------
 % TEST 13: UNREACT - ANY TOPIC, ANY POST, DELETE Entry test - Fail - Input r+, w+, w, r,
 % TEST 14: UNREACT - ANY TOPIC, ANY POST, DELETE Entry test - Pass - Input r+, just forgot to dump it back in JSON
+
+
+% FRONTEND TESTING - FOR EXAMPLE - BUTTON WORKS, BUTTON DOESN'T WORK - VISIBLE, INVISIBLE ELEMENTS
+% ALL-IN TESTS - SCROLLING TESTS, DOUBLE LOADING ON SCROLL
 
 \end{appendices}
 

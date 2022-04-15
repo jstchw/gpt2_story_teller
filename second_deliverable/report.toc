@@ -67,9 +67,21 @@
 \contentsline {subsubsection}{Reflection}{18}{section*.79}%
 \contentsline {paragraph}{}{18}{section*.80}%
 \contentsline {section}{Critical analysis and Reflection}{19}{section*.81}%
-\contentsline {section}{Bibliography}{19}{section*.82}%
 \contentsline {paragraph}{}{19}{section*.82}%
-\contentsline {chapter}{Appendices}{22}{section*.84}%
-\contentsline {section}{Testing}{23}{section*.85}%
-\contentsline {subsection}{Model testing}{23}{section*.86}%
-\contentsline {subsection}{Reaction system testing}{24}{section*.88}%
+\contentsline {subsection}{Libraries and frameworks}{19}{section*.83}%
+\contentsline {subsubsection}{GPT-2-Simple}{19}{section*.84}%
+\contentsline {paragraph}{}{19}{section*.85}%
+\contentsline {subsubsection}{Eel}{19}{section*.86}%
+\contentsline {paragraph}{}{19}{section*.87}%
+\contentsline {subsubsection}{Bootstrap}{19}{section*.88}%
+\contentsline {paragraph}{}{19}{section*.89}%
+\contentsline {subsubsection}{Pillow}{20}{section*.90}%
+\contentsline {paragraph}{}{20}{section*.91}%
+\contentsline {subsection}{Tools}{20}{section*.92}%
+\contentsline {subsubsection}{Python}{20}{section*.93}%
+\contentsline {paragraph}{}{20}{section*.94}%
+\contentsline {section}{Bibliography}{20}{section*.94}%
+\contentsline {chapter}{Appendices}{23}{section*.96}%
+\contentsline {section}{Testing}{24}{section*.97}%
+\contentsline {subsection}{Model testing}{24}{section*.98}%
+\contentsline {subsection}{Reaction system testing}{25}{section*.100}%

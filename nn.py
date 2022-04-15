@@ -2,30 +2,8 @@ import gpt_2_simple as gpt2
 import os
 import eel
 import tensorflow as tf
-import re
 
 
-# sess = None
-
-# @eel.expose
-# def load_model(run_name):
-#     sess = gpt2.start_tf_sess()
-#     gpt2.load_gpt2(sess, run_name=run_name)
-#     print(sess)
-
-
-# TESTED WITH LENGTH 10 - TOO SHORT (NOT EVEN A SENTENCE)
-# FIRST TEST - LENGTH 1023 and NSAMPLES 1 (TIME IS OKAY)
-# SECOND TEST - LENGTH 500 and NSAMPLES 6 (TOO LONG TO PROCESS)
-# SOME NUMBER OF SAMPLES JUST CUT THE TEXT AND NOTHING IS CLEAR
-# THIRD TEST - LENGTH 64, NSAMPLES 2, BATCH SIZE 2 - STILL CUTS THE TEXT
-# THIRD TEST - LENGTH 60, NSAMPLES 2, BATCH SIZE 2 - STILL CUTS THE TEXT
-# FOURTH TEST - LENGTH 60, NSAMPLES 2, BATCH SIZE 1 - STILL CUTS THE TEXT
-# FIFTH TEST - LENGTH 70, NSAMPLES 2, BATCH SIZE 1 - STILL CUTS THE TEXT
-# THIS IS TRAINED ON 1023 SAMPLE SIZE
-# NETWORK WASN'T FINETUNED TO THE SAMPLE SIZE ----------------------
-# ALL TRAINED WITH ADAM
-# TRAINED WITH ADAM -> SGD TOO SLOW AND TAKES MUCH MORE TIME
 @eel.expose
 def generate_text(run_name, length, nsamples):
     sess = gpt2.start_tf_sess()
@@ -58,4 +36,5 @@ class NN:
     def train_model(self, run_name, file_name, steps, sample_length):
         sess = gpt2.start_tf_sess()
         gpt2.finetune(sess, file_name, model_name=self.model_name, steps=steps, run_name=run_name,
-                      restore_from='latest', overwrite=True, sample_length=sample_length, save_every=100, sample_every=10000)
+                      restore_from='latest', overwrite=True, sample_length=sample_length, save_every=100,
+                      sample_every=10000)

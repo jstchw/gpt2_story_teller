@@ -1,9 +1,4 @@
-try:
-    from PIL import Image, ImageDraw, ImageFont
-except ImportError:
-    import Image, ImageDraw, ImageFont
-
-import os
+from PIL import Image, ImageDraw, ImageFont
 import nn
 import textwrap
 import eel
@@ -30,19 +25,3 @@ def create_meme(topic, count):
         d.text(((W-w)/2, 800), text[i+6], fill=(255, 255, 255), font=font, align='center', stroke_fill=(0, 0, 0),
                stroke_width=2)
         img.save(f'www/img/memes/{topic}/{topic}{i}.jpg')
-
-
-class ImgManager:
-
-    # def __init__(self, input_img, output_img):
-    def __init__(self):
-        self.img_pil = None
-        self.meme_dir = os.fsdecode('www/img/memes/')
-        self.output_img = self.meme_dir + 'testing.jpg'
-
-    # Takes a string as a value
-
-    def reformat_image(self):
-        self.img_pil = Image.open(self.input_img)
-        self.img_pil = self.img_pil.resize((350, 350), Image.ANTIALIAS)
-        self.img_pil.save(self.output_img)
