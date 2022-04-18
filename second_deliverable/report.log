@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12.10) (preloaded format=pdflatex 2021.12.10)  15 APR 2022 20:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12.10) (preloaded format=pdflatex 2021.12.10)  18 APR 2022 14:32
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -538,40 +538,40 @@ l.29 \clearpage
 ] [3
 
 ] [4] [5]
-<img/electron_window_example.png, id=157, 403.5075pt x 423.83344pt>
+<img/electron_window_example.png, id=170, 403.5075pt x 423.83344pt>
 File: img/electron_window_example.png Graphic file (type png)
 <use img/electron_window_example.png>
 Package pdftex.def Info: img/electron_window_example.png  used on input line 243.
 (pdftex.def)             Requested size: 199.46577pt x 209.51039pt.
-<img/tkinter_window_example.png, id=158, 403.5075pt x 333.245pt>
+<img/tkinter_window_example.png, id=171, 403.5075pt x 333.245pt>
 File: img/tkinter_window_example.png Graphic file (type png)
 <use img/tkinter_window_example.png>
 Package pdftex.def Info: img/tkinter_window_example.png  used on input line 249.
 (pdftex.def)             Requested size: 199.46577pt x 164.7305pt.
  [6 <./img/electron_window_example.png> <./img/tkinter_window_example.png>]
-<img/light_theme.png, id=174, 403.5075pt x 423.83344pt>
+<img/light_theme.png, id=187, 403.5075pt x 423.83344pt>
 File: img/light_theme.png Graphic file (type png)
 <use img/light_theme.png>
 Package pdftex.def Info: img/light_theme.png  used on input line 274.
 (pdftex.def)             Requested size: 199.46577pt x 209.51039pt.
-<img/dark_theme.png, id=175, 403.5075pt x 423.83344pt>
+<img/dark_theme.png, id=188, 403.5075pt x 423.83344pt>
 File: img/dark_theme.png Graphic file (type png)
 <use img/dark_theme.png>
 Package pdftex.def Info: img/dark_theme.png  used on input line 280.
 (pdftex.def)             Requested size: 199.46577pt x 209.51039pt.
  [7 <./img/light_theme.png> <./img/dark_theme.png>]
-<img/json_example.png, id=183, 331.2375pt x 234.8775pt>
+<img/json_example.png, id=196, 331.2375pt x 234.8775pt>
 File: img/json_example.png Graphic file (type png)
 <use img/json_example.png>
 Package pdftex.def Info: img/json_example.png  used on input line 338.
 (pdftex.def)             Requested size: 249.33128pt x 176.79921pt.
  [8 <./img/json_example.png>]
-<img/eel_expose_example.png, id=197, 644.4075pt x 91.84312pt>
+<img/eel_expose_example.png, id=210, 644.4075pt x 91.84312pt>
 File: img/eel_expose_example.png Graphic file (type png)
 <use img/eel_expose_example.png>
 Package pdftex.def Info: img/eel_expose_example.png  used on input line 359.
 (pdftex.def)             Requested size: 498.66258pt x 71.07396pt.
-<img/system_diagram.png, id=198, 573.14125pt x 164.615pt>
+<img/system_diagram.png, id=211, 573.14125pt x 164.615pt>
 File: img/system_diagram.png Graphic file (type png)
 <use img/system_diagram.png>
 Package pdftex.def Info: img/system_diagram.png  used on input line 373.
@@ -579,7 +579,7 @@ Package pdftex.def Info: img/system_diagram.png  used on input line 373.
  [9
 
  <./img/eel_expose_example.png> <./img/system_diagram.png>]
-<img/train_model_example.png, id=208, 630.10406pt x 85.06781pt>
+<img/train_model_example.png, id=221, 630.10406pt x 85.06781pt>
 File: img/train_model_example.png Graphic file (type png)
 <use img/train_model_example.png>
 Package pdftex.def Info: img/train_model_example.png  used on input line 421.
@@ -587,59 +587,59 @@ Package pdftex.def Info: img/train_model_example.png  used on input line 421.
  [10
 
  <./img/train_model_example.png>]
-<img/alice-original.png, id=218, 356.0803pt x 62.48344pt>
+<img/alice-original.png, id=231, 356.0803pt x 62.48344pt>
 File: img/alice-original.png Graphic file (type png)
 <use img/alice-original.png>
-Package pdftex.def Info: img/alice-original.png  used on input line 448.
+Package pdftex.def Info: img/alice-original.png  used on input line 449.
 (pdftex.def)             Requested size: 249.33128pt x 43.75145pt.
-<img/alice-preprocess.png, id=219, 356.0803pt x 106.89937pt>
+<img/alice-preprocess.png, id=232, 356.0803pt x 106.89937pt>
 File: img/alice-preprocess.png Graphic file (type png)
 <use img/alice-preprocess.png>
-Package pdftex.def Info: img/alice-preprocess.png  used on input line 454.
+Package pdftex.def Info: img/alice-preprocess.png  used on input line 455.
 (pdftex.def)             Requested size: 249.33128pt x 74.85187pt.
  [11
 
  <./img/alice-original.png> <./img/alice-preprocess.png>]
-<img/generate-text-eel.png, id=229, 648.17157pt x 91.09032pt>
+<img/generate-text-eel.png, id=242, 648.17157pt x 91.09032pt>
 File: img/generate-text-eel.png Graphic file (type png)
 <use img/generate-text-eel.png>
-Package pdftex.def Info: img/generate-text-eel.png  used on input line 504.
+Package pdftex.def Info: img/generate-text-eel.png  used on input line 505.
 (pdftex.def)             Requested size: 398.93158pt x 56.06398pt.
-<img/text-processing.png, id=230, 351.56343pt x 167.12437pt>
+<img/text-processing.png, id=243, 351.56343pt x 167.12437pt>
 File: img/text-processing.png Graphic file (type png)
 <use img/text-processing.png>
-Package pdftex.def Info: img/text-processing.png  used on input line 519.
+Package pdftex.def Info: img/text-processing.png  used on input line 520.
 (pdftex.def)             Requested size: 249.33128pt x 118.52396pt.
  [12
 
  <./img/generate-text-eel.png> <./img/text-processing.png>] [13
 
 ]
-<img/json_entry.png, id=250, 499.8675pt x 144.54pt>
+<img/json_entry.png, id=263, 499.8675pt x 144.54pt>
 File: img/json_entry.png Graphic file (type png)
 <use img/json_entry.png>
-Package pdftex.def Info: img/json_entry.png  used on input line 598.
+Package pdftex.def Info: img/json_entry.png  used on input line 599.
 (pdftex.def)             Requested size: 349.06227pt x 100.93689pt.
  [14
 
  <./img/json_entry.png>]
-<img/react-function.png, id=259, 431.36156pt x 271.76532pt>
+<img/react-function.png, id=272, 431.36156pt x 271.76532pt>
 File: img/react-function.png Graphic file (type png)
 <use img/react-function.png>
-Package pdftex.def Info: img/react-function.png  used on input line 634.
+Package pdftex.def Info: img/react-function.png  used on input line 635.
 (pdftex.def)             Requested size: 199.46577pt x 125.6646pt.
-<img/unreact-function.png, id=260, 479.54156pt x 220.57407pt>
+<img/unreact-function.png, id=273, 479.54156pt x 220.57407pt>
 File: img/unreact-function.png Graphic file (type png)
 <use img/unreact-function.png>
-Package pdftex.def Info: img/unreact-function.png  used on input line 640.
+Package pdftex.def Info: img/unreact-function.png  used on input line 641.
 (pdftex.def)             Requested size: 249.33128pt x 114.6857pt.
  [15 <./img/react-function.png> <./img/unreact-function.png>] [16
 
 ]
-<img/lazy-loading.png, id=277, 627.09282pt x 119.69719pt>
+<img/lazy-loading.png, id=290, 627.09282pt x 119.69719pt>
 File: img/lazy-loading.png Graphic file (type png)
 <use img/lazy-loading.png>
-Package pdftex.def Info: img/lazy-loading.png  used on input line 722.
+Package pdftex.def Info: img/lazy-loading.png  used on input line 723.
 (pdftex.def)             Requested size: 398.93158pt x 76.14932pt.
  [17
 
@@ -647,36 +647,51 @@ Package pdftex.def Info: img/lazy-loading.png  used on input line 722.
 
 ] [19
 
-] (report.bbl [20
+] [20
+
+] (report.bbl [21
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 64--66
 \OT1/cmr/bx/n/12 URL: \OT1/cmr/m/it/12 https://github.com/cvalenzuela/rwet/blob/master/final/source[]text/ny/the-catcher-
  []
 
-[21
+[22
 
-]) [22] [23
+]) [23] [24
 
 
-] [24] [25
+] [25] [26
 
-] [26] (report.aux)
+] [27
+
+]
+Overfull \hbox (7.07178pt too wide) in paragraph at lines 1054--1108
+ [][] 
+ []
+
+[28
+
+] [29
+
+] [30
+
+] (report.aux)
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: 97FEB92690F2B7DFF5E72B0AC29E7B94;1124.
+(rerunfilecheck)             Checksum: 3385C41BBA52E5D978AE81188CDCC9E6;1224.
  ) 
 Here is how much of TeX's memory you used:
- 15081 strings out of 478659
- 257617 string characters out of 2862404
- 620182 words of memory out of 3000000
- 32836 multiletter control sequences out of 15000+600000
- 409851 words of font info for 48 fonts, out of 8000000 for 9000
+ 15106 strings out of 478659
+ 257971 string characters out of 2862404
+ 620329 words of memory out of 3000000
+ 32843 multiletter control sequences out of 15000+600000
+ 410188 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  61i,11n,67p,336b,517s stack positions out of 5000i,500n,10000p,200000b,80000s
-<D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on report.pdf (27 pages, 753474 bytes).
+ <C:\Users\bobr7\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on report.pdf (31 pages, 766027 bytes).
 PDF statistics:
- 399 PDF objects out of 1000 (max. 8388607)
- 144 named destinations out of 1000 (max. 500000)
- 153 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 453 PDF objects out of 1000 (max. 8388607)
+ 161 named destinations out of 1000 (max. 500000)
+ 161 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -909,6 +909,7 @@ INPUT .\img\lazy-loading.png
 INPUT .\img\lazy-loading.png
 INPUT .\img\lazy-loading.png
 INPUT .\img\lazy-loading.png
+INPUT D:\MiKTeX\fonts\tfm\jknappen\ec\tcrm1200.tfm
 INPUT .\report.bbl
 INPUT report.bbl
 INPUT .\report.bbl
@@ -916,6 +917,8 @@ INPUT report.bbl
 INPUT report.aux
 INPUT .\report.out
 INPUT .\report.out
+INPUT C:\Users\bobr7\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk
+INPUT C:\Users\bobr7\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk
 INPUT D:\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
 INPUT D:\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
 INPUT D:\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi12.pfb

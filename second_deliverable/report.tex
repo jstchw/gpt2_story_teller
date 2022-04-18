@@ -428,6 +428,7 @@ value of 100 to save the progress in case the process crashes.
 \subsubsection*{Testing}
 \addcontentsline{toc}{subsubsection}{Testing}
 \paragraph{}
+\label{sec:model_testing}
 Testing the training process is not a very long process itself, so it is not described in detail. The `GPT-2-Simple'
 library offers many parameters to tweak and test the performance of the training process. All datasets were fed to the
 network and trained on a machine with a `NVIDIA RTX 3080' GPU - this allowed an effective and speedy training process.
@@ -751,7 +752,8 @@ as expected and no errors will come up in the future. Visible elements were test
 Questions like: `Does it look right?', `Is there a way to make it appear better?' and similar were asked to verify the correctness of implementation.
 Invisible elements on the other hands followed a functional testing approach. Every visible element must have had a working
 implentation in the backend. Since lazy loading heavily depends on text generation process - the performance testing has been declared
-successful because the text generation completed in a reasonable time. 
+successful because the text generation completed in a reasonable time. Testing tables can be found in the \hyperref[appendix:frontend_testing]{`Frontend Testing'} appendix
+section.
 
 
 \subsubsection*{Reflection}
@@ -830,7 +832,67 @@ to the presence of the font called `Impact' and an added stroke to it. All this 
 \addcontentsline{toc}{subsubsection}{Python}
 \paragraph{}
 Python is the main tool used in the project since it's a very simple and effective language. It's very well known for
-the amount of libraries written in it.
+the amount of libraries written in it. This is believed to be the best choice for the project since it's also cross-platform.
+
+\subsubsection*{IDE}
+\addcontentsline{toc}{subsubsection}{IDE}
+\paragraph{}
+PyCharm was used as an IDE for the project. It's a very powerful and easy to use IDE that can be used for any kind of project
+written in Python. It's has been chosen for development since the familiarity with it was very hight and it allowed
+easy and efficient development.
+
+\subsection*{Overall testing}
+\addcontentsline{toc}{subsection}{Overall testing}
+\paragraph{}
+Overall testing was carried out in order to make sure that the project is working as expected with all the components plugged in.
+Many of the parts yet are dependent on each other in terms of perception, are independent in a functional way. That means that 
+the components work together without intervening in each others work. Also, it is important to mention that almost all of the components
+were tested after completing all the sprints (with several exceptions) and that explains a dominant amount of passed and successful tests
+conducted. Also, that makes all of the tests complete and tested on a whole system. Results of the \hyperref[appendix:all-in_testing]{All-in Testing}
+can be found in the apendices list.
+
+Elements tested throughout the project:
+\begin{itemize}
+  \item \hyperref[sec:model_testing]{Model training}
+  \item \hyperref[appendix:model_testing]{Text generation}
+  \item \hyperref[appendix:reaction_system_testing]{Reaction system}
+  \item \hyperref[appendix:frontend_testing]{Frontend}
+  \subitem Functional buttons
+  \subitem simultaneous function interaction
+  \subitem Lazy loading
+  \subitem Timer
+  \item \hyperref[appendix:meme_creation_testing]{Meme creation}
+\end{itemize}
+
+\clearpage
+
+\section*{Conclusion}
+\addcontentsline{toc}{section}{Conclusion}
+\paragraph{}
+The usage of neural networks not only in research field but also in common entertainment is a rare occasion nowadays yet the potential of 
+the artificial intelligence that can mimic people's behaviour in text synthesis is very high. Excluding all other areas where neural networks
+could potentially be used, only the entertainment area could benefit greatly from the usage of artificial intelligence. 
+
+Despite that the transformer neural networks were introduced not so long ago, they appear to be a very promising technology. If the
+technological restraints (GPU calculational power, memory, etc.) do not pose a problem, the application of neural networks can be
+limitless.
+
+The program developed is only a proof of concept that neural networks can be wrapped up in a fancy box and presented to the user as something
+they would use in their everyday life.
+
+On the other hand, if the project would be further developed, it could mean a potential loss of job positions since a lot of people in the modern
+world work as bloggers or influencers. If the content produced by these people is replaced with artificially synthesised text, it will lose its
+value and could potentially become unpopular.
+
+If balanced correctly and the technology is used with careful consideration of job market and people's interests, then
+all sides can benefit from adopting such a technology.
+
+Having that in mind, the adoption of said development could mean an integration with the popular social media platforms such as `Twitter',
+`Instagram' and `Facebook' or a creation of a new social media platform that could potentially attract bloggers with its capabilities.
+Bloggers, as their name implies, are the ones who write and publish content and will be able to finetune the network on the said media platform and produce
+unique content.
+
+
 
 
 
@@ -951,8 +1013,12 @@ the amount of libraries written in it.
   \addlinespace[3pt]
   \bottomrule
   \end{tabular}
-  \caption{Reaction system sprint}
+  \caption{Reaction system sprint (1/2)}
 \end{table}
+
+\clearpage
+
+\phantomsection
 
 \begin{table}[ht]
   \centering
@@ -974,9 +1040,170 @@ the amount of libraries written in it.
   \addlinespace[3pt]
   \bottomrule
   \end{tabular}
-  \caption{Reaction system sprint}
+  \caption{Reaction system sprint (2/2)}
 \end{table}
 
+\clearpage
+
+\subsection*{Frontend testing}
+\addcontentsline{toc}{subsection}{Frontend testing}
+\label{appendix:frontend_testing}
+
+\begin{table}[ht]
+  \centering
+  \begin{tabular}{lllll}
+  \toprule   
+  {Case} & {Input} & {Expected} & {Actual} & {Result}\\
+  \midrule
+  FE0 & Alice -$>$ Catcher & Change topic & Topic changed & Pass\\ 
+  \addlinespace[3pt]
+  FE1 & Alice -$>$ The Iliad & Change topic & Topic changed & Pass\\
+  \addlinespace[3pt]
+  FE2 & Catcher -$>$ Alice & Change topic & Topic changed & Pass\\
+  \addlinespace[3pt]
+  FE3 & Catcher -$>$ The Iliad & Change topic & Topic changed & Pass\\
+  \addlinespace[3pt]
+  FE4 & The Iliad -$>$ Alice & Change topic & Topic changed & Pass\\
+  \addlinespace[3pt]
+  FE5 & The Iliad -$>$ Catcher & Change topic & Topic changed & Pass\\
+  \addlinespace[3pt]
+  FE6 & Click `Topics' section & Unfold section & Section unfolded & Pass\\
+  \addlinespace[3pt]
+  FE7 & Click `About' section & Unfold section & Section unfolded & Pass\\
+  \addlinespace[3pt]
+  FE8 & Click `Settings' section & Unfold section & Section unfolded & Pass\\
+  \addlinespace[3pt]
+  FE9 & Click `Change theme' & Theme change (to light) & Theme changed (to light) & Pass\\
+  \addlinespace[3pt]
+  FE10 & Click `Change theme' & Theme change (to dark) & Theme changed (to dark) & Pass\\
+  \addlinespace[3pt]
+  FE11 & Click `Classic mode' & Switch to classic & Switched to classic & Pass\\
+  \addlinespace[3pt]
+  FE12 & Click `Meme mode' & Switch to meme & Switched to meme & Pass\\
+  \addlinespace[3pt]
+  FE13 & Click `Classic' on load & Do nothing & Do nothing & Pass\\
+  \addlinespace[3pt]
+  FE14 & Click `Meme' on load & Do nothing & Do nothing & Pass\\
+  \addlinespace[3pt]
+  FE15 & `Change' theme on load & Change theme & Changed theme & Pass\\
+  \addlinespace[3pt]
+  FE16 & Select `Alice' on load & Do nothing & Do nothing & Pass\\
+  \addlinespace[3pt]
+  FE17 & Select `Catcher' on load & Do nothing & Do nothing & Pass\\
+  \addlinespace[3pt]
+  FE18 & Select `The Iliad' on load & Do nothing & Do nothing & Pass\\
+  \addlinespace[3pt]
+  FE19 & Click `Story Teller' & Scroll back & Scrolled back & Pass\\
+  \addlinespace[3pt]
+  FE20 & Group test & No error in console & No error in console & Pass\\
+  \addlinespace[3pt]
+  FE21 & Click menu button & Open menu & Open menu & Pass\\
+  \addlinespace[3pt]
+  FE22 & Click `X' in menu & Close menu & Close menu & Pass\\
+  \addlinespace[3pt]
+  FE23 & Click outside menu & Close menu & Close menu & Pass\\
+
+  \bottomrule
+  \end{tabular}
+  \caption{Frontend testing}
+\end{table}
+
+\clearpage
+
+\subsection*{All-in Testing}
+\addcontentsline{toc}{subsection}{All-in Testing}
+\label{appendix:all-in_testing}
+
+\begin{table}[ht]
+  \centering
+  \begin{tabular}{@{\extracolsep{1pt}}lllll}
+  \toprule   
+  {Case} & {Input} & {Expected} & {Actual} & {Result}\\
+  \midrule
+  ALL0 & Scroll to load & Loading started & Loading started & Pass\\ 
+  \addlinespace[3pt]
+  ALL1 & Scroll back and forth on load & Load once & Load once & Pass\\
+  \addlinespace[3pt]
+  ALL2 & Change resolution & Load normally & Load normally & Pass\\
+  \addlinespace[3pt]
+  ALL3 & Change resolution & Elements adapt & Elements adapt & Pass\\
+  \addlinespace[3pt]
+  ALL4 & Hover on `Like' & `Like' enlarge & `Like' enlarge & Pass\\
+  \addlinespace[3pt]
+  ALL5 & Hover off `Like' & `Like' shrink & `Like' shrink & Pass\\
+  \addlinespace[3pt]
+  ALL6 & Hover on `Dislike' & `Dislike' enlarge & `Dislike' enlarge & Pass\\
+  \addlinespace[3pt]
+  ALL7 & Hover off `Dislike' & `Dislike' shrink & `Dislike' shrink & Pass\\
+  \bottomrule
+  \end{tabular}
+  \caption{All-in Testing}
+\end{table}
+
+\clearpage
+
+\subsection*{Meme creation}
+\addcontentsline{toc}{subsection}{Meme creation}
+\label{appendix:meme_creation_testing}
+
+\begin{table}[ht]
+  \centering
+  \begin{tabular}{@{\extracolsep{1pt}}lllll}
+  \toprule   
+  {Case} & {Input} & {Expected} & {Actual} & {Result}\\
+  \midrule
+  \multirow{2}{*}{MC0} & Width: 350px & Quality res. & Quality res. & \multirow{2}{*}{Pass}\\ 
+  & Height: 350px & Low gen time & Low gen time & \\
+  \addlinespace[3pt]
+  \multirow{2}{*}{MC1} & Width: 500px & Quality res. & Quality res. & \multirow{2}{*}{Pass}\\ 
+  & Height: 500px & Low gen time & Low gen time & \\
+  \addlinespace[3pt]
+  \multirow{2}{*}{MC2} & Width: 1000px & Quality res. & Quality res. & \multirow{2}{*}{Pass}\\ 
+  & Height: 1000px & Low gen time & Low gen time & \\
+  \addlinespace[3pt]
+  \multirow{2}{*}{MC3} & Width: 1500px & Quality res. & Quality res. & Fail\\ 
+  & Height: 1500px & Low gen time & Low gen time & (overkill) \\
+  \addlinespace[3pt]
+  MC4 & 20px margin (top) & Visually acceptable & Too high & Fail\\ 
+  \addlinespace[3pt]
+  MC4 & 35px margin (top) & Visually acceptable & Too high & Fail\\ 
+  \addlinespace[3pt]
+  MC6 & 50px margin (top) & Visually acceptable & Visually acceptable & Pass\\ 
+  \addlinespace[3pt]
+  MC7 & 700px margin (bottom) & Visually acceptable & Too high & Fail\\ 
+  \addlinespace[3pt]
+  MC8 & 800px margin (bottom) & Visually acceptable & Visually acceptable & Pass\\ 
+  \addlinespace[3pt]
+  MC9 & Impact 30pt & Acceptable & Too small & Fail\\ 
+  \addlinespace[3pt]
+  MC10 & Impact 40pt & Acceptable & Too small & Fail\\ 
+  \addlinespace[3pt]
+  MC11 & Impact 75pt & Acceptable & Too big & Fail\\ 
+  \addlinespace[3pt]
+  MC12 & Impact 60pt & Acceptable & Acceptable & Pass\\ 
+  \addlinespace[3pt]
+  MC13 & Text wrap: 50 & Acceptable & Too many chars & Fail\\ 
+  \addlinespace[3pt]
+  MC14 & Text wrap: 20 & Acceptable & Too few chars & Fail\\ 
+  \addlinespace[3pt]
+  MC15 & Text wrap: 35 & Acceptable & Acceptable & Pass\\ 
+  \addlinespace[3pt]
+  MC16 & Stroke: 0 & Meme stroke & No stroke & Fail\\ 
+  \addlinespace[3pt]
+  MC17 & Stroke: 5 & Meme stroke & Too thick & Fail\\ 
+  \addlinespace[3pt]
+  MC18 & Stroke: 3 & Meme stroke & Too thick & Fail\\ 
+  \addlinespace[3pt]
+  MC19 & Stroke: 2 & Meme stroke & Meme stroke & Pass\\ 
+  \addlinespace[3pt]
+  MC20 & Not uppercase & Meme look & Normal text & Fail\\ 
+  \addlinespace[3pt]
+  MC21 & All uppercase & Meme look & Meme look & Pass\\ 
+  \addlinespace[3pt]
+  \bottomrule
+  \end{tabular}
+  \caption{Meme creation testing}
+\end{table}
 
 % SPRINT: REACTION SYSTEM
 % TESTING DATABASE REACTIONS

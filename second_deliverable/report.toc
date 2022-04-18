@@ -80,8 +80,17 @@
 \contentsline {subsection}{Tools}{20}{section*.92}%
 \contentsline {subsubsection}{Python}{20}{section*.93}%
 \contentsline {paragraph}{}{20}{section*.94}%
-\contentsline {section}{Bibliography}{20}{section*.94}%
-\contentsline {chapter}{Appendices}{23}{section*.96}%
-\contentsline {section}{Testing}{24}{section*.97}%
-\contentsline {subsection}{Model testing}{24}{section*.98}%
-\contentsline {subsection}{Reaction system testing}{25}{section*.100}%
+\contentsline {subsubsection}{IDE}{20}{section*.95}%
+\contentsline {paragraph}{}{20}{section*.96}%
+\contentsline {subsection}{Overall testing}{20}{section*.97}%
+\contentsline {paragraph}{}{20}{section*.98}%
+\contentsline {section}{Conclusion}{21}{section*.99}%
+\contentsline {paragraph}{}{21}{section*.100}%
+\contentsline {section}{Bibliography}{21}{section*.100}%
+\contentsline {chapter}{Appendices}{24}{section*.102}%
+\contentsline {section}{Testing}{25}{section*.103}%
+\contentsline {subsection}{Model testing}{25}{section*.104}%
+\contentsline {subsection}{Reaction system testing}{26}{section*.106}%
+\contentsline {subsection}{Frontend testing}{28}{section*.110}%
+\contentsline {subsection}{All-in Testing}{29}{section*.112}%
+\contentsline {subsection}{Meme creation}{30}{section*.114}%
