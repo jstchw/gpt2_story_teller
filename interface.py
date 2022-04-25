@@ -65,7 +65,7 @@ class Interface:
 
     def __init__(self):
         self.width = 550
-        self.height = 570
+        self.height = 800
         # For Mac
         # eel.browsers.set_path('electron', '/Applications/Electron.app/Contents/MacOS/Electron')
         # For Windows

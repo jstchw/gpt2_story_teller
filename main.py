@@ -3,6 +3,7 @@ import imgmanager
 from interface import Interface
 from nn import NN
 import time
+import numpy as np
 
 # network = NN('124M')
 
@@ -23,3 +24,14 @@ gui = Interface()
 
 # Create the window
 gui.create_window()
+# text = nn.generate_text(run_name='the_iliad', length=20, nsamples=2)
+# print(text)
+# # print(text[0])
+# # print(text[1])
+#
+# for i in range(0, 2):
+#     part = text[i].split()
+#     part = np.array_split(part, 2)
+#     print(part[0])
+#     print(part[1])
+#
