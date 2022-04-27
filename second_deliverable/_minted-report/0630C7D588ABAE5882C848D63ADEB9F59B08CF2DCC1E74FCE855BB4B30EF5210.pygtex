@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{addEventListener}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}scroll\PYGZsq{}}\PYG{p}{,} \PYG{p}{()} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+    \PYG{k}{if} \PYG{p}{((}\PYG{n+nb}{window}\PYG{p}{.}\PYG{n+nx}{innerHeight} \PYG{o}{+} \PYG{n+nb}{window}\PYG{p}{.}\PYG{n+nx}{scrollY}\PYG{p}{)} \PYG{o}{\PYGZgt{}=} \PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{body}\PYG{p}{.}\PYG{n+nx}{offsetHeight}
+        \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{o}{!}\PYG{n+nx}{loadMoreInProgress}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{n+nx}{loadMore}\PYG{p}{()}
+    \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{})}
+\end{Verbatim}

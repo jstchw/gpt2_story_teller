@@ -8,10 +8,14 @@ import tensorflow as tf
 def generate_text(run_name, length, nsamples):
     sess = gpt2.start_tf_sess()
     gpt2.load_gpt2(sess, run_name=run_name, reuse=tf.compat.v1.AUTO_REUSE)
-    texts = gpt2.generate(sess, return_as_list=True, length=length, nsamples=nsamples, model_name='124M')
+    texts = gpt2.generate(sess, return_as_list=True, length=length, nsamples=nsamples, model_name='124M',
+                          temperature=1, batch_size=nsamples, prefix="")
     for idx, item in enumerate(texts):
-        # STAYS FOR NOW
+        item = item.replace("<|startoftext|>", "")
         item = item.rsplit('.', 1)[0]
+        item = item.lstrip()
+        while not item[0].isalpha():
+            item = item[1:]
         if not item[0].isupper() and item[0].isalpha():
             item = '...' + item + '...'
         else:
@@ -37,4 +41,4 @@ class NN:
         sess = gpt2.start_tf_sess()
         gpt2.finetune(sess, file_name, model_name=self.model_name, steps=steps, run_name=run_name,
                       restore_from='latest', overwrite=True, sample_length=sample_length, save_every=100,
-                      sample_every=10000)
+                      sample_every=steps)

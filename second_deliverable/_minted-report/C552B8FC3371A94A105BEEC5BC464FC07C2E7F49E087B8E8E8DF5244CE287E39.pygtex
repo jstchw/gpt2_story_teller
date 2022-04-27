@@ -1,0 +1,14 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nd}{@eel}\PYG{o}{.}\PYG{n}{expose}
+\PYG{k}{def} \PYG{n+nf}{unreact}\PYG{p}{(}\PYG{n}{post\PYGZus{}id}\PYG{p}{):}
+    \PYG{k}{with} \PYG{n+nb}{open}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}base/reaction.json\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}r+\PYGZsq{}}\PYG{p}{)} \PYG{k}{as} \PYG{n}{json\PYGZus{}file}\PYG{p}{:}
+        \PYG{n}{reaction\PYGZus{}file} \PYG{o}{=} \PYG{n}{json}\PYG{o}{.}\PYG{n}{load}\PYG{p}{(}\PYG{n}{json\PYGZus{}file}\PYG{p}{)}
+        \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{reversed}\PYG{p}{(}\PYG{n+nb}{range}\PYG{p}{(}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{reaction\PYGZus{}file}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}posts\PYGZsq{}}\PYG{p}{]))):}
+            \PYG{k}{if} \PYG{n}{reaction\PYGZus{}file}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}posts\PYGZsq{}}\PYG{p}{][}\PYG{n}{i}\PYG{p}{][}\PYG{l+s+s2}{\PYGZdq{}postID\PYGZdq{}}\PYG{p}{]} \PYG{o}{==} \PYG{n}{post\PYGZus{}id}\PYG{p}{:}
+                \PYG{n}{reaction\PYGZus{}file}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}posts\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{pop}\PYG{p}{(}\PYG{n}{i}\PYG{p}{)}
+                \PYG{n}{json\PYGZus{}file}\PYG{o}{.}\PYG{n}{seek}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{)}
+                \PYG{n}{json}\PYG{o}{.}\PYG{n}{dump}\PYG{p}{(}\PYG{n}{reaction\PYGZus{}file}\PYG{p}{,} \PYG{n}{json\PYGZus{}file}\PYG{p}{,} \PYG{n}{indent}\PYG{o}{=}\PYG{l+m+mi}{4}\PYG{p}{,}
+                          \PYG{n}{sort\PYGZus{}keys}\PYG{o}{=}\PYG{k+kc}{True}\PYG{p}{)}
+                \PYG{n}{json\PYGZus{}file}\PYG{o}{.}\PYG{n}{truncate}\PYG{p}{()}
+                \PYG{k}{break}
+\end{Verbatim}

@@ -57,7 +57,6 @@ def set_settings(key, value):
 
 @eel.expose
 def count_files(path):
-    # return len([name for name in os.listdir(path) if os.path.isfile(os.path.join(path, name))])
     return len(glob.glob1(path, "*.jpg"))
 
 

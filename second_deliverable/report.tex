@@ -11,7 +11,14 @@
 \usepackage{multirow}
 \usepackage{subcaption}
 \usepackage[margin=0.8in]{geometry}
+\usepackage{csvsimple}
+\usepackage{longtable}
+\usepackage{array}
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
 \newenvironment{longlisting}{\captionsetup{type=listing}}{}
+\newenvironment{code}{\captionsetup{type=listing}}{}
+\SetupFloatingEnvironment{listing}{name=Code}
 \title{%
   GPT-2 Based Story Teller\\
   \large CTEC3451 Development Project \\~\\
@@ -333,12 +340,28 @@ No encryption of the database is used either.
 There are many other data serialisation formats such as XML, YAML, BSON etc. It has been decided to use JSON because
 of its simplicity and flexibility compared to YAML. YAML is a superset of JSON and it seemed to big for the purpose.
 
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=0.5\linewidth]{img/json_example.png}
-  \caption{JSON database}
-  \label{fig:json}
-\end{figure}
+%TC:ignore
+\begin{code}
+\begin{minted}[
+frame=single,
+framesep=3mm,
+linenos=true,
+xleftmargin=21pt,
+tabsize=4]{js}
+[
+  {
+    "Id": 0,
+    "FirstName": "string",
+    "LastName": "string",
+    "Name": "string",
+    "EmailAddress": "string",
+    "TerritoryId": 0
+  }
+]
+\end{minted}
+\captionof*{listing}{An example of a JSON file}
+\end{code}
+%TC:endignore
 
 \clearpage
 
@@ -354,13 +377,23 @@ Chrome, Safari, Firefox and last but not least - Electron.
 The most important feature of `Eel' is function exposition. It allows to call any function that is explicitly 
 defined with a `@eel.expose' decorator and use it anywhere in the JavaScript code and vice versa.
 
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=1\linewidth]{img/eel_expose_example.png}
-  \caption{Eel exposition}
-  \label{fig:eel}
-\end{figure}
+%TC:ignore
+\begin{code}
+\begin{minted}[
+frame=single,
+framesep=3mm,
+linenos=true,
+xleftmargin=21pt,
+tabsize=4]{python}
+@eel.expose
+def count_files(path):
+    return len(glob.glob1(path, "*.jpg"))
+\end{minted}
+\captionof*{listing}{Decorator for exposing functions}
+\end{code}
+%TC:endignore
 
+\paragraph*{}
 It's important to note that when a function call is made from the JavaScript code, it should be done in
 async/await fashion. This is because the function call is made in the background and the result is returned
 after some time.
@@ -383,12 +416,6 @@ approaches on each side and also focus on each part individually.
 Development process followed the principles of Agile practice. The main aspects of the development methodology
 are: continiual improvement, flexible responses to any change and most importantly evolutionary development. Since
 the project is developed by a single person, not a team, some of the practices of agile methodology are not applicable.
-
-
-% \subsection*{Building the input repository}
-% \addcontentsline{toc}{subsection}{Building the input repository}
-% \paragraph{}
-
 
 % Training sprint
 % Implementation
@@ -416,12 +443,24 @@ multiple runs in the same model. Restore point and overwrite options are used fo
 process to minimise the chance of failing (crashing). Also the interval to save the checkpoints is set to a small
 value of 100 to save the progress in case the process crashes.
 
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=1\linewidth]{img/train_model_example.png}
-  \caption{Training function}
-  \label{fig:train_model}
-\end{figure}
+%TC:ignore
+\begin{code}
+\begin{minted}[
+frame=single,
+framesep=3mm,
+linenos=true,
+xleftmargin=21pt,
+tabsize=4]{python}
+def train_model(self, run_name, file_name, steps, sample_length):
+    sess = gpt2.start_tf_sess()
+    gpt2.finetune(sess, file_name, model_name=self.model_name,
+                  steps=steps, run_name=run_name, restore_from='latest',
+                  overwrite=True, sample_length=sample_length,
+                  save_every=100, sample_every=10000)
+\end{minted}
+\captionof*{listing}{Training function}
+\end{code}
+%TC:endignore
 
 \clearpage
 
@@ -446,13 +485,13 @@ original text and the results were satisfactory.
   \centering
   \begin{subfigure}{.5\textwidth}
     \centering
-    \includegraphics[width=1\linewidth]{img/alice-original.png}
+    \fbox{\includegraphics[width=0.9\linewidth]{img/alice-original.png}}
     \caption{Unprocessed text (trained 13,100 steps)}
     \label{fig:unprocess-alice}
   \end{subfigure}%
   \begin{subfigure}{.5\textwidth}
     \centering
-    \includegraphics[width=1\linewidth]{img/alice-preprocess.png}
+    \fbox{\includegraphics[width=0.8\linewidth]{img/alice-preprocess.png}}
     \caption{Prepocessed text (trained 1,000 steps)}
     \label{fig:preprocess-alice}
   \end{subfigure}
@@ -500,13 +539,27 @@ parameters are thought to be the most `volatile' because they are changed often.
 which checkpoint is being used. The \textit{`length'} parameter defines how many tokens the text should contain and the last parameter
 \textit{`nsamples'} determines the number of samples to be generated.
 
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=.8\linewidth]{img/generate-text-eel.png}
-  \caption{Eel exposed generate function}
-  \label{fig:generate_text}
-\end{figure}
+% Exposed function for generating text
+%TC:ignore
+\begin{code}
+\begin{minted}[
+frame=single,
+framesep=3mm,
+linenos=true,
+xleftmargin=21pt,
+tabsize=4]{python}
+@eel.expose
+def generate_text(run_name, length, nsamples):
+    sess = gpt2.start_tf_sess()
+    gpt2.load_gpt2(sess, run_name=run_name, reuse=tf.compat.v1.AUTO_REUSE)
+    texts = gpt2.generate(sess, return_as_list=True, length=length,
+    nsamples=nsamples, model_name='124M')
+\end{minted}
+\captionof*{listing}{Exposed function for generating text}
+\end{code}
+%TC:endignore
 
+\paragraph*{}
 For the purpose of the infinite generation it is important to specify the \textit{`reuse'} parameter when the GPT-2
 is being loaded. This parameter allows the model to be reused without the need to load it again. In the example above
 this parameter is set to a value directly taken from the Tensorflow library since `GPT-2-Simple' provided explanation
@@ -515,14 +568,26 @@ in the documentation doesn't work (setting the `reuse' parameter to `True').
 Yet this is only a first stage of the text processing in the function. After the text is generated it is handled by the
 algorithm that is shown on the below figure.
 
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=.5\linewidth]{img/text-processing.png}
-  \caption{Text processing algorithm}
-  \label{fig:process_text}
-\end{figure}
-
-\clearpage
+%TC:ignore
+\begin{code}
+\begin{minted}[
+frame=single,
+framesep=3mm,
+linenos=true,
+xleftmargin=21pt,
+tabsize=4]{python}
+for idx, item in enumerate(texts):
+    item = item.rsplit('.', 1)[0]
+    if not item[0].isupper() and item[0].isalpha():
+        item = '...' + item + '...'
+    else:
+        item = item + '...'
+    texts[idx] = item
+return texts
+\end{minted}
+\captionof*{listing}{Text processing algorithm}
+\end{code}
+%TC:endignore
 
 The presented algorithm is developed specifically for this project. It is based on the idea that the text which is
 output by the function is cut - it is been tested and proven in the previous section `Model training'. The incomplete
@@ -568,98 +633,6 @@ the model can represent much more complicated functions that with fewer paramete
 
 \clearpage
 
-\subsection*{Reaction System}
-\addcontentsline{toc}{subsection}{Reaction System}
-\subsubsection*{Implementation}
-\addcontentsline{toc}{subsubsection}{Implementation}
-\paragraph{}
-Despite the simple explanation of the reaction system earlier in `Major Components' section - the development
-itself was a bit more complex and involved the creation of a whole new logic system. Reactions now are used in a
-manual way by the developer to understand the problems of the system and make it more efficient and enjoyable to use.
-The idea is simple - if the user likes a generated post - they can react with a positive reaction (like). If they
-don't - they can react with a negative reaction (dislike). A logic system was needed in order to restrict the user
-from liking and disliking one post at the same time. It checks the boolean value of the reaction and if it's `True',
-it's impossible to react with the opposite reaction again. Every reaction is separate for every post and has its own
-unique ID which is linked to the post. That way, it's easier to find the reactions in the database and understand a 
-pattern of these reactions, since the main aim of the system is to gather collective information about the experience
-in whole and not one by one.
-
-Apart from the logics - a database was implemented to store the reactions. JSON data serialisation format is used 
-and every new reaction is stored there right away. Every object has several keys: \textit{appVer}, \textit{id},
-\textit{postID}, \textit{postReaction}, \textit{postTime} and \textit{topic}. The addition process is rather simple,
-the JSON file is opened with a built-in function in Python, then the array of data if being formed. It includes all
-the values described earlier. App version is hard coded into the system whereas other values such as post ID, reaction,
-text and topic are passed into the function from the frontend. ID of the entry follows a different approach. It is 
-being generated every time a new array is formed. The mechanism is the following: the last post ID is collected and
-incremented by one. Right after that this array is appended to the JSON object, the end of the JSON file (different from JSON object) 
-is sought and the array is dumped into it. Indentation and sorting is maintained.
-
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=.7\linewidth]{img/json_entry.png}
-  \caption{Example of an object}
-  \label{fig:json_entry}
-\end{figure}
-
-As every post can be reacted at, it can also be unreacted. This is an important feature which helps to tidy up the
-database in case if the user changes their mind or just missclicks. The system for unreacting is slightly more
-complex than reacting. It searches the database reversely and finds the last reaction of the user with a corresponding
-post ID. It must work from the end to the beginning because many entries might have the same post ID and only the last
-one should be deleted since it is the most recent one. The search is performed using a loop which iterates over the
-entries in the database. Then the post ID from the frontend (every like and dislike button have their IDs) is compared
-with the post ID of the entry. If they are the same, the entry is deleted and the loop is broken.
-
-\subsubsection*{Testing}
-\addcontentsline{toc}{subsubsection}{Testing}
-\paragraph{}
-The testing stage was very extensive and everything was tested directly during the development sprint. 
-The testing was done, as always, in a manual way without writing any automatic tests or using any test suites.
-It can be split in several parts: reaction buttons and database. The reaction buttons were tested only for logics and
-animation tests weren't conducted since they were considered unnecessary.
-
-Buttons' logic is meant to be the following way: when the like button is pressed - the button is animated and dislike
-button is deactivated. And the dislike button should follow the same mechanism of action. Since an if-else statement
-was used to determine the logical system instead of switch-case statement, it was harder to create a logical system
-and this harder to test it (i.e. more tests were needed).
-
-Database testing was conducted in a similar way. Entry creation and entry deletion was tested. It was crucial to 
-have an understanding that it all works the way it should. Total of 13 tests were conducted in order to test the integrity of the system.
-
-The test table of conducted tests can be found in the following \hyperref[appendix:reaction_system_testing]{appendix}.
-
-\begin{figure}[ht]
-  \captionsetup[subfigure]{labelformat=empty}
-  \centering
-  \begin{subfigure}{.5\textwidth}
-    \centering
-    \includegraphics[width=.8\linewidth]{img/react-function.png}
-    \caption{React function}
-    \label{fig:react-func}
-  \end{subfigure}%
-  \begin{subfigure}{.5\textwidth}
-    \centering
-    \includegraphics[width=1\linewidth]{img/unreact-function.png}
-    \caption{Unreact function}
-    \label{fig:unreact-func}
-  \end{subfigure}
-  \caption{Two functions that have been tested}
-  \label{fig:react-unreact-funcs}
-\end{figure}
-
-
-\subsubsection*{Reflection}
-\addcontentsline{toc}{subsubsection}{Reflection}
-\paragraph{}
-The reaction system was one of the hardest things to implement since it has very convoluted logic. The main problem with
-it was the naming of the `like' and `dislike' buttons in the HTML document. After the issue has been solved, the implementation
-became rather simple. A better possible solution would be to use this feedback somehow to automatically improve
-the model and adjust the generated text without any manual intervention. This approach would make the app 
-totally autonomous and would be a good point for the future development. Also not enough attention was paid to the
-functions that work with JSON. The formed array wasn't dumped into the JSON file and thus the database was not updated.
-This flaw extended the development time with a couple of hours.
-
-\clearpage
-
 \subsection*{Frontend Development}
 \addcontentsline{toc}{subsection}{Frontend Development}
 \paragraph{}
@@ -671,6 +644,7 @@ JavaScript part of the project).
 
 Many different ways of implementation and design were tried for the frontend. This section won't include the details of
 the earlier versions since they're not used in the project.
+
 \subsubsection*{Implementation - Visible elements}
 \addcontentsline{toc}{subsubsection}{Implementation - visible elements}
 \paragraph{}
@@ -717,13 +691,26 @@ appropriate colour. After, the reaction buttons are appended.
 Another important aspect in loading is the point of time when to start generating and displaying another group of posts. The logics behind that are rather simple and are very well known
 in modern Internet applications. When the user reaches the end of the page and no content is available - the application will load more content.
 
+%TC:ignore
+\begin{code}
+\begin{minted}[
+frame=single,
+framesep=3mm,
+linenos=true,
+xleftmargin=21pt,
+tabsize=4]{js}
+document.addEventListener('scroll', () => {
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight
+        && !loadMoreInProgress) {
+        loadMore()
+    }
+})
+\end{minted}
+\captionof*{listing}{Lazy loading function}
+\end{code}
+%TC:endignore
 
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=.8\linewidth]{img/lazy-loading.png}
-  \caption{Function of lazy loading}
-  \label{fig:lazy-loading}
-\end{figure}
+\paragraph*{}
 
 This technique is known as `lazy loading'. The point of using `lazy loading' in the project is to minimise the load on the user's system
 and thus improve the user experience. Also there is no point in generating more posts than the user will be able to see in the long run.
@@ -774,6 +761,146 @@ Speaking about frontend features, there are some not very functional features th
 the developers can show their own attitude towards the project and user experience in whole. From a commercial point of view,
 having a timer that counts how much time the user has spent in the app scrolling through stories, is not a good idea,
 since they are likely to blame themselves for the big amount of time spent but I think it's a great addition.
+
+\clearpage
+
+\subsection*{Reaction System}
+\addcontentsline{toc}{subsection}{Reaction System}
+\subsubsection*{Implementation}
+\addcontentsline{toc}{subsubsection}{Implementation}
+\paragraph{}
+Despite the simple explanation of the reaction system earlier in `Major Components' section - the development
+itself was a bit more complex and involved the creation of a whole new logic system. Reactions now are used in a
+manual way by the developer to understand the problems of the system and make it more efficient and enjoyable to use.
+The idea is simple - if the user likes a generated post - they can react with a positive reaction (like). If they
+don't - they can react with a negative reaction (dislike). A logic system was needed in order to restrict the user
+from liking and disliking one post at the same time. It checks the boolean value of the reaction and if it's `True',
+it's impossible to react with the opposite reaction again. Every reaction is separate for every post and has its own
+unique ID which is linked to the post. That way, it's easier to find the reactions in the database and understand a 
+pattern of these reactions, since the main aim of the system is to gather collective information about the experience
+in whole and not one by one.
+
+Apart from the logics - a database was implemented to store the reactions. JSON data serialisation format is used 
+and every new reaction is stored there right away. Every object has several keys: \textit{appVer}, \textit{id},
+\textit{postID}, \textit{postReaction}, \textit{postTime} and \textit{topic}. The addition process is rather simple,
+the JSON file is opened with a built-in function in Python, then the array of data if being formed. It includes all
+the values described earlier. App version is hard coded into the system whereas other values such as post ID, reaction,
+text and topic are passed into the function from the frontend. ID of the entry follows a different approach. It is 
+being generated every time a new array is formed. The mechanism is the following: the last post ID is collected and
+incremented by one. Right after that this array is appended to the JSON object, the end of the JSON file (different from JSON object) 
+is sought and the array is dumped into it. Indentation and sorting is maintained.
+
+%TC:ignore
+\begin{code}
+\begin{minted}[
+frame=single,
+framesep=3mm,
+linenos=true,
+xleftmargin=21pt,
+tabsize=4]{js}
+{
+  "appVer": "1.0",
+  "id": 0,
+  "postID": 0,
+  "postReaction": 1,
+  "postText": "I walked all the way downstairs, instead of taking...",
+  "topic": "catcher"
+}
+\end{minted}
+\captionof*{listing}{Example of a JSON object}
+\end{code}
+%TC:endignore
+
+\paragraph*{}
+As every post can be reacted at, it can also be unreacted. This is an important feature which helps to tidy up the
+database in case if the user changes their mind or just missclicks. The system for unreacting is slightly more
+complex than reacting. It searches the database reversely and finds the last reaction of the user with a corresponding
+post ID. It must work from the end to the beginning because many entries might have the same post ID and only the last
+one should be deleted since it is the most recent one. The search is performed using a loop which iterates over the
+entries in the database. Then the post ID from the frontend (every like and dislike button have their IDs) is compared
+with the post ID of the entry. If they are the same, the entry is deleted and the loop is broken.
+
+\subsubsection*{Testing}
+\addcontentsline{toc}{subsubsection}{Testing}
+\paragraph{}
+The testing stage was very extensive and everything was tested directly during the development sprint. 
+The testing was done, as always, in a manual way without writing any automatic tests or using any test suites.
+It can be split in several parts: reaction buttons and database. The reaction buttons were tested only for logics and
+animation tests weren't conducted since they were considered unnecessary.
+
+Buttons' logic is meant to be the following way: when the like button is pressed - the button is animated and dislike
+button is deactivated. And the dislike button should follow the same mechanism of action. Since an if-else statement
+was used to determine the logical system instead of switch-case statement, it was harder to create a logical system
+and this harder to test it (i.e. more tests were needed).
+
+Database testing was conducted in a similar way. Entry creation and entry deletion was tested. It was crucial to 
+have an understanding that it all works the way it should. Total of 13 tests were conducted in order to test the integrity of the system.
+
+The test table of conducted tests can be found in the following \hyperref[appendix:reaction_system_testing]{appendix}.
+
+%TC:ignore
+\begin{code}
+\begin{minted}[
+frame=single,
+framesep=3mm,
+linenos=true,
+xleftmargin=21pt,
+tabsize=4]{python}
+@eel.expose
+def react(post_id, value, topic, post_text):
+    with open('base/reaction.json', 'r+') as json_file:
+        reaction_file = json.load(json_file)
+        array = {
+            "appVer": app_version,
+            "id": reaction_file['posts'][-1]['id'] + 1,
+            "postID": post_id,
+            "postReaction": value,
+            "postText": post_text,
+            "topic": topic
+        }
+        reaction_file['posts'].append(array)
+        json_file.seek(0)
+        json.dump(reaction_file, json_file, indent=4, sort_keys=True)
+\end{minted}
+\captionof*{listing}{React function}
+\end{code}
+
+\clearpage
+
+\begin{code}
+\begin{minted}[
+frame=single,
+framesep=3mm,
+linenos=true,
+xleftmargin=21pt,
+tabsize=4]{python}
+@eel.expose
+def unreact(post_id):
+    with open('base/reaction.json', 'r+') as json_file:
+        reaction_file = json.load(json_file)
+        for i in reversed(range(len(reaction_file['posts']))):
+            if reaction_file['posts'][i]["postID"] == post_id:
+                reaction_file['posts'].pop(i)
+                json_file.seek(0)
+                json.dump(reaction_file, json_file, indent=4,
+                          sort_keys=True)
+                json_file.truncate()
+                break
+\end{minted}
+\captionof*{listing}{Unreact function}
+\end{code}
+%TC:endignore
+
+\subsubsection*{Reflection}
+\addcontentsline{toc}{subsubsection}{Reflection}
+\paragraph{}
+The reaction system was one of the hardest things to implement since it has very convoluted logic. The main problem with
+it was the naming of the `like' and `dislike' buttons in the HTML document. After the issue has been solved, the implementation
+became rather simple. A better possible solution would be to use this feedback somehow to automatically improve
+the model and adjust the generated text without any manual intervention. This approach would make the app 
+totally autonomous and would be a good point for the future development. Also not enough attention was paid to the
+functions that work with JSON. The formed array wasn't dumped into the JSON file and thus the database was not updated.
+This flaw extended the development time with a couple of hours.
 
 \clearpage
 
@@ -858,13 +985,19 @@ Elements tested throughout the project:
   \item \hyperref[appendix:reaction_system_testing]{Reaction system}
   \item \hyperref[appendix:frontend_testing]{Frontend}
   \subitem Functional buttons
-  \subitem simultaneous function interaction
+  \subitem Simultaneous function interaction
   \subitem Lazy loading
   \subitem Timer
   \item \hyperref[appendix:meme_creation_testing]{Meme creation}
 \end{itemize}
 
-\clearpage
+\subsection*{User feedback: Survey}
+\addcontentsline{toc}{subsection}{User feedback: Survey}
+\paragraph{}
+The user feedback was collected through a survey. The survey was conducted in order to understand the user's opinion about the
+application and the way it works. The survey was conducted in a group of 10 people and it included 4 questions with closed answers
+and 1 with an open answer. The results can be observed in the \hyperref[appendix:survey_results]{appendix section}. Generally,
+the app proved itself to be a great tool for the user and the user was satisfied with the application.
 
 \section*{Conclusion}
 \addcontentsline{toc}{section}{Conclusion}
@@ -961,6 +1094,61 @@ unique content.
 
 \clearpage
 
+\begin{table}[ht]
+  \centering
+  \begin{tabular}{@{\extracolsep{1pt}}lllll}
+  \toprule   
+  {Case} & {Input} & {Expected} & {Actual} & {Result}\\
+  \midrule
+  \multirow{3}{*}{GEN10} & Length: 100 & \multirow{3}{*}{Time: $<$15s} & \multirow{3}{*}{Time: 5.47s} & \multirow{3}{*}{Pass}\\ 
+  & Samples: 6 & & & \\
+  & Batches: 6 &  & & \\
+  \addlinespace[3pt]
+  \multirow{3}{*}{GEN11} & Length: 100 & \multirow{3}{*}{Time: $<$15s} & \multirow{3}{*}{Time: 5.63s} & \multirow{3}{*}{Pass}\\ 
+  & Samples: 6 & & & \\
+  & Batches: 6 &  & & \\
+  \addlinespace[3pt]
+  \bottomrule
+  \end{tabular}
+  \caption{GEN10-GEN11 - `Catcher'}
+\end{table}
+
+\subsection*{Model testing Explanation}
+\addcontentsline{toc}{subsection}{Model testing Explanation}
+\label{appendix:model_testing_explanation}
+\paragraph{}
+The test cases described in the table presented above are the ones that were used to test the model. The most significant and interesting were reported in a form of a story in
+the main report. In this appendix section, the test cases that are not so significant are going to be presented.
+
+The tests are divided in two phases although they test the same behaviour of the system but on different sets of data.
+Tests named `\textit{GEN0-GEN7}' are the ones that test the behaviour of the system on the data set called `\textit{Alice}'.
+As can be seen in the table, many different input have been tested to check the best approach to the problem.
+The scatter in the first test cases is present due to the fact that when the problem was approached at first, it
+was unknown what are the best values and some extreme values were tried to build an understanding what should be 
+considered an appropriate value for the `\textit{length}' input parameter.
+
+Due to the big length of the samples that were generated, the sample number had to be reduced since it affected the
+generation time. Generation time is very important because the app is supposed to work in live mode and any generation
+time above 15 seconds is considered an error. Later it was decided instead of generating one big sample and split into
+many parts it was better to generate many small samples with a length of 100 tokens. Batch size was not been proven to
+change anything but will be tested more since, in the documentation it's stated that it decreases the generation time.
+
+The first portion of test cases (GEN0-GEN7) aimed to test not only for generation time, which was one of the most
+important parameters, but also for the quality of the generated text. As can be seen in the table, all of the tests
+that were conducted to test for quality failed. The reason for this is that the neural network was not able to generate
+a full text without cutting the sentences. The cause for that is not known but it might be the parameter count.
+
+The other portion of test cases (GEN8-GEN9) aimed to test the generation time only since the first portion proved
+the inability of the neural network to generate a full text.
+
+Next group of tests were conducted to test the speed of the system. The tests were conducted on multiple datasets and
+using the same number of batches as the sample number. It's believed that the batch size affects the generation time
+greatly. If a batch size is set to the same number as samples - it means the N number of samples will be generated
+concurrently. For example, sample number - 6, batch size - 6, 6 samples will be generated at the same time.
+
+
+\clearpage
+
 \subsection*{Reaction system testing}
 \addcontentsline{toc}{subsection}{Reaction system testing}
 \label{appendix:reaction_system_testing}
@@ -1043,7 +1231,24 @@ unique content.
   \caption{Reaction system sprint (2/2)}
 \end{table}
 
+\subsection*{Reaction system testing Explanation}
+\addcontentsline{toc}{subsection}{Reaction system testing Explanation}
+\label{appendix:reaction_system_testing_explanation}
+\paragraph{}
+Looking at the tables above, it can be seen that the reaction system sprint is working as expected in the long run.
+The tests were carried out during the development process and include everything from basic liking and disliking animations
+and button presses to the entry creation in the JSON-formatted database. First 5 tests (RS0-RS4) failed because the system was
+in early development and errors were expected. The most important test case from the beginning is RS1-RS2 (equivalent), RS3, RS5
+since RS1-2 make sure that only a single entry is created per like or dislike. Down below in the table it can be observed that later
+same tests were conducted and they all passed. RS3 and RS5 verify that not added when an opposite reaction is blocked and
+that a file is created when needed. In the end, it's been decided that the most convenient way to use the database is to have
+one default entry in it at all times since when the file is not present or is empty problems start to occur.
+
+Other tests just verify that all functions related to the database work as expected - adding, deleting etc. Also the
+testing scheme makes sure that the logics of liking work as expected.
+
 \clearpage
+
 
 \subsection*{Frontend testing}
 \addcontentsline{toc}{subsection}{Frontend testing}
@@ -1110,6 +1315,25 @@ unique content.
 
 \clearpage
 
+\subsection*{Frontend testing Explanation}
+\addcontentsline{toc}{subsection}{Frontend testing Explanation}
+\label{appendix:frontend_testing_explanation}
+\paragraph{}
+Frontend testing is one of the most extensive testing since it involves the whole frontend.
+As can be seen above in the testing table test cases are separated in several groups by their expected
+behaviour. First 6 tests (FE0-FE5) are very simple and they just verify that the user can change the topic
+to whatever they like (i.e. the button works and a proper function is called). The next 3 tests (FE6-FE8)
+verify that the user can unfold the sections of the menu. Same ideology as the previous tests, the button
+works and the function is called. Following 2 tests (FE9-FE10) test the possible scenarios when the user
+tries to change the theme in the app. The next 2 tests (FE11-FE12) work with possible outcomes when the user
+tries to switch between classic and meme mode. These two test cases are very important since this feature is one
+of the biggest among the whole app. It stands next to the topic change if not more important. The following
+6 tests (FE13-FE18) are crucial for the proper functioning of the app. They verify that the user is restricted
+from accessing other topics and modes when loading is in process. The last group of tests (FE19-FE23) are used
+to verify the proper functioning of the menu buttons and console messages.
+
+\clearpage
+
 \subsection*{All-in Testing}
 \addcontentsline{toc}{subsection}{All-in Testing}
 \label{appendix:all-in_testing}
@@ -1140,10 +1364,25 @@ unique content.
   \caption{All-in Testing}
 \end{table}
 
+\subsection*{All-in Testing Explanation}
+\addcontentsline{toc}{subsection}{All-in Testing Explanation}
+\label{appendix:all-in_testing_explanation}
+\paragraph{}
+All-in Testing is a small test case group that can be appended to the frontend testing but it is separated from it
+because it is not as extensive as the frontend testing and tests everything that doesn't directly affect the look
+of the page apart from like animations.
+
+First test is the test of the lazy loading trigger. It is very simple and it just verifies that the app captures
+the right event at the right time and the called function works properly. The second test is an important case
+because it tests the bug-preventing algorithm that is used when the user tries to scroll up and down in the end of
+the page when the loading process is in progress. The resolution is tested afterwards, nothing specific - the 
+web development approach helps massively in creating adaptive interface. The likes and dislikes animations are
+working properly and are coded with CSS.
+
 \clearpage
 
-\subsection*{Meme creation}
-\addcontentsline{toc}{subsection}{Meme creation}
+\subsection*{Meme creation Testing}
+\addcontentsline{toc}{subsection}{Meme creation Testing}
 \label{appendix:meme_creation_testing}
 
 \begin{table}[ht]
@@ -1205,28 +1444,53 @@ unique content.
   \caption{Meme creation testing}
 \end{table}
 
-% SPRINT: REACTION SYSTEM
-% TESTING DATABASE REACTIONS
-% TEST 1: LIKE, ALICE, Different post text - Partial Pass - text formatted with \n ------------
-% TEST 2: LIKE, ALICE, Different post texts - Partial pass - text too long and formatted with \n ------
-% TEST 3: DISLIKE, ALICE, Different post texts - Fail - two entries with different reacion identifiers (id 6 and 7) -----
-% TEST 4: DISLIKE, ALICE, Different post texts - Fail - two entires with different reaction identifiers (id 8 and 9) -----
-% TEST 5: REMOVE DISLIKE, ALICE, different post texts - fail - instead of doing nothing, it adds another entry ----
-% TEST 6: EMPTY FILE TEST - fail - cannot append to a non-existing array in JSON ----
-% TEST 6: No file with w+, a+ instead of r+ - fail - some error, idk -------
-% TEST 7: No file with w+, a+ instead of r+ - file creation - Pass ----------
-% TEST 8: Empty file with w+, r+, a+ - fail - empty file needs at least one entry ---------
+\clearpage
 
-% TEST 9: LIKE, CATCHER, Different post texts - Partial pass - text formatted with \n but only one entry, no multiple entries -----
-% TEST 10: DISLIKE, CATCHER, DIfferent post texts - Partial pass - text formatted with \n but only one entry, no multiple entries
-% TEST 11: UNREACT - ANY TOPIC, ANY POST, LOGIC TEST - Fail - When like is pressed - dislike can be activated --------
-% TEST 12: UNREACT - ANY TOPIC, ANY POST, LOGIC TEST - Pass - Every function works fine ------
-% TEST 13: UNREACT - ANY TOPIC, ANY POST, DELETE Entry test - Fail - Input r+, w+, w, r,
-% TEST 14: UNREACT - ANY TOPIC, ANY POST, DELETE Entry test - Pass - Input r+, just forgot to dump it back in JSON
+\subsection*{Meme creation Testing Explanation}
+\addcontentsline{toc}{subsection}{Meme creation Testing Explanation}
+\label{appendix:meme_creation_explanation}
+\paragraph{}
+This testing table describes the tests conducted regarding the meme mode and image creation.
+All of the tests work with the visual part of the process and verify that the image looks as expected.
+First 4 tests make sure that the dimensions of the image are proper and that the image is generated
+in the expected time. Next 5 tests verify the margins of the text in the images. They margins are used
+to make the `meme' look like a `meme'. Next 4 tests verify the font (Impact) and the size of it.
+Impact is used because it's the standard font in all memes. Following tests work with text wrapping and
+verify that the text is not too long or too short and fits the image size and lines properly.
+The last tests are for the stilisation of the text - stroke and uppercase variant.
 
+In the end, all tests are just for a good visual look of the image and don't have to pass or fail explicitly.
 
-% FRONTEND TESTING - FOR EXAMPLE - BUTTON WORKS, BUTTON DOESN'T WORK - VISIBLE, INVISIBLE ELEMENTS
-% ALL-IN TESTS - SCROLLING TESTS, DOUBLE LOADING ON SCROLL
+\subsection*{Survey Results}
+\addcontentsline{toc}{subsection}{Survey Results}
+\label{appendix:survey_results}
+\paragraph{}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=.8\linewidth]{img/feedback0.png}
+  \label{fig:feedback0}
+\end{figure}
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=.8\linewidth]{img/feedback1.png}
+  \label{fig:feedback1}
+\end{figure}
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=.8\linewidth]{img/feedback2.png}
+  \label{fig:feedback2}
+\end{figure}
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=.8\linewidth]{img/feedback3.png}
+  \label{fig:feedback3}
+\end{figure}
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=.8\linewidth]{img/feedback4.png}
+  \label{fig:feedback4}
+\end{figure}
 
 \end{appendices}
 

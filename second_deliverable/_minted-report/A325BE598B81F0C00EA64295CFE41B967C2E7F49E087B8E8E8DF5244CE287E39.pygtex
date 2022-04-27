@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{train\PYGZus{}model}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{run\PYGZus{}name}\PYG{p}{,} \PYG{n}{file\PYGZus{}name}\PYG{p}{,} \PYG{n}{steps}\PYG{p}{,} \PYG{n}{sample\PYGZus{}length}\PYG{p}{):}
+    \PYG{n}{sess} \PYG{o}{=} \PYG{n}{gpt2}\PYG{o}{.}\PYG{n}{start\PYGZus{}tf\PYGZus{}sess}\PYG{p}{()}
+    \PYG{n}{gpt2}\PYG{o}{.}\PYG{n}{finetune}\PYG{p}{(}\PYG{n}{sess}\PYG{p}{,} \PYG{n}{file\PYGZus{}name}\PYG{p}{,} \PYG{n}{model\PYGZus{}name}\PYG{o}{=}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{model\PYGZus{}name}\PYG{p}{,}
+                  \PYG{n}{steps}\PYG{o}{=}\PYG{n}{steps}\PYG{p}{,} \PYG{n}{run\PYGZus{}name}\PYG{o}{=}\PYG{n}{run\PYGZus{}name}\PYG{p}{,} \PYG{n}{restore\PYGZus{}from}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}latest\PYGZsq{}}\PYG{p}{,}
+                  \PYG{n}{overwrite}\PYG{o}{=}\PYG{k+kc}{True}\PYG{p}{,} \PYG{n}{sample\PYGZus{}length}\PYG{o}{=}\PYG{n}{sample\PYGZus{}length}\PYG{p}{,}
+                  \PYG{n}{save\PYGZus{}every}\PYG{o}{=}\PYG{l+m+mi}{100}\PYG{p}{,} \PYG{n}{sample\PYGZus{}every}\PYG{o}{=}\PYG{l+m+mi}{10000}\PYG{p}{)}
+\end{Verbatim}

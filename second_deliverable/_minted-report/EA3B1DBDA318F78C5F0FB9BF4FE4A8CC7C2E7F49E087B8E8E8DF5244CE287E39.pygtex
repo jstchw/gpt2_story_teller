@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nd}{@eel}\PYG{o}{.}\PYG{n}{expose}
+\PYG{k}{def} \PYG{n+nf}{count\PYGZus{}files}\PYG{p}{(}\PYG{n}{path}\PYG{p}{):}
+    \PYG{k}{return} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{glob}\PYG{o}{.}\PYG{n}{glob1}\PYG{p}{(}\PYG{n}{path}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}*.jpg\PYGZdq{}}\PYG{p}{))}
+\end{Verbatim}

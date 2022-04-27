@@ -1,96 +1,109 @@
-\contentsline {section}{Abstract}{2}{section*.1}%
-\contentsline {paragraph}{}{2}{section*.2}%
-\contentsline {section}{Introduction}{2}{section*.3}%
-\contentsline {paragraph}{}{2}{section*.4}%
-\contentsline {section}{Objectives and Goals}{3}{section*.5}%
-\contentsline {subsection}{Initial approach}{3}{section*.6}%
-\contentsline {paragraph}{}{3}{section*.7}%
-\contentsline {subsection}{New approach}{3}{section*.8}%
-\contentsline {paragraph}{}{3}{section*.9}%
-\contentsline {subsection}{Reasons}{3}{section*.10}%
-\contentsline {paragraph}{}{3}{section*.11}%
-\contentsline {subsection}{General Description}{3}{section*.12}%
-\contentsline {paragraph}{}{3}{section*.13}%
-\contentsline {section}{Major Components}{4}{section*.14}%
-\contentsline {subsection}{Backend}{4}{section*.15}%
-\contentsline {paragraph}{}{4}{section*.16}%
-\contentsline {subsubsection}{GPT-2 and the library}{4}{section*.17}%
-\contentsline {paragraph}{}{4}{section*.18}%
-\contentsline {subsubsection}{Datasets}{5}{section*.19}%
-\contentsline {paragraph}{}{5}{section*.20}%
-\contentsline {subsubsection}{Pillow}{5}{section*.21}%
-\contentsline {paragraph}{}{5}{section*.22}%
-\contentsline {subsection}{Frontend}{6}{section*.23}%
-\contentsline {paragraph}{}{6}{section*.24}%
-\contentsline {subsubsection}{Web Application appearence}{6}{section*.25}%
-\contentsline {paragraph}{}{6}{section*.26}%
-\contentsline {subsubsection}{Displaying the content}{7}{section*.29}%
-\contentsline {paragraph}{}{7}{section*.30}%
-\contentsline {subsubsection}{User feedback}{8}{section*.31}%
-\contentsline {paragraph}{}{8}{section*.32}%
-\contentsline {subsubsection}{Database}{8}{section*.33}%
-\contentsline {paragraph}{}{8}{section*.34}%
-\contentsline {subsection}{Linking the frontend and backend}{9}{section*.36}%
-\contentsline {paragraph}{}{9}{section*.37}%
-\contentsline {section}{Development lifecycle}{10}{section*.40}%
-\contentsline {paragraph}{}{10}{section*.41}%
-\contentsline {subsection}{Training the model}{10}{section*.42}%
-\contentsline {subsubsection}{Implementation}{10}{section*.43}%
-\contentsline {paragraph}{}{10}{section*.44}%
-\contentsline {subsubsection}{Testing}{11}{section*.46}%
-\contentsline {paragraph}{}{11}{section*.47}%
-\contentsline {subsubsection}{Reflection}{11}{section*.49}%
-\contentsline {paragraph}{}{11}{section*.50}%
-\contentsline {subsection}{Text generation}{12}{section*.51}%
-\contentsline {paragraph}{}{12}{section*.52}%
-\contentsline {subsubsection}{Implementation}{12}{section*.53}%
-\contentsline {paragraph}{}{12}{section*.54}%
-\contentsline {subsubsection}{Testing}{13}{section*.57}%
-\contentsline {paragraph}{}{13}{section*.58}%
-\contentsline {subsubsection}{Reflection}{13}{section*.59}%
-\contentsline {paragraph}{}{13}{section*.60}%
-\contentsline {subsection}{Reaction System}{14}{section*.61}%
-\contentsline {subsubsection}{Implementation}{14}{section*.62}%
-\contentsline {paragraph}{}{14}{section*.63}%
-\contentsline {subsubsection}{Testing}{15}{section*.65}%
+\contentsline {section}{Abstract}{3}{section*.1}%
+\contentsline {paragraph}{}{3}{section*.2}%
+\contentsline {section}{Introduction}{3}{section*.3}%
+\contentsline {paragraph}{}{3}{section*.4}%
+\contentsline {section}{Objectives and Goals}{4}{section*.5}%
+\contentsline {subsection}{Initial approach}{4}{section*.6}%
+\contentsline {paragraph}{}{4}{section*.7}%
+\contentsline {subsection}{New approach}{4}{section*.8}%
+\contentsline {paragraph}{}{4}{section*.9}%
+\contentsline {subsection}{Reasons}{4}{section*.10}%
+\contentsline {paragraph}{}{4}{section*.11}%
+\contentsline {subsection}{General Description}{4}{section*.12}%
+\contentsline {paragraph}{}{4}{section*.13}%
+\contentsline {section}{Major Components}{5}{section*.14}%
+\contentsline {subsection}{Backend}{5}{section*.15}%
+\contentsline {paragraph}{}{5}{section*.16}%
+\contentsline {subsubsection}{GPT-2 and the library}{5}{section*.17}%
+\contentsline {paragraph}{}{5}{section*.18}%
+\contentsline {subsubsection}{Datasets}{6}{section*.19}%
+\contentsline {paragraph}{}{6}{section*.20}%
+\contentsline {subsubsection}{Pillow}{6}{section*.21}%
+\contentsline {paragraph}{}{6}{section*.22}%
+\contentsline {subsection}{Frontend}{7}{section*.23}%
+\contentsline {paragraph}{}{7}{section*.24}%
+\contentsline {subsubsection}{Web Application appearence}{7}{section*.25}%
+\contentsline {paragraph}{}{7}{section*.26}%
+\contentsline {subsubsection}{Displaying the content}{8}{section*.29}%
+\contentsline {paragraph}{}{8}{section*.30}%
+\contentsline {subsubsection}{User feedback}{9}{section*.31}%
+\contentsline {paragraph}{}{9}{section*.32}%
+\contentsline {subsubsection}{Database}{9}{section*.33}%
+\contentsline {paragraph}{}{9}{section*.34}%
+\contentsline {subsection}{Linking the frontend and backend}{10}{section*.36}%
+\contentsline {paragraph}{}{10}{section*.37}%
+\contentsline {section}{Development lifecycle}{11}{section*.41}%
+\contentsline {paragraph}{}{11}{section*.42}%
+\contentsline {subsection}{Training the model}{11}{section*.43}%
+\contentsline {subsubsection}{Implementation}{11}{section*.44}%
+\contentsline {paragraph}{}{11}{section*.45}%
+\contentsline {subsubsection}{Testing}{12}{section*.47}%
+\contentsline {paragraph}{}{12}{section*.48}%
+\contentsline {subsubsection}{Reflection}{12}{section*.50}%
+\contentsline {paragraph}{}{12}{section*.51}%
+\contentsline {subsection}{Text generation}{13}{section*.52}%
+\contentsline {paragraph}{}{13}{section*.53}%
+\contentsline {subsubsection}{Implementation}{13}{section*.54}%
+\contentsline {paragraph}{}{13}{section*.55}%
+\contentsline {subsubsection}{Testing}{14}{section*.59}%
+\contentsline {paragraph}{}{14}{section*.60}%
+\contentsline {subsubsection}{Reflection}{14}{section*.61}%
+\contentsline {paragraph}{}{14}{section*.62}%
+\contentsline {subsection}{Frontend Development}{15}{section*.63}%
+\contentsline {paragraph}{}{15}{section*.64}%
+\contentsline {subsubsection}{Implementation - visible elements}{15}{section*.65}%
 \contentsline {paragraph}{}{15}{section*.66}%
-\contentsline {subsubsection}{Reflection}{15}{section*.68}%
-\contentsline {paragraph}{}{15}{section*.69}%
-\contentsline {subsection}{Frontend Development}{16}{section*.70}%
-\contentsline {paragraph}{}{16}{section*.71}%
-\contentsline {subsubsection}{Implementation - visible elements}{16}{section*.72}%
-\contentsline {paragraph}{}{16}{section*.73}%
-\contentsline {subsubsection}{Implementation - invisible elements}{17}{section*.74}%
-\contentsline {paragraph}{}{17}{section*.75}%
-\contentsline {subsubsection}{Testing}{18}{section*.77}%
-\contentsline {paragraph}{}{18}{section*.78}%
-\contentsline {subsubsection}{Reflection}{18}{section*.79}%
-\contentsline {paragraph}{}{18}{section*.80}%
-\contentsline {section}{Critical analysis and Reflection}{19}{section*.81}%
-\contentsline {paragraph}{}{19}{section*.82}%
-\contentsline {subsection}{Libraries and frameworks}{19}{section*.83}%
-\contentsline {subsubsection}{GPT-2-Simple}{19}{section*.84}%
-\contentsline {paragraph}{}{19}{section*.85}%
-\contentsline {subsubsection}{Eel}{19}{section*.86}%
-\contentsline {paragraph}{}{19}{section*.87}%
-\contentsline {subsubsection}{Bootstrap}{19}{section*.88}%
-\contentsline {paragraph}{}{19}{section*.89}%
-\contentsline {subsubsection}{Pillow}{20}{section*.90}%
-\contentsline {paragraph}{}{20}{section*.91}%
-\contentsline {subsection}{Tools}{20}{section*.92}%
-\contentsline {subsubsection}{Python}{20}{section*.93}%
-\contentsline {paragraph}{}{20}{section*.94}%
-\contentsline {subsubsection}{IDE}{20}{section*.95}%
-\contentsline {paragraph}{}{20}{section*.96}%
-\contentsline {subsection}{Overall testing}{20}{section*.97}%
-\contentsline {paragraph}{}{20}{section*.98}%
-\contentsline {section}{Conclusion}{21}{section*.99}%
-\contentsline {paragraph}{}{21}{section*.100}%
-\contentsline {section}{Bibliography}{21}{section*.100}%
-\contentsline {chapter}{Appendices}{24}{section*.102}%
-\contentsline {section}{Testing}{25}{section*.103}%
-\contentsline {subsection}{Model testing}{25}{section*.104}%
-\contentsline {subsection}{Reaction system testing}{26}{section*.106}%
-\contentsline {subsection}{Frontend testing}{28}{section*.110}%
-\contentsline {subsection}{All-in Testing}{29}{section*.112}%
-\contentsline {subsection}{Meme creation}{30}{section*.114}%
+\contentsline {subsubsection}{Implementation - invisible elements}{16}{section*.67}%
+\contentsline {paragraph}{}{16}{section*.68}%
+\contentsline {subsubsection}{Testing}{17}{section*.71}%
+\contentsline {paragraph}{}{17}{section*.72}%
+\contentsline {subsubsection}{Reflection}{17}{section*.73}%
+\contentsline {paragraph}{}{17}{section*.74}%
+\contentsline {subsection}{Reaction System}{18}{section*.75}%
+\contentsline {subsubsection}{Implementation}{18}{section*.76}%
+\contentsline {paragraph}{}{18}{section*.77}%
+\contentsline {subsubsection}{Testing}{19}{section*.80}%
+\contentsline {paragraph}{}{19}{section*.81}%
+\contentsline {subsubsection}{Reflection}{20}{section*.84}%
+\contentsline {paragraph}{}{20}{section*.85}%
+\contentsline {section}{Critical analysis and Reflection}{21}{section*.86}%
+\contentsline {paragraph}{}{21}{section*.87}%
+\contentsline {subsection}{Libraries and frameworks}{21}{section*.88}%
+\contentsline {subsubsection}{GPT-2-Simple}{21}{section*.89}%
+\contentsline {paragraph}{}{21}{section*.90}%
+\contentsline {subsubsection}{Eel}{21}{section*.91}%
+\contentsline {paragraph}{}{21}{section*.92}%
+\contentsline {subsubsection}{Bootstrap}{21}{section*.93}%
+\contentsline {paragraph}{}{21}{section*.94}%
+\contentsline {subsubsection}{Pillow}{22}{section*.95}%
+\contentsline {paragraph}{}{22}{section*.96}%
+\contentsline {subsection}{Tools}{22}{section*.97}%
+\contentsline {subsubsection}{Python}{22}{section*.98}%
+\contentsline {paragraph}{}{22}{section*.99}%
+\contentsline {subsubsection}{IDE}{22}{section*.100}%
+\contentsline {paragraph}{}{22}{section*.101}%
+\contentsline {subsection}{Overall testing}{22}{section*.102}%
+\contentsline {paragraph}{}{22}{section*.103}%
+\contentsline {subsection}{User feedback: Survey}{23}{section*.104}%
+\contentsline {paragraph}{}{23}{section*.105}%
+\contentsline {section}{Conclusion}{23}{section*.106}%
+\contentsline {paragraph}{}{23}{section*.107}%
+\contentsline {section}{Bibliography}{23}{section*.107}%
+\contentsline {chapter}{Appendices}{26}{section*.109}%
+\contentsline {section}{Testing}{27}{section*.110}%
+\contentsline {subsection}{Model testing}{27}{section*.111}%
+\contentsline {subsection}{Model testing Explanation}{28}{section*.114}%
+\contentsline {paragraph}{}{28}{section*.115}%
+\contentsline {subsection}{Reaction system testing}{29}{section*.116}%
+\contentsline {subsection}{Reaction system testing Explanation}{30}{section*.120}%
+\contentsline {paragraph}{}{30}{section*.121}%
+\contentsline {subsection}{Frontend testing}{31}{section*.122}%
+\contentsline {subsection}{Frontend testing Explanation}{32}{section*.124}%
+\contentsline {paragraph}{}{32}{section*.125}%
+\contentsline {subsection}{All-in Testing}{33}{section*.126}%
+\contentsline {subsection}{All-in Testing Explanation}{33}{section*.128}%
+\contentsline {paragraph}{}{33}{section*.129}%
+\contentsline {subsection}{Meme creation Testing}{34}{section*.130}%
+\contentsline {subsection}{Meme creation Testing Explanation}{35}{section*.132}%
+\contentsline {paragraph}{}{35}{section*.133}%
+\contentsline {subsection}{Survey Results}{35}{section*.134}%

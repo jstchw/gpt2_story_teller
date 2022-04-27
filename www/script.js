@@ -109,7 +109,7 @@ async function loadMore() {
     await populateImageArray()
 
     if (mode === 'classic') {
-        let object = await eel.generate_text(topic, 100, 6)()
+        let object = await eel.generate_text(topic, 100, maxResult)()
         $('.spinner-container').remove()
         if(theme === 'light') {
             for (let i = 0; i < maxResult; i++) {

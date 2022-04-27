@@ -1,0 +1,10 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{for} \PYG{n}{idx}\PYG{p}{,} \PYG{n}{item} \PYG{o+ow}{in} \PYG{n+nb}{enumerate}\PYG{p}{(}\PYG{n}{texts}\PYG{p}{):}
+    \PYG{n}{item} \PYG{o}{=} \PYG{n}{item}\PYG{o}{.}\PYG{n}{rsplit}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}.\PYGZsq{}}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{)[}\PYG{l+m+mi}{0}\PYG{p}{]}
+    \PYG{k}{if} \PYG{o+ow}{not} \PYG{n}{item}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{isupper}\PYG{p}{()} \PYG{o+ow}{and} \PYG{n}{item}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{isalpha}\PYG{p}{():}
+        \PYG{n}{item} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}...\PYGZsq{}} \PYG{o}{+} \PYG{n}{item} \PYG{o}{+} \PYG{l+s+s1}{\PYGZsq{}...\PYGZsq{}}
+    \PYG{k}{else}\PYG{p}{:}
+        \PYG{n}{item} \PYG{o}{=} \PYG{n}{item} \PYG{o}{+} \PYG{l+s+s1}{\PYGZsq{}...\PYGZsq{}}
+    \PYG{n}{texts}\PYG{p}{[}\PYG{n}{idx}\PYG{p}{]} \PYG{o}{=} \PYG{n}{item}
+\PYG{k}{return} \PYG{n}{texts}
+\end{Verbatim}

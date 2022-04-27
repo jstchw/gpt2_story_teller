@@ -1,0 +1,17 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nd}{@eel}\PYG{o}{.}\PYG{n}{expose}
+\PYG{k}{def} \PYG{n+nf}{react}\PYG{p}{(}\PYG{n}{post\PYGZus{}id}\PYG{p}{,} \PYG{n}{value}\PYG{p}{,} \PYG{n}{topic}\PYG{p}{,} \PYG{n}{post\PYGZus{}text}\PYG{p}{):}
+    \PYG{k}{with} \PYG{n+nb}{open}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}base/reaction.json\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}r+\PYGZsq{}}\PYG{p}{)} \PYG{k}{as} \PYG{n}{json\PYGZus{}file}\PYG{p}{:}
+        \PYG{n}{reaction\PYGZus{}file} \PYG{o}{=} \PYG{n}{json}\PYG{o}{.}\PYG{n}{load}\PYG{p}{(}\PYG{n}{json\PYGZus{}file}\PYG{p}{)}
+        \PYG{n}{array} \PYG{o}{=} \PYG{p}{\PYGZob{}}
+            \PYG{l+s+s2}{\PYGZdq{}appVer\PYGZdq{}}\PYG{p}{:} \PYG{n}{app\PYGZus{}version}\PYG{p}{,}
+            \PYG{l+s+s2}{\PYGZdq{}id\PYGZdq{}}\PYG{p}{:} \PYG{n}{reaction\PYGZus{}file}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}posts\PYGZsq{}}\PYG{p}{][}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{][}\PYG{l+s+s1}{\PYGZsq{}id\PYGZsq{}}\PYG{p}{]} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{,}
+            \PYG{l+s+s2}{\PYGZdq{}postID\PYGZdq{}}\PYG{p}{:} \PYG{n}{post\PYGZus{}id}\PYG{p}{,}
+            \PYG{l+s+s2}{\PYGZdq{}postReaction\PYGZdq{}}\PYG{p}{:} \PYG{n}{value}\PYG{p}{,}
+            \PYG{l+s+s2}{\PYGZdq{}postText\PYGZdq{}}\PYG{p}{:} \PYG{n}{post\PYGZus{}text}\PYG{p}{,}
+            \PYG{l+s+s2}{\PYGZdq{}topic\PYGZdq{}}\PYG{p}{:} \PYG{n}{topic}
+        \PYG{p}{\PYGZcb{}}
+        \PYG{n}{reaction\PYGZus{}file}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}posts\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{array}\PYG{p}{)}
+        \PYG{n}{json\PYGZus{}file}\PYG{o}{.}\PYG{n}{seek}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{)}
+        \PYG{n}{json}\PYG{o}{.}\PYG{n}{dump}\PYG{p}{(}\PYG{n}{reaction\PYGZus{}file}\PYG{p}{,} \PYG{n}{json\PYGZus{}file}\PYG{p}{,} \PYG{n}{indent}\PYG{o}{=}\PYG{l+m+mi}{4}\PYG{p}{,} \PYG{n}{sort\PYGZus{}keys}\PYG{o}{=}\PYG{k+kc}{True}\PYG{p}{)}
+\end{Verbatim}

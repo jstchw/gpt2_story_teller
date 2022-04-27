@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nd}{@eel}\PYG{o}{.}\PYG{n}{expose}
+\PYG{k}{def} \PYG{n+nf}{generate\PYGZus{}text}\PYG{p}{(}\PYG{n}{run\PYGZus{}name}\PYG{p}{,} \PYG{n}{length}\PYG{p}{,} \PYG{n}{nsamples}\PYG{p}{):}
+    \PYG{n}{sess} \PYG{o}{=} \PYG{n}{gpt2}\PYG{o}{.}\PYG{n}{start\PYGZus{}tf\PYGZus{}sess}\PYG{p}{()}
+    \PYG{n}{gpt2}\PYG{o}{.}\PYG{n}{load\PYGZus{}gpt2}\PYG{p}{(}\PYG{n}{sess}\PYG{p}{,} \PYG{n}{run\PYGZus{}name}\PYG{o}{=}\PYG{n}{run\PYGZus{}name}\PYG{p}{,} \PYG{n}{reuse}\PYG{o}{=}\PYG{n}{tf}\PYG{o}{.}\PYG{n}{compat}\PYG{o}{.}\PYG{n}{v1}\PYG{o}{.}\PYG{n}{AUTO\PYGZus{}REUSE}\PYG{p}{)}
+    \PYG{n}{texts} \PYG{o}{=} \PYG{n}{gpt2}\PYG{o}{.}\PYG{n}{generate}\PYG{p}{(}\PYG{n}{sess}\PYG{p}{,} \PYG{n}{return\PYGZus{}as\PYGZus{}list}\PYG{o}{=}\PYG{k+kc}{True}\PYG{p}{,} \PYG{n}{length}\PYG{o}{=}\PYG{n}{length}\PYG{p}{,}
+    \PYG{n}{nsamples}\PYG{o}{=}\PYG{n}{nsamples}\PYG{p}{,} \PYG{n}{model\PYGZus{}name}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}124M\PYGZsq{}}\PYG{p}{)}
+\end{Verbatim}
