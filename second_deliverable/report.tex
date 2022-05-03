@@ -19,10 +19,16 @@
 \newenvironment{longlisting}{\captionsetup{type=listing}}{}
 \newenvironment{code}{\captionsetup{type=listing}}{}
 \SetupFloatingEnvironment{listing}{name=Code}
+\makeatletter
+\def\blfootnote{\xdef\@thefnmark{}\@footnotetext}
+\makeatother
+
 \title{%
   GPT-2 Based Story Teller\\
   \large CTEC3451 Development Project \\~\\
-    De Montfort University} 
+    De Montfort University
+  \blfootnote{Word count: 7998}
+} 
 \author{Artem Bobrov (P2547788)}
 \date{May 5 2022}
 \setlength{\parindent}{1em}
@@ -30,10 +36,7 @@
 \maketitle
 \thispagestyle{empty}
 \clearpage
-\tableofcontents
-\setcounter{tocdepth}{1}
-\thispagestyle{empty}
-\clearpage
+%TC:ignore
 \section*{Abstract}
 \addcontentsline{toc}{section}{Abstract}
 \paragraph{}
@@ -42,6 +45,11 @@ The model is trained on multiple datasets and is able to generate text from a va
 The frontend is a web application that allows users to endlessly generate stories accompanied by thematic pictures.
 The point of the project is to prove the concept that neural networks, if trained properly, are able to generate 
 data that is very similar to human language.
+%TC:endignore
+\tableofcontents
+\setcounter{tocdepth}{1}
+\thispagestyle{empty}
+\clearpage
 
 \section*{Introduction}
 \addcontentsline{toc}{section}{Introduction}
@@ -63,8 +71,6 @@ will be examined and the results will be presented and discussed in depth. The u
 backend and frontend will be explained. Moreover the project development and research cycle will be reflected on and 
 other approaches that possibly could have been used to achieve different or similar results will be presented.
 
-\clearpage
-
 \section*{Objectives and Goals}
 \addcontentsline{toc}{section}{Objectives and Goals}
 
@@ -85,6 +91,7 @@ techniques - indetical frontend and almost the same backend. The only difference
 because it's not needed for the project anymore. To minimize the deviation from the original plan, there will be an
 additional section in the web interface that creates `memes' based on novels and other piece of art.
 
+\clearpage
 
 \subsection*{Reasons}
 \addcontentsline{toc}{subsection}{Reasons}
@@ -121,6 +128,8 @@ react to each story leaving a positive or a negative feedback - using the `Like'
 these reactions will be stored in a database to be used by the developer to understand which stories should be
 corrected and improved. The feedback system is designed to create a reflection on the pre-trained model as a whole and
 not on separate elements (stories). Given the feedback, the developer can decide to improve the model or not.
+
+\clearpage
 
 \section*{Major Components}
 \addcontentsline{toc}{section}{Major Components}
@@ -200,15 +209,12 @@ project if the checkpoint storage would be located not on the user's machine but
 \addcontentsline{toc}{subsubsection}{Pillow}
 \paragraph{}
 % Meme section
-`Pillow' is a Python library used to manipulate images \citep{pillow_lib}. It's a fork from an original library named
-`PIL'. The reason why it was chosen to use in the development project is that it offers an easy and fast way
+`Pillow' is a Python library used to manipulate images \citep{pillow_lib}. The reason why it was chosen to use in the development project is that it offers an easy and fast way
 to insert text into the image. This process is also known as `meme' creation. It is possible to use generated samples
 from the neural network, either cut the size of the samples after it has been generated or generate a small sample 
 in the first place. The second option reduces the time of generation process but it also takes away the option
 to format the text if the first and the last sentences are inappropriate. The customisation of the text in the library
 is a very straightforward process. It is possible to change the font, the size, the colour, the position and the angle.
-The `Meme mode' section will most likely contain pictures in unified format (i.e. the font size, the colour and the angle will
-be the same).
 
 In terms of the project, `Pillow' will be used in the `Meme mode' section. The idea is similar to the stories generator,
 the difference lies in the fact that the text is inserted into the image, rather than being printed below the image.
@@ -262,9 +268,10 @@ satisfy the standards of app design in early 2020s.
 \end{figure}
 
 Similar situation occurs when it comes to animation with Tkinter. Many examples and many guides were examined and 
-it has been concluded that Tkinter, in spite of the fact that it's one of the most popular GUI libraries, is not
-suitable for the purpose of the project because the aim of the project is to create a fancy web-based application
-that can catch the attention of the user.
+it has been concluded that Tkinter is not suitable for the purpose of the project because the aim of the project
+is to create a fancy web-based application that can catch the attention of the user.
+
+\clearpage
 
 Another aspect of the design is the theme. Since many modern projects offer a possibility to change to 
 either a light or a dark theme, it has been decided to develop an application with two themes. Bootstrap 
@@ -306,13 +313,10 @@ a random picture from a set is followed by a random and freshly generated text b
 The displayed content depends on which topic is selected since the content is separated in different topics and 
 displayed with different pictures.
 
-Another aspect which was considered with exclusive scrupulousness is the conformity to accepted social standards. 
-In view of the fact that neural networks do not understand major human problems of inequality, supremacism and just 
-unacceptable language, a word filter can be used to filter out the most offensive words. A dictionary of such words
-can be formed and used to exclude the possible offensive language. Some content fed to the network might contain
-questionable statements and thus the output of the network will contain altered but still questionable words.
-The problem might be regarded from two perspectives: the first one is that it's not acceptable and the second one
-is that it's not even a problem because the output is generated based on the style of the original author. 
+Another aspect that needs to be considered is the conformity to accepted social standards.
+In view of the fact that neural networks do not understand major human problems of inequality, supremacism and just
+unacceptable language, a word filter can be used to filter out the most offensive words. That also might not be a problem
+since the neural network generates text based on the source text fed into it.
 
 
 \subsubsection*{User feedback}
@@ -425,7 +429,7 @@ the project is developed by a single person, not a team, some of the practices o
 \subsubsection*{Implementation}
 \addcontentsline{toc}{subsubsection}{Implementation}
 \paragraph{}
-Training or finetuning the model was a crucial step in the development process. Before the neural network would
+Training the model was a crucial step in the development process. Before the neural network would
 be able to generate specific text based on some dataset, it has to be trained on it. The training process involves
 tweaking many parameters of the model and the process is repeated until the best options are found. Currently,
 all three checkpoints are trained with the same parameters and on the same model - 124M (124 million parameters). 
@@ -642,9 +646,6 @@ work on their own. This section will include the implementation process of such 
 content loading, reaction animations, theme change and other elements related to frontend (created and coded in the
 JavaScript part of the project).
 
-Many different ways of implementation and design were tried for the frontend. This section won't include the details of
-the earlier versions since they're not used in the project.
-
 \subsubsection*{Implementation - Visible elements}
 \addcontentsline{toc}{subsubsection}{Implementation - visible elements}
 \paragraph{}
@@ -688,8 +689,8 @@ on the theme selected. Then when the text generation is over - an image array is
 After that comes the if-else statement that checks if the theme is dark or not to generate the the text with an 
 appropriate colour. After, the reaction buttons are appended.
 
-Another important aspect in loading is the point of time when to start generating and displaying another group of posts. The logics behind that are rather simple and are very well known
-in modern Internet applications. When the user reaches the end of the page and no content is available - the application will load more content.
+Another important aspect in loading is the point of time when to start generating and displaying another group of posts. The logics behind that are rather simple
+- when the user reaches the end of the page and no content is available - the application will load more content.
 
 %TC:ignore
 \begin{code}
@@ -916,6 +917,21 @@ in spite of the fact that the project was a success, there are a lot of differen
 explored and implemented. Many features could have used a different approach. But these considerations of a different approach 
 came during the process of implementation and eventually it was decided to stick as much as possible to the initial approach that was chosen.
 
+A major improvement for the project would have been to use a different approach considering the frontend. For example,
+`Vue.js' or `React.js' could have been used in order to create the look of the app. The understanding of that came when
+it the code became hardly maintanable and readable. If the project grows in the future - it would be impossible for another
+person to improve the app.
+
+Another step further in the development would include abandoning the use pre-made images and instead using the
+newly presented `DALL-E' \citep{ramesh_2021_zeroshot}. It's an another project developed by OpenAI and is based on GPT-3. The main purpose of this
+neural network is to generate images based on the text that the user inputs. The whole program could be trained to
+take in the generated text by a neural network and output an image based on it.
+
+Another great step in development of such software - GPT Based Story Teller - would be to use a bigger model of newly presented
+GPT-3 instead of GPT-2 and hosting everything on a server relieving the user of the need to download the model and the checkpoints.
+That would require a constant connection to the server and would be a great improvement in the future. That would allow
+to operate the bigger models and train those models without disturbing the users.
+
 \subsection*{Libraries and frameworks}
 \addcontentsline{toc}{subsection}{Libraries and frameworks}
 \subsubsection*{GPT-2-Simple}
@@ -943,8 +959,6 @@ complex and a bit too much.
 Bootstrap on the other hand is a frontend framework used to make the development process more efficient since it provides a big
 amount of ready-to-use components. The development of the design that is featured in the application now would be much more
 complicated and time consuming if Bootstrap was not used.
-
-\clearpage
 
 \subsubsection*{Pillow}
 \addcontentsline{toc}{subsubsection}{Pillow}
@@ -977,6 +991,8 @@ the components work together without intervening in each others work. Also, it i
 were tested after completing all the sprints (with several exceptions) and that explains a dominant amount of passed and successful tests
 conducted. Also, that makes all of the tests complete and tested on a whole system. Results of the \hyperref[appendix:all-in_testing]{All-in Testing}
 can be found in the apendices list.
+
+\clearpage
 
 Elements tested throughout the project:
 \begin{itemize}
@@ -1461,10 +1477,9 @@ The last tests are for the stilisation of the text - stroke and uppercase varian
 
 In the end, all tests are just for a good visual look of the image and don't have to pass or fail explicitly.
 
-\subsection*{Survey Results}
-\addcontentsline{toc}{subsection}{Survey Results}
+\section*{Survey Results}
+\addcontentsline{toc}{section}{Survey Results}
 \label{appendix:survey_results}
-\paragraph{}
 
 \begin{figure}[ht]
   \centering
@@ -1491,6 +1506,68 @@ In the end, all tests are just for a good visual look of the image and don't hav
   \includegraphics[width=.8\linewidth]{img/feedback4.png}
   \label{fig:feedback4}
 \end{figure}
+
+\clearpage
+
+\section*{UML diagram}
+\addcontentsline{toc}{section}{UML Diagram}
+\label{appendix:uml}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=.4\linewidth]{img/uml.png}
+  \label{fig:uml}
+\end{figure}
+
+\clearpage
+
+\subsection*{UML Diagram Explanation}
+\addcontentsline{toc}{subsection}{UML Diagram Explanation}
+\label{appendix:uml_explanation}
+\paragraph{}
+This UML diagram is a representation of the classes and their relationships. Since the program is written in Python, it's
+been decided to name the diagram boxes with the names of the files rather than the class names because many of the
+methods are static and are not included in the classes and are simply exposed to Eel using the specific decorator -
+`@eel.expose'.
+
+The diagram has been created using `PlantUML' which is a tool for creating UML diagrams from source code. It has been
+used as a plugin for PyCharm. The final diagram was saved in a PNG file format and is shown in the figure.
+
+The above diagram has 5 classes, 13 non-static methods and 7 static methods. Basically, static methods are methods
+that are called from the frontend in the backend and vice versa. Other non-static methods work on their own side and don't cross-talk with
+the frontend/backend.
+
+The frontend script file called simply `script.js' is the main JavaScript file and is used exclusively in the frontend.
+The main function `loadMore()' is called when the user scrolls to the bottom of the page and makes the program generate
+more stories. Every time the user scrolls, also `populateImageArray()' function is called because displaying the stories,
+it's necessary to bind them with the images. `displayElapsedTime()' is a function that is called every 60 seconds to display
+the time the user has spent in the app. The said time is displayed in the menu. `toggleTheme()' is a function that has
+been claimed in the additional feature form. It toggles the theme of the app from light to dark and vice versa. Heavily based
+on Bootstrap and the way it works - it toggles the classes of different `DOM' objects on the page since Bootstrap
+provide different colours and styles for different themes. `select\_topic()' is used when the user clicks a button with a different
+topic than he is on now and it cleans what is currently displayed on the page and displays the stories of the freshly selected topic.
+`select\_mode()' is a similar function to `select\_topic()' but it changes the mode of the app from `Classic' to `Meme' and vice versa.
+`setSettings()' is used to save the settings of the app in the backend. The previously described functions set the mode, topic and theme in
+a specific settings file and then when the app is started these settings are pulled from the file using a function `get\_settings()'
+for the app to remember what the user has changed. `selectReaction()' is just a frontend feature to manage the animations
+of the like-dislike buttons and maintain the logics behind them (i.e. what can be pressed and what can't). `shuffleArray()'
+is a function that shuffles the array of images to make sure that the user doesn't see the same sequence of images every time
+the stories are generated.
+
+`imgmanager.py' file contains only one static exposed method `create\_meme(topic, count)'. The method is a more complex piece of code
+than the `generate\_text()' function that will follow later, since the later is being called every time the meme is generated.
+After it's been generated, the text is split in two parts and appended to the image.
+
+`nn.py' file contains more than just static methods becasue some of the functions written in it are used solely in the
+backend. `download\_model()' is used to download and save the desired pretrained model. `train\_model()' is another very used function
+in this project because the finetuning process is done through this one. `generate\_text()' function is the one that is
+static and is used to generate stories. It takes the run name which can be `Alice', `Cathcer' or `The Iliad', the
+length of the desired sample and the number of samples. This is how it works under the hood.
+
+`interface.py' is full of static methods since it mostly operates within the frontend. `react()' and `unreact()' functions
+are used to record the reactions for each post in a JSON database, `get\_settings' and `set\_settings' are the backend
+implementation of the frontend function with the same names. `count\_files()' is the function that counts files and is used
+in the `populateImageArray()' function to determine how many times to iterations to perform.
 
 \end{appendices}
 

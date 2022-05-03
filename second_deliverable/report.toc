@@ -1,12 +1,12 @@
-\contentsline {section}{Abstract}{3}{section*.1}%
-\contentsline {paragraph}{}{3}{section*.2}%
+\contentsline {section}{Abstract}{1}{section*.1}%
+\contentsline {paragraph}{}{1}{section*.2}%
 \contentsline {section}{Introduction}{3}{section*.3}%
 \contentsline {paragraph}{}{3}{section*.4}%
-\contentsline {section}{Objectives and Goals}{4}{section*.5}%
-\contentsline {subsection}{Initial approach}{4}{section*.6}%
-\contentsline {paragraph}{}{4}{section*.7}%
-\contentsline {subsection}{New approach}{4}{section*.8}%
-\contentsline {paragraph}{}{4}{section*.9}%
+\contentsline {section}{Objectives and Goals}{3}{section*.5}%
+\contentsline {subsection}{Initial approach}{3}{section*.6}%
+\contentsline {paragraph}{}{3}{section*.7}%
+\contentsline {subsection}{New approach}{3}{section*.8}%
+\contentsline {paragraph}{}{3}{section*.9}%
 \contentsline {subsection}{Reasons}{4}{section*.10}%
 \contentsline {paragraph}{}{4}{section*.11}%
 \contentsline {subsection}{General Description}{4}{section*.12}%
@@ -16,18 +16,18 @@
 \contentsline {paragraph}{}{5}{section*.16}%
 \contentsline {subsubsection}{GPT-2 and the library}{5}{section*.17}%
 \contentsline {paragraph}{}{5}{section*.18}%
-\contentsline {subsubsection}{Datasets}{6}{section*.19}%
-\contentsline {paragraph}{}{6}{section*.20}%
+\contentsline {subsubsection}{Datasets}{5}{section*.19}%
+\contentsline {paragraph}{}{5}{section*.20}%
 \contentsline {subsubsection}{Pillow}{6}{section*.21}%
 \contentsline {paragraph}{}{6}{section*.22}%
-\contentsline {subsection}{Frontend}{7}{section*.23}%
-\contentsline {paragraph}{}{7}{section*.24}%
-\contentsline {subsubsection}{Web Application appearence}{7}{section*.25}%
-\contentsline {paragraph}{}{7}{section*.26}%
+\contentsline {subsection}{Frontend}{6}{section*.23}%
+\contentsline {paragraph}{}{6}{section*.24}%
+\contentsline {subsubsection}{Web Application appearence}{6}{section*.25}%
+\contentsline {paragraph}{}{6}{section*.26}%
 \contentsline {subsubsection}{Displaying the content}{8}{section*.29}%
 \contentsline {paragraph}{}{8}{section*.30}%
-\contentsline {subsubsection}{User feedback}{9}{section*.31}%
-\contentsline {paragraph}{}{9}{section*.32}%
+\contentsline {subsubsection}{User feedback}{8}{section*.31}%
+\contentsline {paragraph}{}{8}{section*.32}%
 \contentsline {subsubsection}{Database}{9}{section*.33}%
 \contentsline {paragraph}{}{9}{section*.34}%
 \contentsline {subsection}{Linking the frontend and backend}{10}{section*.36}%
@@ -73,8 +73,8 @@
 \contentsline {paragraph}{}{21}{section*.90}%
 \contentsline {subsubsection}{Eel}{21}{section*.91}%
 \contentsline {paragraph}{}{21}{section*.92}%
-\contentsline {subsubsection}{Bootstrap}{21}{section*.93}%
-\contentsline {paragraph}{}{21}{section*.94}%
+\contentsline {subsubsection}{Bootstrap}{22}{section*.93}%
+\contentsline {paragraph}{}{22}{section*.94}%
 \contentsline {subsubsection}{Pillow}{22}{section*.95}%
 \contentsline {paragraph}{}{22}{section*.96}%
 \contentsline {subsection}{Tools}{22}{section*.97}%
@@ -106,4 +106,7 @@
 \contentsline {subsection}{Meme creation Testing}{34}{section*.130}%
 \contentsline {subsection}{Meme creation Testing Explanation}{35}{section*.132}%
 \contentsline {paragraph}{}{35}{section*.133}%
-\contentsline {subsection}{Survey Results}{35}{section*.134}%
+\contentsline {section}{Survey Results}{35}{section*.134}%
+\contentsline {section}{UML Diagram}{37}{section*.140}%
+\contentsline {subsection}{UML Diagram Explanation}{38}{section*.142}%
+\contentsline {paragraph}{}{38}{section*.143}%

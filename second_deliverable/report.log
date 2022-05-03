@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12.10) (preloaded format=pdflatex 2021.12.10)  27 APR 2022 18:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12.10) (preloaded format=pdflatex 2021.12.10)  3 MAY 2022 12:49
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -472,25 +472,25 @@ runsystem(del report.aex)...executed.
  (report.aux)
 \openout1 = `report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-Package hyperref Info: Link coloring OFF on input line 29.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+Package hyperref Info: Link coloring OFF on input line 35.
  (D:\MiKTeX\tex/latex/hyperref\nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
  (D:\MiKTeX\tex/latex/refcount\refcount.sty
@@ -500,9 +500,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count346
 )
-LaTeX Info: Redefining \ref on input line 29.
-LaTeX Info: Redefining \pageref on input line 29.
-LaTeX Info: Redefining \nameref on input line 29.
+LaTeX Info: Redefining \ref on input line 35.
+LaTeX Info: Redefining \pageref on input line 35.
+LaTeX Info: Redefining \nameref on input line 35.
  (report.out) (report.out)
 \@outlinefile=\write6
 \openout6 = `report.out'.
@@ -568,23 +568,25 @@ Package caption Info: End \AtBeginDocument code.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> on input line 31.
+(Font)              <10.95> on input line 37.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 31.
+(Font)              <8> on input line 37.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 37.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <14.4> on input line 37.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 37.
 [1
 
 {C:/Users/bobr7/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] (report.toc
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <12> on input line 1.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 1.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 1.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.74 ...line {subsubsection}{Eel}{21}{section*.91}
+l.62 ...section}{Reaction System}{18}{section*.75}
                                                   % [1
 
 ])
@@ -595,29 +597,33 @@ l.74 ...line {subsubsection}{Eel}{21}{section*.91}
 
 ] [4
 
-] [5] [6]
-<img/electron_window_example.png, id=238, 403.5075pt x 423.83344pt>
+] [5
+
+] [6]
+<img/electron_window_example.png, id=253, 403.5075pt x 423.83344pt>
 File: img/electron_window_example.png Graphic file (type png)
 <use img/electron_window_example.png>
-Package pdftex.def Info: img/electron_window_example.png  used on input line 250.
+Package pdftex.def Info: img/electron_window_example.png  used on input line 256.
 (pdftex.def)             Requested size: 199.46577pt x 209.51039pt.
-<img/tkinter_window_example.png, id=239, 403.5075pt x 333.245pt>
+<img/tkinter_window_example.png, id=254, 403.5075pt x 333.245pt>
 File: img/tkinter_window_example.png Graphic file (type png)
 <use img/tkinter_window_example.png>
-Package pdftex.def Info: img/tkinter_window_example.png  used on input line 256.
+Package pdftex.def Info: img/tkinter_window_example.png  used on input line 262.
 (pdftex.def)             Requested size: 199.46577pt x 164.7305pt.
  [7 <./img/electron_window_example.png> <./img/tkinter_window_example.png>]
-<img/light_theme.png, id=253, 403.5075pt x 423.83344pt>
+<img/light_theme.png, id=263, 403.5075pt x 423.83344pt>
 File: img/light_theme.png Graphic file (type png)
 <use img/light_theme.png>
-Package pdftex.def Info: img/light_theme.png  used on input line 281.
+Package pdftex.def Info: img/light_theme.png  used on input line 288.
 (pdftex.def)             Requested size: 199.46577pt x 209.51039pt.
-<img/dark_theme.png, id=254, 403.5075pt x 423.83344pt>
+<img/dark_theme.png, id=264, 403.5075pt x 423.83344pt>
 File: img/dark_theme.png Graphic file (type png)
 <use img/dark_theme.png>
-Package pdftex.def Info: img/dark_theme.png  used on input line 287.
+Package pdftex.def Info: img/dark_theme.png  used on input line 294.
 (pdftex.def)             Requested size: 199.46577pt x 209.51039pt.
- [8 <./img/light_theme.png> <./img/dark_theme.png>]
+ [8
+
+ <./img/light_theme.png> <./img/dark_theme.png>]
 \openout3 = `report.pyg'.
 
  (_minted-report/default-pyg-prefix.pygstyle) (_minted-report/default.pygstyle) (_minted-report/D785C3C866370C012576976D13D9E0AE9B08CF2DCC1E74FCE855BB4B30EF5210.pygtex) [9]
@@ -627,10 +633,10 @@ Package pdftex.def Info: img/dark_theme.png  used on input line 287.
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
 (Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 3.
 )
-<img/system_diagram.png, id=272, 573.14125pt x 164.615pt>
+<img/system_diagram.png, id=282, 573.14125pt x 164.615pt>
 File: img/system_diagram.png Graphic file (type png)
 <use img/system_diagram.png>
-Package pdftex.def Info: img/system_diagram.png  used on input line 406.
+Package pdftex.def Info: img/system_diagram.png  used on input line 410.
 (pdftex.def)             Requested size: 498.66258pt x 143.22644pt.
  [10
 
@@ -640,15 +646,15 @@ Package pdftex.def Info: img/system_diagram.png  used on input line 406.
  (_minted-report/A325BE598B81F0C00EA64295CFE41B967C2E7F49E087B8E8E8DF5244CE287E39.pygtex) [11
 
 ]
-<img/alice-original.png, id=292, 356.0803pt x 62.48344pt>
+<img/alice-original.png, id=302, 356.0803pt x 62.48344pt>
 File: img/alice-original.png Graphic file (type png)
 <use img/alice-original.png>
-Package pdftex.def Info: img/alice-original.png  used on input line 488.
+Package pdftex.def Info: img/alice-original.png  used on input line 492.
 (pdftex.def)             Requested size: 224.39662pt x 39.3762pt.
-<img/alice-preprocess.png, id=293, 356.0803pt x 106.89937pt>
+<img/alice-preprocess.png, id=303, 356.0803pt x 106.89937pt>
 File: img/alice-preprocess.png Graphic file (type png)
 <use img/alice-preprocess.png>
-Package pdftex.def Info: img/alice-preprocess.png  used on input line 494.
+Package pdftex.def Info: img/alice-preprocess.png  used on input line 498.
 (pdftex.def)             Requested size: 199.46577pt x 59.88116pt.
  [12
 
@@ -684,16 +690,16 @@ Package pdftex.def Info: img/alice-preprocess.png  used on input line 494.
 
 ] [21
 
-] [22
+] [22] (report.bbl [23
 
-] (report.bbl [23]
-Underfull \hbox (badness 10000) in paragraph at lines 64--66
+] [24
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 81--84
 \OT1/cmr/bx/n/12 URL: \OT1/cmr/m/it/12 https://github.com/cvalenzuela/rwet/blob/master/final/source[]text/ny/the-catcher-
  []
 
-[24
-
-]) [25] [26
+) [25] [26
 
 
 ] [27] [28
@@ -703,7 +709,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 64--66
 ] [30
 
 ]
-Overfull \hbox (7.07178pt too wide) in paragraph at lines 1259--1313
+Overfull \hbox (7.07178pt too wide) in paragraph at lines 1275--1329
  [][] 
  []
 
@@ -716,51 +722,61 @@ Overfull \hbox (7.07178pt too wide) in paragraph at lines 1259--1313
 ] [34
 
 ]
-<img/feedback0.png, id=448, 487.06969pt x 231.86626pt>
+<img/feedback0.png, id=461, 487.06969pt x 231.86626pt>
 File: img/feedback0.png Graphic file (type png)
 <use img/feedback0.png>
-Package pdftex.def Info: img/feedback0.png  used on input line 1471.
+Package pdftex.def Info: img/feedback0.png  used on input line 1486.
 (pdftex.def)             Requested size: 398.93158pt x 189.90865pt.
-<img/feedback1.png, id=449, 498.36188pt x 232.61906pt>
+<img/feedback1.png, id=462, 498.36188pt x 232.61906pt>
 File: img/feedback1.png Graphic file (type png)
 <use img/feedback1.png>
-Package pdftex.def Info: img/feedback1.png  used on input line 1476.
+Package pdftex.def Info: img/feedback1.png  used on input line 1491.
 (pdftex.def)             Requested size: 398.93158pt x 186.21262pt.
-<img/feedback2.png, id=450, 496.10344pt x 231.86626pt>
+<img/feedback2.png, id=463, 496.10344pt x 231.86626pt>
 File: img/feedback2.png Graphic file (type png)
 <use img/feedback2.png>
-Package pdftex.def Info: img/feedback2.png  used on input line 1481.
+Package pdftex.def Info: img/feedback2.png  used on input line 1496.
 (pdftex.def)             Requested size: 398.93158pt x 186.45204pt.
-<img/feedback3.png, id=451, 496.10344pt x 233.37187pt>
+<img/feedback3.png, id=464, 496.10344pt x 233.37187pt>
 File: img/feedback3.png Graphic file (type png)
 <use img/feedback3.png>
-Package pdftex.def Info: img/feedback3.png  used on input line 1486.
+Package pdftex.def Info: img/feedback3.png  used on input line 1501.
 (pdftex.def)             Requested size: 398.93158pt x 187.66277pt.
-<img/feedback4.png, id=452, 571.38469pt x 347.79938pt>
+<img/feedback4.png, id=465, 571.38469pt x 347.79938pt>
 File: img/feedback4.png Graphic file (type png)
 <use img/feedback4.png>
-Package pdftex.def Info: img/feedback4.png  used on input line 1491.
+Package pdftex.def Info: img/feedback4.png  used on input line 1506.
 (pdftex.def)             Requested size: 398.93158pt x 242.82637pt.
  [35
 
- <./img/feedback0.png> <./img/feedback1.png>] [36 <./img/feedback2.png> <./img/feedback3.png> <./img/feedback4.png>] (report.aux)
+ <./img/feedback0.png> <./img/feedback1.png>] [36 <./img/feedback2.png> <./img/feedback3.png> <./img/feedback4.png>]
+<img/uml.png, id=481, 321.2pt x 788.9475pt>
+File: img/uml.png Graphic file (type png)
+<use img/uml.png>
+Package pdftex.def Info: img/uml.png  used on input line 1518.
+(pdftex.def)             Requested size: 199.46198pt x 489.93692pt.
+ [37
+
+ <./img/uml.png (PNG copy)>] [38
+
+] (report.aux)
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: E8C9483A20A76AE56E1BAF54C23527C2;1225.
+(rerunfilecheck)             Checksum: 3165EC067B89CFFDB60CC981E476E664;1474.
 runsystem(del report.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 16935 strings out of 478659
- 303309 string characters out of 2862404
- 652759 words of memory out of 3000000
- 34558 multiletter control sequences out of 15000+600000
- 410357 words of font info for 50 fonts, out of 8000000 for 9000
+ 16961 strings out of 478659
+ 303731 string characters out of 2862404
+ 653108 words of memory out of 3000000
+ 34576 multiletter control sequences out of 15000+600000
+ 410973 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,11n,77p,404b,517s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 68i,11n,77p,404b,508s stack positions out of 5000i,500n,10000p,200000b,80000s
  <C:\Users\bobr7\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on report.pdf (37 pages, 805485 bytes).
+Output written on report.pdf (39 pages, 861613 bytes).
 PDF statistics:
- 549 PDF objects out of 1000 (max. 8388607)
- 191 named destinations out of 1000 (max. 500000)
- 141 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 574 PDF objects out of 1000 (max. 8388607)
+ 198 named destinations out of 1000 (max. 500000)
+ 162 words of extra memory for PDF output out of 10000 (max. 10000000)
 

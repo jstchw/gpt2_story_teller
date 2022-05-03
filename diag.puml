@@ -1,27 +1,57 @@
 @startuml
-'https://plantuml.com/class-diagram
+skinparam linetype ortho
+skinparam classHeaderBackgroundColor #444
+skinparam classFontColor automatic
+left to right direction
 
-abstract class AbstractList
-abstract AbstractCollection
-interface List
-interface Collection
-
-List <|-- AbstractList
-Collection <|-- AbstractCollection
-
-Collection <|- List
-AbstractCollection <|- AbstractList
-AbstractList <|-- ArrayList
-
-class ArrayList {
-Object[] elementData
-size()
+class nn {
+    model_name
+    run_name
+    sess
+    __init__()
+    download_model()
+    train_model(run_name, file_name, steps, sample_length)
+    @generate_text(run_name, length, nsamples)
 }
 
-enum TimeUnit {
-DAYS
-HOURS
-MINUTES
+class interface {
+    width
+    height
+    app_version
+    __init__()
+    create_window()
+    @react(post_id, value, topic, post_text)
+    @unreact(post_id)
+    @get_settings(filename)
+    @set_settings(key, value)
+    @count_files(path)
 }
+
+class imgmanager {
+    @create_meme(topic, count)
+}
+
+class main {
+    main()
+}
+
+class script.js. {
+    async function loadMore()
+    async function populateImageArray()
+    function displayElapsedTime()
+    function toggleTheme()
+    async function selectTopic()
+    async function selectMode()
+    function setSettings()
+    async function getSettings()
+    async function selectReaction()
+    function shuffleArray(array)
+}
+
+main <- interface
+imgmanager <- nn
+script.js <- interface
+script.js <- imgmanager
+script.js <- nn
 
 @enduml
