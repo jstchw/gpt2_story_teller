@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12.10) (preloaded format=pdflatex 2021.12.10)  3 MAY 2022 12:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12.10) (preloaded format=pdflatex 2021.12.10)  3 MAY 2022 16:46
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -600,23 +600,23 @@ l.62 ...section}{Reaction System}{18}{section*.75}
 ] [5
 
 ] [6]
-<img/electron_window_example.png, id=253, 403.5075pt x 423.83344pt>
+<img/electron_window_example.png, id=255, 403.5075pt x 423.83344pt>
 File: img/electron_window_example.png Graphic file (type png)
 <use img/electron_window_example.png>
 Package pdftex.def Info: img/electron_window_example.png  used on input line 256.
 (pdftex.def)             Requested size: 199.46577pt x 209.51039pt.
-<img/tkinter_window_example.png, id=254, 403.5075pt x 333.245pt>
+<img/tkinter_window_example.png, id=256, 403.5075pt x 333.245pt>
 File: img/tkinter_window_example.png Graphic file (type png)
 <use img/tkinter_window_example.png>
 Package pdftex.def Info: img/tkinter_window_example.png  used on input line 262.
 (pdftex.def)             Requested size: 199.46577pt x 164.7305pt.
  [7 <./img/electron_window_example.png> <./img/tkinter_window_example.png>]
-<img/light_theme.png, id=263, 403.5075pt x 423.83344pt>
+<img/light_theme.png, id=265, 403.5075pt x 423.83344pt>
 File: img/light_theme.png Graphic file (type png)
 <use img/light_theme.png>
 Package pdftex.def Info: img/light_theme.png  used on input line 288.
 (pdftex.def)             Requested size: 199.46577pt x 209.51039pt.
-<img/dark_theme.png, id=264, 403.5075pt x 423.83344pt>
+<img/dark_theme.png, id=266, 403.5075pt x 423.83344pt>
 File: img/dark_theme.png Graphic file (type png)
 <use img/dark_theme.png>
 Package pdftex.def Info: img/dark_theme.png  used on input line 294.
@@ -633,7 +633,7 @@ Package pdftex.def Info: img/dark_theme.png  used on input line 294.
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
 (Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 3.
 )
-<img/system_diagram.png, id=282, 573.14125pt x 164.615pt>
+<img/system_diagram.png, id=284, 573.14125pt x 164.615pt>
 File: img/system_diagram.png Graphic file (type png)
 <use img/system_diagram.png>
 Package pdftex.def Info: img/system_diagram.png  used on input line 410.
@@ -646,12 +646,12 @@ Package pdftex.def Info: img/system_diagram.png  used on input line 410.
  (_minted-report/A325BE598B81F0C00EA64295CFE41B967C2E7F49E087B8E8E8DF5244CE287E39.pygtex) [11
 
 ]
-<img/alice-original.png, id=302, 356.0803pt x 62.48344pt>
+<img/alice-original.png, id=304, 356.0803pt x 62.48344pt>
 File: img/alice-original.png Graphic file (type png)
 <use img/alice-original.png>
 Package pdftex.def Info: img/alice-original.png  used on input line 492.
 (pdftex.def)             Requested size: 224.39662pt x 39.3762pt.
-<img/alice-preprocess.png, id=303, 356.0803pt x 106.89937pt>
+<img/alice-preprocess.png, id=305, 356.0803pt x 106.89937pt>
 File: img/alice-preprocess.png Graphic file (type png)
 <use img/alice-preprocess.png>
 Package pdftex.def Info: img/alice-preprocess.png  used on input line 498.
@@ -722,61 +722,63 @@ Overfull \hbox (7.07178pt too wide) in paragraph at lines 1275--1329
 ] [34
 
 ]
-<img/feedback0.png, id=461, 487.06969pt x 231.86626pt>
+<img/feedback0.png, id=463, 487.06969pt x 231.86626pt>
 File: img/feedback0.png Graphic file (type png)
 <use img/feedback0.png>
 Package pdftex.def Info: img/feedback0.png  used on input line 1486.
 (pdftex.def)             Requested size: 398.93158pt x 189.90865pt.
-<img/feedback1.png, id=462, 498.36188pt x 232.61906pt>
+<img/feedback1.png, id=464, 498.36188pt x 232.61906pt>
 File: img/feedback1.png Graphic file (type png)
 <use img/feedback1.png>
 Package pdftex.def Info: img/feedback1.png  used on input line 1491.
 (pdftex.def)             Requested size: 398.93158pt x 186.21262pt.
-<img/feedback2.png, id=463, 496.10344pt x 231.86626pt>
+<img/feedback2.png, id=465, 496.10344pt x 231.86626pt>
 File: img/feedback2.png Graphic file (type png)
 <use img/feedback2.png>
 Package pdftex.def Info: img/feedback2.png  used on input line 1496.
 (pdftex.def)             Requested size: 398.93158pt x 186.45204pt.
-<img/feedback3.png, id=464, 496.10344pt x 233.37187pt>
+<img/feedback3.png, id=466, 496.10344pt x 233.37187pt>
 File: img/feedback3.png Graphic file (type png)
 <use img/feedback3.png>
 Package pdftex.def Info: img/feedback3.png  used on input line 1501.
 (pdftex.def)             Requested size: 398.93158pt x 187.66277pt.
-<img/feedback4.png, id=465, 571.38469pt x 347.79938pt>
+<img/feedback4.png, id=467, 571.38469pt x 347.79938pt>
 File: img/feedback4.png Graphic file (type png)
 <use img/feedback4.png>
 Package pdftex.def Info: img/feedback4.png  used on input line 1506.
 (pdftex.def)             Requested size: 398.93158pt x 242.82637pt.
  [35
 
- <./img/feedback0.png> <./img/feedback1.png>] [36 <./img/feedback2.png> <./img/feedback3.png> <./img/feedback4.png>]
-<img/uml.png, id=481, 321.2pt x 788.9475pt>
+ <./img/feedback0.png> <./img/feedback1.png>] [36 <./img/feedback2.png> <./img/feedback3.png> <./img/feedback4.png>] [37
+
+]
+<img/uml.png, id=488, 321.2pt x 788.9475pt>
 File: img/uml.png Graphic file (type png)
 <use img/uml.png>
-Package pdftex.def Info: img/uml.png  used on input line 1518.
+Package pdftex.def Info: img/uml.png  used on input line 1558.
 (pdftex.def)             Requested size: 199.46198pt x 489.93692pt.
- [37
+ [38
 
- <./img/uml.png (PNG copy)>] [38
+ <./img/uml.png (PNG copy)>] [39
 
 ] (report.aux)
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: 3165EC067B89CFFDB60CC981E476E664;1474.
+(rerunfilecheck)             Checksum: 58219D1EB5240EF9AB33E57C7D206056;1474.
 runsystem(del report.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 16961 strings out of 478659
- 303731 string characters out of 2862404
- 653108 words of memory out of 3000000
- 34576 multiletter control sequences out of 15000+600000
+ 16965 strings out of 478659
+ 303791 string characters out of 2862404
+ 653152 words of memory out of 3000000
+ 34577 multiletter control sequences out of 15000+600000
  410973 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  68i,11n,77p,404b,508s stack positions out of 5000i,500n,10000p,200000b,80000s
  <C:\Users\bobr7\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on report.pdf (39 pages, 861613 bytes).
+Output written on report.pdf (40 pages, 865178 bytes).
 PDF statistics:
- 574 PDF objects out of 1000 (max. 8388607)
- 198 named destinations out of 1000 (max. 500000)
+ 582 PDF objects out of 1000 (max. 8388607)
+ 201 named destinations out of 1000 (max. 500000)
  162 words of extra memory for PDF output out of 10000 (max. 10000000)
 

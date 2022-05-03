@@ -107,6 +107,8 @@
 \contentsline {subsection}{Meme creation Testing Explanation}{35}{section*.132}%
 \contentsline {paragraph}{}{35}{section*.133}%
 \contentsline {section}{Survey Results}{35}{section*.134}%
-\contentsline {section}{UML Diagram}{37}{section*.140}%
-\contentsline {subsection}{UML Diagram Explanation}{38}{section*.142}%
-\contentsline {paragraph}{}{38}{section*.143}%
+\contentsline {subsection}{Survey Explanation}{37}{section*.140}%
+\contentsline {paragraph}{}{37}{section*.141}%
+\contentsline {section}{UML Diagram}{38}{section*.142}%
+\contentsline {subsection}{UML Diagram Explanation}{39}{section*.144}%
+\contentsline {paragraph}{}{39}{section*.145}%
