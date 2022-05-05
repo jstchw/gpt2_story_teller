@@ -1,8 +1,10 @@
 import eel
 import json
 import glob
+from imgmanager import ImgManager
 
-app_version = 'Alpha 1.1'
+
+app_version = 'Alpha 1.2'
 
 
 # Function to save reactions in a JSON file
@@ -70,6 +72,7 @@ class Interface:
         # For Windows
         eel.browsers.set_path('electron', r'C:/Users/bobr7/AppData/Roaming/npm/node_modules/electron/dist/electron.exe')
         eel.init('www')
+        ImgManager()
 
     def create_window(self):
         eel.start(mode='electron', size=(self.width, self.height))

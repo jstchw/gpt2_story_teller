@@ -24,7 +24,7 @@ def create_meme(topic, count):
         part[0] = textwrap.fill(text=part[0], width=35)
 
         w, h = d.textsize(part[0], font=font)
-        d.text(((W-w)/2, 50), str(part[0]), fill=(255, 255, 255), font=font, align='center', stroke_fill=(0, 0, 0),
+        d.text(((W - w) / 2, 50), str(part[0]), fill=(255, 255, 255), font=font, align='center', stroke_fill=(0, 0, 0),
                stroke_width=2)
 
         part[1] = ' '.join(part[1])
@@ -32,6 +32,11 @@ def create_meme(topic, count):
         part[1] = textwrap.fill(text=part[1], width=35)
 
         w, h = d.textsize(part[1], font=font)
-        d.text(((W-w)/2, 800), str(part[1]), fill=(255, 255, 255), font=font, align='center', stroke_fill=(0, 0, 0),
+        d.text(((W - w) / 2, 800), str(part[1]), fill=(255, 255, 255), font=font, align='center', stroke_fill=(0, 0, 0),
                stroke_width=2)
         img.save(f'www/img/memes/{topic}/{topic}{i}.jpg')
+
+
+class ImgManager:
+    def __init__(self):
+        pass

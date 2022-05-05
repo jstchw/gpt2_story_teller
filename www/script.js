@@ -123,6 +123,8 @@ async function loadMore() {
                         "<div class='col dislike' id='dislike_" + counter + "'>&#128078</div>" +
                     "</div>" +
                 "</div>")
+                $(`#dolike_${counter}`).click(selectReaction)
+                $(`#dislike_${counter}`).click(selectReaction)
                 counter++
             }
         } else if(theme === 'dark') {
@@ -137,6 +139,8 @@ async function loadMore() {
                         "<div class='col dislike' id='dislike_" + counter + "'>&#128078</div>" +
                     "</div>" +
                 "</div>")
+                $(`#dolike_${counter}`).click(selectReaction)
+                $(`#dislike_${counter}`).click(selectReaction)
                 counter++
             }
         }
@@ -152,14 +156,12 @@ async function loadMore() {
                         "<div class='col dislike' id='dislike_" + counter + "'>&#128078</div>" +
                     "</div>" +
                 "</div>")
+                $(`#dolike_${counter}`).click(selectReaction)
+                $(`#dislike_${counter}`).click(selectReaction)
                 counter++
             }
     }
 
-
-    $('.like').click(selectReaction)
-    $('.dislike').click(selectReaction)
-    //currentIndex += maxResult
     loadMoreInProgress = false
 }
 
@@ -279,38 +281,40 @@ async function getSettings() {
 }
 
 async function selectReaction() {
-    let id = (this.id).replace(/\D/g, "");
-    let like_pressed, dislike_pressed
-    let postText
-    if (mode === 'classic') postText = document.querySelector('#text_' + id).innerHTML
-    else if (mode === 'meme')  postText = 'Meme post (WIP)'
+    if (!loadMoreInProgress) {
+        let id = (this.id).replace(/\D/g, "");
+        let like_pressed, dislike_pressed
+        let postText
+        if (mode === 'classic') postText = document.querySelector('#text_' + id).innerHTML
+        else if (mode === 'meme')  postText = 'Meme post (WIP)'
 
-    like_pressed = document.querySelector('#dolike_' + id).classList.contains('reaction-selected')
-    dislike_pressed = document.querySelector('#dislike_' + id).classList.contains('reaction-selected')
+        like_pressed = document.querySelector('#dolike_' + id).classList.contains('reaction-selected')
+        dislike_pressed = document.querySelector('#dislike_' + id).classList.contains('reaction-selected')
+        console.log(`Like pressed: ${like_pressed}, Dislike pressed: ${dislike_pressed}`)
 
 
-    if(!like_pressed && this.id.includes('dislike')) {
-        document.querySelector('#' + this.id).classList.add('reaction-selected')
-        if(!dislike_pressed) {
-            console.log('dislike done')
-            await eel.react(id, 0, topic, postText)()
+        if(!like_pressed && this.id.includes('dislike')) {
+            document.querySelector('#' + this.id).classList.add('reaction-selected')
+            if(!dislike_pressed) {
+                console.log('dislike done')
+                await eel.react(id, 0, topic, postText)()
+            }
+        } else if(!dislike_pressed && this.id.includes('dolike')) {
+            document.querySelector('#' + this.id).classList.add('reaction-selected')
+            if(!like_pressed) {
+                console.log('like done')
+                await eel.react(id, 1, topic, postText)()
+            }
         }
-    } else if(!dislike_pressed && this.id.includes('dolike')) {
-        document.querySelector('#' + this.id).classList.add('reaction-selected')
-        if(!like_pressed) {
-            console.log('like done')
-            await eel.react(id, 1, topic, postText)()
+         if(like_pressed && this.id.includes('dolike')) {
+            document.querySelector('#' + this.id).classList.remove('reaction-selected')
+            console.log('like undone')
+            await eel.unreact(id)
+        } else if(dislike_pressed && this.id.includes('dislike')) {
+            document.querySelector('#' + this.id).classList.remove('reaction-selected')
+            console.log('dislike undone')
+            await eel.unreact(id)
         }
-    }
-
-    if(dislike_pressed && this.id.includes('dislike')) {
-        document.querySelector('#' + this.id).classList.remove('reaction-selected')
-        console.log('dislike undone')
-        await eel.unreact(id)
-    } else if(like_pressed && this.id.includes('dolike')) {
-        document.querySelector('#' + this.id).classList.remove('reaction-selected')
-        console.log('like undone')
-        await eel.unreact(id)
     }
 }
 
